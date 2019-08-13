@@ -24,7 +24,7 @@ CREATE TABLE IF NOT EXISTS Token(
 ); 
 
 /* Create the Store information */ 
-/* 當設定欄位的編碼時,不能使用NOT NULL */ 
+/* 當設定欄位的編碼時,不能使用NOT NULL語法 */ 
 CREATE TABLE IF NOT EXISTS StoreInfo( 
     store_name VARCHAR(15) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci, 
     city CHAR(3) CHARACTER SET uft8mb4 COLLATE utf8mb4_general_ci, 
