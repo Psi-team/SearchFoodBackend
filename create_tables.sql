@@ -10,14 +10,14 @@ CREATE TABLE IF NOT EXISTS User(
     passwd CHAR(10) NOT NULL, 
     sexual CHAR(2) NOT NULL, 
     birthyear YEAR NOT NULL, 
-    age TINYINT NULL, 
+    age TINYINT DEFAULT ( YEAR(CURRENT_DATE) - birthyear ), 
     PRIMARY KEY( mail ) 
 ); 
 
 /* Create the User token */
 CREATE TABLE IF NOT EXISTS Token( 
     mail VARCHAR(25) NOT NULL, 
-    token CHAR(30) NULL,
+    token VARCHAR(30) NULL,
     login_time TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP, 
     PRIMARY KEY( mail ), 
     FOREIGN KEY( mail ) REFERENCES User( mail ) 
@@ -49,7 +49,7 @@ CREATE TABLE IF NOT EXISTS StoreComment(
     city CHAR(3) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci, 
     district CHAR(5) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci, 
     address VARCHAR(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci, 
-    star TINYINT DEFAULT '0', 
+    star TINYINT NOT NULL DEFAULT '0', 
     price INT NOT NULL, 
     comment_time TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP, 
     comments TINYTEXT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci, 
