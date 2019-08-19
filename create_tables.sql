@@ -39,7 +39,7 @@ CREATE TABLE IF NOT EXISTS StoreInfo(
     click_week INT(3) DEFAULT '0', 
     click_cum INT(4) DEFAULT '0', 
     lat_long JSON NOT NULL, 
-    types JSON NULL, 
+    types JSON NOT NULL, 
     PRIMARY KEY( store_id, store_name, city, district, address ), 
     UNIQUE KEY( store_name, city, district, address ), 
     FOREIGN KEY( creator ) REFERENCES Users( mail )
