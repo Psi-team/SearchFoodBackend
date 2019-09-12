@@ -50,12 +50,12 @@
             <artifactId>mysql-connector-java</artifactId> 
         </dependency> 
 
-        <!-- pakcages about dealing with json --> 
+        <!-- pakcages about dealing with json  
         <dependency> 
             <groupId>com.fasterxml.jackson.core</groupId> 
             <artifactId>jackson-databind</artifactId> 
         </dependency> 
-        
+        --> 
 
 	</dependencies>
 

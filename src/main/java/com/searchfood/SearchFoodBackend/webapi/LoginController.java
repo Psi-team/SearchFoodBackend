@@ -44,9 +44,9 @@ public class LoginController{
     @PostMapping( value="/", consumes="application/json" ) // receive the json type data.  
     @ResponseStatus( HttpStatus.OK ) // return the http status code. 
     //public Map<String,String> getRecievedData( Members member ){ // the body of request should be convert to Members to parameters. 
-    public Members getRecievedData(){ // the body of request should be convert to Members to parameters. 
+    public Members getRecievedData( Members member ){ // the body of request should be convert to Members to parameters. 
 
-        System.out.println( "****** Receive data sucessfully!   ********" ); 
+        System.out.println( "****** Call getRecievedData() sucessfully!   ********" ); 
 
         //member.setToken(); 
 
