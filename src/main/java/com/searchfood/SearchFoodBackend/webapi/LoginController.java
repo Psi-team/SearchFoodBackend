@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.CrossOrigin; 
 import org.springframework.web.bind.annotation.ResponseStatus; 
 import org.springframework.web.bind.annotation.RequestBody; 
-import org.springframework.web.bind.annotation.ResponseBody; 
+import org.springframework.web.bind.annotation.ResponseBody; // can be omitted if annotating RestController.  
 
 // beans 
 import org.springframework.beans.factory.annotation.Autowired; 
@@ -21,8 +21,8 @@ import java.util.Map;
 import java.util.HashMap; 
 
 @RestController // handle the Restful api 
-@CrossOrigin // allows clients from any domain to consume the API.  
-@RequestMapping( value="/login", produces="application/json" ) // handle the HTTP request /login 
+@CrossOrigin("*") // allows clients from any domain to consume the API.  
+@RequestMapping( value="login", produces="application/json" ) // handle the HTTP request /login 
 public class LoginController{ 
 
     /* This class is for checking whether the login user is valid member from the table User in DB.
@@ -37,22 +37,25 @@ public class LoginController{
     private Members member; 
 
     public LoginController(){ 
-        System.out.println( "****** Construct class sucessfully!   ********" ); 
+        System.out.println( "***** Construct class sucessfully!   *******" ); 
     } 
 
     // handle the POST method from url /login 
     @PostMapping( value="/", consumes="application/json" ) // receive the json type data.  
     @ResponseStatus( HttpStatus.OK ) // return the http status code. 
-    public @ResponseBody Members getRecievedData( @RequestBody Members member ){ // the body of request should be convert to Members to parameters. 
+    //public Map<String,String> getRecievedData( Members member ){ // the body of request should be convert to Members to parameters. 
+    public Members getRecievedData(){ // the body of request should be convert to Members to parameters. 
 
         System.out.println( "****** Receive data sucessfully!   ********" ); 
 
-        //Map<String,String> target = new HashMap<>(); 
-        //String token = member.getToken(); 
-        //target.put( "username", member.getMail() ); 
-        //target.put( "token", token ); 
+        //member.setToken(); 
+
+        System.out.println("username: "+member.getUsername() + "\npassword: "+member.getPasswd() ); 
+
+        //Map<String, String> target = new HashMap(); 
+        //target.put("username",member.getUsername() ); 
+        //target.put("token",member.getToken() ); 
         
-        member.setToken(); 
         return member; 
     } 
 } 

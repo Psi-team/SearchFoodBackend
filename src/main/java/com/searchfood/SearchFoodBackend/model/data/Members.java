@@ -7,38 +7,38 @@ import com.searchfood.SearchFoodBackend.utils.UUIDGenerator;
 @Component 
 public class Members{ 
 
-    private String mail; 
+    private String username; 
     private String passwd; 
-    private String token; 
+    //private String token; 
 
     public Members(){ 
         System.out.println( "*********  Construct Members object    ***********"); 
     } 
 
-    public void setMail( String mail ){ 
-        this.mail = mail; 
+    public void setUsername( String username ){ 
+        this.username = username; 
     } 
 
     public void setPasswd( String pass ){ 
         this.passwd = pass; 
     }  
 
-    public void setToken(){ 
-        UUIDGenerator token_ = new UUIDGenerator( this.mail, this.passwd ); 
-        this.token = token_.getUUID(); 
-    } 
+    //public void setToken(){ 
+    //    UUIDGenerator token_ = new UUIDGenerator(); 
+    //    this.token = token_.getUUID(); 
+    //} 
 
-    public String getMail(){ 
-        return this.mail; 
+    public String getUsername(){ 
+        return this.username; 
     } 
 
     public String getPasswd(){ 
         return this.passwd; 
     }  
 
-    public String getToken(){ 
-        return this.token; 
-    } 
+    //public String getToken(){ 
+    //    return this.token; 
+    //} 
 
 } 
 
