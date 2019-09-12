@@ -1,7 +1,10 @@
 package com.searchfood.SearchFoodBackend.model.data; 
 
+import org.springframework.stereotype.Component; 
+
 import com.searchfood.SearchFoodBackend.utils.UUIDGenerator; 
 
+@Component 
 public class Members{ 
 
     private String mail; 
@@ -9,7 +12,7 @@ public class Members{
     private String token; 
 
     public Members(){ 
-
+        System.out.println( "*********  Construct Members object    ***********"); 
     } 
 
     public void setMail( String mail ){ 

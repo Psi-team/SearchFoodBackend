@@ -1,13 +1,17 @@
-package com.searchfood.SearchFoodBackend.web-api; 
+package com.searchfood.SearchFoodBackend.webapi; 
 
 // Annotation 
-import org.springframework.web.bind.annotation.RestController; 
+import org.springframework.web.bind.annotation.RestController;  
 import org.springframework.web.bind.annotation.RequestMapping; 
 import org.springframework.web.bind.annotation.PostMapping; 
 import org.springframework.web.bind.annotation.CrossOrigin; 
-import org.springframework.web.bind.annotation.RequestStatus; 
+import org.springframework.web.bind.annotation.ResponseStatus; 
 import org.springframework.web.bind.annotation.RequestBody; 
 import org.springframework.web.bind.annotation.ResponseBody; 
+
+// beans 
+import org.springframework.beans.factory.annotation.Autowired; 
+
 // http abstraction 
 import org.springframework.http.HttpStatus; 
 // user-define class  
@@ -18,7 +22,7 @@ import java.util.HashMap;
 
 @RestController // handle the Restful api 
 @CrossOrigin // allows clients from any domain to consume the API.  
-@RequestMapping( path="/login", produces="application/json" ) // handle the HTTP request /login 
+@RequestMapping( value="/login", produces="application/json" ) // handle the HTTP request /login 
 public class LoginController{ 
 
     /* This class is for checking whether the login user is valid member from the table User in DB.
@@ -29,19 +33,27 @@ public class LoginController{
      * for the HTTP response. 
      */ 
 
-    //@Autowired 
-    //private Members member; 
+    @Autowired 
+    private Members member; 
+
+    public LoginController(){ 
+        System.out.println( "****** Construct class sucessfully!   ********" ); 
+    } 
 
     // handle the POST method from url /login 
-    @PostMapping( consume="application/json" ) // receive the json type data.  
-    @RequestStatus( HttpStatus.OK ) // return the http status code. 
-    public @ResponseBody Map<String,String> getRecievedData( @RequestBody Members member ){ // the body of request should be convert to Members to parameters. 
+    @PostMapping( value="/", consumes="application/json" ) // receive the json type data.  
+    @ResponseStatus( HttpStatus.OK ) // return the http status code. 
+    public @ResponseBody Members getRecievedData( @RequestBody Members member ){ // the body of request should be convert to Members to parameters. 
 
-        Map<String,String> target = new HashMap<>(); 
-        String token = member.getToken(); 
-        target.put( "username", member.getMail() ); 
-        target.put( "token", token ); 
-        return target; 
+        System.out.println( "****** Receive data sucessfully!   ********" ); 
+
+        //Map<String,String> target = new HashMap<>(); 
+        //String token = member.getToken(); 
+        //target.put( "username", member.getMail() ); 
+        //target.put( "token", token ); 
+        
+        member.setToken(); 
+        return member; 
     } 
 } 
 

@@ -25,10 +25,10 @@ public class SignUpMember{
     @Digits( integer=4, fraction=0, message="Birthyear INVALID!!") 
     private int birthyear; 
 
-    @Digits( integer=3, fraction=0, message="Age INVALID!!") 
+    @Size( min=0, max=150, message="Age INVALID!!") 
     private int age; 
 
-    public RegisteredMember(){ 
+    public SignUpMember(){ 
     } 
 
     // Setter 
@@ -48,7 +48,7 @@ public class SignUpMember{
         this.birthyear = birthyear; 
     } 
 
-    public void setAge( int age = 0 ){ 
+    public void setAge( int age ){ 
         this.age = age; 
     } 
 
