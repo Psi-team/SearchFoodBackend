@@ -27,36 +27,30 @@ public class LoginController{
 
     /* This class is for checking whether the login user is valid member from the table User in DB.
      * If it is valid member, then return an unique token for HTTP response, or redirect to register page. 
-     * 
-     * ------------------------
-     * But this is in the test phase. Our goal is to recieve the Json from the Web API and return an token including the username and pass 
-     * for the HTTP response. 
      */ 
-
-    @Autowired 
-    private Members member; 
+    
+    //@Autowired 
+    //private Members member; 
 
     public LoginController(){ 
         System.out.println( "***** Construct class sucessfully!   *******" ); 
     } 
 
-    // handle the POST method from url /login 
+    // handle the POST method from url /login/ 
     @PostMapping( value="/", consumes="application/json" ) // receive the json type data.  
     @ResponseStatus( HttpStatus.OK ) // return the http status code. 
-    //public Map<String,String> getRecievedData( Members member ){ // the body of request should be convert to Members to parameters. 
-    public Members getRecievedData( Members member ){ // the body of request should be convert to Members to parameters. 
+    public Map<String,String> SignIn( @RequestBody Members member ){ // @RequestBody: the body of request should be convert to Members to parameters. 
 
-        System.out.println( "****** Call getRecievedData() sucessfully!   ********" ); 
+        System.out.println("username: "+member.getUsername() + "\npassword: "+member.getPassword() ); 
 
-        //member.setToken(); 
+        Map<String, String> target = new HashMap(); 
+        target.put("username",member.getUsername() ); 
+        target.put("passwd",member.getPassword() ); // this is for the purpose of test. 
+        //target.put("token",<token>); 
 
-        System.out.println("username: "+member.getUsername() + "\npassword: "+member.getPasswd() ); 
-
-        //Map<String, String> target = new HashMap(); 
-        //target.put("username",member.getUsername() ); 
-        //target.put("token",member.getToken() ); 
+        System.out.println( target ); 
         
-        return member; 
+        return target; 
     } 
 } 
 

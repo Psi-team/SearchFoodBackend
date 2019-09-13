@@ -1,11 +1,15 @@
 package com.searchfood.SearchFoodBackend.model.data; 
 
+// spring 
+import org.springframework.stereotype.Component; 
+
 // java 
 import javax.validation.constraints.Size; 
 import javax.validation.constraints.NotNull; 
 import javax.validation.constraints.Digits; 
 import javax.validation.constraints.Email; 
 
+//@Component 
 public class SignUpMember{ 
     
     @NotNull 

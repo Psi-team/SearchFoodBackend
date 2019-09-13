@@ -2,43 +2,37 @@ package com.searchfood.SearchFoodBackend.model.data;
 
 import org.springframework.stereotype.Component; 
 
-import com.searchfood.SearchFoodBackend.utils.UUIDGenerator; 
-
-@Component 
+//@Component 
 public class Members{ 
 
     private String username; 
-    private String passwd; 
-    //private String token; 
+
+    private String password; 
 
     public Members(){ 
-        System.out.println( "*********  Construct Members object    ***********"); 
+
     } 
 
-    public void setUsername( String username ){ 
+    public Members( String username, String password ){ 
         this.username = username; 
+        this.password = password; 
+    } 
+
+    public void setUsername( String name ){ 
+        this.username = name; 
     } 
 
     public void setPasswd( String pass ){ 
-        this.passwd = pass; 
-    }  
-
-    //public void setToken(){ 
-    //    UUIDGenerator token_ = new UUIDGenerator(); 
-    //    this.token = token_.getUUID(); 
-    //} 
+        this.password = pass; 
+    } 
 
     public String getUsername(){ 
         return this.username; 
     } 
 
-    public String getPasswd(){ 
-        return this.passwd; 
-    }  
-
-    //public String getToken(){ 
-    //    return this.token; 
-    //} 
+    public String getPassword(){ 
+        return this.password; 
+    } 
 
 } 
 

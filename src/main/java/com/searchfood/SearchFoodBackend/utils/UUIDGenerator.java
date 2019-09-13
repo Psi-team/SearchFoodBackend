@@ -6,8 +6,8 @@ public class UUIDGenerator{
 
     private String token; 
 
-    public UUIDGenerator( String str, String str2 ){ 
-        this.token = str+str2+ UUID.randomUUID().toString();  
+    public UUIDGenerator( String usrname ){ 
+        this.token = usrname + UUID.randomUUID().toString();  
     } 
 
     public UUIDGenerator(){ 
