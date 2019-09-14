@@ -7,7 +7,7 @@ public class UUIDGenerator{
     private String token; 
 
     public UUIDGenerator( String usrname ){ 
-        this.token = usrname + UUID.randomUUID().toString();  
+        this.token = usrname +"-"+ UUID.randomUUID().toString();  
     } 
 
     public UUIDGenerator(){ 

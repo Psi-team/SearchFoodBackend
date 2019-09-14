@@ -16,6 +16,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus; 
 // user-define class  
 import com.searchfood.SearchFoodBackend.model.data.Members; 
+import com.searchfood.SearchFoodBackend.model.data.TokenRecords; 
+import com.searchfood.SearchFoodBackend.model.TokenRecordsImp; 
 // plain java packages 
 import java.util.Map; 
 import java.util.HashMap; 
@@ -29,8 +31,8 @@ public class LoginController{
      * If it is valid member, then return an unique token for HTTP response, or redirect to register page. 
      */ 
     
-    //@Autowired 
-    //private Members member; 
+    @Autowired 
+    private TokenRecordsImp tokenImp; 
 
     public LoginController(){ 
         System.out.println( "***** Construct class sucessfully!   *******" ); 
@@ -39,19 +41,16 @@ public class LoginController{
     // handle the POST method from url /login/ 
     @PostMapping( value="/", consumes="application/json" ) // receive the json type data.  
     @ResponseStatus( HttpStatus.OK ) // return the http status code. 
-    public Map<String,String> SignIn( @RequestBody Members member ){ // @RequestBody: the body of request should be convert to Members to parameters. 
+    public TokenRecords SignIn( @RequestBody Members member ){ // @RequestBody: the body of request should be convert to Members to parameters. 
 
-        System.out.println("username: "+member.getUsername() + "\npassword: "+member.getPassword() ); 
+        System.out.println("TESTING:\nusername: "+member.getUsername() + "\npassword: "+member.getPassword() ); 
 
-        Map<String, String> target = new HashMap(); 
-        target.put("username",member.getUsername() ); 
-        target.put("passwd",member.getPassword() ); // this is for the purpose of test. 
-        //target.put("token",<token>); 
+        TokenRecords token = tokenImp.saveTokenTable( member ); 
+        // Check whether a member or not, if yes, setUsername and setToken then return a TokenRecords Object. 
 
-        System.out.println( target ); 
-        
-        return target; 
+        return token; 
     } 
+
 } 
 
 

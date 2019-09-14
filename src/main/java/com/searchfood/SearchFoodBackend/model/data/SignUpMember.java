@@ -34,6 +34,14 @@ public class SignUpMember{
 
     public SignUpMember(){ 
     } 
+    
+    public SignUpMember(String name, String pass, int sex, int birthyear, int age ){
+        this.username = name; 
+        this.pass = pass; 
+        this.sexual = sex; 
+        this.birthyear = birthyear; 
+        this.age = age; 
+    } 
 
     // Setter 
     public void setUsername( String name ){ 
