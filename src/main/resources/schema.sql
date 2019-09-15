@@ -10,8 +10,7 @@ CREATE TABLE IF NOT EXISTS Users(
     passwd CHAR(10) NOT NULL, 
     sexual INT NOT NULL, 
     birthyear YEAR NOT NULL, 
-    /*age TINYINT DEFAULT ( YEAR(CURRENT_DATE) - birthyear ), */
-    age TINYINT DEFAULT ( YEAR(CURDATE()) - birthyear ), 
+    age TINYINT DEFAULT ( YEAR(CURRENT_DATE) - birthyear ), 
     PRIMARY KEY( mail ) 
 ); 
 
