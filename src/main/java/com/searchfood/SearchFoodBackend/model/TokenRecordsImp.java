@@ -56,7 +56,7 @@ public class TokenRecordsImp implements TokenRecordsITF, FindDataITF{
                     },
                     index, password ); 
 
-            sign.toString();  
+            //System.out.println( sign.toString() ); 
             System.out.println( "Member founded."); 
 
             return 1; 

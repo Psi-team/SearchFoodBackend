@@ -88,7 +88,9 @@ public class SignUpMember{
     @Override 
     public String toString(){ 
        return String.format( "Username: %s\nPassword: %s\nSexual: %d\nBirthYear: %d\nAge: %d", 
-                            this,username, this.password, this.sexual, this.sexual, this.age ); 
+                            this,getUsername(), this.getPassword(), this.getSexual(), 
+                            this.getBirthyear(), this.getAge() ); 
     } 
+
 } 
 
