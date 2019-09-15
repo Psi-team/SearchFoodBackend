@@ -18,7 +18,7 @@ public class SignUpMember{
 
     @NotNull 
     @Size( min=6, max=10, message="The length of Password must be between 6 and 10.") 
-    private String pass; 
+    private String password; 
 
     @NotNull 
     @Size( min=0, max=1, message="Sexual must be male or female.") 
@@ -37,7 +37,7 @@ public class SignUpMember{
     
     public SignUpMember(String name, String pass, int sex, int birthyear, int age ){
         this.username = name; 
-        this.pass = pass; 
+        this.password = pass; 
         this.sexual = sex; 
         this.birthyear = birthyear; 
         this.age = age; 
@@ -48,8 +48,8 @@ public class SignUpMember{
         this.username = name; 
     } 
 
-    public void setPass( String pass ){ 
-        this.pass = pass; 
+    public void setPassword( String pass ){ 
+        this.password = pass; 
     } 
 
     public void setSexual( int sex ){ 
@@ -69,8 +69,8 @@ public class SignUpMember{
         return this.username; 
     } 
 
-    public String getPass(){ 
-        return this.pass; 
+    public String getPassword(){ 
+        return this.password; 
     } 
 
     public int getSexual(){ 
@@ -85,5 +85,10 @@ public class SignUpMember{
         return this.age; 
     } 
 
+    @Override 
+    public String toString(){ 
+       return String.format( "Username: %s\nPassword: %s\nSexual: %d\nBirthYear: %d\nAge: %d", 
+                            this,username, this.password, this.sexual, this.sexual, this.age ); 
+    } 
 } 
 

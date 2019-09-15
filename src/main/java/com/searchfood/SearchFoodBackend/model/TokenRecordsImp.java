@@ -3,9 +3,9 @@ package com.searchfood.SearchFoodBackend.model;
 // jdbc in Spring 
 import org.springframework.jdbc.core.JdbcTemplate; 
 import org.springframework.jdbc.core.RowMapper; 
-import org.springframework.jdbc.core.PreparedStatementCreator; 
 
 import org.springframework.dao.DataAccessException; 
+import org.springframework.dao.EmptyResultDataAccessException; 
 
 // stereotype 
 import org.springframework.stereotype.Repository; 
@@ -56,16 +56,16 @@ public class TokenRecordsImp implements TokenRecordsITF, FindDataITF{
                     },
                     index, password ); 
 
-            System.out.println( sign ); 
+            sign.toString();  
             System.out.println( "Member founded."); 
 
             return 1; 
-
-        }catch( DataAccessException e ){ 
-
+        }catch( EmptyResultDataAccessException e ){ // Access no appropriate data in table Users. 
             System.out.println( "Member not founded."); 
             return -1; 
-
+        }catch( DataAccessException e ){ 
+            System.out.println( "DataAccessException occurs."); 
+            return -1; 
         } 
 
     } 

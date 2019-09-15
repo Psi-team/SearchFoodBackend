@@ -8,7 +8,6 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.ResponseStatus; 
 import org.springframework.web.bind.annotation.RequestBody; 
 import org.springframework.web.bind.annotation.ResponseBody; // can be omitted if annotating RestController.  
-
 // beans 
 import org.springframework.beans.factory.annotation.Autowired; 
 
@@ -18,9 +17,6 @@ import org.springframework.http.HttpStatus;
 import com.searchfood.SearchFoodBackend.model.data.Members; 
 import com.searchfood.SearchFoodBackend.model.data.TokenRecords; 
 import com.searchfood.SearchFoodBackend.model.TokenRecordsImp; 
-// plain java packages 
-import java.util.Map; 
-import java.util.HashMap; 
 
 @RestController // handle the Restful api 
 @CrossOrigin("*") // allows clients from any domain to consume the API.  
