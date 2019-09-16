@@ -63,9 +63,6 @@ public class TokenRecordsImp implements TokenRecordsITF, FindDataITF{
         }catch( EmptyResultDataAccessException e ){ // Access no appropriate data in table Users. 
             System.out.println( "Member not founded."); 
             return -1; 
-        }catch( DataAccessException e ){ 
-            System.out.println( "DataAccessException occurs."); 
-            return -1; 
         } 
 
     } 
@@ -81,7 +78,6 @@ public class TokenRecordsImp implements TokenRecordsITF, FindDataITF{
             token.setToken( mem.getUsername() );   
             save( token ); 
         } 
-
 
         //System.out.println( "Token not built."); 
         return token; 

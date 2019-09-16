@@ -13,6 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 // http abstraction 
 import org.springframework.http.HttpStatus; 
+import org.springframework.http.ResponseEntity; 
 // user-define class  
 import com.searchfood.SearchFoodBackend.model.data.Members; 
 import com.searchfood.SearchFoodBackend.model.data.TokenRecords; 
@@ -36,15 +37,24 @@ public class LoginController{
 
     // handle the POST method from url /login/ 
     @PostMapping( value="/", consumes="application/json" ) // receive the json type data.  
-    @ResponseStatus( HttpStatus.OK ) // return the http status code. 
-    public TokenRecords SignIn( @RequestBody Members member ){ // @RequestBody: the body of request should be convert to Members to parameters. 
+    //@ResponseStatus( HttpStatus.OK ) // return the http status code. 
+    //public TokenRecords SignIn( @RequestBody Members member ){ // @RequestBody: the body of request should be convert to Members to parameters. 
+    public ResponseEntity<TokenRecords> SignIn( @RequestBody Members member ){ // @RequestBody: the body of request should be convert to Members to parameters. 
 
         System.out.println("TESTING:\nusername: "+member.getUsername() + "\npassword: "+member.getPassword() ); 
 
         TokenRecords token = tokenImp.saveTokenTable( member ); 
-        // Check whether a member or not, if yes, setUsername and setToken then return a TokenRecords Object. 
 
-        return token; 
+        if ( null == token.getToken() ){ 
+            //throw new RuntimeException( "Incorrect username or password"); 
+            return new ResponseEntity( token, HttpStatus.UNAUTHORIZED ); 
+        } 
+
+        /* What if throw an Exception? 
+         * Reference: https://openjry.url.tw/spring-boot-rest-exception-all-catch/ 
+         */ 
+
+        return new ResponseEntity<>( token, HttpStatus.OK ); 
     } 
 
 } 
