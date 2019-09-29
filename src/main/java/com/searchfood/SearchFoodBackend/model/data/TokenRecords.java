@@ -25,6 +25,11 @@ public class TokenRecords{
         this.token = tk.getUUID(); 
     } 
 
+    public void setToken(){ 
+        UUIDGenerator tk = new UUIDGenerator(); 
+        this.token = tk.getUUID(); 
+    } 
+
     public String getUsername(){ 
         return username; 
     } 

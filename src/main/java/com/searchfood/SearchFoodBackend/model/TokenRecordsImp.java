@@ -75,7 +75,8 @@ public class TokenRecordsImp implements TokenRecordsITF, FindDataITF{
         if( -1 != isExist( mem.getUsername(), mem.getPassword() ) ){ // the user who tried to login in is exactly a member. 
             // then trying to set a token; 
             token.setUsername( mem.getUsername() ); 
-            token.setToken( mem.getUsername() );   
+            token.setToken();   
+            //token.setToken( mem.getUsername() );   
             save( token ); 
         } 
 
