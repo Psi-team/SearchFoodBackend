@@ -37,10 +37,10 @@ public class LoginController{
     } 
 
     // handle the POST method from url /login/ 
-    @PostMapping( value="/", consumes="application/json" ) // receive the json type data.  
+    @PostMapping( consumes="application/json" ) // receive the json type data.  
     //@ResponseStatus( HttpStatus.OK ) // return the http status code. 
-    //public TokenRecords SignIn( @RequestBody Members member ){ // @RequestBody: the body of request should be convert to Members to parameters. 
-    public ResponseEntity<TokenRecords> SignIn( @RequestBody Members member ){ // @RequestBody: the body of request should be convert to Members to parameters. 
+    //public TokenRecords LoginIn( @RequestBody Members member ){ // @RequestBody: the body of request should be convert to Members to parameters. 
+    public ResponseEntity<TokenRecords> LogIn( @RequestBody Members member ){ // @RequestBody: the body of request should be convert to Members to parameters. 
 
         System.out.println("TESTING:\nusername: "+member.getUsername() + "\npassword: "+member.getPassword() ); 
 
