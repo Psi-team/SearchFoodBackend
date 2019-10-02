@@ -77,6 +77,7 @@ public class TokenRecordsImp implements TokenRecordsITF, FindDataITF{
             token.setUsername( mem.getUsername() ); 
             token.setToken();   
             //token.setToken( mem.getUsername() );   
+            token.setBrowser( mem.getBrowser() ); 
             save( token ); 
         } 
 
@@ -85,7 +86,8 @@ public class TokenRecordsImp implements TokenRecordsITF, FindDataITF{
     } 
 
     private void save( TokenRecords token ){ 
-        jdbc.update( "INSERT INTO Token( mail, token, navigator_type ) VALUES( ?, ?, ? )", token.getUsername(), token.getToken(), "Chrome" );  
+        jdbc.update( "INSERT INTO Token( mail, token, navigator_type ) VALUES( ?, ?, ? )", 
+                        token.getUsername(), token.getToken(), token.getBrowser() );  
     } 
 
 } 

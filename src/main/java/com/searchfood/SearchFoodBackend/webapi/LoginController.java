@@ -28,10 +28,11 @@ public class LoginController{
      * If it is valid member, then return an unique token for HTTP response, or redirect to register page. 
      */ 
     
-    @Autowired 
     private TokenRecordsImp tokenImp; 
 
-    public LoginController(){ 
+    @Autowired 
+    public LoginController( TokenRecordsImp tokenImp ){ 
+        this.tokenImp = tokenImp; 
         System.out.println( "***** Construct class sucessfully!   *******" ); 
     } 
 
