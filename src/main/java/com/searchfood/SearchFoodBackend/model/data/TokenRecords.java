@@ -11,7 +11,7 @@ public class TokenRecords{
 
     private String username; 
     private String token; 
-    private String browser; 
+    //private String browser; 
 
     public TokenRecords(){ 
 
@@ -31,9 +31,9 @@ public class TokenRecords{
         this.token = tk.getUUID(); 
     } 
 
-    public void setBrowser( String brow ){ 
-        this.browser = brow; 
-    } 
+    //public void setBrowser( String brow ){ 
+    //    this.browser = brow; 
+    //} 
 
     public String getUsername(){ 
         return username; 
@@ -43,9 +43,9 @@ public class TokenRecords{
         return token; 
     } 
 
-    public String getBrowser(){ 
-        return this.browser; 
-    } 
+    //public String getBrowser(){ 
+    //    return this.browser; 
+    //} 
 
 } 
 

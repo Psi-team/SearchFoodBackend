@@ -4,7 +4,7 @@ package com.searchfood.SearchFoodBackend.utils;
 public interface FindDataITF{ 
 
 
-    public int isExist( String username, String password ); // define an abstract function that return the id of data in table or -1 for not found. 
+    public int isExist(); // define an abstract function that return the id of data in table or -1 for not found. 
 
 } 
 

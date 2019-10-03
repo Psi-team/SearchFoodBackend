@@ -1,5 +1,4 @@
 package com.searchfood.SearchFoodBackend.model.data; 
-
 import org.springframework.stereotype.Component; 
 
 //@Component 

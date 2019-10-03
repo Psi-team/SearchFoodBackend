@@ -10,6 +10,9 @@ import org.springframework.dao.EmptyResultDataAccessException;
 // stereotype 
 import org.springframework.stereotype.Repository; 
 
+// Annotation
+import org.springframework.beans.factory.annotation.Autowired; 
+
 // java.sql 
 import java.sql.ResultSet; 
 import java.sql.SQLException; 
@@ -25,13 +28,16 @@ import com.searchfood.SearchFoodBackend.utils.FindDataITF;
 public class TokenRecordsImp implements TokenRecordsITF, FindDataITF{ 
 
     private JdbcTemplate jdbc; 
+    private Members mem; 
 
-    public TokenRecordsImp( JdbcTemplate jdbc ){ 
+    @Autowired 
+    public TokenRecordsImp( JdbcTemplate jdbc, Members mem ){ 
         this.jdbc = jdbc; 
+        this.mem = mem; 
     } 
 
     @Override 
-    public int isExist( String index, String password ){ 
+    public int isExist(){ 
 
         try{ 
 
@@ -54,13 +60,14 @@ public class TokenRecordsImp implements TokenRecordsITF, FindDataITF{
                                     );
                         } 
                     },
-                    index, password ); 
+                    mem.getUsername(), mem.getPassword() ); 
 
             //System.out.println( sign.toString() ); 
             System.out.println( "Member founded."); 
 
             return 1; 
         }catch( EmptyResultDataAccessException e ){ // Access no appropriate data in table Users. 
+            System.out.println( "getUsername: " + mem.getUsername() ); 
             System.out.println( "Member not founded."); 
             return -1; 
         } 
@@ -70,14 +77,15 @@ public class TokenRecordsImp implements TokenRecordsITF, FindDataITF{
     @Override 
     public TokenRecords saveTokenTable( Members mem ){ 
         
+        this.mem = mem; 
         TokenRecords token = new TokenRecords(); 
 
-        if( -1 != isExist( mem.getUsername(), mem.getPassword() ) ){ // the user who tried to login in is exactly a member. 
+        if( -1 != isExist() ){ // the user who tried to login in is exactly a member. 
             // then trying to set a token; 
             token.setUsername( mem.getUsername() ); 
             token.setToken();   
             //token.setToken( mem.getUsername() );   
-            token.setBrowser( mem.getBrowser() ); 
+            //token.setBrowser( mem.getBrowser() ); 
             save( token ); 
         } 
 
@@ -87,7 +95,7 @@ public class TokenRecordsImp implements TokenRecordsITF, FindDataITF{
 
     private void save( TokenRecords token ){ 
         jdbc.update( "INSERT INTO Token( mail, token, navigator_type ) VALUES( ?, ?, ? )", 
-                        token.getUsername(), token.getToken(), token.getBrowser() );  
+                        token.getUsername(), token.getToken(), mem.getBrowser() );  
     } 
 
 } 

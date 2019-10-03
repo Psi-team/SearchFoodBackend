@@ -19,6 +19,9 @@ import com.searchfood.SearchFoodBackend.model.data.Members;
 import com.searchfood.SearchFoodBackend.model.data.TokenRecords; 
 import com.searchfood.SearchFoodBackend.model.TokenRecordsImp; 
 
+import java.util.Map; 
+import java.util.HashMap; 
+
 @RestController // handle the Restful api 
 @CrossOrigin("*") // allows clients from any domain to consume the API.  
 @RequestMapping( value="login", produces="application/json" ) // handle the HTTP request /login 
@@ -33,14 +36,14 @@ public class LoginController{
     @Autowired 
     public LoginController( TokenRecordsImp tokenImp ){ 
         this.tokenImp = tokenImp; 
-        System.out.println( "***** Construct class sucessfully!   *******" ); 
+        System.out.println( "***** Construct class sucessfully! *******" ); 
     } 
 
-    // handle the POST method from url /login/ 
+    // handle the POST method from url /login 
     @PostMapping( consumes="application/json" ) // receive the json type data.  
     //@ResponseStatus( HttpStatus.OK ) // return the http status code. 
-    //public TokenRecords LoginIn( @RequestBody Members member ){ // @RequestBody: the body of request should be convert to Members to parameters. 
-    public ResponseEntity<TokenRecords> LogIn( @RequestBody Members member ){ // @RequestBody: the body of request should be convert to Members to parameters. 
+    //public TokenRecords LoginIn( @RequestBody Members member ){ // @RequestBody: the body of request should be convert to Members as parameters. 
+    public ResponseEntity<Object> LogIn( @RequestBody Members member ){ // @RequestBody: the body of request should be convert to Members as parameters. 
 
         System.out.println("TESTING:\nusername: "+member.getUsername() + "\npassword: "+member.getPassword() ); 
 
@@ -48,12 +51,16 @@ public class LoginController{
 
         if ( null == token.getToken() ){ 
             //throw new RuntimeException( "Incorrect username or password"); 
-            return new ResponseEntity( token, HttpStatus.UNAUTHORIZED ); 
+            //return new ResponseEntity( token, HttpStatus.UNAUTHORIZED );  
+            //return new ResponseEntity( "User or Password not founded", HttpStatus.UNAUTHORIZED );  
+            Map<String,String> err = new HashMap(); 
+            err.put("error message","User or Password not founded."); 
+            return new ResponseEntity( err, HttpStatus.UNAUTHORIZED );  
+            /* What if throw an Exception? 
+             * Reference: https://openjry.url.tw/spring-boot-rest-exception-all-catch/ 
+             * Rewrite this section with exception handling. 
+             */ 
         } 
-
-        /* What if throw an Exception? 
-         * Reference: https://openjry.url.tw/spring-boot-rest-exception-all-catch/ 
-         */ 
 
         return new ResponseEntity<>( token, HttpStatus.OK ); 
     } 
