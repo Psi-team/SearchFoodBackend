@@ -1,7 +1,7 @@
 package com.searchfood.SearchFoodBackend.model.data; 
 import org.springframework.stereotype.Component; 
 
-//@Component 
+@Component 
 public class Members{ 
 
     private String username; 

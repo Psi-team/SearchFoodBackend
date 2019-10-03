@@ -30,7 +30,6 @@ public class TokenRecordsImp implements TokenRecordsITF, FindDataITF{
     private JdbcTemplate jdbc; 
     private Members mem; 
 
-    @Autowired 
     public TokenRecordsImp( JdbcTemplate jdbc, Members mem ){ 
         this.jdbc = jdbc; 
         this.mem = mem; 
@@ -40,7 +39,6 @@ public class TokenRecordsImp implements TokenRecordsITF, FindDataITF{
     public int isExist(){ 
 
         try{ 
-
             // JdbcTemplate.query( PreparedStatementCreator psc, RowMapper<T> rowMapper, Object ... args ) 
             // RowMapper is an interface that you have to @Override  mapRow( ResultSet rs, int rowNum ) to map data into user-defined object. 
             // At the buttom of Spring in Action on page 62. 
