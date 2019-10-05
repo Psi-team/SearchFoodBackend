@@ -32,10 +32,12 @@ public class LoginController{
      */ 
     
     private TokenRecordsImp tokenImp; 
+    private TokenRecords token; 
 
     @Autowired 
-    public LoginController( TokenRecordsImp tokenImp ){ 
+    public LoginController( TokenRecordsImp tokenImp, TokenRecords token ){ 
         this.tokenImp = tokenImp; 
+        this.token = token; 
         System.out.println( "***** Construct class sucessfully! *******" ); 
     } 
 
@@ -47,7 +49,7 @@ public class LoginController{
 
         System.out.println("TESTING:\nusername: "+member.getUsername() + "\npassword: "+member.getPassword() ); 
 
-        TokenRecords token = tokenImp.saveTokenTable( member ); 
+        token = tokenImp.saveTokenTable( member ); 
 
         if ( null == token.getToken() ){ 
             //throw new RuntimeException( "Incorrect username or password"); 
@@ -55,7 +57,7 @@ public class LoginController{
             //return new ResponseEntity( "User or Password not founded", HttpStatus.UNAUTHORIZED );  
             Map<String,String> err = new HashMap(); 
             err.put("error message","User or Password not founded."); 
-            return new ResponseEntity( err, HttpStatus.UNAUTHORIZED );  
+            return new ResponseEntity<>( err, HttpStatus.UNAUTHORIZED );  
             /* What if throw an Exception? 
              * Reference: https://openjry.url.tw/spring-boot-rest-exception-all-catch/ 
              * Rewrite this section with exception handling. 

@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 import com.searchfood.SearchFoodBackend.utils.UUIDGenerator; 
 
 // a class for token record 
-//@Component 
+@Component 
 public class TokenRecords{ 
 
     private String username; 
