@@ -15,6 +15,7 @@ import org.springframework.http.ResponseEntity;
 // Validation  
 import javax.validation.Valid; // Valid whether the bean meets constraints. 
 import org.springframework.validation.Errors; // If constraints don't meet, capture the error messages. 
+import org.springframework.validation.FieldError; 
 // User-defined class 
 import com.searchfood.SearchFoodBackend.model.data.TokenRecords; 
 import com.searchfood.SearchFoodBackend.model.data.SignUpMember;  
@@ -22,8 +23,8 @@ import com.searchfood.SearchFoodBackend.model.SignUpMemberImp;
 
 import com.searchfood.SearchFoodBackend.utils.exceptions.DataExistException; 
 
-import java.util.Map; 
-import java.util.HashMap; 
+import java.util.List; 
+import java.util.LinkedList; 
 
 @RestController 
 @RequestMapping( value="signup", produces="application/json" ) 
@@ -47,7 +48,12 @@ public class SignUpController{
                             " birthyear: " + signupmember.getBirthyear() + " sex: " + signupmember.getSexual() ); 
         
         if( errors.hasErrors() ){ 
-            System.out.println(errors); 
+            System.out.println("**TESTING***"); 
+            List<FieldError> Errors = errors.getFieldErrors(); 
+            for ( FieldError error : Errors ){ 
+                System.out.println( error.getObjectName() + " - " + error.getDefaultMessage() );  
+            } 
+
             return new ResponseEntity<>( errors, HttpStatus.BAD_REQUEST );
             // throw an exception.  
             //throw new InvalidDataException("Invalid data", errors ); 

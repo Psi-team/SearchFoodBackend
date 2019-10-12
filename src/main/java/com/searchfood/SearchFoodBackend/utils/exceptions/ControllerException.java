@@ -36,17 +36,18 @@ public class ControllerException{
     @ExceptionHandler( InvalidDataException.class ) 
     public ResponseEntity<?> handleInvalidDataException( InvalidDataException e ){ 
     
-        List listError = new LinkedList<>(); 
+        List<FieldError> errors = e.getErrors().getFieldError(); 
 
-        e.getErrors().getFieldErrors().forEach( fieldError -> { 
-            FieldResource fieldResource = new FieldResource(fieldError.getObjectName(), fieldError.getField(), fieldError.getCode(), fieldError.getDefaultMessage() );
-            listError.add( fieldResource); 
-        }); 
+        for ( FieldError error : errors ){ 
+            System.out.println( error.getObjectName() + " - " + error.getDefaultMessage() );  
+        } 
+
         InvalidDataException invalidDataException = new InvalidDataException( e.getMessage(), listError ); 
         return new ResponseEntity<>( invalidDataException, HttpStatus.BAD_REQUEST ); 
     
         return null; 
     } 
     */ 
+    
 } 
  
