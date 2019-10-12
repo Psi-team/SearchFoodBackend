@@ -4,10 +4,14 @@ package com.searchfood.SearchFoodBackend.model.data;
 import org.springframework.stereotype.Component; 
 
 // java 
-import javax.validation.constraints.Size; 
+import javax.validation.constraints.Size; // used for checking String.  
 import javax.validation.constraints.NotNull; 
 import javax.validation.constraints.Digits; 
 import javax.validation.constraints.Email; 
+import javax.validation.constraints.Max; 
+import javax.validation.constraints.Min; 
+
+import java.util.Date; 
 
 //@Component 
 public class SignUpMember{ 
@@ -18,26 +22,31 @@ public class SignUpMember{
 
     @NotNull 
     @Size( min=6, max=10, message="The length of Password must be between 6 and 10.") 
-    private String password; 
+    private String passwd; 
 
     @NotNull 
-    @Size( min=0, max=1, message="Sexual must be male or female.") 
+    @Min(0) 
+    @Max(1) 
     @Digits( integer=1, fraction=0, message="0 or 1") 
     private int sexual; 
 
     @NotNull 
-    @Digits( integer=4, fraction=0, message="Birthyear INVALID!!") 
+    @Min(1900) 
+    @Max(2500) 
     private int birthyear; 
 
-    @Size( min=0, max=150, message="Age INVALID!!") 
+    @Min(0) 
+    @Max(160) 
     private int age; 
+
+    private Date date = new Date(); 
 
     public SignUpMember(){ 
     } 
     
     public SignUpMember(String name, String pass, int sex, int birthyear, int age ){
         this.username = name; 
-        this.password = pass; 
+        this.passwd = pass; 
         this.sexual = sex; 
         this.birthyear = birthyear; 
         this.age = age; 
@@ -48,8 +57,8 @@ public class SignUpMember{
         this.username = name; 
     } 
 
-    public void setPassword( String pass ){ 
-        this.password = pass; 
+    public void setPasswd( String pass ){ 
+        this.passwd = pass; 
     } 
 
     public void setSexual( int sex ){ 
@@ -69,8 +78,8 @@ public class SignUpMember{
         return this.username; 
     } 
 
-    public String getPassword(){ 
-        return this.password; 
+    public String getPasswd(){ 
+        return this.passwd; 
     } 
 
     public int getSexual(){ 
@@ -88,7 +97,7 @@ public class SignUpMember{
     @Override 
     public String toString(){ 
        return String.format( "Username: %s\nPassword: %s\nSexual: %d\nBirthYear: %d\nAge: %d", 
-                            this,getUsername(), this.getPassword(), this.getSexual(), 
+                            this,getUsername(), this.getPasswd(), this.getSexual(), 
                             this.getBirthyear(), this.getAge() ); 
     } 
 

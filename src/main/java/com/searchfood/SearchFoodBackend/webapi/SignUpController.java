@@ -18,12 +18,49 @@ import org.springframework.validation.Errors; // If constraints don't meet, capt
 // User-defined class 
 import com.searchfood.SearchFoodBackend.model.data.TokenRecords; 
 import com.searchfood.SearchFoodBackend.model.data.SignUpMember;  
-import com.searchfood.SearchFoodBackend.model.TokenRecordsImp; 
+import com.searchfood.SearchFoodBackend.model.SignUpMemberImp; 
+
+import com.searchfood.SearchFoodBackend.utils.exceptions.DataExistException; 
+
+import java.util.Map; 
+import java.util.HashMap; 
 
 @RestController 
-@RequestMapping( value="sigup", produces="application/json" ) 
+@RequestMapping( value="signup", produces="application/json" ) 
 @CrossOrigin("*") 
 public class SignUpController{ 
+
+    private SignUpMemberImp signupImp;  
+    private TokenRecords token; 
+
+    @Autowired 
+    public SignUpController( SignUpMemberImp signupImp, TokenRecords token ){ 
+        this.signupImp = signupImp; 
+        this.token = token; 
+    } 
+    
+    @PostMapping( consumes="application/json" ) 
+    public ResponseEntity<?> signUp( @Valid @RequestBody SignUpMember signupmember, 
+                                Errors errors ){ 
+
+        System.out.println("TESTING:\n username: " + signupmember.getUsername() + " password: " + signupmember.getPasswd() + 
+                            " birthyear: " + signupmember.getBirthyear() + " sex: " + signupmember.getSexual() ); 
+        
+        if( errors.hasErrors() ){ 
+            System.out.println(errors); 
+            return new ResponseEntity<>( errors, HttpStatus.BAD_REQUEST );
+            // throw an exception.  
+            //throw new InvalidDataException("Invalid data", errors ); 
+        } 
+
+        token = signupImp.saveToUsers( signupmember ); 
+        if ( token.getToken() == null ){ 
+            throw new DataExistException("The mail has existed."); 
+        } 
+        // then send mail to new member. 
+        return new ResponseEntity<>( token,HttpStatus.CREATED ); 
+
+    } 
 
 } 
 

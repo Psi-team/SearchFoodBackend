@@ -30,9 +30,8 @@ public class TokenRecordsImp implements TokenRecordsITF, FindDataITF{
     private JdbcTemplate jdbc; 
     private Members mem; 
 
-    public TokenRecordsImp( JdbcTemplate jdbc, Members mem ){ 
+    public TokenRecordsImp( JdbcTemplate jdbc ){ 
         this.jdbc = jdbc; 
-        this.mem = mem; 
     } 
 
     @Override 

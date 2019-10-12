@@ -63,6 +63,12 @@
             <artifactId>jackson-databind</artifactId> 
         </dependency> 
 
+        <!-- The dependency of Java Message Service, JMS --> 
+        <dependency> 
+            <groupId>org.springframework.boot</groupId> 
+            <artifactId>spring-boot-starter-artemis</artifactId> 
+        </dependency> 
+
 
 	</dependencies>
 

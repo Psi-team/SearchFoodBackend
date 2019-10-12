@@ -19,8 +19,7 @@ import com.searchfood.SearchFoodBackend.model.data.Members;
 import com.searchfood.SearchFoodBackend.model.data.TokenRecords; 
 import com.searchfood.SearchFoodBackend.model.TokenRecordsImp; 
 
-import java.util.Map; 
-import java.util.HashMap; 
+import com.searchfood.SearchFoodBackend.utils.exceptions.NotFoundException; 
 
 @RestController // handle the Restful api 
 @CrossOrigin("*") // allows clients from any domain to consume the API.  
@@ -45,27 +44,20 @@ public class LoginController{
     @PostMapping( consumes="application/json" ) // receive the json type data.  
     //@ResponseStatus( HttpStatus.OK ) // return the http status code. 
     //public TokenRecords LoginIn( @RequestBody Members member ){ // @RequestBody: the body of request should be convert to Members as parameters. 
-    public ResponseEntity<Object> LogIn( @RequestBody Members member ){ // @RequestBody: the body of request should be convert to Members as parameters. 
+    public ResponseEntity<?> LogIn( @RequestBody Members member ){ // @RequestBody: the body of request should be convert to Members as parameters. 
 
         System.out.println("TESTING:\nusername: "+member.getUsername() + "\npassword: "+member.getPassword() ); 
 
         token = tokenImp.saveTokenTable( member ); 
 
         if ( null == token.getToken() ){ 
-            //throw new RuntimeException( "Incorrect username or password"); 
-            //return new ResponseEntity( token, HttpStatus.UNAUTHORIZED );  
-            //return new ResponseEntity( "User or Password not founded", HttpStatus.UNAUTHORIZED );  
-            Map<String,String> err = new HashMap(); 
-            err.put("error message","User or Password not founded."); 
-            return new ResponseEntity<>( err, HttpStatus.UNAUTHORIZED );  
-            /* What if throw an Exception? 
-             * Reference: https://openjry.url.tw/spring-boot-rest-exception-all-catch/ 
-             * Rewrite this section with exception handling. 
-             */ 
+            throw new NotFoundException("User or password not founded."); 
+             /* Reference: https://openjry.url.tw/spring-boot-rest-exception-all-catch/ */ 
         } 
 
         return new ResponseEntity<>( token, HttpStatus.OK ); 
     } 
+
 
 } 
 
