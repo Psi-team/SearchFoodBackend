@@ -1,29 +1,21 @@
 package com.searchfood.SearchFoodBackend.utils.exceptions; 
 
-public class InvalidDataException{ 
+import org.springframework.validation.Errors; // If constraints don't meet, capture the error messages. 
 
-    private String message; 
+public class InvalidDataException extends RuntimeException{ 
+
     private Object errors; 
 
     public InvalidDataException(){ 
-        super(); 
+
     } 
 
-    public InvalidDataException( String m, Object e ){ 
-        this.message = m;
+    public InvalidDataException( Object e ){ 
         this.errors = e; 
     } 
 
-    public String getMessage(){ 
-        return this.message; 
-    } 
-
-    public Object getErrors(){ 
-        return this.errors; 
-    } 
-
-    public void setMessage( String m ){ 
-        this.message = m; 
+    public Errors getErrors(){ 
+        return (Errors) this.errors; 
     } 
 
     public void setErrors( Object e ){ 

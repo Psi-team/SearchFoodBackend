@@ -15,13 +15,13 @@ import org.springframework.http.ResponseEntity;
 // Validation  
 import javax.validation.Valid; // Valid whether the bean meets constraints. 
 import org.springframework.validation.Errors; // If constraints don't meet, capture the error messages. 
-import org.springframework.validation.FieldError; 
 // User-defined class 
 import com.searchfood.SearchFoodBackend.model.data.TokenRecords; 
 import com.searchfood.SearchFoodBackend.model.data.SignUpMember;  
 import com.searchfood.SearchFoodBackend.model.SignUpMemberImp; 
 
 import com.searchfood.SearchFoodBackend.utils.exceptions.DataExistException; 
+import com.searchfood.SearchFoodBackend.utils.exceptions.InvalidDataException; 
 
 import java.util.List; 
 import java.util.LinkedList; 
@@ -48,22 +48,16 @@ public class SignUpController{
                             " birthyear: " + signupmember.getBirthyear() + " sex: " + signupmember.getSexual() ); 
         
         if( errors.hasErrors() ){ 
-            System.out.println("**TESTING***"); 
-            List<FieldError> Errors = errors.getFieldErrors(); 
-            for ( FieldError error : Errors ){ 
-                System.out.println( error.getObjectName() + " - " + error.getDefaultMessage() );  
-            } 
-
-            return new ResponseEntity<>( errors, HttpStatus.BAD_REQUEST );
-            // throw an exception.  
-            //throw new InvalidDataException("Invalid data", errors ); 
+            throw new InvalidDataException( errors ); 
         } 
 
         token = signupImp.saveToUsers( signupmember ); 
         if ( token.getToken() == null ){ 
             throw new DataExistException("The mail has existed."); 
         } 
+
         // then send mail to new member. 
+        
         return new ResponseEntity<>( token,HttpStatus.CREATED ); 
 
     } 

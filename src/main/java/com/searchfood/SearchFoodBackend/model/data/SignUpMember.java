@@ -17,7 +17,7 @@ import java.util.Date;
 public class SignUpMember{ 
     
     @NotNull 
-    @Email( message="username must be the user's email") 
+    @Email( message="Username must be the user's email") 
     private String username; // e-mail by default 
 
     @NotNull 
@@ -27,7 +27,6 @@ public class SignUpMember{
     @NotNull 
     @Min(0) 
     @Max(1) 
-    @Digits( integer=1, fraction=0, message="0 or 1") 
     private int sexual; 
 
     @NotNull 
@@ -38,8 +37,6 @@ public class SignUpMember{
     @Min(0) 
     @Max(160) 
     private int age; 
-
-    private Date date = new Date(); 
 
     public SignUpMember(){ 
     } 
