@@ -23,11 +23,13 @@ public class TokenRecords{
 
     public void setToken( String username ){ 
         UUIDGenerator tk = new  UUIDGenerator( username ); 
+        System.out.println("Setting token with username"); 
         this.token = tk.getUUID(); 
     } 
 
     public void setToken(){ 
         UUIDGenerator tk = new UUIDGenerator(); 
+        System.out.println("Setting token"); 
         this.token = tk.getUUID(); 
     } 
 

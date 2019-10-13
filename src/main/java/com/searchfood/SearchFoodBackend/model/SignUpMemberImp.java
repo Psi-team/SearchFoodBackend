@@ -70,12 +70,15 @@ public class SignUpMemberImp implements SignUpMemberITF, FindDataITF{
         return token; 
     } 
 
-    private void save( TokenRecords token, SignUpMember signupmember ){ 
-         jdbc.update( "INSERT INTO Users( mail, passwd, sexual, birthyear ) VALUES( ?, ?, ?, ? )", 
+    private int save( TokenRecords token, SignUpMember signupmember ){ 
+        if ( 0 != jdbc.update( "INSERT INTO Users( mail, passwd, sexual, birthyear ) VALUES( ?, ?, ?, ? )", 
                         signupmember.getUsername(), signupmember.getPasswd(), 
-                        signupmember.getSexual(), signupmember.getBirthyear() ); 
-        jdbc.update( "INSERT INTO Token( mail, token, navigator_type ) VALUES( ?, ?, ? )", 
-                        token.getUsername(), token.getToken(), "Nan" ); 
+                        signupmember.getSexual(), signupmember.getBirthyear() ) && 
+             0 != jdbc.update( "INSERT INTO Token( mail, token, navigator_type ) VALUES( ?, ?, ? )", 
+                        token.getUsername(), token.getToken(), "Nan" ) ){ 
+            return 1; 
+             } 
+        return -1; 
     } 
 
 } 

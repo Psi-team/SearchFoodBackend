@@ -90,9 +90,12 @@ public class TokenRecordsImp implements TokenRecordsITF, FindDataITF{
         return token; 
     } 
 
-    private void save( TokenRecords token ){ 
-        jdbc.update( "INSERT INTO Token( mail, token, navigator_type ) VALUES( ?, ?, ? )", 
-                        token.getUsername(), token.getToken(), mem.getBrowser() );  
+    private int save( TokenRecords token ){ 
+        if( 0 != jdbc.update( "INSERT INTO Token( mail, token, navigator_type ) VALUES( ?, ?, ? )", 
+                        token.getUsername(), token.getToken(), mem.getBrowser() ) ){ 
+            return 1; 
+        } 
+        return -1; 
     } 
 
 } 
