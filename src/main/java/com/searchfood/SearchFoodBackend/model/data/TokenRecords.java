@@ -17,19 +17,24 @@ public class TokenRecords{
 
     } 
 
+    public TokenRecords(String s, String t){ 
+        this.username = s; 
+        this.token = t; 
+    } 
+
     public void setUsername( String usrname ){ 
         this.username = usrname; 
     } 
 
-    public void setToken( String username ){ 
-        UUIDGenerator tk = new  UUIDGenerator( username ); 
-        System.out.println("Setting token with username"); 
-        this.token = tk.getUUID(); 
-    } 
+    //public void setToken( String username ){ 
+    //    UUIDGenerator tk = new  UUIDGenerator( username ); 
+    //    System.out.println("Setting token with username"); 
+    //    this.token = tk.getUUID(); 
+    //} 
 
     public void setToken(){ 
         UUIDGenerator tk = new UUIDGenerator(); 
-        System.out.println("Setting token"); 
+        System.out.println("Setting token with no params"); 
         this.token = tk.getUUID(); 
     } 
 

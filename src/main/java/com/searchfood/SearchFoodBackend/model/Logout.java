@@ -15,13 +15,13 @@ import java.sql.SQLException;
 
 import com.searchfood.SearchFoodBackend.utils.FindDataITF; 
 import com.searchfood.SearchFoodBackend.model.data.tmpData; 
-import com.searchfood.SearchFoodBackend.model.data.OnlineMembers; 
+import com.searchfood.SearchFoodBackend.model.data.TokenRecords; 
 
 @Repository 
 public class Logout implements FindDataITF{ 
     
     private JdbcTemplate jdbc; 
-    private OnlineMembers onlineMembers; 
+    private TokenRecords token; 
     
     @Autowired 
     public Logout( JdbcTemplate jdbc ){ 
@@ -42,7 +42,7 @@ public class Logout implements FindDataITF{
                                     ); 
                         } 
                     },
-                    onlineMembers.getToken() ); 
+                    token.getToken() ); 
 
             System.out.println( "Token founded."); 
             return 1; 
@@ -53,18 +53,18 @@ public class Logout implements FindDataITF{
 
     } 
 
-    public int deleteFromToken( OnlineMembers o ){ 
-        this.onlineMembers = o; 
+    public int deleteFromToken( TokenRecords o ){ 
+        this.token = o; 
 
         if ( 1 == isExist() ){ // if token exists in Token, then delete it. 
-            delete( onlineMembers ); 
+            delete( token ); 
             return 1; // delete token from Token sucessfully. 
         } 
         return -1; // fail to delete token from Token. 
     } 
 
-    private int delete( OnlineMembers onlineMembers ){ 
-        if ( 0 != jdbc.update( "DELETE FROM Token WHERE Token = ?", onlineMembers.getToken() ) ){ 
+    private int delete( TokenRecords token ){ 
+        if ( 0 != jdbc.update( "DELETE FROM Token WHERE Token = ?", token.getToken() ) ){ 
             return 1;   
         } 
         return -1; 
