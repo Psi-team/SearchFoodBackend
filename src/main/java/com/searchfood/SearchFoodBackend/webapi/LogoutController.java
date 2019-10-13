@@ -43,7 +43,8 @@ public class LogoutController{
         // 簡單說,setter overloading會違反Java Bean原則, 應避免使用
         // 
         // 解決方法: 
-        //  把TokenRecords.java中的setToken( String )刪掉, avoiding setter overloading.  
+        //  1. 把TokenRecords.java中的setToken( String )刪掉, avoiding setter overloading.  
+        //  2. 把setToken(String)的函數名稱改掉,以避免Container不知道要用哪一個setter
         System.out.println( token.getToken() ); 
         if ( 1 != logout.deleteFromToken( token ) ){ 
             throw new NotFoundException( "Token not founded in Database." ); 
