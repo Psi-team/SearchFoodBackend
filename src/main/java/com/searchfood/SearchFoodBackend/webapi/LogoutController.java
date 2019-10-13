@@ -39,6 +39,7 @@ public class LogoutController{
         // 因此在com.searchfood.SearchFoodBackend.model.Logout印出來的資訊
         // username = null 而 token則為<舊的token> concate <新的token> 
         // 成員函數接受到參數與C++的觀念一樣都會進行local variables初始化,物件會找到相對應的建構函數或方法以初始化
+        //
         // 簡單說,setter overloading會違反Java Bean原則, 應避免使用
         // 
         // 解決方法: 
