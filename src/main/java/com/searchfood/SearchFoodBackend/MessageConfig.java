@@ -1,7 +1,8 @@
+/* 
 package com.searchfood.SearchFoodBackend;
 
 // the destination of jms 
-import org.apache.activemq.artemis.jms.client.ActiveMQQueue; 
+//import org.apache.activemq.artemis.jms.client.ActiveMQQueue; 
 //jms 
 import javax.jms.Destination; 
 // Annotation 
@@ -18,4 +19,4 @@ public class MessageConfig{
 
 } 
 
-
+*/ 

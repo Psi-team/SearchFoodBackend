@@ -22,6 +22,7 @@ import com.searchfood.SearchFoodBackend.model.SignUpMemberImp;
 
 import com.searchfood.SearchFoodBackend.utils.exceptions.DataExistException; 
 import com.searchfood.SearchFoodBackend.utils.exceptions.InvalidDataException; 
+import com.searchfood.SearchFoodBackend.utils.messages.interfaces.SignUpMailService; 
 
 import java.util.List; 
 import java.util.LinkedList; 
@@ -33,11 +34,13 @@ public class SignUpController{
 
     private SignUpMemberImp signupImp;  
     private TokenRecords token; 
+    private SignUpMailService signupMailService; 
 
     @Autowired 
-    public SignUpController( SignUpMemberImp signupImp, TokenRecords token ){ 
+    public SignUpController( SignUpMemberImp signupImp, TokenRecords token, SignUpMailService signupMailService ){ 
         this.signupImp = signupImp; 
         this.token = token; 
+        this.signupMailService = signupMailService; 
     } 
     
     @PostMapping( consumes="application/json" ) 
@@ -57,6 +60,7 @@ public class SignUpController{
         } 
 
         // then send mail to new member. 
+        signupMailService.sendEmail( signupmember ); 
         
         return new ResponseEntity<>( token,HttpStatus.CREATED ); 
 
