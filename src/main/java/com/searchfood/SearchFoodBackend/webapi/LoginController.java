@@ -14,6 +14,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 // http abstraction 
 import org.springframework.http.HttpStatus; 
 import org.springframework.http.ResponseEntity; 
+
+// logging import org.slf4j.Logger; 
+import org.slf4j.Logger; 
+import org.slf4j.LoggerFactory; 
+
 // user-define class  
 import com.searchfood.SearchFoodBackend.model.data.Members; 
 import com.searchfood.SearchFoodBackend.model.data.TokenRecords; 
@@ -30,6 +35,8 @@ public class LoginController{
      * If it is valid member, then return an unique token for HTTP response, or redirect to register page. 
      */ 
     
+    private static final Logger log = LoggerFactory.getLogger( LoginController.class.getName() ); 
+
     private TokenRecordsImp tokenImp; 
     private TokenRecords token; 
 
@@ -37,7 +44,7 @@ public class LoginController{
     public LoginController( TokenRecordsImp tokenImp, TokenRecords token ){ 
         this.tokenImp = tokenImp; 
         this.token = token; 
-        System.out.println( "***** Construct class sucessfully! *******" ); 
+        //System.out.println( "***** Construct class sucessfully! *******" ); 
     } 
 
     // handle the POST method from url /login 
@@ -46,11 +53,13 @@ public class LoginController{
     //public TokenRecords LoginIn( @RequestBody Members member ){ // @RequestBody: the body of request should be convert to Members as parameters. 
     public ResponseEntity<?> login( @RequestBody Members member ){ // @RequestBody: the body of request should be convert to Members as parameters. 
 
-        System.out.println("TESTING:\nusername: "+member.getUsername() + "\npassword: "+member.getPassword() ); 
+        //System.out.println("TESTING:\nusername: "+member.getUsername() + "\npassword: "+member.getPassword() ); 
+        log.info( "TESTING logging: username: "+member.getUsername() + "  password: "+member.getPassword() ); 
 
         token = tokenImp.saveTokenTable( member ); 
 
         if ( null == token.getToken() ){ 
+            log.info("Not Founded"); 
             throw new NotFoundException("User or password not founded."); 
              /* Reference: https://openjry.url.tw/spring-boot-rest-exception-all-catch/ */ 
         } 

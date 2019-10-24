@@ -10,6 +10,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import org.springframework.validation.FieldError; 
 
+import org.slf4j.Logger; 
+import org.slf4j.LoggerFactory; 
+
 import com.searchfood.SearchFoodBackend.utils.exceptions.ErrorResponse; 
 import com.searchfood.SearchFoodBackend.utils.exceptions.InvalidDataException; 
 import com.searchfood.SearchFoodBackend.utils.exceptions.NotFoundException; 
@@ -19,18 +22,20 @@ import java.util.LinkedList;
 
 @RestControllerAdvice // @ControllerAdvice + @ResponseBody 
 public class ControllerException{ 
+
+    private static final Logger log = LoggerFactory.getLogger( ControllerException.class ); 
     
     @ExceptionHandler( NotFoundException.class ) // data is not exist. 
     public ResponseEntity<?> handleNotFoundException( Exception e ){ 
         ErrorResponse errorResponse = new ErrorResponse( e.getMessage() ); // boxing the error message by ErrorResponse. 
-        System.out.println("Testing:\n\t In ControllerException: NotFoundException"); 
+        log.error("warning:\t In ControllerException: NotFoundException"); 
         return new ResponseEntity<>( errorResponse, HttpStatus.UNAUTHORIZED ); 
     } 
 
     @ExceptionHandler( DataExistException.class ) // data has existed in database. 
     public ResponseEntity<?> handleDataExistException( Exception e ){ 
         ErrorResponse errorResponse = new ErrorResponse( e.getMessage() ); 
-        System.out.println("Testing:\n\t In ControllerException: DataExistException."); 
+        log.error("warning:\t In ControllerException: DataExistException."); 
         return new ResponseEntity<>( errorResponse, HttpStatus.CONFLICT ); 
     } 
 
@@ -42,7 +47,7 @@ public class ControllerException{
         for ( FieldError error : Errors ){ 
             invalidDataResponse.add( new InvalidDataResponse(error.getField(), error.getDefaultMessage()) );  
         } 
-        System.out.println("Testing:\n\t In ControllerException: InvalidDataException"); 
+        log.error("warning:\t In ControllerException: InvalidDataException"); 
         return new ResponseEntity<>( invalidDataResponse, HttpStatus.BAD_REQUEST ); 
     } 
     

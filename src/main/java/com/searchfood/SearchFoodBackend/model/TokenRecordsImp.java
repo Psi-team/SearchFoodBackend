@@ -10,6 +10,10 @@ import org.springframework.dao.EmptyResultDataAccessException;
 // stereotype 
 import org.springframework.stereotype.Repository; 
 
+// logging import org.slf4j.Logger; 
+import org.slf4j.Logger; 
+import org.slf4j.LoggerFactory; 
+
 // Annotation
 import org.springframework.beans.factory.annotation.Autowired; 
 
@@ -26,6 +30,8 @@ import com.searchfood.SearchFoodBackend.utils.FindDataITF;
 
 @Repository 
 public class TokenRecordsImp implements TokenRecordsITF, FindDataITF{ 
+
+    private static final Logger log = LoggerFactory.getLogger( TokenRecordsImp.class.getName() ); 
 
     private JdbcTemplate jdbc; 
     private Members mem; 
@@ -59,13 +65,15 @@ public class TokenRecordsImp implements TokenRecordsITF, FindDataITF{
                     },
                     mem.getUsername(), mem.getPassword() ); 
 
-            //System.out.println( sign.toString() ); 
-            System.out.println( "Member founded."); 
+            //System.out.println( "Member founded."); 
+            log.info( "Member founded." ); 
 
             return 1; 
         }catch( EmptyResultDataAccessException e ){ // Access no appropriate data in table Users. 
-            System.out.println( "getUsername: " + mem.getUsername() ); 
-            System.out.println( "Member not founded."); 
+            log.info( "getUsername: " + mem.getUsername() ); 
+            log.info( "Member not founded."); 
+            //System.out.println( "Member not founded."); 
+            //System.out.println( "getUsername: " + mem.getUsername() ); 
             return -1; 
         } 
 

@@ -1,0 +1,95 @@
+2019-10-24 22:27:32.945  INFO 25096 --- [main] c.s.S.SearchFoodApplication              : Starting SearchFoodApplication on eason-P15FV2 with PID 25096 (/home/eason/Desktop/WorkPlace/Project/SearchFoodBackend/target/classes started by eason in /home/eason/Desktop/WorkPlace/Project/SearchFoodBackend)
+2019-10-24 22:27:32.948  INFO 25096 --- [main] c.s.S.SearchFoodApplication              : No active profile set, falling back to default profiles: default
+2019-10-24 22:27:34.101  INFO 25096 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$5e7e3407] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-24 22:27:34.359  INFO 25096 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 2020 (http)
+2019-10-24 22:27:34.384  INFO 25096 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-10-24 22:27:34.384  INFO 25096 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.22]
+2019-10-24 22:27:34.462  INFO 25096 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-10-24 22:27:34.463  INFO 25096 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1463 ms
+2019-10-24 22:27:34.706  INFO 25096 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-10-24 22:27:35.539  INFO 25096 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2019-10-24 22:27:35.987  INFO 25096 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-10-24 22:27:36.345  INFO 25096 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2019-10-24 22:27:36.409  INFO 25096 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 2020 (http) with context path ''
+2019-10-24 22:27:36.412  INFO 25096 --- [main] c.s.S.SearchFoodApplication              : Started SearchFoodApplication in 3.918 seconds (JVM running for 7.467)
+2019-10-24 22:27:39.274  INFO 25096 --- [http-nio-2020-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-10-24 22:27:39.275  INFO 25096 --- [http-nio-2020-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-10-24 22:27:39.282  INFO 25096 --- [http-nio-2020-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 7 ms
+2019-10-24 22:27:39.378  INFO 25096 --- [http-nio-2020-exec-1] c.s.S.webapi.LoginController             : TESTING logging: username: Admin@testcom  password: 234#$%@
+2019-10-24 22:27:39.421  INFO 25096 --- [http-nio-2020-exec-1] c.s.S.model.TokenRecordsImp              : getUsername: Admin@testcom
+2019-10-24 22:27:39.421  INFO 25096 --- [http-nio-2020-exec-1] c.s.S.model.TokenRecordsImp              : Member not founded.
+2019-10-24 22:27:39.421  INFO 25096 --- [http-nio-2020-exec-1] c.s.S.webapi.LoginController             : Not Founded
+2019-10-24 22:27:39.423 ERROR 25096 --- [http-nio-2020-exec-1] c.s.S.u.exceptions.ControllerException   : warning:	 In ControllerException: NotFoundException
+2019-10-24 22:27:40.251  INFO 25096 --- [http-nio-2020-exec-2] c.s.S.webapi.LoginController             : TESTING logging: username: Admin@testcom  password: 234#$%@
+2019-10-24 22:27:40.253  INFO 25096 --- [http-nio-2020-exec-2] c.s.S.model.TokenRecordsImp              : getUsername: Admin@testcom
+2019-10-24 22:27:40.253  INFO 25096 --- [http-nio-2020-exec-2] c.s.S.model.TokenRecordsImp              : Member not founded.
+2019-10-24 22:27:40.253  INFO 25096 --- [http-nio-2020-exec-2] c.s.S.webapi.LoginController             : Not Founded
+2019-10-24 22:27:40.254 ERROR 25096 --- [http-nio-2020-exec-2] c.s.S.u.exceptions.ControllerException   : warning:	 In ControllerException: NotFoundException
+2019-10-24 22:27:41.710  INFO 25096 --- [Thread-4] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-10-24 22:27:41.713  INFO 25096 --- [Thread-4] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2019-10-24 22:27:41.723  INFO 25096 --- [Thread-4] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2019-10-24 22:28:51.639  INFO 25478 --- [main] c.s.S.SearchFoodApplication              : Starting SearchFoodApplication on eason-P15FV2 with PID 25478 (/home/eason/Desktop/WorkPlace/Project/SearchFoodBackend/target/classes started by eason in /home/eason/Desktop/WorkPlace/Project/SearchFoodBackend)
+2019-10-24 22:28:51.644  INFO 25478 --- [main] c.s.S.SearchFoodApplication              : No active profile set, falling back to default profiles: default
+2019-10-24 22:28:52.731  INFO 25478 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$53225564] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-24 22:28:53.039  INFO 25478 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 2020 (http)
+2019-10-24 22:28:53.065  INFO 25478 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-10-24 22:28:53.066  INFO 25478 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.22]
+2019-10-24 22:28:53.148  INFO 25478 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-10-24 22:28:53.149  INFO 25478 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1470 ms
+2019-10-24 22:28:53.431  INFO 25478 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-10-24 22:28:54.087  INFO 25478 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2019-10-24 22:28:54.601  INFO 25478 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-10-24 22:28:55.011  INFO 25478 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2019-10-24 22:28:55.079  INFO 25478 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 2020 (http) with context path ''
+2019-10-24 22:28:55.083  INFO 25478 --- [main] c.s.S.SearchFoodApplication              : Started SearchFoodApplication in 3.944 seconds (JVM running for 8.792)
+2019-10-24 22:28:58.363  INFO 25478 --- [http-nio-2020-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-10-24 22:28:58.364  INFO 25478 --- [http-nio-2020-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-10-24 22:28:58.377  INFO 25478 --- [http-nio-2020-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 13 ms
+2019-10-24 22:28:58.487  INFO 25478 --- [http-nio-2020-exec-1] c.s.S.webapi.LoginController             : TESTING logging: username: Admin@testcom  password: 234#$%@
+2019-10-24 22:28:58.524  INFO 25478 --- [http-nio-2020-exec-1] c.s.S.model.TokenRecordsImp              : getUsername: Admin@testcom
+2019-10-24 22:28:58.525  INFO 25478 --- [http-nio-2020-exec-1] c.s.S.model.TokenRecordsImp              : Member not founded.
+2019-10-24 22:28:58.525  INFO 25478 --- [http-nio-2020-exec-1] c.s.S.webapi.LoginController             : Not Founded
+2019-10-24 22:28:58.526 ERROR 25478 --- [http-nio-2020-exec-1] c.s.S.u.exceptions.ControllerException   : warning:	 In ControllerException: NotFoundException
+2019-10-24 22:28:59.571  INFO 25478 --- [http-nio-2020-exec-2] c.s.S.webapi.LoginController             : TESTING logging: username: Admin@testcom  password: 234#$%@
+2019-10-24 22:28:59.574  INFO 25478 --- [http-nio-2020-exec-2] c.s.S.model.TokenRecordsImp              : getUsername: Admin@testcom
+2019-10-24 22:28:59.574  INFO 25478 --- [http-nio-2020-exec-2] c.s.S.model.TokenRecordsImp              : Member not founded.
+2019-10-24 22:28:59.574  INFO 25478 --- [http-nio-2020-exec-2] c.s.S.webapi.LoginController             : Not Founded
+2019-10-24 22:28:59.575 ERROR 25478 --- [http-nio-2020-exec-2] c.s.S.u.exceptions.ControllerException   : warning:	 In ControllerException: NotFoundException
+2019-10-24 22:29:00.695  INFO 25478 --- [Thread-4] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-10-24 22:29:00.697  INFO 25478 --- [Thread-4] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2019-10-24 22:29:00.708  INFO 25478 --- [Thread-4] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2019-10-24 22:29:48.052  INFO 25653 --- [main] c.s.S.SearchFoodApplication              : Starting SearchFoodApplication on eason-P15FV2 with PID 25653 (/home/eason/Desktop/WorkPlace/Project/SearchFoodBackend/target/classes started by eason in /home/eason/Desktop/WorkPlace/Project/SearchFoodBackend)
+2019-10-24 22:29:48.055  INFO 25653 --- [main] c.s.S.SearchFoodApplication              : No active profile set, falling back to default profiles: default
+2019-10-24 22:29:49.229  INFO 25653 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$4a77718a] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-24 22:29:49.499  INFO 25653 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 2020 (http)
+2019-10-24 22:29:49.527  INFO 25653 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-10-24 22:29:49.528  INFO 25653 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.22]
+2019-10-24 22:29:49.607  INFO 25653 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-10-24 22:29:49.608  INFO 25653 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1515 ms
+2019-10-24 22:29:49.885  INFO 25653 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-10-24 22:29:50.465  INFO 25653 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2019-10-24 22:29:51.005  INFO 25653 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-10-24 22:29:51.392  INFO 25653 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2019-10-24 22:29:51.472  INFO 25653 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 2020 (http) with context path ''
+2019-10-24 22:29:51.477  INFO 25653 --- [main] c.s.S.SearchFoodApplication              : Started SearchFoodApplication in 3.89 seconds (JVM running for 7.483)
+2019-10-24 22:29:54.810  INFO 25653 --- [http-nio-2020-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-10-24 22:29:54.811  INFO 25653 --- [http-nio-2020-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-10-24 22:29:54.825  INFO 25653 --- [http-nio-2020-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 14 ms
+2019-10-24 22:29:54.927  INFO 25653 --- [http-nio-2020-exec-1] c.s.S.webapi.LoginController             : TESTING logging: username: Admin@testcom  password: 234#$%@
+2019-10-24 22:29:54.965  INFO 25653 --- [http-nio-2020-exec-1] c.s.S.model.TokenRecordsImp              : getUsername: Admin@testcom
+2019-10-24 22:29:54.965  INFO 25653 --- [http-nio-2020-exec-1] c.s.S.model.TokenRecordsImp              : Member not founded.
+2019-10-24 22:29:54.965  INFO 25653 --- [http-nio-2020-exec-1] c.s.S.webapi.LoginController             : Not Founded
+2019-10-24 22:29:54.967 ERROR 25653 --- [http-nio-2020-exec-1] c.s.S.u.exceptions.ControllerException   : warning:	 In ControllerException: NotFoundException
+2019-10-24 22:29:55.827  INFO 25653 --- [http-nio-2020-exec-2] c.s.S.webapi.LoginController             : TESTING logging: username: Admin@testcom  password: 234#$%@
+2019-10-24 22:29:55.830  INFO 25653 --- [http-nio-2020-exec-2] c.s.S.model.TokenRecordsImp              : getUsername: Admin@testcom
+2019-10-24 22:29:55.831  INFO 25653 --- [http-nio-2020-exec-2] c.s.S.model.TokenRecordsImp              : Member not founded.
+2019-10-24 22:29:55.831  INFO 25653 --- [http-nio-2020-exec-2] c.s.S.webapi.LoginController             : Not Founded
+2019-10-24 22:29:55.832 ERROR 25653 --- [http-nio-2020-exec-2] c.s.S.u.exceptions.ControllerException   : warning:	 In ControllerException: NotFoundException
+2019-10-24 22:29:57.523  INFO 25653 --- [http-nio-2020-exec-3] c.s.S.webapi.LoginController             : TESTING logging: username: Admin@testcom  password: 234#$%@
+2019-10-24 22:29:57.525  INFO 25653 --- [http-nio-2020-exec-3] c.s.S.model.TokenRecordsImp              : getUsername: Admin@testcom
+2019-10-24 22:29:57.525  INFO 25653 --- [http-nio-2020-exec-3] c.s.S.model.TokenRecordsImp              : Member not founded.
+2019-10-24 22:29:57.526  INFO 25653 --- [http-nio-2020-exec-3] c.s.S.webapi.LoginController             : Not Founded
+2019-10-24 22:29:57.526 ERROR 25653 --- [http-nio-2020-exec-3] c.s.S.u.exceptions.ControllerException   : warning:	 In ControllerException: NotFoundException
+2019-10-24 22:29:58.310  INFO 25653 --- [Thread-4] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-10-24 22:29:58.313  INFO 25653 --- [Thread-4] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2019-10-24 22:29:58.321  INFO 25653 --- [Thread-4] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
