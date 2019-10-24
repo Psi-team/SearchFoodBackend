@@ -28,14 +28,14 @@ public class ControllerException{
     @ExceptionHandler( NotFoundException.class ) // data is not exist. 
     public ResponseEntity<?> handleNotFoundException( Exception e ){ 
         ErrorResponse errorResponse = new ErrorResponse( e.getMessage() ); // boxing the error message by ErrorResponse. 
-        log.error("warning:\t In ControllerException: NotFoundException"); 
+        log.warn("warning:\t In ControllerException: NotFoundException"); 
         return new ResponseEntity<>( errorResponse, HttpStatus.UNAUTHORIZED ); 
     } 
 
     @ExceptionHandler( DataExistException.class ) // data has existed in database. 
     public ResponseEntity<?> handleDataExistException( Exception e ){ 
         ErrorResponse errorResponse = new ErrorResponse( e.getMessage() ); 
-        log.error("warning:\t In ControllerException: DataExistException."); 
+        log.warn("warning:\t In ControllerException: DataExistException."); 
         return new ResponseEntity<>( errorResponse, HttpStatus.CONFLICT ); 
     } 
 
@@ -47,7 +47,7 @@ public class ControllerException{
         for ( FieldError error : Errors ){ 
             invalidDataResponse.add( new InvalidDataResponse(error.getField(), error.getDefaultMessage()) );  
         } 
-        log.error("warning:\t In ControllerException: InvalidDataException"); 
+        log.warn("warning:\t In ControllerException: InvalidDataException"); 
         return new ResponseEntity<>( invalidDataResponse, HttpStatus.BAD_REQUEST ); 
     } 
     
