@@ -36,6 +36,11 @@ public class LoginController{
      */ 
     
     private static final Logger log = LoggerFactory.getLogger( LoginController.class.getName() ); 
+    /* slf4j: 
+     *      slf4j只提供日誌的接口.提供獲取具體日誌物件的方法,其只是一種日誌標準, 並不是日誌系統的具體實現, 具體實現可以使用java.util.logging, logback等等
+     *      只要所有程式碼都使用slf4j當作接口,不論實現日誌實做是什麼框架.最終所有地方使用一種實現方法即可,維護更新接很方便 
+     *      https://blog.csdn.net/shiyong1949/article/details/78844342
+     */ 
 
     private TokenRecordsImp tokenImp; 
     private TokenRecords token; 
