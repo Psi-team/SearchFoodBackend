@@ -1,25 +1,38 @@
-2019-10-24 23:50:55.953  INFO 725 --- [main] c.s.S.SearchFoodApplication              : Starting SearchFoodApplication on eason-P15FV2 with PID 725 (/home/eason/Desktop/WorkPlace/Project/SearchFoodBackend/target/classes started by eason in /home/eason/Desktop/WorkPlace/Project/SearchFoodBackend)
-2019-10-24 23:50:55.956  INFO 725 --- [main] c.s.S.SearchFoodApplication              : No active profile set, falling back to default profiles: default
-2019-10-24 23:50:57.086  INFO 725 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$c37f166b] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2019-10-24 23:50:57.362  INFO 725 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 2020 (http)
-2019-10-24 23:50:57.398  INFO 725 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2019-10-24 23:50:57.398  INFO 725 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.22]
-2019-10-24 23:50:57.477  INFO 725 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2019-10-24 23:50:57.478  INFO 725 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1475 ms
-2019-10-24 23:50:57.748  INFO 725 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2019-10-24 23:50:58.408  INFO 725 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2019-10-24 23:50:58.862  INFO 725 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
-2019-10-24 23:50:59.300  INFO 725 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
-2019-10-24 23:50:59.378  INFO 725 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 2020 (http) with context path ''
-2019-10-24 23:50:59.382  INFO 725 --- [main] c.s.S.SearchFoodApplication              : Started SearchFoodApplication in 3.925 seconds (JVM running for 7.759)
-2019-10-24 23:51:02.702  INFO 725 --- [http-nio-2020-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2019-10-24 23:51:02.702  INFO 725 --- [http-nio-2020-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2019-10-24 23:51:02.711  INFO 725 --- [http-nio-2020-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 8 ms
-2019-10-24 23:51:02.818  INFO 725 --- [http-nio-2020-exec-1] c.s.S.webapi.LoginController             : TESTING logging: username: Admin@testcom  password: 234#$%@
-2019-10-24 23:51:02.864  INFO 725 --- [http-nio-2020-exec-1] c.s.S.model.TokenRecordsImp              : getUsername: Admin@testcom
-2019-10-24 23:51:02.865  INFO 725 --- [http-nio-2020-exec-1] c.s.S.model.TokenRecordsImp              : Member not founded.
-2019-10-24 23:51:02.865  INFO 725 --- [http-nio-2020-exec-1] c.s.S.webapi.LoginController             : Not Founded
-2019-10-24 23:51:02.867  WARN 725 --- [http-nio-2020-exec-1] c.s.S.u.exceptions.ControllerException   : warning:	 In ControllerException: NotFoundException
-2019-10-24 23:51:04.128  INFO 725 --- [Thread-4] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
-2019-10-24 23:51:04.130  INFO 725 --- [Thread-4] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2019-10-24 23:51:04.147  INFO 725 --- [Thread-4] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2019-10-27 23:30:02.087  INFO 17864 --- [main] c.s.S.SearchFoodApplication              : Starting SearchFoodApplication on eason-P15FV2 with PID 17864 (/home/eason/Desktop/WorkPlace/Project/SearchFoodBackend/target/classes started by eason in /home/eason/Desktop/WorkPlace/Project/SearchFoodBackend)
+2019-10-27 23:30:02.091  INFO 17864 --- [main] c.s.S.SearchFoodApplication              : No active profile set, falling back to default profiles: default
+2019-10-27 23:30:03.240  INFO 17864 --- [main] faultConfiguringBeanFactoryPostProcessor : No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2019-10-27 23:30:03.247  INFO 17864 --- [main] faultConfiguringBeanFactoryPostProcessor : No bean named 'taskScheduler' has been explicitly defined. Therefore, a default ThreadPoolTaskScheduler will be created.
+2019-10-27 23:30:03.252  INFO 17864 --- [main] faultConfiguringBeanFactoryPostProcessor : No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2019-10-27 23:30:03.367  INFO 17864 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$ba0020a8] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-27 23:30:03.390  INFO 17864 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.integration.config.IntegrationManagementConfiguration' of type [org.springframework.integration.config.IntegrationManagementConfiguration$$EnhancerBySpringCGLIB$$24f1dbd7] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-27 23:30:03.407  INFO 17864 --- [main] trationDelegate$BeanPostProcessorChecker : Bean 'integrationDisposableAutoCreatedBeans' of type [org.springframework.integration.config.annotation.Disposables] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-10-27 23:30:03.688  INFO 17864 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 2020 (http)
+2019-10-27 23:30:03.716  INFO 17864 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2019-10-27 23:30:03.717  INFO 17864 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.22]
+2019-10-27 23:30:03.801  INFO 17864 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2019-10-27 23:30:03.802  INFO 17864 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 1674 ms
+2019-10-27 23:30:04.103  INFO 17864 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2019-10-27 23:30:04.746  INFO 17864 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2019-10-27 23:30:05.363  INFO 17864 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2019-10-27 23:30:05.808  INFO 17864 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 2 endpoint(s) beneath base path '/actuator'
+2019-10-27 23:30:05.905  INFO 17864 --- [main] o.s.s.c.ThreadPoolTaskScheduler          : Initializing ExecutorService 'taskScheduler'
+2019-10-27 23:30:05.973  INFO 17864 --- [main] o.s.i.endpoint.EventDrivenConsumer       : Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2019-10-27 23:30:05.973  INFO 17864 --- [main] o.s.i.channel.PublishSubscribeChannel    : Channel 'application.errorChannel' has 1 subscriber(s).
+2019-10-27 23:30:05.973  INFO 17864 --- [main] o.s.i.endpoint.EventDrivenConsumer       : started _org.springframework.integration.errorLogger
+2019-10-27 23:30:06.024  INFO 17864 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 2020 (http) with context path ''
+2019-10-27 23:30:06.028  INFO 17864 --- [main] c.s.S.SearchFoodApplication              : Started SearchFoodApplication in 4.429 seconds (JVM running for 8.184)
+2019-10-27 23:30:09.113  INFO 17864 --- [http-nio-2020-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-10-27 23:30:09.113  INFO 17864 --- [http-nio-2020-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2019-10-27 23:30:09.123  INFO 17864 --- [http-nio-2020-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 10 ms
+2019-10-27 23:30:09.245  INFO 17864 --- [http-nio-2020-exec-1] c.s.S.webapi.LoginController             : TESTING logging: username: Admin@testcom  password: 234#$%@
+2019-10-27 23:30:09.284  INFO 17864 --- [http-nio-2020-exec-1] c.s.S.model.TokenRecordsImp              : getUsername: Admin@testcom
+2019-10-27 23:30:09.284  INFO 17864 --- [http-nio-2020-exec-1] c.s.S.model.TokenRecordsImp              : Member not founded.
+2019-10-27 23:30:09.284  INFO 17864 --- [http-nio-2020-exec-1] c.s.S.webapi.LoginController             : Not Founded
+2019-10-27 23:30:09.286  WARN 17864 --- [http-nio-2020-exec-1] c.s.S.u.exceptions.ControllerException   : warning:	 In ControllerException: NotFoundException
+2019-10-27 23:30:12.692  INFO 17864 --- [Thread-4] o.s.i.endpoint.EventDrivenConsumer       : Removing {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2019-10-27 23:30:12.692  INFO 17864 --- [Thread-4] o.s.i.channel.PublishSubscribeChannel    : Channel 'application.errorChannel' has 0 subscriber(s).
+2019-10-27 23:30:12.692  INFO 17864 --- [Thread-4] o.s.i.endpoint.EventDrivenConsumer       : stopped _org.springframework.integration.errorLogger
+2019-10-27 23:30:12.693  INFO 17864 --- [Thread-4] o.s.s.c.ThreadPoolTaskScheduler          : Shutting down ExecutorService 'taskScheduler'
+2019-10-27 23:30:12.697  INFO 17864 --- [Thread-4] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2019-10-27 23:30:12.699  INFO 17864 --- [Thread-4] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2019-10-27 23:30:12.706  INFO 17864 --- [Thread-4] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
