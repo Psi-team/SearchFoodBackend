@@ -56,9 +56,16 @@
             <artifactId>spring-boot-starter-actuator</artifactId> 
         </dependency> 
 
+        <!-- jdbc --> 
         <dependency> 
             <groupId>org.springframework.boot</groupId> 
             <artifactId>spring-boot-starter-jdbc</artifactId> 
+        </dependency> 
+
+        <!-- Spring Integration --> 
+        <dependency> 
+            <groupId>org.springframework.boot</groupId> 
+            <artifactId>spring-boot-starter-integration</artifactId> 
         </dependency> 
 
         <dependency> 
@@ -71,33 +78,31 @@
             <artifactId>jackson-databind</artifactId> 
         </dependency> 
 
-        <!-- The dependency of Java Message Service, JMS  
-        <dependency> 
-            <groupId>org.springframework.boot</groupId> 
-            <artifactId>spring-boot-starter-artemis</artifactId> 
-        </dependency> 
-        --> 
-
-        <!-- log4j2          --> 
-        <dependency> 
-            <groupId>org.springframework.boot</groupId> 
-            <artifactId>spring-boot-starter-log4j2</artifactId> 
-        </dependency> 
-
-
-        <!-- 
-        <dependency> 
-            <groupId>org.springframework.boot</groupId> 
-            <artifactId>spring-boot-starter-data-jpa</artifactId> 
-        </dependency> 
-        --> 
-
         <!-- The JavaMail dependencies --> 
         <dependency> 
             <groupId>org.springframework.boot</groupId> 
             <artifactId>spring-boot-starter-mail</artifactId> 
         </dependency> 
 
+        <!-- log4j2  --> 
+        <dependency> 
+            <groupId>org.springframework.boot</groupId> 
+            <artifactId>spring-boot-starter-log4j2</artifactId> 
+        </dependency> 
+
+        <!-- Message Queue Java Message Service, JMS  
+        <dependency> 
+            <groupId>org.springframework.boot</groupId> 
+            <artifactId>spring-boot-starter-artemis</artifactId> 
+        </dependency> 
+        --> 
+
+        <!-- JPA 
+        <dependency> 
+            <groupId>org.springframework.boot</groupId> 
+            <artifactId>spring-boot-starter-data-jpa</artifactId> 
+        </dependency> 
+        --> 
 
 	</dependencies>
 
