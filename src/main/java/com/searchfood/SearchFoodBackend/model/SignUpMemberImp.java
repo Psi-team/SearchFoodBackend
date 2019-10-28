@@ -10,6 +10,9 @@ import org.springframework.stereotype.Repository;
 
 import org.springframework.beans.factory.annotation.Autowired; 
 
+import org.slf4j.Logger; 
+import org.slf4j.LoggerFactory; 
+
 import java.sql.ResultSet; 
 import java.sql.SQLException; 
 
@@ -23,6 +26,8 @@ public class SignUpMemberImp implements SignUpMemberITF, FindDataITF{
 
     private JdbcTemplate jdbc; 
     private SignUpMember signupmember; 
+
+    private static final Logger log = LoggerFactory.getLogger( SignUpMemberImp.class ); 
     
     @Autowired 
     public SignUpMemberImp( JdbcTemplate jdbc ){ 
@@ -47,10 +52,10 @@ public class SignUpMemberImp implements SignUpMemberITF, FindDataITF{
                         } 
                     },
                     signupmember.getUsername() ); 
-            System.out.println("The member has existed."); 
+            log.info("The member has existed."); 
             return 1; // the user who is trying to sign up has already exist in Users. 
         }catch( EmptyResultDataAccessException e ){ 
-            System.out.println("The user is exactly a new member."); 
+            log.info("The user is exactly a new member."); 
             return -1; // The user is exactly a new member. 
         } 
     } 

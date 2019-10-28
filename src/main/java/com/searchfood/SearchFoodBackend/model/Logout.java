@@ -10,6 +10,9 @@ import org.springframework.stereotype.Repository;
 
 import org.springframework.beans.factory.annotation.Autowired; 
 
+import org.slf4j.Logger; 
+import org.slf4j.LoggerFactory; 
+
 import java.sql.ResultSet; 
 import java.sql.SQLException; 
 
@@ -22,6 +25,8 @@ public class Logout implements FindDataITF{
     
     private JdbcTemplate jdbc; 
     private TokenRecords token; 
+    
+    private static final Logger log = LoggerFactory.getLogger( Logout.class ); 
     
     @Autowired 
     public Logout( JdbcTemplate jdbc ){ 
@@ -44,10 +49,10 @@ public class Logout implements FindDataITF{
                     },
                     token.getToken() ); 
 
-            System.out.println( "Token founded."); 
+            log.info( "Token founded."); 
             return 1; 
         }catch( EmptyResultDataAccessException e ){ // Access no appropriate data in table Users. 
-            System.out.println( "token not founded."); 
+            log.info("token not founded."); 
             return -1; 
         } 
 

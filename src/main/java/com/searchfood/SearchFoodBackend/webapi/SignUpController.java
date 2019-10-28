@@ -19,6 +19,9 @@ import org.springframework.validation.Errors; // If constraints don't meet, capt
 import com.searchfood.SearchFoodBackend.model.data.TokenRecords; 
 import com.searchfood.SearchFoodBackend.model.data.SignUpMember;  
 import com.searchfood.SearchFoodBackend.model.SignUpMemberImp; 
+// logging import org.slf4j.Logger; 
+import org.slf4j.Logger; 
+import org.slf4j.LoggerFactory; 
 
 import com.searchfood.SearchFoodBackend.utils.exceptions.DataExistException; 
 import com.searchfood.SearchFoodBackend.utils.exceptions.InvalidDataException; 
@@ -36,6 +39,8 @@ public class SignUpController{
     private TokenRecords token; 
     private SignUpMailService signupMailService; 
 
+    private static final Logger log = LoggerFactory.getLogger( SignUpController.class ); 
+
     @Autowired 
     public SignUpController( SignUpMemberImp signupImp, TokenRecords token, SignUpMailService signupMailService ){ 
         this.signupImp = signupImp; 
@@ -47,7 +52,9 @@ public class SignUpController{
     public ResponseEntity<?> signUp( @Valid @RequestBody SignUpMember signupmember, 
                                 Errors errors ){ 
 
-        System.out.println("TESTING:\n username: " + signupmember.getUsername() + " password: " + signupmember.getPasswd() + 
+        log.debug("TESTING: username: " + signupmember.getUsername() + " password: " + signupmember.getPasswd() + 
+                            " birthyear: " + signupmember.getBirthyear() + " sex: " + signupmember.getSexual() ); 
+        log.info( "username: " + signupmember.getUsername() + " password: " + signupmember.getPasswd() + 
                             " birthyear: " + signupmember.getBirthyear() + " sex: " + signupmember.getSexual() ); 
         
         if( errors.hasErrors() ){ 

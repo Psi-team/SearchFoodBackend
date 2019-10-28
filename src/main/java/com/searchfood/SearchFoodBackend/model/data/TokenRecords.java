@@ -33,13 +33,13 @@ public class TokenRecords{
     //  2. 把setToken(String)的函數名稱改掉,以避免Container不知道要用哪一個setter
     public void setTokenByUsername( String username ){ 
         UUIDGenerator tk = new  UUIDGenerator( username ); 
-        System.out.println("Setting token with username"); 
+        //System.out.println("Setting token with username"); 
         this.token = tk.getUUID(); 
     } 
 
     public void setToken(){ 
         UUIDGenerator tk = new UUIDGenerator(); 
-        System.out.println("Setting token with no params"); 
+        //System.out.println("Setting token with no params"); 
         this.token = tk.getUUID(); 
     } 
 

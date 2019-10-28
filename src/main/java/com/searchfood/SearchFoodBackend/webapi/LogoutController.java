@@ -8,6 +8,9 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.PostMapping; 
 import org.springframework.web.bind.annotation.CrossOrigin; 
 
+import org.slf4j.Logger; 
+import org.slf4j.LoggerFactory; 
+
 // stereotype 
 import org.springframework.beans.factory.annotation.Autowired; 
 // http
@@ -24,6 +27,7 @@ import com.searchfood.SearchFoodBackend.utils.exceptions.NotFoundException;
 public class LogoutController{ 
 
     private Logout logout; 
+    private static final Logger log = LoggerFactory.getLogger( LogoutController.class ); 
 
     @Autowired 
     public LogoutController( Logout l ){ 
@@ -45,7 +49,7 @@ public class LogoutController{
         // 解決方法: 
         //  1. 把TokenRecords.java中的setToken( String )刪掉, avoiding setter overloading.  
         //  2. 把setToken(String)的函數名稱改掉,以避免Container不知道要用哪一個setter
-        System.out.println( token.getToken() ); 
+        log.info( token.getToken() + " logout." ); 
         if ( 1 != logout.deleteFromToken( token ) ){ 
             throw new NotFoundException( "Token not founded in Database." ); 
         }

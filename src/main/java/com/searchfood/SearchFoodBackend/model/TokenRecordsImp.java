@@ -66,14 +66,11 @@ public class TokenRecordsImp implements TokenRecordsITF, FindDataITF{
                     mem.getUsername(), mem.getPassword() ); 
 
             //System.out.println( "Member founded."); 
-            log.info( "Member founded." ); 
+            log.info( "Member" + mem.getUsername() + " founded." ); 
 
             return 1; 
         }catch( EmptyResultDataAccessException e ){ // Access no appropriate data in table Users. 
-            log.info( "getUsername: " + mem.getUsername() ); 
-            log.info( "Member not founded."); 
-            //System.out.println( "Member not founded."); 
-            //System.out.println( "getUsername: " + mem.getUsername() ); 
+            log.info( mem.getUsername() + " not founded."); 
             return -1; 
         } 
 
