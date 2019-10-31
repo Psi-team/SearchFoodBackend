@@ -13,7 +13,7 @@ import javax.validation.constraints.Min;
 
 import java.util.Date; 
 
-//@Component 
+@Component 
 public class SignUpMember{ 
     
     @NotNull 

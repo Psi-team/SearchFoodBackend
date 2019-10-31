@@ -8,8 +8,9 @@ import javax.validation.constraints.Size;
 import javax.validation.constraints.Digits; 
 import javax.validation.constraints.NotNull; 
 import javax.validation.constraints.Max; 
+import javax.validation.constraints.Min; 
 
-//@Component 
+@Component 
 public class StoreComments{ 
     
     @NotNull 
@@ -20,12 +21,13 @@ public class StoreComments{
     private String username; 
 
     @NotNull 
-    @Size( min = 1, max = 5, message="The rate must be between 1 and 5.") 
+    @Min(1)
+    @Max(5) 
     @Digits( integer=1, fraction=0, message="The rate must be an integer.") 
     private int star; 
     
     @NotNull 
-    @Size( min = 1, message="Price cannot be smaller than 1." ) 
+    @Min(1) 
     @Digits( integer=5, fraction=0, message="Price must be an integer." ) 
     private int price; 
 

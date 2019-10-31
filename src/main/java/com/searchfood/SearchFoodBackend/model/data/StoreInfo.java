@@ -10,11 +10,11 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Max; 
 import java.util.Date; 
 
-//@Component 
+@Component 
 public class StoreInfo{ 
 
-    @NotNull 
-    private int storeId; 
+    //@NotNull 
+    //private int storeId; 
     
     @NotNull 
     @Size( max=14, message="The length of StoreName must be smaller than 14" ) 
@@ -36,7 +36,7 @@ public class StoreInfo{
     @Size(max=10) 
     private String tel; 
 
-    @NotNull 
+    //@NotNull 
     private String creator; 
     
     @NotNull 
@@ -57,9 +57,9 @@ public class StoreInfo{
     } 
 
     // setter 
-    public void setStoreId( int id ){ 
-        this.storeId = id; 
-    } 
+    //public void setStoreId( int id ){ 
+    //    this.storeId = id; 
+    //} 
 
     public void setStoreName( String name ){ 
         this.storeName = name; 
@@ -102,48 +102,48 @@ public class StoreInfo{
     } 
 
     // getter 
-    public int getStoreId( int id ){ 
-        return this.storeId = id; 
+    //public int getStoreId( int id ){ 
+    //    return this.storeId = id; 
+    //} 
+
+    public String getStoreName(){ 
+        return this.storeName; 
     } 
 
-    public String getStoreName( String name ){ 
-        return this.storeName = name; 
+    public String getCity(){ 
+        return this.city; 
     } 
 
-    public String getCity( String city ){ 
-        return this.city = city; 
+    public String getDistrict(){ 
+        return this.district; 
     } 
 
-    public String getDistrict( String dist ){ 
-        return this.district = dist; 
+    public String getAddress(){ 
+        return this.address; 
     } 
 
-    public String getAddress( String addr ){ 
-        return this.address = addr; 
+    public String getTel(){ 
+        return this.tel; 
     } 
 
-    public String getTel( String tel ){ 
-        return this.tel = tel; 
+    public String getCreator(){ 
+        return this.creator; 
     } 
 
-    public String getCreator( String catr ){ 
-        return this.creator = catr; 
+    public Date getCreatedDate(){ 
+        return this.created_date; 
     } 
 
-    public Date getCreatedDate( Date date ){ 
-        return this.created_date = date; 
+    public String getBusinessTime(){ 
+        return this.business_time; 
     } 
 
-    public String getBusinessTime( String time ){ 
-        return this.business_time = time; 
+    public String getLatLong(){ 
+        return this.lat_long; 
     } 
 
-    public String getLatLong( String loc ){ 
-        return this.lat_long = loc; 
-    } 
-
-    public String getType( String type ){ 
-        return this.type = type; 
+    public String getType(){ 
+        return this.type; 
     } 
 
 } 

@@ -21,15 +21,15 @@ import com.searchfood.SearchFoodBackend.model.data.tmpData;
 import com.searchfood.SearchFoodBackend.model.data.TokenRecords; 
 
 @Repository 
-public class Logout implements FindDataITF{ 
+public class LogoutImp implements FindDataITF{ 
     
     private JdbcTemplate jdbc; 
     private TokenRecords token; 
     
-    private static final Logger log = LoggerFactory.getLogger( Logout.class ); 
+    private static final Logger log = LoggerFactory.getLogger( LogoutImp.class ); 
     
     @Autowired 
-    public Logout( JdbcTemplate jdbc ){ 
+    public LogoutImp( JdbcTemplate jdbc ){ 
         this.jdbc = jdbc; 
     } 
 

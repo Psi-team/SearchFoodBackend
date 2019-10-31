@@ -18,7 +18,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity; 
 
 import com.searchfood.SearchFoodBackend.model.data.TokenRecords; 
-import com.searchfood.SearchFoodBackend.model.Logout; 
+import com.searchfood.SearchFoodBackend.model.LogoutImp; 
 import com.searchfood.SearchFoodBackend.utils.exceptions.NotFoundException; 
 
 @RestController 
@@ -26,11 +26,11 @@ import com.searchfood.SearchFoodBackend.utils.exceptions.NotFoundException;
 @RequestMapping(value="logout",produces="application/json") 
 public class LogoutController{ 
 
-    private Logout logout; 
+    private LogoutImp logout; 
     private static final Logger log = LoggerFactory.getLogger( LogoutController.class ); 
 
     @Autowired 
-    public LogoutController( Logout l ){ 
+    public LogoutController( LogoutImp l ){ 
         this.logout = l; 
     } 
 
