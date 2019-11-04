@@ -25,8 +25,9 @@ import com.searchfood.SearchFoodBackend.utils.exceptions.DataExistException;
 import org.slf4j.Logger; 
 import org.slf4j.LoggerFactory; 
 
+@RestController 
 @CrossOrigin("*") 
-@RequestMapping(value="",produces="application/json") 
+@RequestMapping(value="/createStores",produces="application/json") 
 public class StoreInfoController{ 
 
     private static final Logger log = LoggerFactory.getLogger( StoreInfoController.class ); 
@@ -39,15 +40,18 @@ public class StoreInfoController{
         this.storeInfoImp = storeInfoImp; 
     } 
 
-    @PostMapping("createStore") 
+    @PostMapping 
     @ResponseStatus(HttpStatus.CREATED) 
     public void createNewStoreInfo( @Valid @RequestBody StoreInfo storeInfo, 
             Errors errors, @RequestHeader("Authorization") String token ){ 
 
         String username; 
 
+        log.debug( "storename: " + storeInfo.getStorename() ); 
+        log.debug( "lat_long: " + storeInfo.getLat_long() ); 
+
         // checking the token is valid or not. 
-        if( (username = checkToken.check(token) ) != null ){ // if the token doesn't exist in database. 
+        if( (username = checkToken.check(token) ) == null ){ // if the token doesn't exist in database. 
             log.warn( "The token is invalid." ); 
             throw new InvalidDataException("The token is invalid."); 
         } 
@@ -55,17 +59,18 @@ public class StoreInfoController{
         
         // check the data whether valid or not. 
         if ( errors.hasErrors() ){ 
+            System.out.println(errors); 
             log.warn( "The data for build new store infomation is invalid." );  
             throw new InvalidDataException( errors ); 
         } 
-        log.info( "The data for build new store infomation is valid." );  
+        log.info( "The data for building new store infomation is valid." );  
 
         if ( storeInfoImp.createNewStoreInfoToDatabase( storeInfo, username ) ){ 
-            log.info( username + " has created the new store info " + storeInfo.getStoreName() + "." ); 
+            log.info( username + " has created the new store info " + storeInfo.getStorename() + "." ); 
             return; 
         } 
 
-        throw new DataExistException( storeInfo.getStoreName() + " has existed in the table StoreInfo." ); 
+        throw new DataExistException( storeInfo.getStorename() + " has existed in the table StoreInfo." ); 
     } 
 
 } 

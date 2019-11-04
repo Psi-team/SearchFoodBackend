@@ -18,7 +18,7 @@ public class StoreInfo{
     
     @NotNull 
     @Size( max=14, message="The length of StoreName must be smaller than 14" ) 
-    private String storeName; 
+    private String storename; 
 
     @NotNull 
     @Size(max=3) 
@@ -43,7 +43,7 @@ public class StoreInfo{
     private String lat_long; 
 
     @NotNull 
-    private String type; 
+    private String types; 
 
     private Date created_date; 
     private String business_time; 
@@ -61,8 +61,8 @@ public class StoreInfo{
     //    this.storeId = id; 
     //} 
 
-    public void setStoreName( String name ){ 
-        this.storeName = name; 
+    public void setStorename( String name ){ 
+        this.storename = name; 
     } 
 
     public void setCity( String city ){ 
@@ -93,12 +93,12 @@ public class StoreInfo{
         this.business_time = time; 
     } 
 
-    public void setLatLong( String loc ){ 
+    public void setLat_long( String loc ){ 
         this.lat_long = loc; 
     } 
 
-    public void setType( String type ){ 
-        this.type = type; 
+    public void setTypes( String type ){ 
+        this.types = type; 
     } 
 
     // getter 
@@ -106,8 +106,8 @@ public class StoreInfo{
     //    return this.storeId = id; 
     //} 
 
-    public String getStoreName(){ 
-        return this.storeName; 
+    public String getStorename(){ 
+        return this.storename; 
     } 
 
     public String getCity(){ 
@@ -138,12 +138,12 @@ public class StoreInfo{
         return this.business_time; 
     } 
 
-    public String getLatLong(){ 
+    public String getLat_long(){ 
         return this.lat_long; 
     } 
 
-    public String getType(){ 
-        return this.type; 
+    public String getTypes(){ 
+        return this.types; 
     } 
 
 } 

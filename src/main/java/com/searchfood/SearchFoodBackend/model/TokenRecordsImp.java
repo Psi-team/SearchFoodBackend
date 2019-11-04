@@ -50,6 +50,7 @@ public class TokenRecordsImp implements TokenRecordsITF, FindDataITF{
             SignUpMember sign = 
             jdbc.queryForObject( 
                     "SELECT * FROM Users WHERE mail = ? AND passwd = ?;", 
+                    /* using the inner annoyous class.  
                     new RowMapper<SignUpMember> (){  
                         // Must override this function. 
                         @Override 
@@ -62,11 +63,20 @@ public class TokenRecordsImp implements TokenRecordsITF, FindDataITF{
                                         rs.getInt("age")
                                     );
                         } 
-                    },
+                    }*/
+                    // using lambda expression below.  
+                    ( ResultSet rs, int rowNum ) ->  
+                                    new SignUpMember( 
+                                        rs.getString("mail"),
+                                        rs.getString("passwd"), 
+                                        rs.getInt("sexual"), 
+                                        rs.getDate("birthyear").getYear() + 1900, 
+                                        rs.getInt("age")
+                                        ),
                     mem.getUsername(), mem.getPassword() ); 
 
             //System.out.println( "Member founded."); 
-            log.info( "Member" + mem.getUsername() + " founded." ); 
+            log.info( "Member " + mem.getUsername() + " founded." ); 
 
             return 1; 
         }catch( EmptyResultDataAccessException e ){ // Access no appropriate data in table Users. 
