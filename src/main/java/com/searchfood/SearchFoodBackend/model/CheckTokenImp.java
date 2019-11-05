@@ -39,14 +39,17 @@ public class CheckTokenImp implements FindDataITF{
                         } 
                     }, 
                     this.token ); 
-        System.out.println("In isExist: " + username); 
         if ( username == null ) return 0;  
+        return 1; 
+    } 
+
+    public int checkActive(){ // check the login time is out-of-date. 
         return 1; 
     } 
 
     public String check( String token ){ 
         this.token = token; 
-        if( isExist() == 1 ){
+        if( isExist() == 1 && checkActive() == 1 ){
             log.info( "The username of " + token + " is " + this.username ); 
             return this.username; 
         } 

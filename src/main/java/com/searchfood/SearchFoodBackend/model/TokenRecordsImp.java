@@ -96,8 +96,6 @@ public class TokenRecordsImp implements TokenRecordsITF, FindDataITF{
             // then trying to set a token; 
             token.setUsername( mem.getUsername() ); 
             token.setToken();   
-            //token.setToken( mem.getUsername() );   
-            //token.setBrowser( mem.getBrowser() ); 
             save( token ); 
         } 
 

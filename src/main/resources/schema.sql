@@ -20,7 +20,7 @@ CREATE TABLE IF NOT EXISTS Token(
     token VARCHAR(80) NOT NULL,
     login_time TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP, 
     navigator_type VARCHAR(20) NOT NULL, 
-    PRIMARY KEY( mail ), 
+    PRIMARY KEY( mail, navigator_type ), 
     FOREIGN KEY( mail ) REFERENCES Users( mail ) 
 ); 
 

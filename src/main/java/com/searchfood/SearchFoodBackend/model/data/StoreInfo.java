@@ -55,6 +55,18 @@ public class StoreInfo{
     public StoreInfo(){ 
 
     } 
+    public StoreInfo(String n, String c, String d, String a, String t, String ct, String latlong, String ty, Date cd, String bt ){ 
+        this.storename = n; 
+        this.city = c; 
+        this.district = d; 
+        this.address = a; 
+        this.tel = t; 
+        this.creator = ct; 
+        this.lat_long = latlong; 
+        this.types = ty; 
+        this.created_date = cd; 
+        this.business_time = bt; 
+    } 
 
     // setter 
     //public void setStoreId( int id ){ 
