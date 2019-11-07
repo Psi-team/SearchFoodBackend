@@ -21,7 +21,7 @@ import com.searchfood.SearchFoodBackend.model.data.tmpData;
 import com.searchfood.SearchFoodBackend.model.data.TokenRecords; 
 
 @Repository 
-public class LogoutImp implements FindDataITF{ 
+public class LogoutImp{ 
     
     private JdbcTemplate jdbc; 
     private TokenRecords token; 
@@ -33,6 +33,8 @@ public class LogoutImp implements FindDataITF{
         this.jdbc = jdbc; 
     } 
 
+    /* 
+    // Override from FindDataITF interface  
     @Override 
     public int isExist(){ 
         try{ 
@@ -57,22 +59,30 @@ public class LogoutImp implements FindDataITF{
         } 
 
     } 
+    */ 
 
     public int deleteFromToken( TokenRecords o ){ 
         this.token = o; 
 
+        /* 
         if ( 1 == isExist() ){ // if token exists in Token, then delete it. 
             delete( token ); 
             return 1; // delete token from Token sucessfully. 
         } 
         return -1; // fail to delete token from Token. 
+        */ 
+        if ( delete( token ) != 1 ){ 
+            return -1; 
+        } 
+        return 1; 
     } 
 
     private int delete( TokenRecords token ){ 
-        if ( 0 != jdbc.update( "DELETE FROM Token WHERE Token = ?", token.getToken() ) ){ 
-            return 1;   
+        try{ 
+            return jdbc.update( "DELETE FROM Token WHERE Token = ?", token.getToken() ); 
+        }catch( DataAccessException e ){ 
+            return -1; 
         } 
-        return -1; 
     } 
 
 } 

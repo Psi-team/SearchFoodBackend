@@ -63,7 +63,7 @@ public class LoginController{
 
         token = tokenImp.saveTokenTable( member ); 
 
-        if ( null == token.getToken() ){ 
+        if ( null == token.getUsername() ){ 
             log.info("Not Founded"); 
             throw new NotFoundException("User or password not founded."); 
              /* Reference: https://openjry.url.tw/spring-boot-rest-exception-all-catch/ */ 

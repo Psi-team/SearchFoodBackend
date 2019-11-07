@@ -10,11 +10,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 // user-define class 
 import com.searchfood.SearchFoodBackend.utils.messages.interfaces.SignUpMailService; 
 import com.searchfood.SearchFoodBackend.model.data.SignUpMember; 
+// logging import org.slf4j.Logger; 
+import org.slf4j.Logger; 
+import org.slf4j.LoggerFactory; 
 
 @Service 
 public class SendSignUpMailService implements SignUpMailService{ 
 
     private JavaMailSender javaMailSender; 
+    private static final Logger log = LoggerFactory.getLogger( SendSignUpMailService.class ); 
 
     @Autowired 
     public SendSignUpMailService( JavaMailSender m ){ 
@@ -33,7 +37,7 @@ public class SendSignUpMailService implements SignUpMailService{
                                ) ); 
 
         javaMailSender.send(msg); 
-        System.out.println("Sending email to " + signupMember.getUsername() + "!!!" );  
+        log.info("Sending email to " + signupMember.getUsername() + "!!!" );  
     } 
 
 } 

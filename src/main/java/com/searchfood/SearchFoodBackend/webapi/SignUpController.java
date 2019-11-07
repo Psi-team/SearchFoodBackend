@@ -62,12 +62,14 @@ public class SignUpController{
         } 
 
         token = signupImp.saveToUsers( signupmember ); 
-        if ( token.getToken() == null ){ 
+        if ( token == null ){ 
             throw new DataExistException("The mail has existed."); 
         } 
 
         // then send mail to new member. 
         signupMailService.sendEmail( signupmember ); 
+
+        log.info( token.getUsername() + " sign up successfully." );  
         
         return new ResponseEntity<>( token,HttpStatus.CREATED ); 
 

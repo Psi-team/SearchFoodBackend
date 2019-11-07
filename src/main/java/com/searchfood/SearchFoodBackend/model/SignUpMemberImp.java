@@ -21,7 +21,7 @@ import com.searchfood.SearchFoodBackend.model.data.SignUpMember;
 import com.searchfood.SearchFoodBackend.model.data.TokenRecords; 
 
 @Repository 
-public class SignUpMemberImp implements SignUpMemberITF, FindDataITF{ 
+public class SignUpMemberImp implements SignUpMemberITF{ 
 
     private JdbcTemplate jdbc; 
     private SignUpMember signupmember; 
@@ -33,6 +33,8 @@ public class SignUpMemberImp implements SignUpMemberITF, FindDataITF{
         this.jdbc = jdbc; 
     } 
 
+    /* 
+    Override from FindDataITF interface. 
     @Override 
     public int isExist(){ 
         try{ 
@@ -58,13 +60,14 @@ public class SignUpMemberImp implements SignUpMemberITF, FindDataITF{
             return -1; // The user is exactly a new member. 
         } 
     } 
+    */ 
     
     @Override 
     public TokenRecords saveToUsers( SignUpMember signupmember ){ 
         
         this.signupmember = signupmember; 
         TokenRecords token = new TokenRecords(); 
-        
+        /* 
         if ( -1 == isExist() ){ // the user is exactly a new member. 
             token.setUsername( signupmember.getUsername() );
             token.setToken();
@@ -72,9 +75,17 @@ public class SignUpMemberImp implements SignUpMemberITF, FindDataITF{
         } 
         
         return token; 
+        */ 
+        token.setUsername( signupmember.getUsername() );
+        token.setToken();
+        if ( save( token, signupmember ) != 2 ){ // if add to User and Token successfully, it should return 2.  
+            return null; 
+        } 
+        return token; 
     } 
 
     private int save( TokenRecords token, SignUpMember signupmember ){ 
+        /* 
         if ( 0 != jdbc.update( "INSERT INTO Users( mail, passwd, sexual, birthyear ) VALUES( ?, ?, ?, ? )", 
                         signupmember.getUsername(), signupmember.getPasswd(), 
                         signupmember.getSexual(), signupmember.getBirthyear() ) && 
@@ -83,7 +94,17 @@ public class SignUpMemberImp implements SignUpMemberITF, FindDataITF{
             return 1; 
              } 
         return -1; 
+        */ 
+        try{ // May consider the transcation problem.  
+            return  jdbc.update( "INSERT INTO Users( mail, passwd, sexual, birthyear ) VALUES( ?, ?, ?, ? )", 
+                                signupmember.getUsername(), signupmember.getPasswd(), 
+                                signupmember.getSexual(), signupmember.getBirthyear() )  
+                    +  
+                    jdbc.update( "INSERT INTO Token( mail, token, navigator_type ) VALUES( ?, ?, ? )", 
+                                token.getUsername(), token.getToken(), "Nan" ); 
+        } catch( DataAccessException e ){ 
+            return -1; 
+        } 
     } 
-
 } 
 
