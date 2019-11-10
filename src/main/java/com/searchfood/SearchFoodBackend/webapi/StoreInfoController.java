@@ -28,7 +28,7 @@ import org.slf4j.LoggerFactory;
 
 @RestController 
 @CrossOrigin("*") 
-@RequestMapping(value="createStores",produces="application/json") 
+@RequestMapping(value="createStore",produces="application/json") 
 public class StoreInfoController{ 
 
     private static final Logger log = LoggerFactory.getLogger( StoreInfoController.class ); 

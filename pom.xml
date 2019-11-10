@@ -78,6 +78,12 @@
             <artifactId>jackson-databind</artifactId> 
         </dependency> 
 
+        <dependency> 
+            <groupId>org.json</groupId> 
+            <artifactId>json</artifactId> 
+            <version>20180130</version> 
+        </dependency> 
+
         <!-- The JavaMail dependencies --> 
         <dependency> 
             <groupId>org.springframework.boot</groupId> 

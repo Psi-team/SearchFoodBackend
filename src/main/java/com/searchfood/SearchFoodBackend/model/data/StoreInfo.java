@@ -8,13 +8,23 @@ import javax.validation.constraints.Size;
 import javax.validation.constraints.Digits; 
 import javax.validation.constraints.NotNull; 
 import javax.validation.constraints.Max; 
-import java.util.Date; 
+
+import java.time.LocalDateTime; 
+import java.sql.Timestamp; 
+
+import java.io.Serializable; 
+import org.json.JSONObject; 
+import com.fasterxml.jackson.annotation.JsonProperty;  
+import com.searchfood.SearchFoodBackend.model.data.Location; 
+import com.searchfood.SearchFoodBackend.model.data.FoodTypes; 
+
+import java.util.Map; 
 
 @Component 
 public class StoreInfo{ 
 
     //@NotNull 
-    //private int storeId; 
+    private int storeId; 
     
     @NotNull 
     @Size( max=14, message="The length of StoreName must be smaller than 14" ) 
@@ -39,23 +49,33 @@ public class StoreInfo{
     //@NotNull 
     private String creator; 
     
+    /* 
+     * 處理nested Json: 
+     *  1. 用Java Bean來封裝該nested Json, 並轉成JSONObject, 但若要存至DB,則必須要實做序列化, 或是用JSONObject.toString()來存入MySQL 
+     *  2. 用Map<String,String>來封裝該nested Json, 但會有Cannot create a JSON value from a string with CHARACTER SET 'binary'. 
+     */ 
     @NotNull 
-    private String lat_long; 
-
+    private Location lat_long; //private Map<String,String> lat_long; 
     @NotNull 
-    private String types; 
+    private FoodTypes types; //private Map<String,String> types; 
 
-    private Date created_date; 
+    private LocalDateTime createdAt; 
+    // 可以使用java.util.Date or java.sql.Timestamp or java.time.LocalDateTime, the point is the time_zone of MySQL.  
+    // ref: modify the time zone of MySQL. 
+    // https://bonvoyagelin.blogspot.com/2011/01/mysql.html?fbclid=IwAR3c6-omIFTqSFThTahQEvwjAM6bPcvI3F2QFUl7quH_ColRrt9NQjLeKEo
+    
     private String business_time; 
-    //private int cleek_week; 
-    //private int cleek_cum;  
+    private int cleek_week; 
+    private int cleek_cum;  
     
 
     // constructor 
     public StoreInfo(){ 
 
     } 
-    public StoreInfo(String n, String c, String d, String a, String t, String ct, String latlong, String ty, Date cd, String bt ){ 
+
+    public StoreInfo(String n, String c, String d, String a, String t, String ct, 
+                                Location latlong, FoodTypes ty, LocalDateTime cd, String bt ){ 
         this.storename = n; 
         this.city = c; 
         this.district = d; 
@@ -64,14 +84,14 @@ public class StoreInfo{
         this.creator = ct; 
         this.lat_long = latlong; 
         this.types = ty; 
-        this.created_date = cd; 
+        this.createdAt = cd; 
         this.business_time = bt; 
     } 
 
     // setter 
-    //public void setStoreId( int id ){ 
-    //    this.storeId = id; 
-    //} 
+    public void setStoreId( int id ){ 
+        this.storeId = id; 
+    } 
 
     public void setStorename( String name ){ 
         this.storename = name; 
@@ -97,26 +117,31 @@ public class StoreInfo{
         this.creator = catr; 
     } 
 
-    public void setCreatedDate( Date date ){ 
-        this.created_date = date; 
+    public void setCreatedAt( LocalDateTime date ){ 
+        // this.createdAt = Timestamp.valueOf( date ); // converting the date from java.time.LocalDateTime to java.sql.Timestamp format. 
+        this.createdAt = date; 
     } 
 
     public void setBusinessTime( String time ){ 
         this.business_time = time; 
     } 
 
-    public void setLat_long( String loc ){ 
+    //public void setLat_long( Map<String,String> loc ){ 
+    public void setLat_long( Location loc ){ 
+        System.out.println("LOC: " + loc); 
         this.lat_long = loc; 
     } 
 
-    public void setTypes( String type ){ 
+    //public void setTypes( Map<String,String> type ){ 
+    public void setTypes( FoodTypes type ){ 
+        System.out.println("TYPE: " + type); 
         this.types = type; 
     } 
 
     // getter 
-    //public int getStoreId( int id ){ 
-    //    return this.storeId = id; 
-    //} 
+    public int getStoreId( int id ){ 
+        return this.storeId = id; 
+    } 
 
     public String getStorename(){ 
         return this.storename; 
@@ -142,20 +167,23 @@ public class StoreInfo{
         return this.creator; 
     } 
 
-    public Date getCreatedDate(){ 
-        return this.created_date; 
+    public LocalDateTime getCreatedAt(){ 
+        return this.createdAt; 
     } 
 
     public String getBusinessTime(){ 
         return this.business_time; 
     } 
 
+    //public Map<String,String> getLat_long(){ 
     public String getLat_long(){ 
-        return this.lat_long; 
+       //return this.lat_long.getJson(); 
+       return this.lat_long.getJsonString(); // 必須將JSONObject用toString()輸出才能存至MySQL的JSON欄位 
     } 
 
+    //public Map<String,String> getTypes(){ 
     public String getTypes(){ 
-        return this.types; 
+        return this.types.getJsonString(); 
     } 
 
 } 
