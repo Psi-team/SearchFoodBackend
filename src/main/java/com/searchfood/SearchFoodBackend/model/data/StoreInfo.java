@@ -19,9 +19,10 @@ import com.searchfood.SearchFoodBackend.model.data.Location;
 import com.searchfood.SearchFoodBackend.model.data.FoodTypes; 
 
 import java.util.Map; 
+import java.util.HashMap; 
 
 @Component 
-public class StoreInfo{ 
+public class StoreInfo implements Serializable{ 
 
     //@NotNull 
     private int storeId; 
@@ -128,7 +129,6 @@ public class StoreInfo{
 
     //public void setLat_long( Map<String,String> loc ){ 
     public void setLat_long( Location loc ){ 
-        System.out.println("LOC: " + loc); 
         this.lat_long = loc; 
     } 
 
@@ -175,15 +175,30 @@ public class StoreInfo{
         return this.business_time; 
     } 
 
-    //public Map<String,String> getLat_long(){ 
-    public String getLat_long(){ 
-       //return this.lat_long.getJson(); 
+    public Map<String,String> getLat_long(){ 
+        Map<String,String> map = new HashMap(); 
+        map.put("lat",this.lat_long.getLatitude()); 
+        map.put("long",this.lat_long.getLongtitude()); 
+        return map;  
+    } 
+
+    public Map<String,String> getTypes(){ 
+        Map<String,String> map = new HashMap(); 
+        map.put("rices",this.types.getRices()); 
+        return map;  
+    } 
+
+
+    /* JsonXXX() below is in order to get the String type of JSONObject to write in MySQL, whose name cannot be getXXX. 
+     * Becuase the container will view getXXX as getter then converts it to the JSON data of Http response. */ 
+    public String JsonLocation(){ 
+       // this getter is made in order to get the String of JSONObject to store in MySQL.  
        return this.lat_long.getJsonString(); // 必須將JSONObject用toString()輸出才能存至MySQL的JSON欄位 
     } 
 
-    //public Map<String,String> getTypes(){ 
-    public String getTypes(){ 
-        return this.types.getJsonString(); 
+    public String JsonTypes(){ 
+       // this getter is made in order to get the String of JSONObject to store in MySQL.  
+       return this.types.getJsonString(); // 必須將JSONObject用toString()輸出才能存至MySQL的JSON欄位 
     } 
 
 } 

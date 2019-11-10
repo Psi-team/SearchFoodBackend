@@ -36,8 +36,7 @@ public class FoodTypes{
     } 
 
     public JSONObject getJson(){ 
-        System.out.println(this.rices); 
-        System.out.println(this.noodles); 
+        // This getter is for getting the org.json.JSONObject 
         JSONObject json = new JSONObject(); 
         json.put("rices",this.rices); 
         json.put("noodles",this.noodles); 
@@ -45,6 +44,7 @@ public class FoodTypes{
     } 
     
     public String getJsonString(){ 
+        // This getter is for getting the org.json.JSONObject in order to write data to MySQL.  
         return this.getJson().toString(); 
     } 
 

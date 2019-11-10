@@ -5,7 +5,7 @@ import java.io.Serializable;
 import com.fasterxml.jackson.annotation.JsonProperty;  
 import org.json.JSONObject; 
 
-public class Location{ 
+public class Location implements Serializable{ 
 
     private String latitude; 
     private String longtitude; 
@@ -58,7 +58,8 @@ public class Location{
     } 
     */ 
 
-    public JSONObject getJson(){ 
+    public JSONObject getLocation(){ 
+        // This getter is for getting the org.json.JSONObject 
         JSONObject json = new JSONObject(); 
         json.put("lat",latitude); 
         json.put("long",longtitude); 
@@ -66,7 +67,8 @@ public class Location{
     } 
     
     public String getJsonString(){ 
-        return this.getJson().toString(); 
+        // This getter is for getting the org.json.JSONObject in order to write data to MySQL.  
+        return this.getLocation().toString(); 
     } 
 
     @Override 

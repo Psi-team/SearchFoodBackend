@@ -42,9 +42,8 @@ public class StoreInfoController{
         this.storeInfoImp = storeInfoImp; 
     } 
 
-    @PostMapping 
-    @ResponseStatus(HttpStatus.CREATED) 
-    public StoreInfo createNewStoreInfo( @Valid @RequestBody StoreInfo storeInfo, 
+    @PostMapping( consumes="application/json" )  
+    public ResponseEntity<?> createNewStoreInfo( @Valid @RequestBody StoreInfo storeInfo, 
             Errors errors, @RequestHeader("Authorization") String token ){ 
 
         String username; 
@@ -61,7 +60,6 @@ public class StoreInfoController{
         
         // check the data whether valid or not. 
         if ( errors.hasErrors() ){ 
-            System.out.println(errors); 
             log.warn( "The data for build new store infomation is invalid." );  
             throw new InvalidDataException( errors ); 
         } 
@@ -69,7 +67,7 @@ public class StoreInfoController{
 
         if ( (storeInfoData  = storeInfoImp.createNewStoreInfoToDatabase( storeInfo, username )) != null ){ 
             log.info( username + " has created the new store info " + storeInfo.getStorename() + "." ); 
-            return storeInfoData; 
+            return new ResponseEntity<>( storeInfoData, HttpStatus.CREATED ); 
         } 
 
         throw new DataExistException( storeInfo.getStorename() + " has existed in the table StoreInfo." ); 

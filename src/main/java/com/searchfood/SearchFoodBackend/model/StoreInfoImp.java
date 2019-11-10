@@ -90,7 +90,7 @@ public class StoreInfoImp implements StoreInfoITF, FindDataITF{
         // jdbc.update( PreparedStatementCreator, KeyHolder ); 
         jdbc.update( "INSERT INTO StoreInfo(store_name,city,district,address,tel,creator,createdAt,lat_long,types) VALUES(?,?,?,?,?,?,?,?,?);", 
             storeInfo.getStorename(), storeInfo.getCity(), storeInfo.getDistrict(), storeInfo.getAddress(), 
-            storeInfo.getTel(), storeInfo.getCreator(), storeInfo.getCreatedAt(), storeInfo.getLat_long(), storeInfo.getTypes() 
+            storeInfo.getTel(), storeInfo.getCreator(), storeInfo.getCreatedAt(), storeInfo.JsonLocation(), storeInfo.JsonTypes() 
             // 若使用Java Bean包裝nested Json,則必須使用JSONPObject來封裝並用toString()來存至DB. 
             // storeInfo.getLat_long()中,必須將JSONObject用toString()輸出才能存至MySQL的JSON欄位 
             // storeInfo.getTypes()中,必須將JSONArray用toString()輸出才能存至MySQL的JSON欄位 

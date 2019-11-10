@@ -31,8 +31,8 @@ import java.util.List;
 import java.util.LinkedList; 
 
 @RestController 
-@RequestMapping( value="signup", produces="application/json" ) 
 @CrossOrigin("*") 
+@RequestMapping( value="signup", produces="application/json" ) 
 public class SignUpController{ 
 
     private SignUpMemberImp signupImp;  

@@ -10,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 // user-define class 
 import com.searchfood.SearchFoodBackend.utils.messages.interfaces.SignUpMailService; 
 import com.searchfood.SearchFoodBackend.model.data.SignUpMember; 
+import com.searchfood.SearchFoodBackend.model.data.StoreInfo; 
 // logging import org.slf4j.Logger; 
 import org.slf4j.Logger; 
 import org.slf4j.LoggerFactory; 
@@ -17,8 +18,11 @@ import org.slf4j.LoggerFactory;
 @Service 
 public class SendSignUpMailService implements SignUpMailService{ 
 
+    /* Maybe can use the Spring Integration by stmp. */ 
+
     private JavaMailSender javaMailSender; 
     private static final Logger log = LoggerFactory.getLogger( SendSignUpMailService.class ); 
+    private SimpleMailMessage msg = new SimpleMailMessage(); 
 
     @Autowired 
     public SendSignUpMailService( JavaMailSender m ){ 
@@ -27,7 +31,6 @@ public class SendSignUpMailService implements SignUpMailService{
 
     @Override 
     public void sendEmail( SignUpMember signupMember ){ 
-        SimpleMailMessage msg = new SimpleMailMessage(); 
         msg.setTo( signupMember.getUsername() ); 
 
         msg.setSubject( "Thanks you to sign up for SearchFood." ); 
@@ -40,6 +43,12 @@ public class SendSignUpMailService implements SignUpMailService{
         log.info("Sending email to " + signupMember.getUsername() + "!!!" );  
     } 
 
+    
+    @Override 
+    public void sendEmailCreateStores( String username, StoreInfo storeInfo ){ 
+        msg.setTo( username ); 
+        String text = String.format(); 
+    } 
 } 
 
 
