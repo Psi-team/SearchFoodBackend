@@ -47,7 +47,6 @@ public class SendSignUpMailService implements SignUpMailService{
     @Override 
     public void sendEmailCreateStores( String username, StoreInfo storeInfo ){ 
         msg.setTo( username ); 
-        String text = String.format(); 
     } 
 } 
 

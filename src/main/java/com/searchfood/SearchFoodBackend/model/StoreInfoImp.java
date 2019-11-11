@@ -11,15 +11,14 @@ import org.springframework.jdbc.support.KeyHolder;
 import org.springframework.jdbc.support.GeneratedKeyHolder; 
 
 import org.springframework.dao.EmptyResultDataAccessException; 
+import org.springframework.dao.DataAccessException; 
 
 import org.slf4j.Logger; 
 import org.slf4j.LoggerFactory; 
-import org.json.JSONObject; 
 
 import java.sql.SQLException; 
 import java.sql.ResultSet; 
 
-import java.sql.Timestamp; 
 import java.time.LocalDateTime; 
 import java.time.ZoneId; 
 
@@ -29,7 +28,7 @@ import com.searchfood.SearchFoodBackend.model.data.StoreInfo;
 import com.searchfood.SearchFoodBackend.utils.exceptions.DataExistException; 
 
 @Repository 
-public class StoreInfoImp implements StoreInfoITF, FindDataITF{ 
+public class StoreInfoImp implements StoreInfoITF{ 
 
     private final static Logger log = LoggerFactory.getLogger( StoreInfoImp.class ); 
     private JdbcTemplate jdbc; 
@@ -42,6 +41,7 @@ public class StoreInfoImp implements StoreInfoITF, FindDataITF{
         this.jdbc = j; 
     } 
 
+    /* 
     @Override 
     public int isExist(){ 
         // Why try catch statement doesn't work. 
@@ -66,6 +66,7 @@ public class StoreInfoImp implements StoreInfoITF, FindDataITF{
         } 
         
     } 
+    */ 
 
     @Override 
     public StoreInfo createNewStoreInfoToDatabase( StoreInfo storeInfo, String username ){ 
@@ -73,33 +74,29 @@ public class StoreInfoImp implements StoreInfoITF, FindDataITF{
                      // 因為@Repository預設為Singleton因此一旦在runtime中storeId被改變不為初始化的0,它就不會是0,storeId會一直存在直到程式結束 
         this.username = username; 
         this.storeInfo = storeInfo; 
-        log.debug( "username: " + username + "\n" + 
-                   "\t\t\t\t\tstoreName: " + storeInfo.getStorename() + "\n" ); 
-        if ( 1 == isExist() ) return null; // the store has already existed in the databases;  
+        log.debug( "username: " + username + "\tstoreName: " + storeInfo.getStorename() + "\n" ); 
+        //if ( 1 == isExist() ) return null; // the store has already existed in the databases;  
         storeInfo.setCreator( username ); 
         // setting localdatetime to MySQL. 
         storeInfo.setCreatedAt( LocalDateTime.now(ZoneId.of("Asia/Taipei")) ); 
-        SaveAndQuery(); 
+        if ( 1 != save() ) return null; 
         return storeInfo; 
     } 
 
-    private int SaveAndQuery(){ 
+    private int save(){ 
 
-        //KeyHolder keyHolder = new GeneratedKeyHolder(); 
-        
-        // jdbc.update( PreparedStatementCreator, KeyHolder ); 
-        jdbc.update( "INSERT INTO StoreInfo(store_name,city,district,address,tel,creator,createdAt,lat_long,types) VALUES(?,?,?,?,?,?,?,?,?);", 
-            storeInfo.getStorename(), storeInfo.getCity(), storeInfo.getDistrict(), storeInfo.getAddress(), 
-            storeInfo.getTel(), storeInfo.getCreator(), storeInfo.getCreatedAt(), storeInfo.JsonLocation(), storeInfo.JsonTypes() 
-            // 若使用Java Bean包裝nested Json,則必須使用JSONPObject來封裝並用toString()來存至DB. 
-            // storeInfo.getLat_long()中,必須將JSONObject用toString()輸出才能存至MySQL的JSON欄位 
-            // storeInfo.getTypes()中,必須將JSONArray用toString()輸出才能存至MySQL的JSON欄位 
-        ); 
-
-        //jdbc.query( 
-        //    "SELECT createdAt FROM StoreInfo WHERE store_id=?;", 
-        //); 
-        return 1; 
+        try{ 
+            return 
+            jdbc.update( "INSERT INTO StoreInfo(store_name,city,district,address,tel,creator,createdAt,lat_long,types) VALUES(?,?,?,?,?,?,?,?,?);", 
+                storeInfo.getStorename(), storeInfo.getCity(), storeInfo.getDistrict(), storeInfo.getAddress(), 
+                storeInfo.getTel(), storeInfo.getCreator(), storeInfo.getCreatedAt(), storeInfo.JsonLatLongString(), storeInfo.JsonTypesString() 
+                // 若使用Java Bean包裝nested Json,則必須使用JSONPObject來封裝並用toString()來存至DB. 
+                // storeInfo.getLat_long()中,必須將JSONObject用toString()輸出才能存至MySQL的JSON欄位 
+                // storeInfo.getTypes()中,必須將JSONArray用toString()輸出才能存至MySQL的JSON欄位 
+            ); 
+        }catch( DataAccessException e ){ 
+            return 0; 
+        } 
     } 
 
 } 

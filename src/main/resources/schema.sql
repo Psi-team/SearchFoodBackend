@@ -65,3 +65,11 @@ CREATE TABLE IF NOT EXISTS StoreComment(
 ); 
  
 
+/* Create the food table */ 
+CREATE TABLE IF NOT EXISTS FoodTypes( 
+    category VARCHAR(5) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci, 
+    id INT NOT NULL, 
+    details VARCHAR(5) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci, 
+    typs VARCHAR(5) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci, 
+    PRIMARY KEY( category, id ) 
+); 

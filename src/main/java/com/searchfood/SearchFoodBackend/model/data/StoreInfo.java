@@ -15,8 +15,6 @@ import java.sql.Timestamp;
 import java.io.Serializable; 
 import org.json.JSONObject; 
 import com.fasterxml.jackson.annotation.JsonProperty;  
-import com.searchfood.SearchFoodBackend.model.data.Location; 
-import com.searchfood.SearchFoodBackend.model.data.FoodTypes; 
 
 import java.util.Map; 
 import java.util.HashMap; 
@@ -54,13 +52,14 @@ public class StoreInfo implements Serializable{
      * 處理nested Json: 
      *  1. 用Java Bean來封裝該nested Json, 並轉成JSONObject, 但若要存至DB,則必須要實做序列化, 或是用JSONObject.toString()來存入MySQL 
      *  2. 用Map<String,String>來封裝該nested Json, 但會有Cannot create a JSON value from a string with CHARACTER SET 'binary'. 
+     *  在此的作法是用Map來裝nested Json, 並且透過定義成員函數將Map轉換成JSONObject並使用.toString()將其寫入資料庫
      */ 
     @NotNull 
-    private Location lat_long; //private Map<String,String> lat_long; 
+    private Map<String,String> lat_long; // private Location lat_long; 
     @NotNull 
-    private FoodTypes types; //private Map<String,String> types; 
+    private Map<String,String> types; // private FoodTypes types; 
 
-    private LocalDateTime createdAt; 
+    private Timestamp createdAt; 
     // 可以使用java.util.Date or java.sql.Timestamp or java.time.LocalDateTime, the point is the time_zone of MySQL.  
     // ref: modify the time zone of MySQL. 
     // https://bonvoyagelin.blogspot.com/2011/01/mysql.html?fbclid=IwAR3c6-omIFTqSFThTahQEvwjAM6bPcvI3F2QFUl7quH_ColRrt9NQjLeKEo
@@ -69,14 +68,13 @@ public class StoreInfo implements Serializable{
     private int cleek_week; 
     private int cleek_cum;  
     
-
     // constructor 
     public StoreInfo(){ 
 
     } 
 
     public StoreInfo(String n, String c, String d, String a, String t, String ct, 
-                                Location latlong, FoodTypes ty, LocalDateTime cd, String bt ){ 
+                                Map<String,String> latlong, Map<String,String> ty, Timestamp cd, String bt ){ 
         this.storename = n; 
         this.city = c; 
         this.district = d; 
@@ -119,22 +117,18 @@ public class StoreInfo implements Serializable{
     } 
 
     public void setCreatedAt( LocalDateTime date ){ 
-        // this.createdAt = Timestamp.valueOf( date ); // converting the date from java.time.LocalDateTime to java.sql.Timestamp format. 
-        this.createdAt = date; 
+        this.createdAt = Timestamp.valueOf( date ); // converting the date from java.time.LocalDateTime to java.sql.Timestamp format. 
     } 
 
     public void setBusinessTime( String time ){ 
         this.business_time = time; 
     } 
 
-    //public void setLat_long( Map<String,String> loc ){ 
-    public void setLat_long( Location loc ){ 
+    public void setLat_long( Map<String,String> loc ){ 
         this.lat_long = loc; 
     } 
 
-    //public void setTypes( Map<String,String> type ){ 
-    public void setTypes( FoodTypes type ){ 
-        System.out.println("TYPE: " + type); 
+    public void setTypes( Map<String,String> type ){ 
         this.types = type; 
     } 
 
@@ -167,7 +161,7 @@ public class StoreInfo implements Serializable{
         return this.creator; 
     } 
 
-    public LocalDateTime getCreatedAt(){ 
+    public Timestamp getCreatedAt(){ 
         return this.createdAt; 
     } 
 
@@ -176,29 +170,32 @@ public class StoreInfo implements Serializable{
     } 
 
     public Map<String,String> getLat_long(){ 
-        Map<String,String> map = new HashMap(); 
-        map.put("lat",this.lat_long.getLatitude()); 
-        map.put("long",this.lat_long.getLongtitude()); 
-        return map;  
+        return this.lat_long;  
     } 
 
     public Map<String,String> getTypes(){ 
-        Map<String,String> map = new HashMap(); 
-        map.put("rices",this.types.getRices()); 
-        return map;  
+        return this.types;  
     } 
 
 
     /* JsonXXX() below is in order to get the String type of JSONObject to write in MySQL, whose name cannot be getXXX. 
      * Becuase the container will view getXXX as getter then converts it to the JSON data of Http response. */ 
-    public String JsonLocation(){ 
+    public JSONObject JsonLatLong(){ 
+       return new JSONObject( this.lat_long ); 
+    } 
+    public String JsonLatLongString(){ 
        // this getter is made in order to get the String of JSONObject to store in MySQL.  
-       return this.lat_long.getJsonString(); // 必須將JSONObject用toString()輸出才能存至MySQL的JSON欄位 
+       //return this.lat_long.getJsonString(); // 必須將JSONObject用toString()輸出才能存至MySQL的JSON欄位 
+       return (new JSONObject( this.lat_long )).toString(); 
     } 
 
-    public String JsonTypes(){ 
+    public JSONObject JsonTypes(){ 
        // this getter is made in order to get the String of JSONObject to store in MySQL.  
-       return this.types.getJsonString(); // 必須將JSONObject用toString()輸出才能存至MySQL的JSON欄位 
+       return new JSONObject( this.types ); // 必須將JSONObject用toString()輸出才能存至MySQL的JSON欄位 
+    } 
+    public String JsonTypesString(){ 
+       // this getter is made in order to get the String of JSONObject to store in MySQL.  
+       return (new JSONObject( this.types )).toString(); // 必須將JSONObject用toString()輸出才能存至MySQL的JSON欄位 
     } 
 
 } 
