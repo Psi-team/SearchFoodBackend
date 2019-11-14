@@ -22,7 +22,7 @@ public class Members{
         this.username = name; 
     } 
 
-    public void setPasswd( String pass ){ 
+    public void setPassword( String pass ){ 
         this.password = pass; 
     } 
 
