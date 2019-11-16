@@ -13,11 +13,18 @@ import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.test.context.junit4.SpringRunner; 
 import org.springframework.test.web.servlet.MockMvc; 
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders; 
+import org.springframework.test.web.servlet.result.MockMvcResultHandlers;  
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;//.jsonPath; 
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;//.status; 
 import org.mockito.BDDMockito; 
 import org.springframework.boot.test.context.SpringBootTest; 
 import static org.springframework.http.MediaType.APPLICATION_JSON; 
+import static org.hamcrest.collection.IsCollectionWithSize.hasSize; 
+
+import org.json.JSONObject; 
+import com.fasterxml.jackson.databind.ObjectMapper; 
+import org.springframework.http.ResponseEntity; 
+import org.springframework.http.HttpStatus; 
 
 @RunWith( SpringRunner.class ) 
 @WebMvcTest( LoginController.class ) 
@@ -32,25 +39,27 @@ public class LoginControllerTest{
     @Test 
     public void login() throws Exception{ 
 
-        Members members = new Members(); 
-        TokenRecordsImp tokenImp; 
+        Members members = new Members( "Admin@test.com", "1234567", "Chrome" ); 
         TokenRecords token = new TokenRecords(); 
-        token = tokenImp.saveTokenTable( members ); 
 
-        BDDMockito.given( loginController.login(members)).willReturn(token); 
+        //BDDMockito.given( loginController.login(members) ).willReturn( new ResponseEntity<TokenRecords>(token,HttpStatus.OK) ); 
 
         mvc.perform( 
                 (MockMvcRequestBuilders.post( "/login" ))
-                .content( this.asJsonString( new Members( "Admin@test.com", "1234567", "Chrome" ) ) ) 
                 .contentType( APPLICATION_JSON ) 
+                .content( this.asJsonString( members ) )
+                .characterEncoding("utf-8") // need to add this statements or the request body is not set. 
            ) 
            .andExpect( MockMvcResultMatchers.status().isOk() )
-           .andExpect( MockMvcResultMatchers.jsonPath("$.token").exists() );  
+           .andDo( MockMvcResultHandlers.print() )
+           .andExpect( MockMvcResultMatchers.jsonPath("$.username").value(members.getUsername()) ); // problem here.  
     } 
 
     public static String asJsonString( final Object obj ){ 
         try{ 
-            return new ObjectMapper().writeValueAsString( obj ); 
+            String mapper = new ObjectMapper().writeValueAsString( obj ); 
+            System.out.println("Content: "+mapper); 
+            return mapper; 
         } catch ( Exception e ){ 
             throw new RuntimeException(e); 
         } 

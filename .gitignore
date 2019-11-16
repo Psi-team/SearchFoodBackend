@@ -34,3 +34,4 @@ build/
 BootResults
 
 mail.application
+tmp.log
