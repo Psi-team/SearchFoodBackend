@@ -38,11 +38,9 @@ CREATE TABLE IF NOT EXISTS StoreInfo(
     /*created_date DATE NULL DEFAULT (CURRENT_DATE), */ /* 時間格式預設當天日期, CURRENT_DATE一定要用() */ 
     createdAt TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP, 
     creator VARCHAR(25) NOT NULL, 
-    business_time JSON NULL, 
     click_week INT(3) DEFAULT '0', 
     click_cum INT(4) DEFAULT '0', 
     lat_long JSON NOT NULL, 
-    types JSON NOT NULL, 
     PRIMARY KEY( store_id, store_name, city, district, address ), 
     UNIQUE KEY( store_name, city, district, address ), 
     FOREIGN KEY( creator ) REFERENCES Users( mail )
@@ -51,14 +49,13 @@ CREATE TABLE IF NOT EXISTS StoreInfo(
 
 /* Create the food table */ 
 CREATE TABLE IF NOT EXISTS FoodTypes( 
-    storeId VARCHAR(5) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci, 
+    storeId INT NOT NULL, 
     id INT NOT NULL, 
     details VARCHAR(5) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci, 
     typs VARCHAR(5) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci, 
-    PRIMARY KEY( storeId, id ) 
+    PRIMARY KEY( storeId, id ),  
     FOREIGN KEY( storeId ) REFERENCES StoreInfo( store_id )  
 ); 
-
 
 /* Create BusinessHours */ 
 CREATE TABLE IF NOT EXISTS BusinessHours( 
@@ -68,10 +65,11 @@ CREATE TABLE IF NOT EXISTS BusinessHours(
     wed CHAR(11) NULL, 
     thurs CHAR(11) NULL, 
     fri CHAR(11) NULL, 
+    sat CHAR(11) NULL, 
+    sun CHAR(11) NULL, 
     PRIMARY KEY( storeId ), 
     FOREIGN KEY( storeId ) REFERENCES StoreInfo( store_id ) 
 ); 
-
 
 /* Create the comments of Store */ 
 CREATE TABLE IF NOT EXISTS StoreComment( 
@@ -89,6 +87,5 @@ CREATE TABLE IF NOT EXISTS StoreComment(
     /*FOREIGN KEY( store_name, city, district, address ) REFERENCES StoreInfo( store_name, city, district, address ) */ 
 ); 
  
-
 
 
