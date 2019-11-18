@@ -24,7 +24,7 @@ import com.searchfood.SearchFoodBackend.model.data.TokenRecords;
 public class LogoutImp{ 
     
     private JdbcTemplate jdbc; 
-    private TokenRecords token; 
+    private String token; 
     
     private static final Logger log = LoggerFactory.getLogger( LogoutImp.class ); 
     
@@ -61,7 +61,7 @@ public class LogoutImp{
     } 
     */ 
 
-    public int deleteFromToken( TokenRecords o ){ 
+    public int deleteFromToken( String o ){ 
         this.token = o; 
 
         /* 
@@ -77,9 +77,10 @@ public class LogoutImp{
         return 1; 
     } 
 
-    private int delete( TokenRecords token ){ 
+    private int delete( String token ){ 
         try{ 
-            return jdbc.update( "DELETE FROM Token WHERE Token = ?", token.getToken() ); 
+            System.out.println( "Token: " + token ); 
+            return jdbc.update( "DELETE FROM Token WHERE Token = ?", token ); 
         }catch( DataAccessException e ){ 
             return -1; 
         } 

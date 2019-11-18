@@ -73,7 +73,7 @@ public class TokenRecordsImp implements TokenRecordsITF, FindDataITF{
                                         rs.getDate("birthyear").getYear() + 1900, 
                                         rs.getInt("age")
                                         ),
-                    mem.getUsername(), mem.getPassword() ); 
+                    mem.getUsername(), mem.getPasswd() ); 
 
             //System.out.println( "Member founded."); 
             log.info( "Member " + mem.getUsername() + " founded." ); 

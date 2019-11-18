@@ -48,6 +48,31 @@ CREATE TABLE IF NOT EXISTS StoreInfo(
     FOREIGN KEY( creator ) REFERENCES Users( mail )
 );
 
+
+/* Create the food table */ 
+CREATE TABLE IF NOT EXISTS FoodTypes( 
+    storeId VARCHAR(5) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci, 
+    id INT NOT NULL, 
+    details VARCHAR(5) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci, 
+    typs VARCHAR(5) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci, 
+    PRIMARY KEY( storeId, id ) 
+    FOREIGN KEY( storeId ) REFERENCES StoreInfo( store_id )  
+); 
+
+
+/* Create BusinessHours */ 
+CREATE TABLE IF NOT EXISTS BusinessHours( 
+    storeId INT NOT NULL, 
+    mon CHAR(11) NULL, 
+    tues CHAR(11) NULL, 
+    wed CHAR(11) NULL, 
+    thurs CHAR(11) NULL, 
+    fri CHAR(11) NULL, 
+    PRIMARY KEY( storeId ), 
+    FOREIGN KEY( storeId ) REFERENCES StoreInfo( store_id ) 
+); 
+
+
 /* Create the comments of Store */ 
 CREATE TABLE IF NOT EXISTS StoreComment( 
     store_id INT NOT NULL,
@@ -65,11 +90,5 @@ CREATE TABLE IF NOT EXISTS StoreComment(
 ); 
  
 
-/* Create the food table */ 
-CREATE TABLE IF NOT EXISTS FoodTypes( 
-    category VARCHAR(5) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci, 
-    id INT NOT NULL, 
-    details VARCHAR(5) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci, 
-    typs VARCHAR(5) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci, 
-    PRIMARY KEY( category, id ) 
-); 
+
+

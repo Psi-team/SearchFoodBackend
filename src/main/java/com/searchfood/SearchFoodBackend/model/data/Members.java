@@ -5,16 +5,16 @@ import org.springframework.stereotype.Component;
 public class Members{ 
 
     private String username; 
-    private String password; 
+    private String passwd; 
     private String browser; 
 
     public Members(){ 
 
     } 
 
-    public Members( String username, String password, String brow ){ 
+    public Members( String username, String passwd, String brow ){ 
         this.username = username; 
-        this.password = password; 
+        this.passwd = passwd; 
         this.browser = brow; 
     } 
 
@@ -22,8 +22,8 @@ public class Members{
         this.username = name; 
     } 
 
-    public void setPassword( String pass ){ 
-        this.password = pass; 
+    public void setPasswd( String pass ){ 
+        this.passwd = pass; 
     } 
 
     public void setBrowser( String brow ){ 
@@ -34,8 +34,8 @@ public class Members{
         return this.username; 
     } 
 
-    public String getPassword(){ 
-        return this.password; 
+    public String getPasswd(){ 
+        return this.passwd; 
     } 
 
     public String getBrowser(){ 
