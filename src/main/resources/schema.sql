@@ -47,14 +47,21 @@ CREATE TABLE IF NOT EXISTS StoreInfo(
 );
 
 
+/* Create the StoreTypes table */ 
+CREATE TABLE IF NOT EXISTS StoreTypes( 
+    storeId INT NOT NULL, 
+    foodId INT NOT NULL, 
+    PRIMARY KEY( storeId, foodId ), 
+    FOREIGN KEY( storeId ) REFERENCES StoreInfo( store_id ), 
+    FOREIGN KEY( foodId ) REFERENCES FoodTypes( store_id ), 
+); 
+
 /* Create the food table */ 
 CREATE TABLE IF NOT EXISTS FoodTypes( 
-    storeId INT NOT NULL, 
-    id INT NOT NULL, 
+    foodId INT NOT NULL AUTO_INCREMENT, 
     details VARCHAR(5) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci, 
-    typs VARCHAR(5) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci, 
-    PRIMARY KEY( storeId, id ),  
-    FOREIGN KEY( storeId ) REFERENCES StoreInfo( store_id )  
+    types VARCHAR(5) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci, 
+    PRIMARY KEY( foodId ),  
 ); 
 
 /* Create BusinessHours */ 

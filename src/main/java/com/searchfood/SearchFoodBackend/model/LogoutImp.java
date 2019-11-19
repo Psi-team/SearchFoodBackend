@@ -17,7 +17,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException; 
 
 import com.searchfood.SearchFoodBackend.utils.FindDataITF; 
-import com.searchfood.SearchFoodBackend.model.data.tmpData; 
 import com.searchfood.SearchFoodBackend.model.data.TokenRecords; 
 
 @Repository 

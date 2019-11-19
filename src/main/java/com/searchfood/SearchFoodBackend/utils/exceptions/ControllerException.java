@@ -16,6 +16,7 @@ import org.slf4j.LoggerFactory;
 import com.searchfood.SearchFoodBackend.utils.exceptions.ErrorResponse; 
 import com.searchfood.SearchFoodBackend.utils.exceptions.InvalidDataException; 
 import com.searchfood.SearchFoodBackend.utils.exceptions.NotFoundException; 
+import com.searchfood.SearchFoodBackend.utils.exceptions.DataFailToLoadedException; 
 
 import java.util.List; 
 import java.util.LinkedList; 
@@ -49,6 +50,13 @@ public class ControllerException{
         } 
         log.warn("In ControllerException: InvalidDataException"); 
         return new ResponseEntity<>( invalidDataResponse, HttpStatus.BAD_REQUEST ); 
+    } 
+
+    @ExceptionHandler( DataFailToLoadedException.class ) 
+    public ResponseEntity<?> handleDataFailedToAccess( Exception e ){ 
+        ErrorResponse errorResponse = new ErrorResponse( e.getMessage() ); 
+        log.warn("In ControllerException: DataFailedToAccessException."); 
+        return new ResponseEntity<>( errorResponse, HttpStatus.CONFLICT ); 
     } 
     
 } 

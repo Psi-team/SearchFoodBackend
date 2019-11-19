@@ -58,13 +58,13 @@ public class StoreInfo implements Serializable{
     private Map<String,String> lat_long; // private Location lat_long; 
     @NotNull 
     private Map<String,String> types; // private FoodTypes types; 
+    private Map<String,String> businessHours; 
 
     private Timestamp createdAt; 
     // 可以使用java.util.Date or java.sql.Timestamp or java.time.LocalDateTime, the point is the time_zone of MySQL.  
     // ref: modify the time zone of MySQL. 
     // https://bonvoyagelin.blogspot.com/2011/01/mysql.html?fbclid=IwAR3c6-omIFTqSFThTahQEvwjAM6bPcvI3F2QFUl7quH_ColRrt9NQjLeKEo
     
-    private String business_time; 
     private int cleek_week; 
     private int cleek_cum;  
     
@@ -74,7 +74,7 @@ public class StoreInfo implements Serializable{
     } 
 
     public StoreInfo(String n, String c, String d, String a, String t, String ct, 
-                                Map<String,String> latlong, Map<String,String> ty, Timestamp cd, String bt ){ 
+                                Map<String,String> latlong, Map<String,String> ty, Timestamp cd, Map<String,String> bt ){ 
         this.storename = n; 
         this.city = c; 
         this.district = d; 
@@ -84,7 +84,7 @@ public class StoreInfo implements Serializable{
         this.lat_long = latlong; 
         this.types = ty; 
         this.createdAt = cd; 
-        this.business_time = bt; 
+        this.businessHours = bt; 
     } 
 
     // setter 
@@ -120,8 +120,8 @@ public class StoreInfo implements Serializable{
         this.createdAt = Timestamp.valueOf( date ); // converting the date from java.time.LocalDateTime to java.sql.Timestamp format. 
     } 
 
-    public void setBusinessTime( String time ){ 
-        this.business_time = time; 
+    public void setBusinessHours( Map<String,String> time ){ 
+        this.businessHours = time; 
     } 
 
     public void setLat_long( Map<String,String> loc ){ 
@@ -165,8 +165,8 @@ public class StoreInfo implements Serializable{
         return this.createdAt; 
     } 
 
-    public String getBusinessTime(){ 
-        return this.business_time; 
+    public Map<String,String> getBusinessHours(){ 
+        return this.businessHours; 
     } 
 
     public Map<String,String> getLat_long(){ 
@@ -196,6 +196,15 @@ public class StoreInfo implements Serializable{
     public String JsonTypesString(){ 
        // this getter is made in order to get the String of JSONObject to store in MySQL.  
        return (new JSONObject( this.types )).toString(); // 必須將JSONObject用toString()輸出才能存至MySQL的JSON欄位 
+    } 
+
+    public JSONObject JsonBusinessHours(){ 
+       // this getter is made in order to get the String of JSONObject to store in MySQL.  
+       return new JSONObject( this.businessHours ); // 必須將JSONObject用toString()輸出才能存至MySQL的JSON欄位 
+    } 
+    public String JsonBusinessHoursString(){ 
+       // this getter is made in order to get the String of JSONObject to store in MySQL.  
+       return (new JSONObject( this.businessHours )).toString(); // 必須將JSONObject用toString()輸出才能存至MySQL的JSON欄位 
     } 
 
 } 
