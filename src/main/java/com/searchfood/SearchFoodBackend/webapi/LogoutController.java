@@ -51,7 +51,7 @@ public class LogoutController{
         //  1. 把TokenRecords.java中的setToken( String )刪掉, avoiding setter overloading.  
         //  2. 把setToken(String)的函數名稱改掉,以避免Container不知道要用哪一個setter
         
-        token = token.substring( token.indexOf(" ")+1 ); 
+        //token = token.substring( token.indexOf(" ")+1 ); 
         log.info( "Token: " + token ); 
         if ( 1 != logout.deleteFromToken( token ) ){ 
             throw new NotFoundException( "Token not founded in Database." ); 
