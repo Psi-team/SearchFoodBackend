@@ -87,13 +87,16 @@ public class StoreInfoImp implements StoreInfoITF{
 
         try{ 
             return 
-            jdbc.update( "INSERT INTO StoreInfo(store_name,city,district,address,tel,creator,createdAt,lat_long,types) VALUES(?,?,?,?,?,?,?,?,?);", 
+                // use KeyHolder to get storeId 
+            jdbc.update( "INSERT INTO StoreInfo(store_name,city,district,address,tel,creator,createdAt,lat_long) VALUES(?,?,?,?,?,?,?,?,?);", 
                 storeInfo.getStorename(), storeInfo.getCity(), storeInfo.getDistrict(), storeInfo.getAddress(), 
-                storeInfo.getTel(), storeInfo.getCreator(), storeInfo.getCreatedAt(), storeInfo.JsonLatLongString(), storeInfo.JsonTypesString() 
+                storeInfo.getTel(), storeInfo.getCreator(), storeInfo.getCreatedAt(), storeInfo.JsonLatLongString() 
                 // 若使用Java Bean包裝nested Json,則必須使用JSONPObject來封裝並用toString()來存至DB. 
                 // storeInfo.getLat_long()中,必須將JSONObject用toString()輸出才能存至MySQL的JSON欄位 
                 // storeInfo.getTypes()中,必須將JSONArray用toString()輸出才能存至MySQL的JSON欄位 
             ); 
+            // use storeId to insert values of businessHours. 
+            // use storeId to insert key values of foods 
         }catch( DataAccessException e ){ 
             return 0; 
         } 

@@ -17,6 +17,7 @@ import org.json.JSONObject;
 import com.fasterxml.jackson.annotation.JsonProperty;  
 
 import java.util.Map; 
+import java.util.List; 
 import java.util.HashMap; 
 
 @Component 
@@ -57,7 +58,7 @@ public class StoreInfo implements Serializable{
     @NotNull 
     private Map<String,String> lat_long; // private Location lat_long; 
     @NotNull 
-    private Map<String,String> types; // private FoodTypes types; 
+    private Map<String,List<String>> types; 
     private Map<String,String> businessHours; 
 
     private Timestamp createdAt; 
@@ -74,7 +75,7 @@ public class StoreInfo implements Serializable{
     } 
 
     public StoreInfo(String n, String c, String d, String a, String t, String ct, 
-                                Map<String,String> latlong, Map<String,String> ty, Timestamp cd, Map<String,String> bt ){ 
+                                Map<String,String> latlong, Map<String,List<String>> ty, Timestamp cd, Map<String,String> bt ){ 
         this.storename = n; 
         this.city = c; 
         this.district = d; 
@@ -128,7 +129,7 @@ public class StoreInfo implements Serializable{
         this.lat_long = loc; 
     } 
 
-    public void setTypes( Map<String,String> type ){ 
+    public void setTypes( Map<String,List<String>> type ){ 
         this.types = type; 
     } 
 
@@ -173,7 +174,7 @@ public class StoreInfo implements Serializable{
         return this.lat_long;  
     } 
 
-    public Map<String,String> getTypes(){ 
+    public Map<String,List<String>> getTypes(){ 
         return this.types;  
     } 
 
