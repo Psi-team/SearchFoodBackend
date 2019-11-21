@@ -8,6 +8,9 @@ import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.stereotype.Repository; 
 
 import org.springframework.beans.factory.annotation.Autowired; 
+
+import org.springframework.transaction.annotation.Transactional; 
+
 import org.slf4j.Logger; 
 import org.slf4j.LoggerFactory; 
 
@@ -77,32 +80,24 @@ public class SignUpMemberImp implements SignUpMemberITF{
         */ 
         token.setUsername( signupmember.getUsername() );
         token.setToken();
-        if ( save( token, signupmember ) != 2 ){ // if add to User and Token successfully, it should return 2.  
+        if ( save( token, signupmember ) != true ){ // if add to User and Token successfully, it should return 2.  
             return null; 
         } 
         return token; 
     } 
 
-    private int save( TokenRecords token, SignUpMember signupmember ){ 
-        /* 
-        if ( 0 != jdbc.update( "INSERT INTO Users( mail, passwd, sexual, birthyear ) VALUES( ?, ?, ?, ? )", 
-                        signupmember.getUsername(), signupmember.getPasswd(), 
-                        signupmember.getSexual(), signupmember.getBirthyear() ) && 
-             0 != jdbc.update( "INSERT INTO Token( mail, token, navigator_type ) VALUES( ?, ?, ? )", 
-                        token.getUsername(), token.getToken(), "Nan" ) ){ 
-            return 1; 
-             } 
-        return -1; 
-        */ 
+    //@Transactional // transaction manegement. 
+    private boolean save( TokenRecords token, SignUpMember signupmember ){ 
+        // transcation manegement
         try{ // May consider the transcation problem.  
-            return  jdbc.update( "INSERT INTO Users( mail, passwd, sexual, birthyear ) VALUES( ?, ?, ?, ? )", 
+            jdbc.update( "INSERT INTO Users( mail, passwd, sexual, birthyear ) VALUES( ?, ?, ?, ? )", 
                                 signupmember.getUsername(), signupmember.getPasswd(), 
-                                signupmember.getSexual(), signupmember.getBirthyear() )  
-                    +  
-                    jdbc.update( "INSERT INTO Token( mail, token, navigator_type ) VALUES( ?, ?, ? )", 
+                                signupmember.getSexual(), signupmember.getBirthyear() );  
+            jdbc.update( "INSERT INTO Token( mail, token, navigator_type ) VALUES( ?, ?, ? )", 
                                 token.getUsername(), token.getToken(), "Nan" ); 
+            return true; 
         } catch( DataAccessException e ){ 
-            return -1; 
+            return false; 
         } 
     } 
 } 
