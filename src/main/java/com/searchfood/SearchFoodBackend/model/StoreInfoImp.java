@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository; 
 
 import org.springframework.jdbc.core.JdbcTemplate; 
+import org.springframework.jdbc.core.BatchPreparedStatementSetter; 
 import org.springframework.jdbc.core.RowCallbackHandler; 
 import org.springframework.jdbc.core.RowMapper; 
 import org.springframework.jdbc.support.KeyHolder; 
@@ -26,10 +27,15 @@ import java.sql.PreparedStatement;
 import java.time.LocalDateTime; 
 import java.time.ZoneId; 
 
+import java.util.List; 
+import java.util.ArrayList; 
+import java.util.function.BiConsumer; 
+
 import com.searchfood.SearchFoodBackend.utils.FindDataITF; 
 import com.searchfood.SearchFoodBackend.model.interfaces.StoreInfoITF; 
 import com.searchfood.SearchFoodBackend.model.data.StoreInfo; 
 import com.searchfood.SearchFoodBackend.utils.exceptions.DataExistException; 
+import com.searchfood.SearchFoodBackend.utils.exceptions.NotFoundException; 
 
 @Repository 
 public class StoreInfoImp implements StoreInfoITF{ 
@@ -92,8 +98,8 @@ public class StoreInfoImp implements StoreInfoITF{
                             return ps; 
                          } 
                          , keyHolder ); 
-            int storeId = keyHolder.getKey().intValue(); 
             // use storeId to insert values of businessHours. 
+            int storeId = keyHolder.getKey().intValue(); 
             jdbc.update( "INSERT INTO BusinessHours( storeId, mon, tues, wed, thurs, fri, sat, sun ) VALUES(?,?,?,?,?,?,?,?);", 
                          storeId, 
                          storeInfo.getBusinessHours().get(""), storeInfo.getBusinessHours().get(""), storeInfo.getBusinessHours().get(""), 
@@ -101,13 +107,51 @@ public class StoreInfoImp implements StoreInfoITF{
                          storeInfo.getBusinessHours().get(""), storeInfo.getBusinessHours().get(""), storeInfo.getBusinessHours().get("")  
             ); 
             // use storeId to insert key values of foods 
-            
+            log.debug( "Test in Map: " + storeInfo.getTypes().get("飯") ); 
+            List detailsList = new ArrayList(); 
+            storeInfo.getTypes()
+                .forEach( 
+                    new BiConsumer<String,List>(){ 
+                        @Override 
+                        public void accept( String s, List l ){ 
+                            detailsList.addAll( storeInfo.getTypes().get(s) ); 
+                        } 
+                    }
+                ); 
+            List<Integer> foodIdList = 
+                    jdbc.query(
+                        "SELECT foodId FROM FoodTypes WHERE details = ?", 
+                        this::getFoodIdList, 
+                        detailsList 
+                    ); 
+            jdbc.batchUpdate( 
+                    "INSERT INTO StoreTypes( storeId, foodId ) VALUES( ?, ? );", 
+                    new BatchPreparedStatementSetter(){ 
+                        @Override 
+                        public void setValues( PreparedStatement ps, int i ) throws SQLException{ 
+                            ps.setInt(1, storeId); 
+                            ps.setInt(2, foodIdList.get(i)); 
+                        } 
+                        @Override 
+                        public int getBatchSize(){ 
+                            return foodIdList.size(); 
+                        } 
+                    } 
+            ); 
             return true; 
         }catch( DuplicateKeyException e ){ 
             throw new DataExistException("Data has existed."); 
+        }catch( EmptyResultDataAccessException e ){ 
+            throw new NotFoundException("Data not found."); 
         }catch( DataAccessException e ){ 
             return false; 
         } 
+    } 
+
+    private Integer getFoodIdList( ResultSet rs, int rowNum ) throws SQLException{ 
+        return new Integer( 
+                   rs.getInt("foodId") 
+               ); 
     } 
 
 } 
