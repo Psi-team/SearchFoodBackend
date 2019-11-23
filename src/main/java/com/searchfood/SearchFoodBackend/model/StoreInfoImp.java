@@ -23,6 +23,7 @@ import org.slf4j.LoggerFactory;
 import java.sql.SQLException; 
 import java.sql.ResultSet; 
 import java.sql.PreparedStatement; 
+import java.sql.Statement; 
 
 import java.time.LocalDateTime; 
 import java.time.ZoneId; 
@@ -56,7 +57,7 @@ public class StoreInfoImp implements StoreInfoITF{
                      // 因為@Repository預設為Singleton因此一旦在runtime中storeId被改變不為初始化的0,它就不會是0,storeId會一直存在直到程式結束 
         this.username = username; 
         this.storeInfo = storeInfo; 
-        log.debug( "username: " + username + "\tstoreName: " + storeInfo.getStorename() + "\n" ); 
+        log.debug( "username: " + username + "\tstoreName: " + storeInfo.getStorename() ); 
         storeInfo.setCreator( username ); 
         // setting localdatetime to MySQL. 
         storeInfo.setCreatedAt( LocalDateTime.now(ZoneId.of("Asia/Taipei")) ); 
@@ -72,7 +73,7 @@ public class StoreInfoImp implements StoreInfoITF{
     //@Transactional(rollbackFor=Exception.class)  
     public boolean save(){ 
 
-        try{ 
+        //try{ 
             /* 
             jdbc.update( "INSERT INTO StoreInfo(store_name,city,district,address,tel,creator,createdAt,lat_long) VALUES(?,?,?,?,?,?,?,?,?);", 
                 storeInfo.getStorename(), storeInfo.getCity(), storeInfo.getDistrict(), storeInfo.getAddress(), 
@@ -81,30 +82,33 @@ public class StoreInfoImp implements StoreInfoITF{
             */ 
             // use KeyHolder to get storeId 
             String sql = 
-                "INSERT INTO StoreInfo(store_name,city,district,address,tel,createdAt,creator,lat_long) VALUES(?,?,?,?,?,?,?,?,?);"; 
+                "INSERT INTO StoreInfo(store_name,city,district,address,tel,createdAt,creator,lat_long) VALUES(?,?,?,?,?,?,?,?);"; 
             KeyHolder keyHolder = new GeneratedKeyHolder(); 
             jdbc.update( connection -> { 
-                            PreparedStatement ps = connection.prepareStatement( sql ); 
-                            ps.setString(2,storeInfo.getStorename()); 
-                            ps.setString(3,storeInfo.getCity()); 
-                            ps.setString(4,storeInfo.getDistrict()); 
-                            ps.setString(5,storeInfo.getAddress()); 
-                            ps.setString(6,storeInfo.getTel()); 
-                            ps.setTimestamp(7,storeInfo.getCreatedAt()); 
-                            ps.setString(8,storeInfo.getCreator()); 
-                            ps.setString(11,storeInfo.JsonLatLongString());// may cause problem. 
+                            PreparedStatement ps = connection.prepareStatement( sql, Statement.RETURN_GENERATED_KEYS ); // setting keyHolder by 2nd arg. 
+                            ps.setString(1,storeInfo.getStorename()); 
+                            ps.setString(2,storeInfo.getCity()); 
+                            ps.setString(3,storeInfo.getDistrict()); 
+                            ps.setString(4,storeInfo.getAddress()); 
+                            ps.setString(5,storeInfo.getTel()); 
+                            ps.setTimestamp(6,storeInfo.getCreatedAt()); 
+                            ps.setString(7,storeInfo.getCreator()); 
+                            ps.setString(8,storeInfo.JsonLatLongString());// may cause problem. 
                             // 若使用Java Bean包裝nested Json,則必須使用JSONPObject來封裝並用toString()來存至DB. 
                             // storeInfo.getLat_long()中,必須將JSONObject用toString()輸出才能存至MySQL的JSON欄位 
                             return ps; 
-                         } 
-                         , keyHolder ); 
+                         }, 
+                         keyHolder ); 
             // use storeId to insert values of businessHours. 
             int storeId = keyHolder.getKey().intValue(); 
+            log.debug("Afer updating StoreInfo, the storeId is " + storeId); 
+            log.debug("BusinessHours are " + storeInfo.getBusinessHours()); 
             jdbc.update( "INSERT INTO BusinessHours( storeId, mon, tues, wed, thurs, fri, sat, sun ) VALUES(?,?,?,?,?,?,?,?);", 
                          storeId, 
-                         storeInfo.getBusinessHours().get(""), storeInfo.getBusinessHours().get(""), storeInfo.getBusinessHours().get(""), 
-                         storeInfo.getBusinessHours().get(""), 
-                         storeInfo.getBusinessHours().get(""), storeInfo.getBusinessHours().get(""), storeInfo.getBusinessHours().get("")  
+                         storeInfo.getBusinessHours().get("Mon"), storeInfo.getBusinessHours().get("Tues"), 
+                         storeInfo.getBusinessHours().get("Wed"), storeInfo.getBusinessHours().get("Thur"), 
+                         storeInfo.getBusinessHours().get("Fri"), storeInfo.getBusinessHours().get("Sat"), 
+                         storeInfo.getBusinessHours().get("Sun")  
             ); 
             // use storeId to insert key values of foods 
             log.debug( "Test in Map: " + storeInfo.getTypes().get("飯") ); 
@@ -118,12 +122,14 @@ public class StoreInfoImp implements StoreInfoITF{
                         } 
                     }
                 ); 
+            log.debug("The details of food types: " + detailsList); 
             List<Integer> foodIdList = 
                     jdbc.query(
                         "SELECT foodId FROM FoodTypes WHERE details = ?", 
                         this::getFoodIdList, 
                         detailsList 
                     ); 
+            log.debug("The foodId of details " + foodIdList ); 
             jdbc.batchUpdate( 
                     "INSERT INTO StoreTypes( storeId, foodId ) VALUES( ?, ? );", 
                     new BatchPreparedStatementSetter(){ 
@@ -139,13 +145,13 @@ public class StoreInfoImp implements StoreInfoITF{
                     } 
             ); 
             return true; 
-        }catch( DuplicateKeyException e ){ 
-            throw new DataExistException("Data has existed."); 
-        }catch( EmptyResultDataAccessException e ){ 
-            throw new NotFoundException("Data not found."); 
-        }catch( DataAccessException e ){ 
-            return false; 
-        } 
+        //}catch( DuplicateKeyException e ){ 
+        //    throw new DataExistException("Data has existed."); 
+        //}catch( EmptyResultDataAccessException e ){ 
+        //    throw new NotFoundException("Data not found."); 
+        //}catch( DataAccessException e ){ 
+        //    return false; 
+        //} 
     } 
 
     private Integer getFoodIdList( ResultSet rs, int rowNum ) throws SQLException{ 

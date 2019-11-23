@@ -12,8 +12,8 @@ CREATE TABLE IF NOT EXISTS Users(
     sexual INT NOT NULL, 
     birthyear YEAR NOT NULL, 
     age TINYINT DEFAULT ( YEAR(CURRENT_DATE) - birthyear ), 
-    PRIMARY KEY( userId, mail ) 
-    UNIQUE KEY( mail ), 
+    PRIMARY KEY( userId, mail ),  
+    UNIQUE KEY mail ( mail ) 
 ); 
 
 /* Create the User token */
@@ -42,7 +42,7 @@ CREATE TABLE IF NOT EXISTS StoreInfo(
     click_cum INT(4) DEFAULT '0', 
     lat_long JSON NOT NULL, 
     PRIMARY KEY( store_id, store_name, city, district, address ), 
-    UNIQUE KEY( store_name, city, district, address ), 
+    UNIQUE KEY store_name ( store_name, city, district, address ), 
     FOREIGN KEY( creator ) REFERENCES Users( mail )
 );
 
@@ -53,7 +53,7 @@ CREATE TABLE IF NOT EXISTS StoreTypes(
     foodId INT NOT NULL, 
     PRIMARY KEY( storeId, foodId ), 
     FOREIGN KEY( storeId ) REFERENCES StoreInfo( store_id ), 
-    FOREIGN KEY( foodId ) REFERENCES FoodTypes( store_id ), 
+    FOREIGN KEY( foodId ) REFERENCES FoodTypes( store_id )  
 ); 
 
 /* Create the food table */ 
@@ -61,7 +61,7 @@ CREATE TABLE IF NOT EXISTS FoodTypes(
     foodId INT NOT NULL AUTO_INCREMENT, 
     details VARCHAR(5) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci, 
     types VARCHAR(5) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci, 
-    PRIMARY KEY( foodId ),  
+    PRIMARY KEY( foodId ) 
 ); 
 
 /* Create BusinessHours */ 
