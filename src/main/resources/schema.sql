@@ -42,19 +42,10 @@ CREATE TABLE IF NOT EXISTS StoreInfo(
     click_cum INT(4) DEFAULT '0', 
     lat_long JSON NOT NULL, 
     PRIMARY KEY( store_id, store_name, city, district, address ), 
-    UNIQUE KEY store_name ( store_name, city, district, address ), 
+    /*UNIQUE KEY store_name ( store_name, city, district, address ), */ 
+    UNIQUE KEY city ( city, district, address ), 
     FOREIGN KEY( creator ) REFERENCES Users( mail )
 );
-
-
-/* Create the StoreTypes table */ 
-CREATE TABLE IF NOT EXISTS StoreTypes( 
-    storeId INT NOT NULL, 
-    foodId INT NOT NULL, 
-    PRIMARY KEY( storeId, foodId ), 
-    FOREIGN KEY( storeId ) REFERENCES StoreInfo( store_id ), 
-    FOREIGN KEY( foodId ) REFERENCES FoodTypes( store_id )  
-); 
 
 /* Create the food table */ 
 CREATE TABLE IF NOT EXISTS FoodTypes( 
@@ -76,6 +67,15 @@ CREATE TABLE IF NOT EXISTS BusinessHours(
     sun CHAR(11) NULL, 
     PRIMARY KEY( storeId ), 
     FOREIGN KEY( storeId ) REFERENCES StoreInfo( store_id ) 
+); 
+
+/* Create the StoreTypes table */ 
+CREATE TABLE IF NOT EXISTS StoreTypes( 
+    storeId INT NOT NULL, 
+    foodId INT NOT NULL, 
+    PRIMARY KEY( storeId, foodId ), 
+    FOREIGN KEY( storeId ) REFERENCES StoreInfo( store_id ), 
+    FOREIGN KEY( foodId ) REFERENCES FoodTypes( foodId )  
 ); 
 
 /* Create the comments of Store */ 
