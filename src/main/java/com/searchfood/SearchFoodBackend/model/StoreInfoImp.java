@@ -35,6 +35,7 @@ import java.util.function.BiConsumer;
 import com.searchfood.SearchFoodBackend.utils.FindDataITF; 
 import com.searchfood.SearchFoodBackend.model.interfaces.StoreInfoITF; 
 import com.searchfood.SearchFoodBackend.model.data.StoreInfo; 
+import com.searchfood.SearchFoodBackend.model.GetFoodTypesImp; 
 import com.searchfood.SearchFoodBackend.utils.exceptions.DataExistException; 
 import com.searchfood.SearchFoodBackend.utils.exceptions.NotFoundException; 
 
@@ -45,10 +46,12 @@ public class StoreInfoImp implements StoreInfoITF{
     private JdbcTemplate jdbc; 
     private String username; 
     private StoreInfo storeInfo; 
+    private GetFoodTypesImp getFoodTypesImp; 
 
     @Autowired 
-    public StoreInfoImp( JdbcTemplate j ){ 
+    public StoreInfoImp( JdbcTemplate j, GetFoodTypesImp g ){ 
         this.jdbc = j; 
+        this.getFoodTypesImp = g; 
     } 
 
     @Override 
@@ -73,19 +76,14 @@ public class StoreInfoImp implements StoreInfoITF{
     //@Transactional(rollbackFor=Exception.class)  
     public boolean save(){ 
 
-        //try{ 
-            /* 
-            jdbc.update( "INSERT INTO StoreInfo(store_name,city,district,address,tel,creator,createdAt,lat_long) VALUES(?,?,?,?,?,?,?,?,?);", 
-                storeInfo.getStorename(), storeInfo.getCity(), storeInfo.getDistrict(), storeInfo.getAddress(), 
-                storeInfo.getTel(), storeInfo.getCreator(), storeInfo.getCreatedAt(), storeInfo.JsonLatLongString() 
-            ); 
-            */ 
+        try{ 
             // use KeyHolder to get storeId 
             String sql = 
                 "INSERT INTO StoreInfo(store_name,city,district,address,tel,createdAt,creator,lat_long) VALUES(?,?,?,?,?,?,?,?);"; 
             KeyHolder keyHolder = new GeneratedKeyHolder(); 
             jdbc.update( connection -> { 
                             PreparedStatement ps = connection.prepareStatement( sql, Statement.RETURN_GENERATED_KEYS ); // setting keyHolder by 2nd arg. 
+                            // the first arguement of setXXX() is the order of the arg of SQL statement. 
                             ps.setString(1,storeInfo.getStorename()); 
                             ps.setString(2,storeInfo.getCity()); 
                             ps.setString(3,storeInfo.getDistrict()); 
@@ -95,7 +93,7 @@ public class StoreInfoImp implements StoreInfoITF{
                             ps.setString(7,storeInfo.getCreator()); 
                             ps.setString(8,storeInfo.JsonLatLongString());// may cause problem. 
                             // 若使用Java Bean包裝nested Json,則必須使用JSONPObject來封裝並用toString()來存至DB. 
-                            // storeInfo.getLat_long()中,必須將JSONObject用toString()輸出才能存至MySQL的JSON欄位 
+                            // storeInfo.getLatlong()中,必須將JSONObject用toString()輸出才能存至MySQL的JSON欄位 
                             return ps; 
                          }, 
                          keyHolder ); 
@@ -105,14 +103,14 @@ public class StoreInfoImp implements StoreInfoITF{
             log.debug("BusinessHours are " + storeInfo.getBusinessHours()); 
             jdbc.update( "INSERT INTO BusinessHours( storeId, mon, tues, wed, thurs, fri, sat, sun ) VALUES(?,?,?,?,?,?,?,?);", 
                          storeId, 
-                         storeInfo.getBusinessHours().get("Mon"), storeInfo.getBusinessHours().get("Tues"), 
-                         storeInfo.getBusinessHours().get("Wed"), storeInfo.getBusinessHours().get("Thur"), 
-                         storeInfo.getBusinessHours().get("Fri"), storeInfo.getBusinessHours().get("Sat"), 
-                         storeInfo.getBusinessHours().get("Sun")  
+                         storeInfo.getBusinessHours().get("星期一"), storeInfo.getBusinessHours().get("星期二"), 
+                         storeInfo.getBusinessHours().get("星期三"), storeInfo.getBusinessHours().get("星期四"), 
+                         storeInfo.getBusinessHours().get("星期五"), storeInfo.getBusinessHours().get("星期六"), 
+                         storeInfo.getBusinessHours().get("星期日")  
             ); 
             // use storeId to insert key values of foods 
             log.debug( "Test in Map: " + storeInfo.getTypes().get("飯") ); 
-            List detailsList = new ArrayList(); 
+            List<String> detailsList = new ArrayList(); 
             storeInfo.getTypes()
                 .forEach( 
                     new BiConsumer<String,List>(){ 
@@ -123,12 +121,7 @@ public class StoreInfoImp implements StoreInfoITF{
                     }
                 ); 
             log.debug("The details of food types: " + detailsList); 
-            List<Integer> foodIdList = 
-                    jdbc.query(
-                        "SELECT foodId FROM FoodTypes WHERE details = ?", 
-                        this::getFoodIdList, 
-                        detailsList 
-                    ); 
+            List<Integer> foodIdList =  this.getFoodTypesImp.getFoodIdsList( detailsList ); 
             log.debug("The foodId of details " + foodIdList ); 
             jdbc.batchUpdate( 
                     "INSERT INTO StoreTypes( storeId, foodId ) VALUES( ?, ? );", 
@@ -145,20 +138,15 @@ public class StoreInfoImp implements StoreInfoITF{
                     } 
             ); 
             return true; 
-        //}catch( DuplicateKeyException e ){ 
-        //    throw new DataExistException("Data has existed."); 
-        //}catch( EmptyResultDataAccessException e ){ 
-        //    throw new NotFoundException("Data not found."); 
-        //}catch( DataAccessException e ){ 
-        //    return false; 
-        //} 
+        }catch( DuplicateKeyException e ){ 
+            throw new DataExistException("Data has existed."); 
+        }catch( EmptyResultDataAccessException e ){ 
+            throw new NotFoundException("Data not found."); 
+        }catch( DataAccessException e ){ 
+            return false; 
+        } 
     } 
 
-    private Integer getFoodIdList( ResultSet rs, int rowNum ) throws SQLException{ 
-        return new Integer( 
-                   rs.getInt("foodId") 
-               ); 
-    } 
 
 } 
 

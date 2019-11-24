@@ -1,12 +1,12 @@
 
 INSERT INTO Users( mail, passwd, sexual, birthyear ) VALUES( "Admin@test.com", "123343223", 0, 1983 ); 
 
-INSERT INTO FoodTypes( details, types ) VALUES( "三寶飯", "白飯" ); 
-INSERT INTO FoodTypes( details, types ) VALUES( "滷肉飯", "白飯" ); 
-INSERT INTO FoodTypes( details, types ) VALUES( "豬排飯", "白飯" ); 
-INSERT INTO FoodTypes( details, types ) VALUES( "炒飯", "白飯" ); 
-INSERT INTO FoodTypes( details, types ) VALUES( "燴飯", "白飯" ); 
-INSERT INTO FoodTypes( details, types ) VALUES( "油飯", "白飯" ); 
+INSERT INTO FoodTypes( details, types ) VALUES( "三寶飯", "飯" ); 
+INSERT INTO FoodTypes( details, types ) VALUES( "滷肉飯", "飯" ); 
+INSERT INTO FoodTypes( details, types ) VALUES( "豬排飯", "飯" ); 
+INSERT INTO FoodTypes( details, types ) VALUES( "炒飯", "飯" ); 
+INSERT INTO FoodTypes( details, types ) VALUES( "燴飯", "飯" ); 
+INSERT INTO FoodTypes( details, types ) VALUES( "油飯", "飯" ); 
 INSERT INTO FoodTypes( details, types ) VALUES( "陽春麵", "麵食" ); 
 INSERT INTO FoodTypes( details, types ) VALUES( "涼麵", "麵食" ); 
 INSERT INTO FoodTypes( details, types ) VALUES( "油麵", "麵食" ); 

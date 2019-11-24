@@ -43,7 +43,7 @@ public class StoreInfo implements Serializable{
     private String address; 
 
     @NotNull 
-    @Size(max=10) 
+    @Size(min=9,max=10) 
     private String tel; 
 
     //@NotNull 
@@ -56,7 +56,7 @@ public class StoreInfo implements Serializable{
      *  在此的作法是用Map來裝nested Json, 並且透過定義成員函數將Map轉換成JSONObject並使用.toString()將其寫入資料庫
      */ 
     @NotNull 
-    private Map<String,String> lat_long; // private Location lat_long; 
+    private Map<String,Integer> latlong; // private Location latlong; 
     @NotNull 
     private Map<String,List<String>> types; 
     private Map<String,String> businessHours; 
@@ -75,14 +75,14 @@ public class StoreInfo implements Serializable{
     } 
 
     public StoreInfo(String n, String c, String d, String a, String t, String ct, 
-                                Map<String,String> latlong, Map<String,List<String>> ty, Timestamp cd, Map<String,String> bt ){ 
+                                Map<String,Integer> latlong, Map<String,List<String>> ty, Timestamp cd, Map<String,String> bt ){ 
         this.storename = n; 
         this.city = c; 
         this.district = d; 
         this.address = a; 
         this.tel = t; 
         this.creator = ct; 
-        this.lat_long = latlong; 
+        this.latlong = latlong; 
         this.types = ty; 
         this.createdAt = cd; 
         this.businessHours = bt; 
@@ -125,8 +125,8 @@ public class StoreInfo implements Serializable{
         this.businessHours = time; 
     } 
 
-    public void setLat_long( Map<String,String> loc ){ 
-        this.lat_long = loc; 
+    public void setLatlong( Map<String,Integer> loc ){ 
+        this.latlong = loc; 
     } 
 
     public void setTypes( Map<String,List<String>> type ){ 
@@ -170,8 +170,8 @@ public class StoreInfo implements Serializable{
         return this.businessHours; 
     } 
 
-    public Map<String,String> getLat_long(){ 
-        return this.lat_long;  
+    public Map<String,Integer> getLatlong(){ 
+        return this.latlong;  
     } 
 
     public Map<String,List<String>> getTypes(){ 
@@ -182,12 +182,12 @@ public class StoreInfo implements Serializable{
     /* JsonXXX() below is in order to get the String type of JSONObject to write in MySQL, whose name cannot be getXXX. 
      * Becuase the container will view getXXX as getter then converts it to the JSON data of Http response. */ 
     public JSONObject JsonLatLong(){ 
-       return new JSONObject( this.lat_long ); 
+       return new JSONObject( this.latlong ); 
     } 
     public String JsonLatLongString(){ 
        // this getter is made in order to get the String of JSONObject to store in MySQL.  
-       //return this.lat_long.getJsonString(); // 必須將JSONObject用toString()輸出才能存至MySQL的JSON欄位 
-       return (new JSONObject( this.lat_long )).toString(); 
+       //return this.latlong.getJsonString(); // 必須將JSONObject用toString()輸出才能存至MySQL的JSON欄位 
+       return (new JSONObject( this.latlong )).toString(); 
     } 
 
     public JSONObject JsonTypes(){ 
