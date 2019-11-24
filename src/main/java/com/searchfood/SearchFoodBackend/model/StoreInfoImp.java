@@ -109,14 +109,14 @@ public class StoreInfoImp implements StoreInfoITF{
                          storeInfo.getBusinessHours().get("星期日")  
             ); 
             // use storeId to insert key values of foods 
-            log.debug( "Test in Map: " + storeInfo.getTypes().get("飯") ); 
+            log.debug( "Test in Map: " + storeInfo.getType().get("飯") ); 
             List<String> detailsList = new ArrayList(); 
-            storeInfo.getTypes()
+            storeInfo.getType()
                 .forEach( 
                     new BiConsumer<String,List>(){ 
                         @Override 
                         public void accept( String s, List l ){ 
-                            detailsList.addAll( storeInfo.getTypes().get(s) ); 
+                            detailsList.addAll( storeInfo.getType().get(s) ); 
                         } 
                     }
                 ); 

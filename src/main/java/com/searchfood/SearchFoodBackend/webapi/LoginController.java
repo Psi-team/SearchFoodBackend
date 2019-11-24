@@ -58,7 +58,7 @@ public class LoginController{
     //public TokenRecords LoginIn( @RequestBody Members member ){ // @RequestBody: the body of request should be convert to Members as parameters. 
     public ResponseEntity<?> login( @RequestBody Members member ){ // @RequestBody: the body of request should be convert to Members as parameters. 
 
-        log.debug( "TESTING logging: username: "+member.getUsername() + "  password: "+member.getPasswd() ); 
+        log.debug( "TESTING logging: username: "+member.getUsername() + "  password: "+member.getPasswd() + " browser: " + member.getBrowser() ); 
         log.info( "username: "+member.getUsername() + ", password: "+member.getPasswd() + "send request to login" ); 
 
         token = tokenImp.saveTokenTable( member ); 

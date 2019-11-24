@@ -56,9 +56,9 @@ public class StoreInfo implements Serializable{
      *  在此的作法是用Map來裝nested Json, 並且透過定義成員函數將Map轉換成JSONObject並使用.toString()將其寫入資料庫
      */ 
     @NotNull 
-    private Map<String,Integer> latlong; // private Location latlong; 
+    private Map<String,Integer> latLong; // private Location latlong; 
     @NotNull 
-    private Map<String,List<String>> types; 
+    private Map<String,List<String>> type; 
     private Map<String,String> businessHours; 
 
     private Timestamp createdAt; 
@@ -82,8 +82,8 @@ public class StoreInfo implements Serializable{
         this.address = a; 
         this.tel = t; 
         this.creator = ct; 
-        this.latlong = latlong; 
-        this.types = ty; 
+        this.latLong = latlong; 
+        this.type = ty; 
         this.createdAt = cd; 
         this.businessHours = bt; 
     } 
@@ -125,12 +125,12 @@ public class StoreInfo implements Serializable{
         this.businessHours = time; 
     } 
 
-    public void setLatlong( Map<String,Integer> loc ){ 
-        this.latlong = loc; 
+    public void setLatLong( Map<String,Integer> loc ){ 
+        this.latLong = loc; 
     } 
 
-    public void setTypes( Map<String,List<String>> type ){ 
-        this.types = type; 
+    public void setType( Map<String,List<String>> type ){ 
+        this.type = type; 
     } 
 
     // getter 
@@ -170,33 +170,33 @@ public class StoreInfo implements Serializable{
         return this.businessHours; 
     } 
 
-    public Map<String,Integer> getLatlong(){ 
-        return this.latlong;  
+    public Map<String,Integer> getLatLong(){ 
+        return this.latLong;  
     } 
 
-    public Map<String,List<String>> getTypes(){ 
-        return this.types;  
+    public Map<String,List<String>> getType(){ 
+        return this.type; 
     } 
 
 
     /* JsonXXX() below is in order to get the String type of JSONObject to write in MySQL, whose name cannot be getXXX. 
      * Becuase the container will view getXXX as getter then converts it to the JSON data of Http response. */ 
     public JSONObject JsonLatLong(){ 
-       return new JSONObject( this.latlong ); 
+       return new JSONObject( this.latLong ); 
     } 
     public String JsonLatLongString(){ 
        // this getter is made in order to get the String of JSONObject to store in MySQL.  
        //return this.latlong.getJsonString(); // 必須將JSONObject用toString()輸出才能存至MySQL的JSON欄位 
-       return (new JSONObject( this.latlong )).toString(); 
+       return (new JSONObject( this.latLong )).toString(); 
     } 
 
-    public JSONObject JsonTypes(){ 
+    public JSONObject JsonType(){ 
        // this getter is made in order to get the String of JSONObject to store in MySQL.  
-       return new JSONObject( this.types ); // 必須將JSONObject用toString()輸出才能存至MySQL的JSON欄位 
+       return new JSONObject( this.type ); // 必須將JSONObject用toString()輸出才能存至MySQL的JSON欄位 
     } 
     public String JsonTypesString(){ 
        // this getter is made in order to get the String of JSONObject to store in MySQL.  
-       return (new JSONObject( this.types )).toString(); // 必須將JSONObject用toString()輸出才能存至MySQL的JSON欄位 
+       return (new JSONObject( this.type )).toString(); // 必須將JSONObject用toString()輸出才能存至MySQL的JSON欄位 
     } 
 
     public JSONObject JsonBusinessHours(){ 

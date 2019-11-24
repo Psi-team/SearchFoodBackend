@@ -41,6 +41,7 @@ public class CreateStoreTypeController{
     @GetMapping  
     public ResponseEntity<?> getStoreTypes( @RequestHeader("Authorization") String token ){ 
         
+        token = token.substring( token.indexOf(" ")+1 ); 
         log.info( "Processing getStoreTypes..." ); 
         // check the token is valid or not. 
         String username; 

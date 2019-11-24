@@ -49,7 +49,7 @@ public class StoreInfoController{
         String username; 
 
         log.debug( "storename: " + storeInfo.getStorename() ); 
-        log.debug( "latlong: " + storeInfo.getLatlong() ); 
+        log.debug( "latlong: " + storeInfo.getLatLong() ); 
 
         // checking the token is valid or not. 
         if( (username = checkToken.check(token) ) == null ){ // if the token doesn't exist in database. 
