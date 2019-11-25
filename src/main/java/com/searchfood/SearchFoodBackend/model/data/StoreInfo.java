@@ -5,9 +5,7 @@ import org.springframework.stereotype.Component;
 
 // java 
 import javax.validation.constraints.Size; 
-import javax.validation.constraints.Digits; 
 import javax.validation.constraints.NotNull; 
-import javax.validation.constraints.Max; 
 
 import java.time.LocalDateTime; 
 import java.sql.Timestamp; 
