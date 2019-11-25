@@ -15,8 +15,6 @@ import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.dao.DataAccessException; 
 import org.springframework.dao.DuplicateKeyException; 
 
-import org.springframework.transaction.annotation.Transactional; 
-
 import org.slf4j.Logger; 
 import org.slf4j.LoggerFactory; 
 
@@ -68,12 +66,6 @@ public class StoreInfoImp implements StoreInfoITF{
         return storeInfo; 
     } 
 
-    // @Transactional預設RunTimeException與非受檢例外會rollback, 受檢例外則不rollback, 透過以下參數更改為受檢例外也會rollback
-    // try{}之外才會rollback?, 
-    // 不能使用在private方法上,因為其不能不繼承, 
-    // transactional只會作用在外部呼叫,class內的呼叫無法作用  
-    // ref: https://stackoverflow.com/questions/39096860/roll-back-a-if-b-goes-wrong-spring-boot-jdbctemplate
-    //@Transactional(rollbackFor=Exception.class)  
     public boolean save(){ 
 
         try{ 
@@ -139,8 +131,10 @@ public class StoreInfoImp implements StoreInfoITF{
             ); 
             return true; 
         }catch( DuplicateKeyException e ){ 
+            //return false; 
             throw new DataExistException("Data has existed."); 
         }catch( EmptyResultDataAccessException e ){ 
+            //return false; 
             throw new NotFoundException("Data not found."); 
         }catch( DataAccessException e ){ 
             return false; 

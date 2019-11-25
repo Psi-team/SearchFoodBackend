@@ -18,7 +18,7 @@ import org.springframework.validation.Errors;
 // user-defined class. 
 import com.searchfood.SearchFoodBackend.model.data.StoreInfo; 
 import com.searchfood.SearchFoodBackend.model.CheckTokenImp; 
-import com.searchfood.SearchFoodBackend.model.StoreInfoImp; 
+import com.searchfood.SearchFoodBackend.model.StoreInfoTransactionImp; 
 import com.searchfood.SearchFoodBackend.utils.exceptions.InvalidDataException; 
 import com.searchfood.SearchFoodBackend.utils.exceptions.DataExistException; 
 import com.searchfood.SearchFoodBackend.utils.exceptions.NotFoundException; 
@@ -32,14 +32,14 @@ import org.slf4j.LoggerFactory;
 public class StoreInfoController{ 
 
     private static final Logger log = LoggerFactory.getLogger( StoreInfoController.class ); 
-    private StoreInfoImp storeInfoImp; 
+    private StoreInfoTransactionImp storeInfoTransactionImp; 
     private CheckTokenImp checkToken;  
     private StoreInfo storeInfoData;  
 
     @Autowired 
-    public StoreInfoController( StoreInfoImp storeInfoImp, CheckTokenImp token ){ 
+    public StoreInfoController( StoreInfoTransactionImp storeInfoTransactionImp, CheckTokenImp token ){ 
         this.checkToken = token; 
-        this.storeInfoImp = storeInfoImp; 
+        this.storeInfoTransactionImp = storeInfoTransactionImp; 
     } 
 
     @PostMapping( consumes="application/json" )  
@@ -65,7 +65,7 @@ public class StoreInfoController{
         } 
         log.info( "The data for building new store infomation is valid." );  
 
-        if ( (storeInfoData  = storeInfoImp.createNewStoreInfoToDatabase( storeInfo, username )) != null ){ 
+        if ( (storeInfoData  = storeInfoTransactionImp.createNewStoreInfoToDatabase( storeInfo, username )) != null ){ 
             log.info( username + " has created the new store info " + storeInfo.getStorename() + "." ); 
             return new ResponseEntity<>( storeInfoData, HttpStatus.CREATED ); 
         } 
