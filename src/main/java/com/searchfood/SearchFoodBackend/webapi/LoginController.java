@@ -30,10 +30,6 @@ import com.searchfood.SearchFoodBackend.utils.exceptions.NotFoundException;
 @RequestMapping( value="login", produces="application/json" ) // handle the HTTP request /login 
 public class LoginController{ 
 
-    /* This class is for checking whether the login user is valid member from the table User in DB.
-     * If it is valid member, then return an unique token for HTTP response, or redirect to register page. 
-     */ 
-    
     private static final Logger log = LoggerFactory.getLogger( LoginController.class.getName() ); 
     /* slf4j: 
      *      slf4j只提供日誌的接口.提供獲取具體日誌物件的方法,其只是一種日誌標準, 並不是日誌系統的具體實現, 具體實現可以使用java.util.logging, logback等等
@@ -48,19 +44,17 @@ public class LoginController{
     public LoginController( TokenRecordsImp tokenImp, TokenRecords token ){ 
         this.tokenImp = tokenImp; 
         this.token = token; 
-        //System.out.println( "***** Construct class sucessfully! *******" ); 
     } 
 
     // handle the POST method from url /login 
     @PostMapping( consumes="application/json" ) // receive the json type data.  
-    //@ResponseStatus( HttpStatus.OK ) // return the http status code. 
-    //public TokenRecords LoginIn( @RequestBody Members member ){ // @RequestBody: the body of request should be convert to Members as parameters. 
     public ResponseEntity<?> login( @RequestBody Members member ){ // @RequestBody: the body of request should be convert to Members as parameters. 
 
         log.debug( "TESTING logging: username: "+member.getUsername() + "  password: "+member.getPasswd() + " browser: " + member.getBrowser() ); 
         log.info( "username: "+member.getUsername() + ", password: "+member.getPasswd() + "send request to login" ); 
 
         token = tokenImp.saveTokenTable( member ); 
+
 
         if ( null == token.getUsername() ){ 
             log.info("Not Founded"); 

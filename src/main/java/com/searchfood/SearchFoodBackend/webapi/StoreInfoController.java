@@ -21,6 +21,7 @@ import com.searchfood.SearchFoodBackend.model.StoreInfoTransactionImp;
 import com.searchfood.SearchFoodBackend.utils.exceptions.InvalidDataException; 
 import com.searchfood.SearchFoodBackend.utils.exceptions.DataExistException; 
 import com.searchfood.SearchFoodBackend.utils.exceptions.NotFoundException; 
+import com.searchfood.SearchFoodBackend.utils.exceptions.TokenExpiredException; 
 // logger 
 import org.slf4j.Logger; 
 import org.slf4j.LoggerFactory; 
@@ -45,15 +46,17 @@ public class StoreInfoController{
     public ResponseEntity<?> createNewStoreInfo( @Valid @RequestBody StoreInfo storeInfo, 
             Errors errors, @RequestHeader("Authorization") String token ){ 
 
-        String username; 
-
         log.debug( "storename: " + storeInfo.getStorename() ); 
         log.debug( "latlong: " + storeInfo.getLatLong() ); 
 
-        // checking the token is valid or not. 
-        if( (username = checkToken.check(token) ) == null ){ // if the token doesn't exist in database. 
+        // checking the token is valid or expired. 
+        String username = checkToken.check( token ); 
+        if( username == null ){ // if the token doesn't exist in database. 
             log.warn( "The token is invalid." ); 
             throw new NotFoundException("The token is invalid."); 
+        }else if( username.equals("TokenExpired") ){ 
+            log.warn( "The token is out of date." ); 
+            throw new TokenExpiredException("Token expired."); 
         } 
         log.info( username + " is trying to create new store info." ); 
         

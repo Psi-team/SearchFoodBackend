@@ -10,6 +10,9 @@ import org.springframework.stereotype.Repository;
 import java.sql.ResultSet; 
 import java.sql.SQLException; 
 
+import java.time.Instant; 
+import java.time.Duration; 
+
 import org.slf4j.Logger; 
 import org.slf4j.LoggerFactory; 
 
@@ -21,6 +24,9 @@ public class CheckTokenImp implements FindDataITF{
     private JdbcTemplate jdbc; 
     private String username; 
     private String token; 
+    private int isExpired = 0; 
+    private int validToken = 0; 
+    private Instant loginTime; 
     private static final Logger log = LoggerFactory.getLogger( CheckTokenImp.class ); 
 
     public CheckTokenImp( JdbcTemplate jdbc ){ 
@@ -30,30 +36,38 @@ public class CheckTokenImp implements FindDataITF{
     @Override 
     public int isExist(){ 
         // with no try statements. 
-        jdbc.query( "SELECT mail FROM Token WHERE token = ?", 
+        jdbc.query( "SELECT mail, login_time FROM Token WHERE token = ?", 
                     new RowCallbackHandler(){ 
                         @Override 
                         public void processRow( ResultSet rs ) 
                             throws SQLException{ 
                             username = rs.getString("mail"); // this.username = rs.getString("mail");  
+                            loginTime = rs.getTimestamp("login_time").toInstant(); 
                         } 
                     }, 
                     this.token ); 
+        
         if ( username == null ) return 0;  
-        return 1; 
-    } 
-
-    public int checkActive(){ // check the login time is out-of-date. 
+        Instant now = Instant.now(); 
+        Long duration = Duration.between( loginTime, now ).toMinutes();
+        log.info("now: " + now ); 
+        log.info("loginTime: " + loginTime ); 
+        log.info("Duration: " + duration ); 
+        //if ( duration > 30 ) isExpired = 1; // and need to delete from Token in Database.  
         return 1; 
     } 
 
     public String check( String token ){ 
+        this.isExpired = 0; 
         this.token = token; 
-        if( isExist() == 1 && checkActive() == 1 ){
+        this.validToken = isExist(); 
+        if( validToken == 1 && isExpired != 1 ){
             log.info( "The username of " + token + " is " + this.username ); 
-            return this.username; 
+            return this.username;  // token is valid and the token is not expired. 
+        }else if( validToken == 1 && isExpired == 1 ){ 
+            return "TokenExpired"; // token is expired. 
         } 
-        return null; 
+        return null; // token not found.  
     } 
 
 } 

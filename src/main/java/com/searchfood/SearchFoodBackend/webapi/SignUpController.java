@@ -17,7 +17,7 @@ import org.springframework.validation.Errors; // If constraints don't meet, capt
 // User-defined class 
 import com.searchfood.SearchFoodBackend.model.data.TokenRecords; 
 import com.searchfood.SearchFoodBackend.model.data.SignUpMember;  
-import com.searchfood.SearchFoodBackend.model.SignUpMemberImp; 
+import com.searchfood.SearchFoodBackend.model.SignUpMemberTransactionImp; 
 // logging import org.slf4j.Logger; 
 import org.slf4j.Logger; 
 import org.slf4j.LoggerFactory; 
@@ -31,16 +31,15 @@ import com.searchfood.SearchFoodBackend.utils.messages.interfaces.SignUpMailServ
 @RequestMapping( value="signup", produces="application/json" ) 
 public class SignUpController{ 
 
-    private SignUpMemberImp signupImp;  
+    private SignUpMemberTransactionImp signupTransactionImp;  
     private TokenRecords token; 
     private SignUpMailService signupMailService; 
 
     private static final Logger log = LoggerFactory.getLogger( SignUpController.class ); 
 
     @Autowired 
-    public SignUpController( SignUpMemberImp signupImp, TokenRecords token, SignUpMailService signupMailService ){ 
-        this.signupImp = signupImp; 
-        this.token = token; 
+    public SignUpController( SignUpMemberTransactionImp signupImp, SignUpMailService signupMailService ){ 
+        this.signupTransactionImp = signupImp; 
         this.signupMailService = signupMailService; 
     } 
     
@@ -50,14 +49,12 @@ public class SignUpController{
 
         log.debug("TESTING: username: " + signupmember.getUsername() + " password: " + signupmember.getPasswd() + 
                             " birthyear: " + signupmember.getBirthyear() + " sex: " + signupmember.getSexual() ); 
-        log.info( "username: " + signupmember.getUsername() + " password: " + signupmember.getPasswd() + 
-                            " birthyear: " + signupmember.getBirthyear() + " sex: " + signupmember.getSexual() ); 
         
         if( errors.hasErrors() ){ 
             throw new InvalidDataException( errors ); 
         } 
 
-        token = signupImp.saveToUsers( signupmember ); 
+        this.token = signupTransactionImp.saveToUsers( signupmember ); 
         if ( token == null ){ 
             throw new DataExistException("The mail has existed."); 
         } 

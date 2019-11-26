@@ -11,9 +11,8 @@ import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.support.KeyHolder; 
 import org.springframework.jdbc.support.GeneratedKeyHolder; 
 
-import org.springframework.dao.EmptyResultDataAccessException; 
-import org.springframework.dao.DataAccessException; 
 import org.springframework.dao.DuplicateKeyException; 
+import org.springframework.dao.DataAccessException; 
 
 import org.slf4j.Logger; 
 import org.slf4j.LoggerFactory; 
@@ -131,13 +130,10 @@ public class StoreInfoImp implements StoreInfoITF{
             ); 
             return true; 
         }catch( DuplicateKeyException e ){ 
-            //return false; 
-            throw new DataExistException("Data has existed."); 
-        }catch( EmptyResultDataAccessException e ){ 
-            //return false; 
-            throw new NotFoundException("Data not found."); 
-        }catch( DataAccessException e ){ 
             return false; 
+            //throw new DataExistException("Data has existed."); 
+        }catch( DataAccessException e ){ 
+            return false;  
         } 
     } 
 

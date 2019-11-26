@@ -21,6 +21,7 @@ import com.searchfood.SearchFoodBackend.model.GetFoodTypesImp;
 import com.searchfood.SearchFoodBackend.model.CheckTokenImp; 
 import com.searchfood.SearchFoodBackend.utils.exceptions.DataFailToLoadedException; 
 import com.searchfood.SearchFoodBackend.utils.exceptions.NotFoundException; 
+import com.searchfood.SearchFoodBackend.utils.exceptions.TokenExpiredException; 
 
 @RestController 
 @CrossOrigin("*") 
@@ -42,13 +43,18 @@ public class CreateStoreTypeController{
         
         token = token.substring( token.indexOf(" ")+1 ); 
         log.info( "Processing getStoreTypes..." ); 
-        // check the token is valid or not. 
-        String username; 
-        if( (username = checkTokenImp.check( token )) == null ){ 
-            log.info("Invalid Token"); 
-            throw new NotFoundException("Invalid token"); 
+
+        // checking the token is valid or expired. 
+        String username = checkTokenImp.check( token ); 
+        if( username == null ){ // if the token doesn't exist in database. 
+            log.warn( "The token is invalid." ); 
+            throw new NotFoundException("The token is invalid."); 
+        }else if( username.equals("TokenExpired") ){ 
+            log.warn( "The token is out of date." ); 
+            throw new TokenExpiredException("Token expired."); 
         } 
         log.info("Valid token"); 
+
         log.info( "Trying to load the food types from databases..." ); 
         Map<String,List<String>> foodJson = getFoodTypesImp.getFoodTypesMap(); 
         log.debug( "foodJson " + foodJson ); 

@@ -15,6 +15,7 @@ import com.searchfood.SearchFoodBackend.utils.exceptions.ErrorResponse;
 import com.searchfood.SearchFoodBackend.utils.exceptions.InvalidDataException; 
 import com.searchfood.SearchFoodBackend.utils.exceptions.NotFoundException; 
 import com.searchfood.SearchFoodBackend.utils.exceptions.DataFailToLoadedException; 
+import com.searchfood.SearchFoodBackend.utils.exceptions.TokenExpiredException; 
 
 import java.util.List; 
 import java.util.LinkedList; 
@@ -55,6 +56,13 @@ public class ControllerException{
         ErrorResponse errorResponse = new ErrorResponse( e.getMessage() ); 
         log.warn("In ControllerException: DataFailedToAccessException."); 
         return new ResponseEntity<>( errorResponse, HttpStatus.CONFLICT ); 
+    } 
+
+    @ExceptionHandler( TokenExpiredException.class ) 
+    public ResponseEntity<?> handleTokenExpiredException( Exception e ){ 
+        ErrorResponse errorResponse = new ErrorResponse( e.getMessage() ); 
+        log.warn("In ControllerException: TokenExpiredException."); 
+        return new ResponseEntity<>( errorResponse, HttpStatus.UNAUTHORIZED ); 
     } 
     
 } 

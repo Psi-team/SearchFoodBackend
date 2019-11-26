@@ -50,20 +50,6 @@ public class TokenRecordsImp implements TokenRecordsITF, FindDataITF{
             SignUpMember sign = 
             jdbc.queryForObject( 
                     "SELECT * FROM Users WHERE mail = ? AND passwd = ?;", 
-                    /* using the inner annoyous class.  
-                    new RowMapper<SignUpMember> (){  
-                        // Must override this function. 
-                        @Override 
-                        public SignUpMember mapRow( ResultSet rs, int rowNum ) throws SQLException{ 
-                            return new SignUpMember( 
-                                        rs.getString("mail"),
-                                        rs.getString("passwd"), 
-                                        rs.getInt("sexual"), 
-                                        rs.getDate("birthyear").getYear() + 1900, 
-                                        rs.getInt("age")
-                                    );
-                        } 
-                    }*/
                     // using lambda expression below.  
                     ( ResultSet rs, int rowNum ) ->  
                                     new SignUpMember( 

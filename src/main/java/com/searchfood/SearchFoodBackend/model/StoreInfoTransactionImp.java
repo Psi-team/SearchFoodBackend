@@ -2,12 +2,12 @@ package com.searchfood.SearchFoodBackend.model;
 
 import org.springframework.beans.factory.annotation.Autowired; 
 import org.springframework.transaction.annotation.Transactional; 
-import org.springframework.stereotype.Repository; 
+import org.springframework.stereotype.Service; 
 
 import com.searchfood.SearchFoodBackend.model.interfaces.StoreInfoTransactionInterface; 
 import com.searchfood.SearchFoodBackend.model.data.StoreInfo; 
 
-@Repository 
+@Service 
 public class StoreInfoTransactionImp implements StoreInfoTransactionInterface{ 
 
     private StoreInfoImp storeInfoImp; 
@@ -24,6 +24,7 @@ public class StoreInfoTransactionImp implements StoreInfoTransactionInterface{
     // transactional只會作用在外部呼叫,class內的呼叫無法作用  
     // ref: https://stackoverflow.com/questions/39096860/roll-back-a-if-b-goes-wrong-spring-boot-jdbctemplate
     //      https://www.journaldev.com/2603/spring-transaction-management-jdbc-example#spring-transaction-management-8211-database-setup
+    //      https://www.cnblogs.com/harrychinese/p/SpringBoot_jdbc_transaction.html?fbclid=IwAR2ooBRD9FR30NylbnvfMK3m80VinEIKzqX_lvu0lK9f6IRSZAwZOXE3c4Q
     public StoreInfo createNewStoreInfoToDatabase( StoreInfo storeInfo, String username ){ 
         return this.storeInfoImp.createNewStoreInfoToDatabase( storeInfo, username );  
     } 
