@@ -32,44 +32,10 @@ public class LogoutImp{
         this.jdbc = jdbc; 
     } 
 
-    /* 
-    // Override from FindDataITF interface  
-    @Override 
-    public int isExist(){ 
-        try{ 
-            jdbc.queryForObject( 
-                    "SELECT token FROM Token WHERE token = ?", 
-                    new RowMapper<tmpData> (){  
-                        // Must override this function. 
-                        @Override 
-                        public tmpData mapRow( ResultSet rs, int rowNum ) throws SQLException{ 
-                            return new tmpData( 
-                                        rs.getString("token") 
-                                    ); 
-                        } 
-                    },
-                    token.getToken() ); 
-
-            log.info( "Token founded."); 
-            return 1; 
-        }catch( EmptyResultDataAccessException e ){ // Access no appropriate data in table Users. 
-            log.info("token not founded."); 
-            return -1; 
-        } 
-
-    } 
-    */ 
 
     public int deleteFromToken( String o ){ 
         this.token = o; 
 
-        /* 
-        if ( 1 == isExist() ){ // if token exists in Token, then delete it. 
-            delete( token ); 
-            return 1; // delete token from Token sucessfully. 
-        } 
-        return -1; // fail to delete token from Token. 
-        */ 
         if ( delete( token ) != 1 ){ 
             return -1; 
         } 
@@ -78,7 +44,6 @@ public class LogoutImp{
 
     private int delete( String token ){ 
         try{ 
-            System.out.println( "Token: " + token ); 
             return jdbc.update( "DELETE FROM Token WHERE Token = ?", token ); 
         }catch( DataAccessException e ){ 
             return -1; 
