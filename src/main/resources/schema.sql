@@ -41,6 +41,7 @@ CREATE TABLE IF NOT EXISTS StoreInfo(
     click_week INT(3) DEFAULT '0', 
     click_cum INT(4) DEFAULT '0', 
     lat_long JSON NOT NULL, 
+    foodList VARCHAR(150) NOT NULL, 
     PRIMARY KEY( store_id, store_name, city, district, address ), 
     /*UNIQUE KEY store_name ( store_name, city, district, address ), */ 
     UNIQUE KEY city ( city, district, address ), 
@@ -48,11 +49,12 @@ CREATE TABLE IF NOT EXISTS StoreInfo(
 );
 
 /* Create the food table */ 
-CREATE TABLE IF NOT EXISTS FoodTypes( 
-    foodId INT NOT NULL AUTO_INCREMENT, 
-    details VARCHAR(5) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci, 
-    types VARCHAR(5) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci, 
-    PRIMARY KEY( foodId ) 
+CREATE TABLE IF NOT EXISTS ReferedTable( 
+    id INT NOT NULL AUTO_INCREMENT, 
+    value VARCHAR(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci, 
+    types VARCHAR(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci, 
+    class VARCHAR(15) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci, 
+    PRIMARY KEY( id ) 
 ); 
 
 /* Create BusinessHours */ 
@@ -69,14 +71,15 @@ CREATE TABLE IF NOT EXISTS BusinessHours(
     FOREIGN KEY( storeId ) REFERENCES StoreInfo( store_id ) 
 ); 
 
-/* Create the StoreTypes table */ 
+/* Create the StoreTypes table 
 CREATE TABLE IF NOT EXISTS StoreTypes( 
     storeId INT NOT NULL, 
     foodId INT NOT NULL, 
     PRIMARY KEY( storeId, foodId ), 
     FOREIGN KEY( storeId ) REFERENCES StoreInfo( store_id ), 
-    FOREIGN KEY( foodId ) REFERENCES FoodTypes( foodId )  
+    FOREIGN KEY( foodId ) REFERENCES Refered( id )  
 ); 
+*/ 
 
 /* Create the comments of Store */ 
 CREATE TABLE IF NOT EXISTS StoreComment( 

@@ -71,7 +71,7 @@ public class CheckTokenImp implements FindDataITF{
         log.info("now: " + now ); 
         log.info("loginTime: " + loginTime ); 
         log.info("Duration: " + duration ); 
-        if ( duration > 1 ){ // and need to delete from Token in Database.  
+        if ( duration > 1000 ){ // and need to delete from Token in Database.  
             isExpired = 1; 
             log.info("Token expired, logout"); 
             logoutImp.deleteFromToken( this.token ); 

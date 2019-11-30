@@ -22,16 +22,17 @@ import java.util.ArrayList;
 import java.util.Map; 
 import java.util.HashMap; 
 import java.util.function.Consumer; 
+import java.lang.StringBuilder; 
 
-import com.searchfood.SearchFoodBackend.model.data.FoodTypes; 
+import com.searchfood.SearchFoodBackend.model.data.Referenced; 
 
 @Repository 
 public class GetFoodTypesImp{ 
 
     private static final Logger log = LoggerFactory.getLogger( GetFoodTypesImp.class ); 
-    private FoodTypes foodTypes;
+    private Referenced foodTypes;
     private JdbcTemplate jdbc; 
-    private List<FoodTypes> foodTypesList; 
+    private List<Referenced> foodTypesList; 
 
     @Autowired 
     public GetFoodTypesImp( JdbcTemplate jdbc ){ 
@@ -49,7 +50,7 @@ public class GetFoodTypesImp{
         log.debug("query data from database in the form of List..."); 
         this.foodTypesList = 
                     jdbc.query( 
-                            "SELECT * FROM FoodTypes;", 
+                            "SELECT * FROM ReferedTable WHERE class='FoodTypes';", 
                             this::getFoodTypes 
                     ); 
         log.debug("Start to change List to JSONArray..."); 
@@ -64,18 +65,18 @@ public class GetFoodTypesImp{
 
         log.debug("forEach..."); 
         target.forEach( 
-                new Consumer<FoodTypes>(){ 
+                new Consumer<Referenced>(){ 
                     @Override 
-                    public void accept( FoodTypes target_ ){ 
+                    public void accept( Referenced target_ ){ 
                         switch( target_.getTypes() ){ 
                             case "飯": 
-                                Rice.add( target_.getDetails() ); 
+                                Rice.add( target_.getValue() ); 
                                 break; 
                             case "麵食": 
-                                Noodles.add( target_.getDetails() ); 
+                                Noodles.add( target_.getValue() ); 
                                 break; 
                             case "速食": 
-                                FastFood.add( target_.getDetails() ); 
+                                FastFood.add( target_.getValue() ); 
                                 break; 
                         } 
                     } 
@@ -90,20 +91,21 @@ public class GetFoodTypesImp{
         return resultMap; 
     } 
 
-    private FoodTypes getFoodTypes( ResultSet rs, int rowNum ) throws SQLException{ 
-        return new FoodTypes( 
-                rs.getInt("foodId"), 
-                rs.getString("details"), 
-                rs.getString("types") ); 
+    private Referenced getFoodTypes( ResultSet rs, int rowNum ) throws SQLException{ 
+        return new Referenced( 
+                rs.getInt("id"), 
+                rs.getString("value"), 
+                rs.getString("types"),
+                rs.getString("class") ); 
     } 
 
-    public List<Integer> getFoodIdsList( List<String> queryDetails ){ 
+    public List<Integer> getFoodIdsList( List<String> queryValue ){ 
         List<Integer> foodIdList = new ArrayList(); 
         /* 需要更好的搜尋法 */ 
-        for( int i = 0; i < queryDetails.size(); i++ ){ 
+        for( int i = 0; i < queryValue.size(); i++ ){ 
             for( int j = 0; j < this.foodTypesList.size(); j++ ){ 
-                if ( this.foodTypesList.get(j).getDetails().equals( queryDetails.get(i) ) ){ 
-                    foodIdList.add( this.foodTypesList.get(j).getFoodId() ); 
+                if ( this.foodTypesList.get(j).getValue().equals( queryValue.get(i) ) ){ 
+                    foodIdList.add( this.foodTypesList.get(j).getId() ); 
                 } 
             }
         } 
@@ -111,6 +113,21 @@ public class GetFoodTypesImp{
         return foodIdList; 
     } 
 
+    public String getFoodIdsListInString( List<String> queryValue ){ 
+        // using StringBuilder to concate String. 
+        StringBuilder stringBuilder = new StringBuilder("$"); 
+        /* 需要更好的搜尋法 */ 
+        for( int i = 0; i < queryValue.size(); i++ ){ 
+            for( int j = 0; j < this.foodTypesList.size(); j++ ){ 
+                if ( this.foodTypesList.get(j).getValue().equals( queryValue.get(i) ) ){ 
+                    stringBuilder.append(String.valueOf(this.foodTypesList.get(j).getId())); 
+                    stringBuilder.append("$"); 
+                } 
+            }
+        } 
+        log.debug( "stringBuilder: " +stringBuilder.toString() ); 
+        return stringBuilder.toString(); 
+    } 
 } 
 
 
