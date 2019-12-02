@@ -994,3 +994,818 @@
 2019-12-01 17:30:55.388 [34mINFO[0;39m [35m[Thread-4][0;39m o.s.s.c.ThreadPoolTaskExecutor.shutdown :: Shutting down ExecutorService 'applicationTaskExecutor'
 2019-12-01 17:30:55.389 [34mINFO[0;39m [35m[Thread-4][0;39m c.z.h.HikariDataSource.close :: HikariPool-1 - Shutdown initiated...
 2019-12-01 17:30:55.410 [34mINFO[0;39m [35m[Thread-4][0;39m c.z.h.HikariDataSource.close :: HikariPool-1 - Shutdown completed.
+2019-12-02 22:06:12.702 [34mINFO[0;39m [35m[main][0;39m c.s.S.SearchFoodApplication.logStarting :: Starting SearchFoodApplication on eason-P15FV2 with PID 13716 (/home/eason/Desktop/WorkPlace/Project/SearchFoodBackend/target/classes started by eason in /home/eason/Desktop/WorkPlace/Project/SearchFoodBackend)
+2019-12-02 22:06:12.712 [34mINFO[0;39m [35m[main][0;39m c.s.S.SearchFoodApplication.logStartupProfileInfo :: No active profile set, falling back to default profiles: default
+2019-12-02 22:06:14.816 [34mINFO[0;39m [35m[main][0;39m o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor.registerErrorChannel :: No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2019-12-02 22:06:14.832 [34mINFO[0;39m [35m[main][0;39m o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor.registerTaskScheduler :: No bean named 'taskScheduler' has been explicitly defined. Therefore, a default ThreadPoolTaskScheduler will be created.
+2019-12-02 22:06:14.853 [34mINFO[0;39m [35m[main][0;39m o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor.registerHeaderChannelRegistry :: No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2019-12-02 22:06:14.959 [34mINFO[0;39m [35m[main][0;39m o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization :: Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$79c6198c] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-12-02 22:06:14.986 [34mINFO[0;39m [35m[main][0;39m o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization :: Bean 'org.springframework.integration.config.IntegrationManagementConfiguration' of type [org.springframework.integration.config.IntegrationManagementConfiguration$$EnhancerBySpringCGLIB$$e4b7d4bb] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-12-02 22:06:15.003 [34mINFO[0;39m [35m[main][0;39m o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization :: Bean 'integrationDisposableAutoCreatedBeans' of type [org.springframework.integration.config.annotation.Disposables] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-12-02 22:06:15.759 [34mINFO[0;39m [35m[main][0;39m o.s.b.w.e.t.TomcatWebServer.initialize :: Tomcat initialized with port(s): 2020 (http)
+2019-12-02 22:06:15.823 [34mINFO[0;39m [35m[main][0;39m o.a.c.c.StandardService.log :: Starting service [Tomcat]
+2019-12-02 22:06:15.823 [34mINFO[0;39m [35m[main][0;39m o.a.c.c.StandardEngine.log :: Starting Servlet engine: [Apache Tomcat/9.0.22]
+2019-12-02 22:06:15.973 [34mINFO[0;39m [35m[main][0;39m o.a.c.c.C.[.[.[/].log :: Initializing Spring embedded WebApplicationContext
+2019-12-02 22:06:15.974 [34mINFO[0;39m [35m[main][0;39m o.s.w.c.ContextLoader.prepareWebApplicationContext :: Root WebApplicationContext: initialization completed in 3129 ms
+2019-12-02 22:06:16.336 [34mINFO[0;39m [35m[main][0;39m c.z.h.HikariDataSource.getConnection :: HikariPool-1 - Starting...
+2019-12-02 22:06:17.438 [34mINFO[0;39m [35m[main][0;39m c.z.h.HikariDataSource.getConnection :: HikariPool-1 - Start completed.
+2019-12-02 22:06:19.675 [34mINFO[0;39m [35m[main][0;39m o.s.s.c.ThreadPoolTaskExecutor.initialize :: Initializing ExecutorService 'applicationTaskExecutor'
+2019-12-02 22:06:20.142 [34mINFO[0;39m [35m[main][0;39m o.s.b.a.e.w.EndpointLinksResolver.<init> :: Exposing 2 endpoint(s) beneath base path '/actuator'
+2019-12-02 22:06:20.286 [34mINFO[0;39m [35m[main][0;39m o.s.s.c.ThreadPoolTaskScheduler.initialize :: Initializing ExecutorService 'taskScheduler'
+2019-12-02 22:06:20.354 [34mINFO[0;39m [35m[main][0;39m o.s.i.e.EventDrivenConsumer.logComponentSubscriptionEvent :: Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2019-12-02 22:06:20.355 [34mINFO[0;39m [35m[main][0;39m o.s.i.c.PublishSubscribeChannel.adjustCounterIfNecessary :: Channel 'application.errorChannel' has 1 subscriber(s).
+2019-12-02 22:06:20.355 [34mINFO[0;39m [35m[main][0;39m o.s.i.e.EventDrivenConsumer.start :: started _org.springframework.integration.errorLogger
+2019-12-02 22:06:20.524 [34mINFO[0;39m [35m[main][0;39m o.s.b.w.e.t.TomcatWebServer.start :: Tomcat started on port(s): 2020 (http) with context path ''
+2019-12-02 22:06:20.527 [34mINFO[0;39m [35m[main][0;39m c.s.S.SearchFoodApplication.logStarted :: Started SearchFoodApplication in 8.739 seconds (JVM running for 14.241)
+2019-12-02 22:06:24.118 [34mINFO[0;39m [35m[Thread-4][0;39m o.s.i.e.EventDrivenConsumer.logComponentSubscriptionEvent :: Removing {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2019-12-02 22:06:24.119 [34mINFO[0;39m [35m[Thread-4][0;39m o.s.i.c.PublishSubscribeChannel.adjustCounterIfNecessary :: Channel 'application.errorChannel' has 0 subscriber(s).
+2019-12-02 22:06:24.120 [34mINFO[0;39m [35m[Thread-4][0;39m o.s.i.e.EventDrivenConsumer.stop :: stopped _org.springframework.integration.errorLogger
+2019-12-02 22:06:24.121 [34mINFO[0;39m [35m[Thread-4][0;39m o.s.s.c.ThreadPoolTaskScheduler.shutdown :: Shutting down ExecutorService 'taskScheduler'
+2019-12-02 22:06:24.124 [34mINFO[0;39m [35m[Thread-4][0;39m o.s.s.c.ThreadPoolTaskExecutor.shutdown :: Shutting down ExecutorService 'applicationTaskExecutor'
+2019-12-02 22:06:24.126 [34mINFO[0;39m [35m[Thread-4][0;39m c.z.h.HikariDataSource.close :: HikariPool-1 - Shutdown initiated...
+2019-12-02 22:06:24.132 [34mINFO[0;39m [35m[Thread-4][0;39m c.z.h.HikariDataSource.close :: HikariPool-1 - Shutdown completed.
+2019-12-02 22:09:25.030 [34mINFO[0;39m [35m[main][0;39m c.s.S.SearchFoodApplication.logStarting :: Starting SearchFoodApplication on eason-P15FV2 with PID 13955 (/home/eason/Desktop/WorkPlace/Project/SearchFoodBackend/target/classes started by eason in /home/eason/Desktop/WorkPlace/Project/SearchFoodBackend)
+2019-12-02 22:09:25.033 [34mINFO[0;39m [35m[main][0;39m c.s.S.SearchFoodApplication.logStartupProfileInfo :: No active profile set, falling back to default profiles: default
+2019-12-02 22:09:26.234 [34mINFO[0;39m [35m[main][0;39m o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor.registerErrorChannel :: No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2019-12-02 22:09:26.241 [34mINFO[0;39m [35m[main][0;39m o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor.registerTaskScheduler :: No bean named 'taskScheduler' has been explicitly defined. Therefore, a default ThreadPoolTaskScheduler will be created.
+2019-12-02 22:09:26.246 [34mINFO[0;39m [35m[main][0;39m o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor.registerHeaderChannelRegistry :: No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2019-12-02 22:09:26.359 [34mINFO[0;39m [35m[main][0;39m o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization :: Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$a08f59b0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-12-02 22:09:26.382 [34mINFO[0;39m [35m[main][0;39m o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization :: Bean 'org.springframework.integration.config.IntegrationManagementConfiguration' of type [org.springframework.integration.config.IntegrationManagementConfiguration$$EnhancerBySpringCGLIB$$b8114df] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-12-02 22:09:26.397 [34mINFO[0;39m [35m[main][0;39m o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization :: Bean 'integrationDisposableAutoCreatedBeans' of type [org.springframework.integration.config.annotation.Disposables] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-12-02 22:09:26.724 [34mINFO[0;39m [35m[main][0;39m o.s.b.w.e.t.TomcatWebServer.initialize :: Tomcat initialized with port(s): 2020 (http)
+2019-12-02 22:09:26.756 [34mINFO[0;39m [35m[main][0;39m o.a.c.c.StandardService.log :: Starting service [Tomcat]
+2019-12-02 22:09:26.757 [34mINFO[0;39m [35m[main][0;39m o.a.c.c.StandardEngine.log :: Starting Servlet engine: [Apache Tomcat/9.0.22]
+2019-12-02 22:09:26.837 [34mINFO[0;39m [35m[main][0;39m o.a.c.c.C.[.[.[/].log :: Initializing Spring embedded WebApplicationContext
+2019-12-02 22:09:26.838 [34mINFO[0;39m [35m[main][0;39m o.s.w.c.ContextLoader.prepareWebApplicationContext :: Root WebApplicationContext: initialization completed in 1770 ms
+2019-12-02 22:09:27.157 [34mINFO[0;39m [35m[main][0;39m c.z.h.HikariDataSource.getConnection :: HikariPool-1 - Starting...
+2019-12-02 22:09:27.833 [34mINFO[0;39m [35m[main][0;39m c.z.h.HikariDataSource.getConnection :: HikariPool-1 - Start completed.
+2019-12-02 22:09:28.093 [1;31mERROR[0;39m [35m[main][0;39m o.s.b.w.e.t.TomcatStarter.onStartup :: Error starting Tomcat context. Exception: org.springframework.beans.factory.BeanCreationException. Message: Error creating bean with name 'servletEndpointRegistrar' defined in class path resource [org/springframework/boot/actuate/autoconfigure/endpoint/web/ServletEndpointManagementContextConfiguration$WebMvcServletEndpointManagementContextConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.boot.actuate.endpoint.web.ServletEndpointRegistrar]: Factory method 'servletEndpointRegistrar' threw exception; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'healthEndpoint' defined in class path resource [org/springframework/boot/actuate/autoconfigure/health/HealthEndpointConfiguration.class]: Unsatisfied dependency expressed through method 'healthEndpoint' parameter 1; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'healthIndicatorRegistry' defined in class path resource [org/springframework/boot/actuate/autoconfigure/health/HealthIndicatorAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.boot.actuate.health.HealthIndicatorRegistry]: Factory method 'healthIndicatorRegistry' threw exception; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'org.springframework.boot.actuate.autoconfigure.jdbc.DataSourceHealthIndicatorAutoConfiguration': Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in class path resource [org/springframework/boot/autoconfigure/jdbc/DataSourceConfiguration$Hikari.class]: Initialization of bean failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerInvoker': Invocation of init method failed; nested exception is org.springframework.jdbc.datasource.init.ScriptStatementFailedException: Failed to execute SQL script statement #1 of URL [file:/home/eason/Desktop/WorkPlace/Project/SearchFoodBackend/target/classes/data.sql]: INSERT INTO Users( mail, passwd, sexual, birthyear ) VALUES( "Admin@test2.com", "123343223", 0, 1983 ); nested exception is java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'Admin@test2.com' for key 'mail'
+2019-12-02 22:09:28.118 [34mINFO[0;39m [35m[main][0;39m o.a.c.c.StandardService.log :: Stopping service [Tomcat]
+2019-12-02 22:09:28.121 [31mWARN[0;39m [35m[main][0;39m o.a.c.l.WebappClassLoaderBase.log :: The web application [ROOT] appears to have started a thread named [HikariPool-1 housekeeper] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ sun.misc.Unsafe.park(Native Method)
+ java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:215)
+ java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2078)
+ java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:1093)
+ java.util.concurrent.ScheduledThreadPoolExecutor$DelayedWorkQueue.take(ScheduledThreadPoolExecutor.java:809)
+ java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1074)
+ java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+ java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+ java.lang.Thread.run(Thread.java:748)
+2019-12-02 22:09:28.122 [31mWARN[0;39m [35m[main][0;39m o.a.c.l.WebappClassLoaderBase.log :: The web application [ROOT] appears to have started a thread named [HikariPool-1 connection adder] but has failed to stop it. This is very likely to create a memory leak. Stack trace of thread:
+ sun.misc.Unsafe.park(Native Method)
+ java.util.concurrent.locks.LockSupport.parkNanos(LockSupport.java:215)
+ java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.awaitNanos(AbstractQueuedSynchronizer.java:2078)
+ java.util.concurrent.LinkedBlockingQueue.poll(LinkedBlockingQueue.java:467)
+ java.util.concurrent.ThreadPoolExecutor.getTask(ThreadPoolExecutor.java:1073)
+ java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1134)
+ java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+ java.lang.Thread.run(Thread.java:748)
+2019-12-02 22:09:28.125 [31mWARN[0;39m [35m[main][0;39m o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext.refresh :: Exception encountered during context initialization - cancelling refresh attempt: org.springframework.context.ApplicationContextException: Unable to start web server; nested exception is org.springframework.boot.web.server.WebServerException: Unable to start embedded Tomcat
+2019-12-02 22:09:28.139 [34mINFO[0;39m [35m[main][0;39m o.s.b.a.l.ConditionEvaluationReportLoggingListener.logMessage :: 
+
+Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
+2019-12-02 22:09:28.146 [1;31mERROR[0;39m [35m[main][0;39m o.s.b.SpringApplication.reportFailure :: Application run failed
+org.springframework.context.ApplicationContextException: Unable to start web server; nested exception is org.springframework.boot.web.server.WebServerException: Unable to start embedded Tomcat
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:156)
+	at org.springframework.context.support.AbstractApplicationContext.refresh(AbstractApplicationContext.java:543)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.refresh(ServletWebServerApplicationContext.java:141)
+	at org.springframework.boot.SpringApplication.refresh(SpringApplication.java:743)
+	at org.springframework.boot.SpringApplication.refreshContext(SpringApplication.java:390)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:312)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1214)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1203)
+	at com.searchfood.SearchFoodBackend.SearchFoodApplication.main(SearchFoodApplication.java:12)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.boot.maven.AbstractRunMojo$LaunchRunner.run(AbstractRunMojo.java:543)
+	at java.lang.Thread.run(Thread.java:748)
+Caused by: org.springframework.boot.web.server.WebServerException: Unable to start embedded Tomcat
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:124)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.<init>(TomcatWebServer.java:86)
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getTomcatWebServer(TomcatServletWebServerFactory.java:416)
+	at org.springframework.boot.web.embedded.tomcat.TomcatServletWebServerFactory.getWebServer(TomcatServletWebServerFactory.java:180)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.createWebServer(ServletWebServerApplicationContext.java:180)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.onRefresh(ServletWebServerApplicationContext.java:153)
+	... 14 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'servletEndpointRegistrar' defined in class path resource [org/springframework/boot/actuate/autoconfigure/endpoint/web/ServletEndpointManagementContextConfiguration$WebMvcServletEndpointManagementContextConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.boot.actuate.endpoint.web.ServletEndpointRegistrar]: Factory method 'servletEndpointRegistrar' threw exception; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'healthEndpoint' defined in class path resource [org/springframework/boot/actuate/autoconfigure/health/HealthEndpointConfiguration.class]: Unsatisfied dependency expressed through method 'healthEndpoint' parameter 1; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'healthIndicatorRegistry' defined in class path resource [org/springframework/boot/actuate/autoconfigure/health/HealthIndicatorAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.boot.actuate.health.HealthIndicatorRegistry]: Factory method 'healthIndicatorRegistry' threw exception; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'org.springframework.boot.actuate.autoconfigure.jdbc.DataSourceHealthIndicatorAutoConfiguration': Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in class path resource [org/springframework/boot/autoconfigure/jdbc/DataSourceConfiguration$Hikari.class]: Initialization of bean failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerInvoker': Invocation of init method failed; nested exception is org.springframework.jdbc.datasource.init.ScriptStatementFailedException: Failed to execute SQL script statement #1 of URL [file:/home/eason/Desktop/WorkPlace/Project/SearchFoodBackend/target/classes/data.sql]: INSERT INTO Users( mail, passwd, sexual, birthyear ) VALUES( "Admin@test2.com", "123343223", 0, 1983 ); nested exception is java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'Admin@test2.com' for key 'mail'
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:627)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:607)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1321)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1160)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:555)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:515)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:204)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.getOrderedBeansOfType(ServletContextInitializerBeans.java:211)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.getOrderedBeansOfType(ServletContextInitializerBeans.java:202)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.addServletContextInitializerBeans(ServletContextInitializerBeans.java:96)
+	at org.springframework.boot.web.servlet.ServletContextInitializerBeans.<init>(ServletContextInitializerBeans.java:85)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.getServletContextInitializerBeans(ServletWebServerApplicationContext.java:253)
+	at org.springframework.boot.web.servlet.context.ServletWebServerApplicationContext.selfInitialize(ServletWebServerApplicationContext.java:227)
+	at org.springframework.boot.web.embedded.tomcat.TomcatStarter.onStartup(TomcatStarter.java:53)
+	at org.apache.catalina.core.StandardContext.startInternal(StandardContext.java:5132)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1384)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1374)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+	at java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:134)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:909)
+	at org.apache.catalina.core.StandardHost.startInternal(StandardHost.java:841)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1384)
+	at org.apache.catalina.core.ContainerBase$StartChild.call(ContainerBase.java:1374)
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266)
+	at org.apache.tomcat.util.threads.InlineExecutorService.execute(InlineExecutorService.java:75)
+	at java.util.concurrent.AbstractExecutorService.submit(AbstractExecutorService.java:134)
+	at org.apache.catalina.core.ContainerBase.startInternal(ContainerBase.java:909)
+	at org.apache.catalina.core.StandardEngine.startInternal(StandardEngine.java:262)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.StandardService.startInternal(StandardService.java:421)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.core.StandardServer.startInternal(StandardServer.java:932)
+	at org.apache.catalina.util.LifecycleBase.start(LifecycleBase.java:183)
+	at org.apache.catalina.startup.Tomcat.start(Tomcat.java:456)
+	at org.springframework.boot.web.embedded.tomcat.TomcatWebServer.initialize(TomcatWebServer.java:105)
+	... 19 common frames omitted
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.boot.actuate.endpoint.web.ServletEndpointRegistrar]: Factory method 'servletEndpointRegistrar' threw exception; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'healthEndpoint' defined in class path resource [org/springframework/boot/actuate/autoconfigure/health/HealthEndpointConfiguration.class]: Unsatisfied dependency expressed through method 'healthEndpoint' parameter 1; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'healthIndicatorRegistry' defined in class path resource [org/springframework/boot/actuate/autoconfigure/health/HealthIndicatorAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.boot.actuate.health.HealthIndicatorRegistry]: Factory method 'healthIndicatorRegistry' threw exception; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'org.springframework.boot.actuate.autoconfigure.jdbc.DataSourceHealthIndicatorAutoConfiguration': Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in class path resource [org/springframework/boot/autoconfigure/jdbc/DataSourceConfiguration$Hikari.class]: Initialization of bean failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerInvoker': Invocation of init method failed; nested exception is org.springframework.jdbc.datasource.init.ScriptStatementFailedException: Failed to execute SQL script statement #1 of URL [file:/home/eason/Desktop/WorkPlace/Project/SearchFoodBackend/target/classes/data.sql]: INSERT INTO Users( mail, passwd, sexual, birthyear ) VALUES( "Admin@test2.com", "123343223", 0, 1983 ); nested exception is java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'Admin@test2.com' for key 'mail'
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:185)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:622)
+	... 59 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'healthEndpoint' defined in class path resource [org/springframework/boot/actuate/autoconfigure/health/HealthEndpointConfiguration.class]: Unsatisfied dependency expressed through method 'healthEndpoint' parameter 1; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'healthIndicatorRegistry' defined in class path resource [org/springframework/boot/actuate/autoconfigure/health/HealthIndicatorAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.boot.actuate.health.HealthIndicatorRegistry]: Factory method 'healthIndicatorRegistry' threw exception; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'org.springframework.boot.actuate.autoconfigure.jdbc.DataSourceHealthIndicatorAutoConfiguration': Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in class path resource [org/springframework/boot/autoconfigure/jdbc/DataSourceConfiguration$Hikari.class]: Initialization of bean failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerInvoker': Invocation of init method failed; nested exception is org.springframework.jdbc.datasource.init.ScriptStatementFailedException: Failed to execute SQL script statement #1 of URL [file:/home/eason/Desktop/WorkPlace/Project/SearchFoodBackend/target/classes/data.sql]: INSERT INTO Users( mail, passwd, sexual, birthyear ) VALUES( "Admin@test2.com", "123343223", 0, 1983 ); nested exception is java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'Admin@test2.com' for key 'mail'
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:769)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:509)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1321)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1160)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:555)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:515)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.context.support.AbstractApplicationContext.getBean(AbstractApplicationContext.java:1105)
+	at org.springframework.boot.actuate.endpoint.annotation.EndpointDiscoverer.createEndpointBean(EndpointDiscoverer.java:141)
+	at org.springframework.boot.actuate.endpoint.annotation.EndpointDiscoverer.createEndpointBeans(EndpointDiscoverer.java:131)
+	at org.springframework.boot.actuate.endpoint.annotation.EndpointDiscoverer.discoverEndpoints(EndpointDiscoverer.java:120)
+	at org.springframework.boot.actuate.endpoint.annotation.EndpointDiscoverer.getEndpoints(EndpointDiscoverer.java:114)
+	at org.springframework.boot.actuate.autoconfigure.endpoint.web.ServletEndpointManagementContextConfiguration$WebMvcServletEndpointManagementContextConfiguration.servletEndpointRegistrar(ServletEndpointManagementContextConfiguration.java:72)
+	at org.springframework.boot.actuate.autoconfigure.endpoint.web.ServletEndpointManagementContextConfiguration$WebMvcServletEndpointManagementContextConfiguration$$EnhancerBySpringCGLIB$$56c3b18b.CGLIB$servletEndpointRegistrar$0(<generated>)
+	at org.springframework.boot.actuate.autoconfigure.endpoint.web.ServletEndpointManagementContextConfiguration$WebMvcServletEndpointManagementContextConfiguration$$EnhancerBySpringCGLIB$$56c3b18b$$FastClassBySpringCGLIB$$502cf8cd.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:244)
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:363)
+	at org.springframework.boot.actuate.autoconfigure.endpoint.web.ServletEndpointManagementContextConfiguration$WebMvcServletEndpointManagementContextConfiguration$$EnhancerBySpringCGLIB$$56c3b18b.servletEndpointRegistrar(<generated>)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154)
+	... 60 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'healthIndicatorRegistry' defined in class path resource [org/springframework/boot/actuate/autoconfigure/health/HealthIndicatorAutoConfiguration.class]: Bean instantiation via factory method failed; nested exception is org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.boot.actuate.health.HealthIndicatorRegistry]: Factory method 'healthIndicatorRegistry' threw exception; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'org.springframework.boot.actuate.autoconfigure.jdbc.DataSourceHealthIndicatorAutoConfiguration': Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in class path resource [org/springframework/boot/autoconfigure/jdbc/DataSourceConfiguration$Hikari.class]: Initialization of bean failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerInvoker': Invocation of init method failed; nested exception is org.springframework.jdbc.datasource.init.ScriptStatementFailedException: Failed to execute SQL script statement #1 of URL [file:/home/eason/Desktop/WorkPlace/Project/SearchFoodBackend/target/classes/data.sql]: INSERT INTO Users( mail, passwd, sexual, birthyear ) VALUES( "Admin@test2.com", "123343223", 0, 1983 ); nested exception is java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'Admin@test2.com' for key 'mail'
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:627)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:607)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1321)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1160)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:555)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:515)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:277)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1251)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1171)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:857)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:760)
+	... 85 common frames omitted
+Caused by: org.springframework.beans.BeanInstantiationException: Failed to instantiate [org.springframework.boot.actuate.health.HealthIndicatorRegistry]: Factory method 'healthIndicatorRegistry' threw exception; nested exception is org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'org.springframework.boot.actuate.autoconfigure.jdbc.DataSourceHealthIndicatorAutoConfiguration': Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in class path resource [org/springframework/boot/autoconfigure/jdbc/DataSourceConfiguration$Hikari.class]: Initialization of bean failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerInvoker': Invocation of init method failed; nested exception is org.springframework.jdbc.datasource.init.ScriptStatementFailedException: Failed to execute SQL script statement #1 of URL [file:/home/eason/Desktop/WorkPlace/Project/SearchFoodBackend/target/classes/data.sql]: INSERT INTO Users( mail, passwd, sexual, birthyear ) VALUES( "Admin@test2.com", "123343223", 0, 1983 ); nested exception is java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'Admin@test2.com' for key 'mail'
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:185)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiate(ConstructorResolver.java:622)
+	... 99 common frames omitted
+Caused by: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'org.springframework.boot.actuate.autoconfigure.jdbc.DataSourceHealthIndicatorAutoConfiguration': Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in class path resource [org/springframework/boot/autoconfigure/jdbc/DataSourceConfiguration$Hikari.class]: Initialization of bean failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerInvoker': Invocation of init method failed; nested exception is org.springframework.jdbc.datasource.init.ScriptStatementFailedException: Failed to execute SQL script statement #1 of URL [file:/home/eason/Desktop/WorkPlace/Project/SearchFoodBackend/target/classes/data.sql]: INSERT INTO Users( mail, passwd, sexual, birthyear ) VALUES( "Admin@test2.com", "123343223", 0, 1983 ); nested exception is java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'Admin@test2.com' for key 'mail'
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:769)
+	at org.springframework.beans.factory.support.ConstructorResolver.autowireConstructor(ConstructorResolver.java:218)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.autowireConstructor(AbstractAutowireCapableBeanFactory.java:1341)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1187)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:555)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:515)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.support.ConstructorResolver.instantiateUsingFactoryMethod(ConstructorResolver.java:392)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.instantiateUsingFactoryMethod(AbstractAutowireCapableBeanFactory.java:1321)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBeanInstance(AbstractAutowireCapableBeanFactory.java:1160)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:555)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:515)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeansOfType(DefaultListableBeanFactory.java:606)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBeansOfType(DefaultListableBeanFactory.java:594)
+	at org.springframework.context.support.AbstractApplicationContext.getBeansOfType(AbstractApplicationContext.java:1226)
+	at org.springframework.boot.actuate.autoconfigure.health.HealthIndicatorRegistryBeans.get(HealthIndicatorRegistryBeans.java:42)
+	at org.springframework.boot.actuate.autoconfigure.health.HealthIndicatorAutoConfiguration.healthIndicatorRegistry(HealthIndicatorAutoConfiguration.java:77)
+	at org.springframework.boot.actuate.autoconfigure.health.HealthIndicatorAutoConfiguration$$EnhancerBySpringCGLIB$$aa117570.CGLIB$healthIndicatorRegistry$2(<generated>)
+	at org.springframework.boot.actuate.autoconfigure.health.HealthIndicatorAutoConfiguration$$EnhancerBySpringCGLIB$$aa117570$$FastClassBySpringCGLIB$$1009b815.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invokeSuper(MethodProxy.java:244)
+	at org.springframework.context.annotation.ConfigurationClassEnhancer$BeanMethodInterceptor.intercept(ConfigurationClassEnhancer.java:363)
+	at org.springframework.boot.actuate.autoconfigure.health.HealthIndicatorAutoConfiguration$$EnhancerBySpringCGLIB$$aa117570.healthIndicatorRegistry(<generated>)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.beans.factory.support.SimpleInstantiationStrategy.instantiate(SimpleInstantiationStrategy.java:154)
+	... 100 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'dataSource' defined in class path resource [org/springframework/boot/autoconfigure/jdbc/DataSourceConfiguration$Hikari.class]: Initialization of bean failed; nested exception is org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerInvoker': Invocation of init method failed; nested exception is org.springframework.jdbc.datasource.init.ScriptStatementFailedException: Failed to execute SQL script statement #1 of URL [file:/home/eason/Desktop/WorkPlace/Project/SearchFoodBackend/target/classes/data.sql]: INSERT INTO Users( mail, passwd, sexual, birthyear ) VALUES( "Admin@test2.com", "123343223", 0, 1983 ); nested exception is java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'Admin@test2.com' for key 'mail'
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:601)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:515)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:199)
+	at org.springframework.beans.factory.config.DependencyDescriptor.resolveCandidate(DependencyDescriptor.java:277)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.addCandidateEntry(DefaultListableBeanFactory.java:1467)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.findAutowireCandidates(DefaultListableBeanFactory.java:1431)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveMultipleBeans(DefaultListableBeanFactory.java:1350)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.doResolveDependency(DefaultListableBeanFactory.java:1209)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveDependency(DefaultListableBeanFactory.java:1171)
+	at org.springframework.beans.factory.support.ConstructorResolver.resolveAutowiredArgument(ConstructorResolver.java:857)
+	at org.springframework.beans.factory.support.ConstructorResolver.createArgumentArray(ConstructorResolver.java:760)
+	... 133 common frames omitted
+Caused by: org.springframework.beans.factory.BeanCreationException: Error creating bean with name 'org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerInvoker': Invocation of init method failed; nested exception is org.springframework.jdbc.datasource.init.ScriptStatementFailedException: Failed to execute SQL script statement #1 of URL [file:/home/eason/Desktop/WorkPlace/Project/SearchFoodBackend/target/classes/data.sql]: INSERT INTO Users( mail, passwd, sexual, birthyear ) VALUES( "Admin@test2.com", "123343223", 0, 1983 ); nested exception is java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'Admin@test2.com' for key 'mail'
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1778)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:593)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.createBean(AbstractAutowireCapableBeanFactory.java:515)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.lambda$doGetBean$0(AbstractBeanFactory.java:320)
+	at org.springframework.beans.factory.support.DefaultSingletonBeanRegistry.getSingleton(DefaultSingletonBeanRegistry.java:222)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.doGetBean(AbstractBeanFactory.java:318)
+	at org.springframework.beans.factory.support.AbstractBeanFactory.getBean(AbstractBeanFactory.java:224)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveNamedBean(DefaultListableBeanFactory.java:1119)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.resolveBean(DefaultListableBeanFactory.java:411)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBean(DefaultListableBeanFactory.java:344)
+	at org.springframework.beans.factory.support.DefaultListableBeanFactory.getBean(DefaultListableBeanFactory.java:337)
+	at org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerPostProcessor.postProcessAfterInitialization(DataSourceInitializerPostProcessor.java:52)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.applyBeanPostProcessorsAfterInitialization(AbstractAutowireCapableBeanFactory.java:429)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1782)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.doCreateBean(AbstractAutowireCapableBeanFactory.java:593)
+	... 146 common frames omitted
+Caused by: org.springframework.jdbc.datasource.init.ScriptStatementFailedException: Failed to execute SQL script statement #1 of URL [file:/home/eason/Desktop/WorkPlace/Project/SearchFoodBackend/target/classes/data.sql]: INSERT INTO Users( mail, passwd, sexual, birthyear ) VALUES( "Admin@test2.com", "123343223", 0, 1983 ); nested exception is java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'Admin@test2.com' for key 'mail'
+	at org.springframework.jdbc.datasource.init.ScriptUtils.executeSqlScript(ScriptUtils.java:509)
+	at org.springframework.jdbc.datasource.init.ResourceDatabasePopulator.populate(ResourceDatabasePopulator.java:238)
+	at org.springframework.jdbc.datasource.init.DatabasePopulatorUtils.execute(DatabasePopulatorUtils.java:48)
+	at org.springframework.boot.autoconfigure.jdbc.DataSourceInitializer.runScripts(DataSourceInitializer.java:202)
+	at org.springframework.boot.autoconfigure.jdbc.DataSourceInitializer.initSchema(DataSourceInitializer.java:119)
+	at org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerInvoker.initialize(DataSourceInitializerInvoker.java:74)
+	at org.springframework.boot.autoconfigure.jdbc.DataSourceInitializerInvoker.afterPropertiesSet(DataSourceInitializerInvoker.java:64)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.invokeInitMethods(AbstractAutowireCapableBeanFactory.java:1837)
+	at org.springframework.beans.factory.support.AbstractAutowireCapableBeanFactory.initializeBean(AbstractAutowireCapableBeanFactory.java:1774)
+	... 160 common frames omitted
+Caused by: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'Admin@test2.com' for key 'mail'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:117)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.StatementImpl.executeInternal(StatementImpl.java:764)
+	at com.mysql.cj.jdbc.StatementImpl.execute(StatementImpl.java:648)
+	at com.zaxxer.hikari.pool.ProxyStatement.execute(ProxyStatement.java:95)
+	at com.zaxxer.hikari.pool.HikariProxyStatement.execute(HikariProxyStatement.java)
+	at org.springframework.jdbc.datasource.init.ScriptUtils.executeSqlScript(ScriptUtils.java:488)
+	... 168 common frames omitted
+2019-12-02 22:10:04.118 [34mINFO[0;39m [35m[main][0;39m c.s.S.SearchFoodApplication.logStarting :: Starting SearchFoodApplication on eason-P15FV2 with PID 14066 (/home/eason/Desktop/WorkPlace/Project/SearchFoodBackend/target/classes started by eason in /home/eason/Desktop/WorkPlace/Project/SearchFoodBackend)
+2019-12-02 22:10:04.122 [34mINFO[0;39m [35m[main][0;39m c.s.S.SearchFoodApplication.logStartupProfileInfo :: No active profile set, falling back to default profiles: default
+2019-12-02 22:10:05.328 [34mINFO[0;39m [35m[main][0;39m o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor.registerErrorChannel :: No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2019-12-02 22:10:05.335 [34mINFO[0;39m [35m[main][0;39m o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor.registerTaskScheduler :: No bean named 'taskScheduler' has been explicitly defined. Therefore, a default ThreadPoolTaskScheduler will be created.
+2019-12-02 22:10:05.340 [34mINFO[0;39m [35m[main][0;39m o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor.registerHeaderChannelRegistry :: No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2019-12-02 22:10:05.456 [34mINFO[0;39m [35m[main][0;39m o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization :: Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$58318d8c] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-12-02 22:10:05.479 [34mINFO[0;39m [35m[main][0;39m o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization :: Bean 'org.springframework.integration.config.IntegrationManagementConfiguration' of type [org.springframework.integration.config.IntegrationManagementConfiguration$$EnhancerBySpringCGLIB$$c32348bb] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-12-02 22:10:05.495 [34mINFO[0;39m [35m[main][0;39m o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization :: Bean 'integrationDisposableAutoCreatedBeans' of type [org.springframework.integration.config.annotation.Disposables] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-12-02 22:10:05.791 [34mINFO[0;39m [35m[main][0;39m o.s.b.w.e.t.TomcatWebServer.initialize :: Tomcat initialized with port(s): 2020 (http)
+2019-12-02 22:10:05.818 [34mINFO[0;39m [35m[main][0;39m o.a.c.c.StandardService.log :: Starting service [Tomcat]
+2019-12-02 22:10:05.819 [34mINFO[0;39m [35m[main][0;39m o.a.c.c.StandardEngine.log :: Starting Servlet engine: [Apache Tomcat/9.0.22]
+2019-12-02 22:10:05.892 [34mINFO[0;39m [35m[main][0;39m o.a.c.c.C.[.[.[/].log :: Initializing Spring embedded WebApplicationContext
+2019-12-02 22:10:05.892 [34mINFO[0;39m [35m[main][0;39m o.s.w.c.ContextLoader.prepareWebApplicationContext :: Root WebApplicationContext: initialization completed in 1723 ms
+2019-12-02 22:10:06.174 [34mINFO[0;39m [35m[main][0;39m c.z.h.HikariDataSource.getConnection :: HikariPool-1 - Starting...
+2019-12-02 22:10:06.755 [34mINFO[0;39m [35m[main][0;39m c.z.h.HikariDataSource.getConnection :: HikariPool-1 - Start completed.
+2019-12-02 22:10:07.457 [34mINFO[0;39m [35m[main][0;39m o.s.s.c.ThreadPoolTaskExecutor.initialize :: Initializing ExecutorService 'applicationTaskExecutor'
+2019-12-02 22:10:07.891 [34mINFO[0;39m [35m[main][0;39m o.s.b.a.e.w.EndpointLinksResolver.<init> :: Exposing 2 endpoint(s) beneath base path '/actuator'
+2019-12-02 22:10:07.981 [34mINFO[0;39m [35m[main][0;39m o.s.s.c.ThreadPoolTaskScheduler.initialize :: Initializing ExecutorService 'taskScheduler'
+2019-12-02 22:10:08.060 [34mINFO[0;39m [35m[main][0;39m o.s.i.e.EventDrivenConsumer.logComponentSubscriptionEvent :: Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2019-12-02 22:10:08.060 [34mINFO[0;39m [35m[main][0;39m o.s.i.c.PublishSubscribeChannel.adjustCounterIfNecessary :: Channel 'application.errorChannel' has 1 subscriber(s).
+2019-12-02 22:10:08.061 [34mINFO[0;39m [35m[main][0;39m o.s.i.e.EventDrivenConsumer.start :: started _org.springframework.integration.errorLogger
+2019-12-02 22:10:08.109 [34mINFO[0;39m [35m[main][0;39m o.s.b.w.e.t.TomcatWebServer.start :: Tomcat started on port(s): 2020 (http) with context path ''
+2019-12-02 22:10:08.113 [34mINFO[0;39m [35m[main][0;39m c.s.S.SearchFoodApplication.logStarted :: Started SearchFoodApplication in 4.419 seconds (JVM running for 8.352)
+2019-12-02 22:10:12.672 [34mINFO[0;39m [35m[http-nio-2020-exec-1][0;39m o.a.c.c.C.[.[.[/].log :: Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-12-02 22:10:12.673 [34mINFO[0;39m [35m[http-nio-2020-exec-1][0;39m o.s.w.s.DispatcherServlet.initServletBean :: Initializing Servlet 'dispatcherServlet'
+2019-12-02 22:10:12.685 [34mINFO[0;39m [35m[http-nio-2020-exec-1][0;39m o.s.w.s.DispatcherServlet.initServletBean :: Completed initialization in 12 ms
+2019-12-02 22:10:12.943 [39mDEBUG[0;39m [35m[http-nio-2020-exec-1][0;39m c.s.S.w.SignUpController.signUp :: TESTING: username: tvjs68@Admin.com password: 1234#$%@ birthyear: 1999 sex: 1
+2019-12-02 22:10:12.980 [39mDEBUG[0;39m [35m[http-nio-2020-exec-1][0;39m o.s.j.c.JdbcTemplate.update :: Executing prepared SQL update
+2019-12-02 22:10:12.981 [39mDEBUG[0;39m [35m[http-nio-2020-exec-1][0;39m o.s.j.c.JdbcTemplate.execute :: Executing prepared SQL statement [INSERT INTO Users( mail, passwd, sexual, birthyear ) VALUES( ?, ?, ?, ? )]
+2019-12-02 22:10:13.015 [39mTRACE[0;39m [35m[http-nio-2020-exec-1][0;39m o.s.j.c.StatementCreatorUtils.setParameterValueInternal :: Setting SQL statement parameter value: column index 1, parameter value [tvjs68@Admin.com], value class [java.lang.String], SQL type unknown
+2019-12-02 22:10:13.016 [39mTRACE[0;39m [35m[http-nio-2020-exec-1][0;39m o.s.j.c.StatementCreatorUtils.setParameterValueInternal :: Setting SQL statement parameter value: column index 2, parameter value [1234#$%@], value class [java.lang.String], SQL type unknown
+2019-12-02 22:10:13.016 [39mTRACE[0;39m [35m[http-nio-2020-exec-1][0;39m o.s.j.c.StatementCreatorUtils.setParameterValueInternal :: Setting SQL statement parameter value: column index 3, parameter value [1], value class [java.lang.Integer], SQL type unknown
+2019-12-02 22:10:13.017 [39mTRACE[0;39m [35m[http-nio-2020-exec-1][0;39m o.s.j.c.StatementCreatorUtils.setParameterValueInternal :: Setting SQL statement parameter value: column index 4, parameter value [1999], value class [java.lang.Integer], SQL type unknown
+2019-12-02 22:10:13.018 [39mTRACE[0;39m [35m[http-nio-2020-exec-1][0;39m o.s.j.c.JdbcTemplate.lambda$update$0 :: SQL update affected 1 rows
+2019-12-02 22:10:13.021 [39mDEBUG[0;39m [35m[http-nio-2020-exec-1][0;39m o.s.j.c.JdbcTemplate.update :: Executing prepared SQL update
+2019-12-02 22:10:13.022 [39mDEBUG[0;39m [35m[http-nio-2020-exec-1][0;39m o.s.j.c.JdbcTemplate.execute :: Executing prepared SQL statement [INSERT INTO Token( mail, token, navigator_type ) VALUES( ?, ?, ? )]
+2019-12-02 22:10:13.023 [39mTRACE[0;39m [35m[http-nio-2020-exec-1][0;39m o.s.j.c.StatementCreatorUtils.setParameterValueInternal :: Setting SQL statement parameter value: column index 1, parameter value [tvjs68@Admin.com], value class [java.lang.String], SQL type unknown
+2019-12-02 22:10:13.023 [39mTRACE[0;39m [35m[http-nio-2020-exec-1][0;39m o.s.j.c.StatementCreatorUtils.setParameterValueInternal :: Setting SQL statement parameter value: column index 2, parameter value [fe1f3964-31ff-45ab-96d7-4515be767675], value class [java.lang.String], SQL type unknown
+2019-12-02 22:10:13.023 [39mTRACE[0;39m [35m[http-nio-2020-exec-1][0;39m o.s.j.c.StatementCreatorUtils.setParameterValueInternal :: Setting SQL statement parameter value: column index 3, parameter value [Nan], value class [java.lang.String], SQL type unknown
+2019-12-02 22:10:13.024 [39mTRACE[0;39m [35m[http-nio-2020-exec-1][0;39m o.s.j.c.JdbcTemplate.lambda$update$0 :: SQL update affected 1 rows
+2019-12-02 22:10:16.766 [34mINFO[0;39m [35m[http-nio-2020-exec-1][0;39m c.s.S.u.m.SendSignUpMailService.sendEmail :: Sending email to tvjs68@Admin.com!!!
+2019-12-02 22:10:16.767 [34mINFO[0;39m [35m[http-nio-2020-exec-1][0;39m c.s.S.w.SignUpController.signUp :: tvjs68@Admin.com sign up successfully.
+2019-12-02 22:10:25.541 [34mINFO[0;39m [35m[http-nio-2020-exec-2][0;39m c.s.S.w.CreateStoreTypeController.getStoreTypes :: Processing getStoreTypes...
+2019-12-02 22:10:25.551 [39mDEBUG[0;39m [35m[http-nio-2020-exec-2][0;39m o.s.j.c.JdbcTemplate.query :: Executing prepared SQL query
+2019-12-02 22:10:25.552 [39mDEBUG[0;39m [35m[http-nio-2020-exec-2][0;39m o.s.j.c.JdbcTemplate.execute :: Executing prepared SQL statement [SELECT mail, login_time FROM Token WHERE token = ?]
+2019-12-02 22:10:25.553 [39mTRACE[0;39m [35m[http-nio-2020-exec-2][0;39m o.s.j.c.StatementCreatorUtils.setParameterValueInternal :: Setting SQL statement parameter value: column index 1, parameter value [5ed92318-5145-4ba7-a1bf-96eaadc51545], value class [java.lang.String], SQL type unknown
+2019-12-02 22:10:25.562 [31mWARN[0;39m [35m[http-nio-2020-exec-2][0;39m c.s.S.w.CreateStoreTypeController.getStoreTypes :: The token is invalid.
+2019-12-02 22:10:25.564 [31mWARN[0;39m [35m[http-nio-2020-exec-2][0;39m c.s.S.u.e.ControllerException.handleNotFoundException :: In ControllerException: NotFoundException
+2019-12-02 22:10:42.296 [39mDEBUG[0;39m [35m[http-nio-2020-exec-3][0;39m c.s.S.w.StoreInfoController.createNewStoreInfo :: storename: JP3
+2019-12-02 22:10:42.297 [39mDEBUG[0;39m [35m[http-nio-2020-exec-3][0;39m c.s.S.w.StoreInfoController.createNewStoreInfo :: latlong: {lat=123, long=2332}
+2019-12-02 22:10:42.297 [39mDEBUG[0;39m [35m[http-nio-2020-exec-3][0;39m o.s.j.c.JdbcTemplate.query :: Executing prepared SQL query
+2019-12-02 22:10:42.297 [39mDEBUG[0;39m [35m[http-nio-2020-exec-3][0;39m o.s.j.c.JdbcTemplate.execute :: Executing prepared SQL statement [SELECT mail, login_time FROM Token WHERE token = ?]
+2019-12-02 22:10:42.298 [39mTRACE[0;39m [35m[http-nio-2020-exec-3][0;39m o.s.j.c.StatementCreatorUtils.setParameterValueInternal :: Setting SQL statement parameter value: column index 1, parameter value [fe1f3964-31ff-45ab-96d7-4515be767675], value class [java.lang.String], SQL type unknown
+2019-12-02 22:10:42.300 [34mINFO[0;39m [35m[http-nio-2020-exec-3][0;39m c.s.S.m.CheckTokenImp.isExist :: now: 2019-12-02T14:10:42.299Z
+2019-12-02 22:10:42.301 [34mINFO[0;39m [35m[http-nio-2020-exec-3][0;39m c.s.S.m.CheckTokenImp.isExist :: loginTime: 2019-12-02T14:10:13Z
+2019-12-02 22:10:42.301 [34mINFO[0;39m [35m[http-nio-2020-exec-3][0;39m c.s.S.m.CheckTokenImp.isExist :: Duration: 0
+2019-12-02 22:10:42.301 [34mINFO[0;39m [35m[http-nio-2020-exec-3][0;39m c.s.S.m.CheckTokenImp.check :: The username of fe1f3964-31ff-45ab-96d7-4515be767675 is tvjs68@Admin.com
+2019-12-02 22:10:42.301 [34mINFO[0;39m [35m[http-nio-2020-exec-3][0;39m c.s.S.w.StoreInfoController.createNewStoreInfo :: tvjs68@Admin.com is trying to create new store info.
+2019-12-02 22:10:42.301 [34mINFO[0;39m [35m[http-nio-2020-exec-3][0;39m c.s.S.w.StoreInfoController.createNewStoreInfo :: The data for building new store infomation is valid.
+2019-12-02 22:10:42.317 [39mDEBUG[0;39m [35m[http-nio-2020-exec-3][0;39m c.s.S.m.StoreInfoImp.createNewStoreInfoToDatabase :: username: tvjs68@Admin.com	storeName: JP3. At 2019-12-02 22:10:42.317
+2019-12-02 22:10:42.318 [39mDEBUG[0;39m [35m[http-nio-2020-exec-3][0;39m c.s.S.m.StoreInfoImp.save :: Test in Map: [炒飯, 燴飯, 滷肉飯, 豬排飯, 三寶飯]
+2019-12-02 22:10:42.319 [39mDEBUG[0;39m [35m[http-nio-2020-exec-3][0;39m c.s.S.m.StoreInfoImp.save :: The details of food types: [麥當勞, 肯德基, 頂呱呱, 胖老爹, 油麵, 涼麵, 義大利麵, 陽春麵, 粄條, 白麵, 炒飯, 燴飯, 滷肉飯, 豬排飯, 三寶飯]
+2019-12-02 22:10:42.341 [1;31mERROR[0;39m [35m[http-nio-2020-exec-3][0;39m o.a.c.c.C.[.[.[.[dispatcherServlet].log :: Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.NullPointerException] with root cause
+java.lang.NullPointerException: null
+	at com.searchfood.SearchFoodBackend.model.GetFoodTypesImp.getFoodIdsListInString(GetFoodTypesImp.java:121)
+	at com.searchfood.SearchFoodBackend.model.GetFoodTypesImp$$FastClassBySpringCGLIB$$4c9c6dc7.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:749)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:139)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:688)
+	at com.searchfood.SearchFoodBackend.model.GetFoodTypesImp$$EnhancerBySpringCGLIB$$8202078f.getFoodIdsListInString(<generated>)
+	at com.searchfood.SearchFoodBackend.model.StoreInfoImp.save(StoreInfoImp.java:83)
+	at com.searchfood.SearchFoodBackend.model.StoreInfoImp.createNewStoreInfoToDatabase(StoreInfoImp.java:64)
+	at com.searchfood.SearchFoodBackend.model.StoreInfoImp$$FastClassBySpringCGLIB$$311c6bdd.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:749)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:139)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:688)
+	at com.searchfood.SearchFoodBackend.model.StoreInfoImp$$EnhancerBySpringCGLIB$$77ce7f91.createNewStoreInfoToDatabase(<generated>)
+	at com.searchfood.SearchFoodBackend.model.StoreInfoTransactionImp.createNewStoreInfoToDatabase(StoreInfoTransactionImp.java:29)
+	at com.searchfood.SearchFoodBackend.model.StoreInfoTransactionImp$$FastClassBySpringCGLIB$$d6a09f5d.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:749)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:295)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:98)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:688)
+	at com.searchfood.SearchFoodBackend.model.StoreInfoTransactionImp$$EnhancerBySpringCGLIB$$1d47ca32.createNewStoreInfoToDatabase(<generated>)
+	at com.searchfood.SearchFoodBackend.webapi.StoreInfoController.createNewStoreInfo(StoreInfoController.java:70)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:104)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:892)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1039)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:942)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1005)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:908)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:882)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.boot.actuate.web.trace.servlet.HttpTraceFilter.doFilterInternal(HttpTraceFilter.java:88)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:118)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:118)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:92)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:118)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:118)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.filterAndRecordMetrics(WebMvcMetricsFilter.java:114)
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:104)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:118)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:118)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:853)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1587)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2019-12-02 22:10:57.119 [34mINFO[0;39m [35m[http-nio-2020-exec-4][0;39m c.s.S.w.CreateStoreTypeController.getStoreTypes :: Processing getStoreTypes...
+2019-12-02 22:10:57.120 [39mDEBUG[0;39m [35m[http-nio-2020-exec-4][0;39m o.s.j.c.JdbcTemplate.query :: Executing prepared SQL query
+2019-12-02 22:10:57.120 [39mDEBUG[0;39m [35m[http-nio-2020-exec-4][0;39m o.s.j.c.JdbcTemplate.execute :: Executing prepared SQL statement [SELECT mail, login_time FROM Token WHERE token = ?]
+2019-12-02 22:10:57.122 [39mTRACE[0;39m [35m[http-nio-2020-exec-4][0;39m o.s.j.c.StatementCreatorUtils.setParameterValueInternal :: Setting SQL statement parameter value: column index 1, parameter value [5ed92318-5145-4ba7-a1bf-96eaadc51545], value class [java.lang.String], SQL type unknown
+2019-12-02 22:10:57.126 [34mINFO[0;39m [35m[http-nio-2020-exec-4][0;39m c.s.S.m.CheckTokenImp.isExist :: now: 2019-12-02T14:10:57.126Z
+2019-12-02 22:10:57.127 [34mINFO[0;39m [35m[http-nio-2020-exec-4][0;39m c.s.S.m.CheckTokenImp.isExist :: loginTime: 2019-12-02T14:10:13Z
+2019-12-02 22:10:57.127 [34mINFO[0;39m [35m[http-nio-2020-exec-4][0;39m c.s.S.m.CheckTokenImp.isExist :: Duration: 0
+2019-12-02 22:10:57.128 [34mINFO[0;39m [35m[http-nio-2020-exec-4][0;39m c.s.S.m.CheckTokenImp.check :: The username of 5ed92318-5145-4ba7-a1bf-96eaadc51545 is tvjs68@Admin.com
+2019-12-02 22:10:57.128 [34mINFO[0;39m [35m[http-nio-2020-exec-4][0;39m c.s.S.w.CreateStoreTypeController.getStoreTypes :: Valid token
+2019-12-02 22:10:57.128 [34mINFO[0;39m [35m[http-nio-2020-exec-4][0;39m c.s.S.w.CreateStoreTypeController.getStoreTypes :: Trying to load the food types from databases...
+2019-12-02 22:10:57.128 [39mDEBUG[0;39m [35m[http-nio-2020-exec-4][0;39m c.s.S.m.GetFoodTypesImp.getFoodTypesMap :: start to get data...
+2019-12-02 22:10:57.129 [39mDEBUG[0;39m [35m[http-nio-2020-exec-4][0;39m c.s.S.m.GetFoodTypesImp.getQueryResults :: query data from database in the form of List...
+2019-12-02 22:10:57.130 [39mDEBUG[0;39m [35m[http-nio-2020-exec-4][0;39m o.s.j.c.JdbcTemplate.query :: Executing SQL query [SELECT * FROM ReferedTable WHERE class='FoodTypes';]
+2019-12-02 22:10:57.135 [39mDEBUG[0;39m [35m[http-nio-2020-exec-4][0;39m c.s.S.m.GetFoodTypesImp.getQueryResults :: Start to change List to JSONArray...
+2019-12-02 22:10:57.135 [39mDEBUG[0;39m [35m[http-nio-2020-exec-4][0;39m c.s.S.m.GetFoodTypesImp.toMap :: forEach...
+2019-12-02 22:10:57.136 [39mDEBUG[0;39m [35m[http-nio-2020-exec-4][0;39m c.s.S.m.GetFoodTypesImp.toMap :: resultMap {速食=[麥當勞, 肯德基, 胖老爹, 頂呱呱], 麵食=[陽春麵, 涼麵, 油麵, 義大利麵, 拉麵], 飯=[三寶飯, 滷肉飯, 豬排飯, 炒飯, 燴飯, 油飯]}
+2019-12-02 22:10:57.136 [39mDEBUG[0;39m [35m[http-nio-2020-exec-4][0;39m c.s.S.m.GetFoodTypesImp.getFoodTypesMap :: Finished
+2019-12-02 22:10:57.137 [39mDEBUG[0;39m [35m[http-nio-2020-exec-4][0;39m c.s.S.w.CreateStoreTypeController.getStoreTypes :: foodJson {速食=[麥當勞, 肯德基, 胖老爹, 頂呱呱], 麵食=[陽春麵, 涼麵, 油麵, 義大利麵, 拉麵], 飯=[三寶飯, 滷肉飯, 豬排飯, 炒飯, 燴飯, 油飯]}
+2019-12-02 22:11:03.554 [39mDEBUG[0;39m [35m[http-nio-2020-exec-5][0;39m c.s.S.w.StoreInfoController.createNewStoreInfo :: storename: JP3
+2019-12-02 22:11:03.556 [39mDEBUG[0;39m [35m[http-nio-2020-exec-5][0;39m c.s.S.w.StoreInfoController.createNewStoreInfo :: latlong: {lat=123, long=2332}
+2019-12-02 22:11:03.557 [39mDEBUG[0;39m [35m[http-nio-2020-exec-5][0;39m o.s.j.c.JdbcTemplate.query :: Executing prepared SQL query
+2019-12-02 22:11:03.558 [39mDEBUG[0;39m [35m[http-nio-2020-exec-5][0;39m o.s.j.c.JdbcTemplate.execute :: Executing prepared SQL statement [SELECT mail, login_time FROM Token WHERE token = ?]
+2019-12-02 22:11:03.559 [39mTRACE[0;39m [35m[http-nio-2020-exec-5][0;39m o.s.j.c.StatementCreatorUtils.setParameterValueInternal :: Setting SQL statement parameter value: column index 1, parameter value [fe1f3964-31ff-45ab-96d7-4515be767675], value class [java.lang.String], SQL type unknown
+2019-12-02 22:11:03.561 [34mINFO[0;39m [35m[http-nio-2020-exec-5][0;39m c.s.S.m.CheckTokenImp.isExist :: now: 2019-12-02T14:11:03.561Z
+2019-12-02 22:11:03.561 [34mINFO[0;39m [35m[http-nio-2020-exec-5][0;39m c.s.S.m.CheckTokenImp.isExist :: loginTime: 2019-12-02T14:10:13Z
+2019-12-02 22:11:03.562 [34mINFO[0;39m [35m[http-nio-2020-exec-5][0;39m c.s.S.m.CheckTokenImp.isExist :: Duration: 0
+2019-12-02 22:11:03.562 [34mINFO[0;39m [35m[http-nio-2020-exec-5][0;39m c.s.S.m.CheckTokenImp.check :: The username of fe1f3964-31ff-45ab-96d7-4515be767675 is tvjs68@Admin.com
+2019-12-02 22:11:03.562 [34mINFO[0;39m [35m[http-nio-2020-exec-5][0;39m c.s.S.w.StoreInfoController.createNewStoreInfo :: tvjs68@Admin.com is trying to create new store info.
+2019-12-02 22:11:03.562 [34mINFO[0;39m [35m[http-nio-2020-exec-5][0;39m c.s.S.w.StoreInfoController.createNewStoreInfo :: The data for building new store infomation is valid.
+2019-12-02 22:11:03.563 [39mDEBUG[0;39m [35m[http-nio-2020-exec-5][0;39m c.s.S.m.StoreInfoImp.createNewStoreInfoToDatabase :: username: tvjs68@Admin.com	storeName: JP3. At 2019-12-02 22:11:03.563
+2019-12-02 22:11:03.563 [39mDEBUG[0;39m [35m[http-nio-2020-exec-5][0;39m c.s.S.m.StoreInfoImp.save :: Test in Map: [炒飯, 燴飯, 滷肉飯, 豬排飯, 三寶飯]
+2019-12-02 22:11:03.563 [39mDEBUG[0;39m [35m[http-nio-2020-exec-5][0;39m c.s.S.m.StoreInfoImp.save :: The details of food types: [麥當勞, 肯德基, 頂呱呱, 胖老爹, 油麵, 涼麵, 義大利麵, 陽春麵, 粄條, 白麵, 炒飯, 燴飯, 滷肉飯, 豬排飯, 三寶飯]
+2019-12-02 22:11:03.564 [39mDEBUG[0;39m [35m[http-nio-2020-exec-5][0;39m c.s.S.m.GetFoodTypesImp.getFoodIdsListInString :: stringBuilder: $12$13$15$14$9$8$10$7$4$5$2$3$1$
+2019-12-02 22:11:03.564 [39mDEBUG[0;39m [35m[http-nio-2020-exec-5][0;39m c.s.S.m.StoreInfoImp.save :: The foodId of details in String format. $12$13$15$14$9$8$10$7$4$5$2$3$1$
+2019-12-02 22:11:03.565 [39mDEBUG[0;39m [35m[http-nio-2020-exec-5][0;39m o.s.j.c.JdbcTemplate.update :: Executing SQL update and returning generated keys
+2019-12-02 22:11:03.566 [39mDEBUG[0;39m [35m[http-nio-2020-exec-5][0;39m o.s.j.c.JdbcTemplate.execute :: Executing prepared SQL statement
+2019-12-02 22:11:03.587 [39mTRACE[0;39m [35m[http-nio-2020-exec-5][0;39m o.s.j.c.JdbcTemplate.lambda$update$1 :: SQL update affected 1 rows and returned 1 keys
+2019-12-02 22:11:03.588 [39mDEBUG[0;39m [35m[http-nio-2020-exec-5][0;39m c.s.S.m.StoreInfoImp.save :: Afer updating StoreInfo, the storeId is 1
+2019-12-02 22:11:03.589 [39mDEBUG[0;39m [35m[http-nio-2020-exec-5][0;39m c.s.S.m.StoreInfoImp.save :: BusinessHours are {星期一=09:00~18:00, 星期二=09:00~18:00, 星期三=09:00~18:00, 星期四=09:00~18:00, 星期五=09:00~18:00, 星期六=09:00~18:00, 星期日=off}
+2019-12-02 22:11:03.589 [39mDEBUG[0;39m [35m[http-nio-2020-exec-5][0;39m o.s.j.c.JdbcTemplate.update :: Executing prepared SQL update
+2019-12-02 22:11:03.589 [39mDEBUG[0;39m [35m[http-nio-2020-exec-5][0;39m o.s.j.c.JdbcTemplate.execute :: Executing prepared SQL statement [INSERT INTO BusinessHours( storeId, mon, tues, wed, thurs, fri, sat, sun ) VALUES(?,?,?,?,?,?,?,?);]
+2019-12-02 22:11:03.589 [39mTRACE[0;39m [35m[http-nio-2020-exec-5][0;39m o.s.j.c.StatementCreatorUtils.setParameterValueInternal :: Setting SQL statement parameter value: column index 1, parameter value [1], value class [java.lang.Integer], SQL type unknown
+2019-12-02 22:11:03.590 [39mTRACE[0;39m [35m[http-nio-2020-exec-5][0;39m o.s.j.c.StatementCreatorUtils.setParameterValueInternal :: Setting SQL statement parameter value: column index 2, parameter value [09:00~18:00], value class [java.lang.String], SQL type unknown
+2019-12-02 22:11:03.590 [39mTRACE[0;39m [35m[http-nio-2020-exec-5][0;39m o.s.j.c.StatementCreatorUtils.setParameterValueInternal :: Setting SQL statement parameter value: column index 3, parameter value [09:00~18:00], value class [java.lang.String], SQL type unknown
+2019-12-02 22:11:03.590 [39mTRACE[0;39m [35m[http-nio-2020-exec-5][0;39m o.s.j.c.StatementCreatorUtils.setParameterValueInternal :: Setting SQL statement parameter value: column index 4, parameter value [09:00~18:00], value class [java.lang.String], SQL type unknown
+2019-12-02 22:11:03.591 [39mTRACE[0;39m [35m[http-nio-2020-exec-5][0;39m o.s.j.c.StatementCreatorUtils.setParameterValueInternal :: Setting SQL statement parameter value: column index 5, parameter value [09:00~18:00], value class [java.lang.String], SQL type unknown
+2019-12-02 22:11:03.591 [39mTRACE[0;39m [35m[http-nio-2020-exec-5][0;39m o.s.j.c.StatementCreatorUtils.setParameterValueInternal :: Setting SQL statement parameter value: column index 6, parameter value [09:00~18:00], value class [java.lang.String], SQL type unknown
+2019-12-02 22:11:03.591 [39mTRACE[0;39m [35m[http-nio-2020-exec-5][0;39m o.s.j.c.StatementCreatorUtils.setParameterValueInternal :: Setting SQL statement parameter value: column index 7, parameter value [09:00~18:00], value class [java.lang.String], SQL type unknown
+2019-12-02 22:11:03.591 [39mTRACE[0;39m [35m[http-nio-2020-exec-5][0;39m o.s.j.c.StatementCreatorUtils.setParameterValueInternal :: Setting SQL statement parameter value: column index 8, parameter value [off], value class [java.lang.String], SQL type unknown
+2019-12-02 22:11:03.592 [39mTRACE[0;39m [35m[http-nio-2020-exec-5][0;39m o.s.j.c.JdbcTemplate.lambda$update$0 :: SQL update affected 1 rows
+2019-12-02 22:11:03.661 [34mINFO[0;39m [35m[http-nio-2020-exec-5][0;39m c.s.S.w.StoreInfoController.createNewStoreInfo :: tvjs68@Admin.com has created the new store info JP3.
+2019-12-02 22:11:15.036 [34mINFO[0;39m [35m[Thread-4][0;39m o.s.i.e.EventDrivenConsumer.logComponentSubscriptionEvent :: Removing {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2019-12-02 22:11:15.037 [34mINFO[0;39m [35m[Thread-4][0;39m o.s.i.c.PublishSubscribeChannel.adjustCounterIfNecessary :: Channel 'application.errorChannel' has 0 subscriber(s).
+2019-12-02 22:11:15.037 [34mINFO[0;39m [35m[Thread-4][0;39m o.s.i.e.EventDrivenConsumer.stop :: stopped _org.springframework.integration.errorLogger
+2019-12-02 22:11:15.038 [34mINFO[0;39m [35m[Thread-4][0;39m o.s.s.c.ThreadPoolTaskScheduler.shutdown :: Shutting down ExecutorService 'taskScheduler'
+2019-12-02 22:11:15.042 [34mINFO[0;39m [35m[Thread-4][0;39m o.s.s.c.ThreadPoolTaskExecutor.shutdown :: Shutting down ExecutorService 'applicationTaskExecutor'
+2019-12-02 22:11:15.044 [34mINFO[0;39m [35m[Thread-4][0;39m c.z.h.HikariDataSource.close :: HikariPool-1 - Shutdown initiated...
+2019-12-02 22:11:15.051 [34mINFO[0;39m [35m[Thread-4][0;39m c.z.h.HikariDataSource.close :: HikariPool-1 - Shutdown completed.
+2019-12-02 22:16:35.812 [34mINFO[0;39m [35m[main][0;39m c.s.S.SearchFoodApplication.logStarting :: Starting SearchFoodApplication on eason-P15FV2 with PID 14485 (/home/eason/Desktop/WorkPlace/Project/SearchFoodBackend/target/classes started by eason in /home/eason/Desktop/WorkPlace/Project/SearchFoodBackend)
+2019-12-02 22:16:35.815 [34mINFO[0;39m [35m[main][0;39m c.s.S.SearchFoodApplication.logStartupProfileInfo :: No active profile set, falling back to default profiles: default
+2019-12-02 22:16:37.301 [34mINFO[0;39m [35m[main][0;39m o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor.registerErrorChannel :: No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2019-12-02 22:16:37.312 [34mINFO[0;39m [35m[main][0;39m o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor.registerTaskScheduler :: No bean named 'taskScheduler' has been explicitly defined. Therefore, a default ThreadPoolTaskScheduler will be created.
+2019-12-02 22:16:37.318 [34mINFO[0;39m [35m[main][0;39m o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor.registerHeaderChannelRegistry :: No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2019-12-02 22:16:37.508 [34mINFO[0;39m [35m[main][0;39m o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization :: Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$d91a88a7] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-12-02 22:16:37.541 [34mINFO[0;39m [35m[main][0;39m o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization :: Bean 'org.springframework.integration.config.IntegrationManagementConfiguration' of type [org.springframework.integration.config.IntegrationManagementConfiguration$$EnhancerBySpringCGLIB$$440c43d6] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-12-02 22:16:37.560 [34mINFO[0;39m [35m[main][0;39m o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization :: Bean 'integrationDisposableAutoCreatedBeans' of type [org.springframework.integration.config.annotation.Disposables] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-12-02 22:16:37.982 [34mINFO[0;39m [35m[main][0;39m o.s.b.w.e.t.TomcatWebServer.initialize :: Tomcat initialized with port(s): 2020 (http)
+2019-12-02 22:16:38.030 [34mINFO[0;39m [35m[main][0;39m o.a.c.c.StandardService.log :: Starting service [Tomcat]
+2019-12-02 22:16:38.031 [34mINFO[0;39m [35m[main][0;39m o.a.c.c.StandardEngine.log :: Starting Servlet engine: [Apache Tomcat/9.0.22]
+2019-12-02 22:16:38.127 [34mINFO[0;39m [35m[main][0;39m o.a.c.c.C.[.[.[/].log :: Initializing Spring embedded WebApplicationContext
+2019-12-02 22:16:38.127 [34mINFO[0;39m [35m[main][0;39m o.s.w.c.ContextLoader.prepareWebApplicationContext :: Root WebApplicationContext: initialization completed in 2271 ms
+2019-12-02 22:16:38.445 [34mINFO[0;39m [35m[main][0;39m c.z.h.HikariDataSource.getConnection :: HikariPool-1 - Starting...
+2019-12-02 22:16:39.054 [34mINFO[0;39m [35m[main][0;39m c.z.h.HikariDataSource.getConnection :: HikariPool-1 - Start completed.
+2019-12-02 22:16:39.948 [34mINFO[0;39m [35m[main][0;39m o.s.s.c.ThreadPoolTaskExecutor.initialize :: Initializing ExecutorService 'applicationTaskExecutor'
+2019-12-02 22:16:40.492 [34mINFO[0;39m [35m[main][0;39m o.s.b.a.e.w.EndpointLinksResolver.<init> :: Exposing 2 endpoint(s) beneath base path '/actuator'
+2019-12-02 22:16:40.624 [34mINFO[0;39m [35m[main][0;39m o.s.s.c.ThreadPoolTaskScheduler.initialize :: Initializing ExecutorService 'taskScheduler'
+2019-12-02 22:16:40.710 [34mINFO[0;39m [35m[main][0;39m o.s.i.e.EventDrivenConsumer.logComponentSubscriptionEvent :: Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2019-12-02 22:16:40.710 [34mINFO[0;39m [35m[main][0;39m o.s.i.c.PublishSubscribeChannel.adjustCounterIfNecessary :: Channel 'application.errorChannel' has 1 subscriber(s).
+2019-12-02 22:16:40.710 [34mINFO[0;39m [35m[main][0;39m o.s.i.e.EventDrivenConsumer.start :: started _org.springframework.integration.errorLogger
+2019-12-02 22:16:40.769 [34mINFO[0;39m [35m[main][0;39m o.s.b.w.e.t.TomcatWebServer.start :: Tomcat started on port(s): 2020 (http) with context path ''
+2019-12-02 22:16:40.773 [34mINFO[0;39m [35m[main][0;39m c.s.S.SearchFoodApplication.logStarted :: Started SearchFoodApplication in 5.529 seconds (JVM running for 10.101)
+2019-12-02 22:16:55.876 [34mINFO[0;39m [35m[http-nio-2020-exec-1][0;39m o.a.c.c.C.[.[.[/].log :: Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-12-02 22:16:55.876 [34mINFO[0;39m [35m[http-nio-2020-exec-1][0;39m o.s.w.s.DispatcherServlet.initServletBean :: Initializing Servlet 'dispatcherServlet'
+2019-12-02 22:16:55.887 [34mINFO[0;39m [35m[http-nio-2020-exec-1][0;39m o.s.w.s.DispatcherServlet.initServletBean :: Completed initialization in 11 ms
+2019-12-02 22:16:56.084 [39mDEBUG[0;39m [35m[http-nio-2020-exec-1][0;39m c.s.S.w.StoreInfoController.createNewStoreInfo :: storename: JP3
+2019-12-02 22:16:56.085 [39mDEBUG[0;39m [35m[http-nio-2020-exec-1][0;39m c.s.S.w.StoreInfoController.createNewStoreInfo :: latlong: {lat=123, long=2332}
+2019-12-02 22:16:56.094 [39mDEBUG[0;39m [35m[http-nio-2020-exec-1][0;39m o.s.j.c.JdbcTemplate.query :: Executing prepared SQL query
+2019-12-02 22:16:56.095 [39mDEBUG[0;39m [35m[http-nio-2020-exec-1][0;39m o.s.j.c.JdbcTemplate.execute :: Executing prepared SQL statement [SELECT mail, login_time FROM Token WHERE token = ?]
+2019-12-02 22:16:56.115 [39mTRACE[0;39m [35m[http-nio-2020-exec-1][0;39m o.s.j.c.StatementCreatorUtils.setParameterValueInternal :: Setting SQL statement parameter value: column index 1, parameter value [fe1f3964-31ff-45ab-96d7-4515be767675], value class [java.lang.String], SQL type unknown
+2019-12-02 22:16:56.131 [34mINFO[0;39m [35m[http-nio-2020-exec-1][0;39m c.s.S.m.CheckTokenImp.isExist :: now: 2019-12-02T14:16:56.130Z
+2019-12-02 22:16:56.132 [34mINFO[0;39m [35m[http-nio-2020-exec-1][0;39m c.s.S.m.CheckTokenImp.isExist :: loginTime: 2019-12-02T14:10:13Z
+2019-12-02 22:16:56.132 [34mINFO[0;39m [35m[http-nio-2020-exec-1][0;39m c.s.S.m.CheckTokenImp.isExist :: Duration: 6
+2019-12-02 22:16:56.133 [34mINFO[0;39m [35m[http-nio-2020-exec-1][0;39m c.s.S.m.CheckTokenImp.check :: The username of fe1f3964-31ff-45ab-96d7-4515be767675 is tvjs68@Admin.com
+2019-12-02 22:16:56.133 [34mINFO[0;39m [35m[http-nio-2020-exec-1][0;39m c.s.S.w.StoreInfoController.createNewStoreInfo :: tvjs68@Admin.com is trying to create new store info.
+2019-12-02 22:16:56.134 [34mINFO[0;39m [35m[http-nio-2020-exec-1][0;39m c.s.S.w.StoreInfoController.createNewStoreInfo :: The data for building new store infomation is valid.
+2019-12-02 22:16:56.158 [39mDEBUG[0;39m [35m[http-nio-2020-exec-1][0;39m c.s.S.m.StoreInfoImp.createNewStoreInfoToDatabase :: username: tvjs68@Admin.com	storeName: JP3. At 2019-12-02 22:16:56.158
+2019-12-02 22:16:56.159 [39mDEBUG[0;39m [35m[http-nio-2020-exec-1][0;39m c.s.S.m.StoreInfoImp.save :: Test in Map: [炒飯, 燴飯, 滷肉飯, 豬排飯, 三寶飯]
+2019-12-02 22:16:56.160 [39mDEBUG[0;39m [35m[http-nio-2020-exec-1][0;39m c.s.S.m.StoreInfoImp.save :: The details of food types: [麥當勞, 肯德基, 頂呱呱, 胖老爹, 油麵, 涼麵, 義大利麵, 陽春麵, 粄條, 白麵, 炒飯, 燴飯, 滷肉飯, 豬排飯, 三寶飯]
+2019-12-02 22:16:56.189 [1;31mERROR[0;39m [35m[http-nio-2020-exec-1][0;39m o.a.c.c.C.[.[.[.[dispatcherServlet].log :: Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is java.lang.NullPointerException] with root cause
+java.lang.NullPointerException: null
+	at com.searchfood.SearchFoodBackend.model.GetFoodTypesImp.getFoodIdsListInString(GetFoodTypesImp.java:121)
+	at com.searchfood.SearchFoodBackend.model.GetFoodTypesImp$$FastClassBySpringCGLIB$$4c9c6dc7.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:749)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:139)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:688)
+	at com.searchfood.SearchFoodBackend.model.GetFoodTypesImp$$EnhancerBySpringCGLIB$$10a7d61c.getFoodIdsListInString(<generated>)
+	at com.searchfood.SearchFoodBackend.model.StoreInfoImp.save(StoreInfoImp.java:83)
+	at com.searchfood.SearchFoodBackend.model.StoreInfoImp.createNewStoreInfoToDatabase(StoreInfoImp.java:64)
+	at com.searchfood.SearchFoodBackend.model.StoreInfoImp$$FastClassBySpringCGLIB$$311c6bdd.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:749)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:139)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:688)
+	at com.searchfood.SearchFoodBackend.model.StoreInfoImp$$EnhancerBySpringCGLIB$$6744e1e.createNewStoreInfoToDatabase(<generated>)
+	at com.searchfood.SearchFoodBackend.model.StoreInfoTransactionImp.createNewStoreInfoToDatabase(StoreInfoTransactionImp.java:29)
+	at com.searchfood.SearchFoodBackend.model.StoreInfoTransactionImp$$FastClassBySpringCGLIB$$d6a09f5d.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:749)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:295)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:98)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:688)
+	at com.searchfood.SearchFoodBackend.model.StoreInfoTransactionImp$$EnhancerBySpringCGLIB$$f61107ce.createNewStoreInfoToDatabase(<generated>)
+	at com.searchfood.SearchFoodBackend.webapi.StoreInfoController.createNewStoreInfo(StoreInfoController.java:70)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:104)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:892)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1039)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:942)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1005)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:908)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:882)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.boot.actuate.web.trace.servlet.HttpTraceFilter.doFilterInternal(HttpTraceFilter.java:88)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:118)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:118)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:92)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:118)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:118)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.filterAndRecordMetrics(WebMvcMetricsFilter.java:114)
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:104)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:118)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:118)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:853)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1587)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2019-12-02 22:17:08.273 [34mINFO[0;39m [35m[http-nio-2020-exec-2][0;39m c.s.S.w.CreateStoreTypeController.getStoreTypes :: Processing getStoreTypes...
+2019-12-02 22:17:08.274 [39mDEBUG[0;39m [35m[http-nio-2020-exec-2][0;39m o.s.j.c.JdbcTemplate.query :: Executing prepared SQL query
+2019-12-02 22:17:08.275 [39mDEBUG[0;39m [35m[http-nio-2020-exec-2][0;39m o.s.j.c.JdbcTemplate.execute :: Executing prepared SQL statement [SELECT mail, login_time FROM Token WHERE token = ?]
+2019-12-02 22:17:08.276 [39mTRACE[0;39m [35m[http-nio-2020-exec-2][0;39m o.s.j.c.StatementCreatorUtils.setParameterValueInternal :: Setting SQL statement parameter value: column index 1, parameter value [5ed92318-5145-4ba7-a1bf-96eaadc51545], value class [java.lang.String], SQL type unknown
+2019-12-02 22:17:08.278 [34mINFO[0;39m [35m[http-nio-2020-exec-2][0;39m c.s.S.m.CheckTokenImp.isExist :: now: 2019-12-02T14:17:08.278Z
+2019-12-02 22:17:08.279 [34mINFO[0;39m [35m[http-nio-2020-exec-2][0;39m c.s.S.m.CheckTokenImp.isExist :: loginTime: 2019-12-02T14:10:13Z
+2019-12-02 22:17:08.279 [34mINFO[0;39m [35m[http-nio-2020-exec-2][0;39m c.s.S.m.CheckTokenImp.isExist :: Duration: 6
+2019-12-02 22:17:08.280 [34mINFO[0;39m [35m[http-nio-2020-exec-2][0;39m c.s.S.m.CheckTokenImp.check :: The username of 5ed92318-5145-4ba7-a1bf-96eaadc51545 is tvjs68@Admin.com
+2019-12-02 22:17:08.280 [34mINFO[0;39m [35m[http-nio-2020-exec-2][0;39m c.s.S.w.CreateStoreTypeController.getStoreTypes :: Valid token
+2019-12-02 22:17:08.280 [34mINFO[0;39m [35m[http-nio-2020-exec-2][0;39m c.s.S.w.CreateStoreTypeController.getStoreTypes :: Trying to load the food types from databases...
+2019-12-02 22:17:08.280 [39mDEBUG[0;39m [35m[http-nio-2020-exec-2][0;39m c.s.S.m.GetFoodTypesImp.getFoodTypesMap :: start to get data...
+2019-12-02 22:17:08.281 [39mDEBUG[0;39m [35m[http-nio-2020-exec-2][0;39m c.s.S.m.GetFoodTypesImp.getQueryResults :: query data from database in the form of List...
+2019-12-02 22:17:08.282 [39mDEBUG[0;39m [35m[http-nio-2020-exec-2][0;39m o.s.j.c.JdbcTemplate.query :: Executing SQL query [SELECT * FROM ReferedTable WHERE class='FoodTypes';]
+2019-12-02 22:17:08.286 [39mDEBUG[0;39m [35m[http-nio-2020-exec-2][0;39m c.s.S.m.GetFoodTypesImp.getQueryResults :: Start to change List to JSONArray...
+2019-12-02 22:17:08.287 [39mDEBUG[0;39m [35m[http-nio-2020-exec-2][0;39m c.s.S.m.GetFoodTypesImp.toMap :: forEach...
+2019-12-02 22:17:08.287 [39mDEBUG[0;39m [35m[http-nio-2020-exec-2][0;39m c.s.S.m.GetFoodTypesImp.toMap :: resultMap {速食=[麥當勞, 肯德基, 胖老爹, 頂呱呱], 麵食=[陽春麵, 涼麵, 油麵, 義大利麵, 拉麵], 飯=[三寶飯, 滷肉飯, 豬排飯, 炒飯, 燴飯, 油飯]}
+2019-12-02 22:17:08.288 [39mDEBUG[0;39m [35m[http-nio-2020-exec-2][0;39m c.s.S.m.GetFoodTypesImp.getFoodTypesMap :: Finished
+2019-12-02 22:17:08.288 [39mDEBUG[0;39m [35m[http-nio-2020-exec-2][0;39m c.s.S.w.CreateStoreTypeController.getStoreTypes :: foodJson {速食=[麥當勞, 肯德基, 胖老爹, 頂呱呱], 麵食=[陽春麵, 涼麵, 油麵, 義大利麵, 拉麵], 飯=[三寶飯, 滷肉飯, 豬排飯, 炒飯, 燴飯, 油飯]}
+2019-12-02 22:17:12.198 [34mINFO[0;39m [35m[http-nio-2020-exec-3][0;39m c.s.S.w.CreateStoreTypeController.getStoreTypes :: Processing getStoreTypes...
+2019-12-02 22:17:12.199 [39mDEBUG[0;39m [35m[http-nio-2020-exec-3][0;39m o.s.j.c.JdbcTemplate.query :: Executing prepared SQL query
+2019-12-02 22:17:12.200 [39mDEBUG[0;39m [35m[http-nio-2020-exec-3][0;39m o.s.j.c.JdbcTemplate.execute :: Executing prepared SQL statement [SELECT mail, login_time FROM Token WHERE token = ?]
+2019-12-02 22:17:12.201 [39mTRACE[0;39m [35m[http-nio-2020-exec-3][0;39m o.s.j.c.StatementCreatorUtils.setParameterValueInternal :: Setting SQL statement parameter value: column index 1, parameter value [5ed92318-5145-4ba7-a1bf-96eaadc51545], value class [java.lang.String], SQL type unknown
+2019-12-02 22:17:12.204 [34mINFO[0;39m [35m[http-nio-2020-exec-3][0;39m c.s.S.m.CheckTokenImp.isExist :: now: 2019-12-02T14:17:12.204Z
+2019-12-02 22:17:12.204 [34mINFO[0;39m [35m[http-nio-2020-exec-3][0;39m c.s.S.m.CheckTokenImp.isExist :: loginTime: 2019-12-02T14:10:13Z
+2019-12-02 22:17:12.204 [34mINFO[0;39m [35m[http-nio-2020-exec-3][0;39m c.s.S.m.CheckTokenImp.isExist :: Duration: 6
+2019-12-02 22:17:12.205 [34mINFO[0;39m [35m[http-nio-2020-exec-3][0;39m c.s.S.m.CheckTokenImp.check :: The username of 5ed92318-5145-4ba7-a1bf-96eaadc51545 is tvjs68@Admin.com
+2019-12-02 22:17:12.205 [34mINFO[0;39m [35m[http-nio-2020-exec-3][0;39m c.s.S.w.CreateStoreTypeController.getStoreTypes :: Valid token
+2019-12-02 22:17:12.205 [34mINFO[0;39m [35m[http-nio-2020-exec-3][0;39m c.s.S.w.CreateStoreTypeController.getStoreTypes :: Trying to load the food types from databases...
+2019-12-02 22:17:12.205 [39mDEBUG[0;39m [35m[http-nio-2020-exec-3][0;39m c.s.S.m.GetFoodTypesImp.getFoodTypesMap :: start to get data...
+2019-12-02 22:17:12.205 [39mDEBUG[0;39m [35m[http-nio-2020-exec-3][0;39m c.s.S.m.GetFoodTypesImp.getQueryResults :: query data from database in the form of List...
+2019-12-02 22:17:12.205 [39mDEBUG[0;39m [35m[http-nio-2020-exec-3][0;39m o.s.j.c.JdbcTemplate.query :: Executing SQL query [SELECT * FROM ReferedTable WHERE class='FoodTypes';]
+2019-12-02 22:17:12.207 [39mDEBUG[0;39m [35m[http-nio-2020-exec-3][0;39m c.s.S.m.GetFoodTypesImp.getQueryResults :: Start to change List to JSONArray...
+2019-12-02 22:17:12.207 [39mDEBUG[0;39m [35m[http-nio-2020-exec-3][0;39m c.s.S.m.GetFoodTypesImp.toMap :: forEach...
+2019-12-02 22:17:12.208 [39mDEBUG[0;39m [35m[http-nio-2020-exec-3][0;39m c.s.S.m.GetFoodTypesImp.toMap :: resultMap {速食=[麥當勞, 肯德基, 胖老爹, 頂呱呱], 麵食=[陽春麵, 涼麵, 油麵, 義大利麵, 拉麵], 飯=[三寶飯, 滷肉飯, 豬排飯, 炒飯, 燴飯, 油飯]}
+2019-12-02 22:17:12.208 [39mDEBUG[0;39m [35m[http-nio-2020-exec-3][0;39m c.s.S.m.GetFoodTypesImp.getFoodTypesMap :: Finished
+2019-12-02 22:17:12.208 [39mDEBUG[0;39m [35m[http-nio-2020-exec-3][0;39m c.s.S.w.CreateStoreTypeController.getStoreTypes :: foodJson {速食=[麥當勞, 肯德基, 胖老爹, 頂呱呱], 麵食=[陽春麵, 涼麵, 油麵, 義大利麵, 拉麵], 飯=[三寶飯, 滷肉飯, 豬排飯, 炒飯, 燴飯, 油飯]}
+2019-12-02 22:17:18.358 [39mDEBUG[0;39m [35m[http-nio-2020-exec-4][0;39m c.s.S.w.StoreInfoController.createNewStoreInfo :: storename: JP3
+2019-12-02 22:17:18.359 [39mDEBUG[0;39m [35m[http-nio-2020-exec-4][0;39m c.s.S.w.StoreInfoController.createNewStoreInfo :: latlong: {lat=123, long=2332}
+2019-12-02 22:17:18.359 [39mDEBUG[0;39m [35m[http-nio-2020-exec-4][0;39m o.s.j.c.JdbcTemplate.query :: Executing prepared SQL query
+2019-12-02 22:17:18.360 [39mDEBUG[0;39m [35m[http-nio-2020-exec-4][0;39m o.s.j.c.JdbcTemplate.execute :: Executing prepared SQL statement [SELECT mail, login_time FROM Token WHERE token = ?]
+2019-12-02 22:17:18.362 [39mTRACE[0;39m [35m[http-nio-2020-exec-4][0;39m o.s.j.c.StatementCreatorUtils.setParameterValueInternal :: Setting SQL statement parameter value: column index 1, parameter value [fe1f3964-31ff-45ab-96d7-4515be767675], value class [java.lang.String], SQL type unknown
+2019-12-02 22:17:18.364 [34mINFO[0;39m [35m[http-nio-2020-exec-4][0;39m c.s.S.m.CheckTokenImp.isExist :: now: 2019-12-02T14:17:18.364Z
+2019-12-02 22:17:18.365 [34mINFO[0;39m [35m[http-nio-2020-exec-4][0;39m c.s.S.m.CheckTokenImp.isExist :: loginTime: 2019-12-02T14:10:13Z
+2019-12-02 22:17:18.365 [34mINFO[0;39m [35m[http-nio-2020-exec-4][0;39m c.s.S.m.CheckTokenImp.isExist :: Duration: 7
+2019-12-02 22:17:18.365 [34mINFO[0;39m [35m[http-nio-2020-exec-4][0;39m c.s.S.m.CheckTokenImp.check :: The username of fe1f3964-31ff-45ab-96d7-4515be767675 is tvjs68@Admin.com
+2019-12-02 22:17:18.365 [34mINFO[0;39m [35m[http-nio-2020-exec-4][0;39m c.s.S.w.StoreInfoController.createNewStoreInfo :: tvjs68@Admin.com is trying to create new store info.
+2019-12-02 22:17:18.366 [34mINFO[0;39m [35m[http-nio-2020-exec-4][0;39m c.s.S.w.StoreInfoController.createNewStoreInfo :: The data for building new store infomation is valid.
+2019-12-02 22:17:18.367 [39mDEBUG[0;39m [35m[http-nio-2020-exec-4][0;39m c.s.S.m.StoreInfoImp.createNewStoreInfoToDatabase :: username: tvjs68@Admin.com	storeName: JP3. At 2019-12-02 22:17:18.367
+2019-12-02 22:17:18.367 [39mDEBUG[0;39m [35m[http-nio-2020-exec-4][0;39m c.s.S.m.StoreInfoImp.save :: Test in Map: [炒飯, 燴飯, 滷肉飯, 豬排飯, 三寶飯]
+2019-12-02 22:17:18.367 [39mDEBUG[0;39m [35m[http-nio-2020-exec-4][0;39m c.s.S.m.StoreInfoImp.save :: The details of food types: [麥當勞, 肯德基, 頂呱呱, 胖老爹, 油麵, 涼麵, 義大利麵, 陽春麵, 粄條, 白麵, 炒飯, 燴飯, 滷肉飯, 豬排飯, 三寶飯]
+2019-12-02 22:17:18.368 [39mDEBUG[0;39m [35m[http-nio-2020-exec-4][0;39m c.s.S.m.GetFoodTypesImp.getFoodIdsListInString :: stringBuilder: $12$13$15$14$9$8$10$7$4$5$2$3$1$
+2019-12-02 22:17:18.368 [39mDEBUG[0;39m [35m[http-nio-2020-exec-4][0;39m c.s.S.m.StoreInfoImp.save :: The foodId of details in String format. $12$13$15$14$9$8$10$7$4$5$2$3$1$
+2019-12-02 22:17:18.370 [39mDEBUG[0;39m [35m[http-nio-2020-exec-4][0;39m o.s.j.c.JdbcTemplate.update :: Executing SQL update and returning generated keys
+2019-12-02 22:17:18.371 [39mDEBUG[0;39m [35m[http-nio-2020-exec-4][0;39m o.s.j.c.JdbcTemplate.execute :: Executing prepared SQL statement
+2019-12-02 22:17:18.378 [39mTRACE[0;39m [35m[http-nio-2020-exec-4][0;39m o.s.j.c.JdbcTemplate.lambda$update$1 :: SQL update affected 1 rows and returned 1 keys
+2019-12-02 22:17:18.379 [39mDEBUG[0;39m [35m[http-nio-2020-exec-4][0;39m c.s.S.m.StoreInfoImp.save :: Afer updating StoreInfo, the storeId is 2
+2019-12-02 22:17:18.379 [39mDEBUG[0;39m [35m[http-nio-2020-exec-4][0;39m c.s.S.m.StoreInfoImp.save :: BusinessHours are {星期一=09:00~18:00, 星期二=09:00~18:00, 星期三=09:00~18:00, 星期四=09:00~18:00, 星期五=09:00~18:00, 星期六=09:00~18:00, 星期日=off}
+2019-12-02 22:17:18.379 [39mDEBUG[0;39m [35m[http-nio-2020-exec-4][0;39m o.s.j.c.JdbcTemplate.update :: Executing prepared SQL update
+2019-12-02 22:17:18.380 [39mDEBUG[0;39m [35m[http-nio-2020-exec-4][0;39m o.s.j.c.JdbcTemplate.execute :: Executing prepared SQL statement [INSERT INTO BusinessHours( storeId, mon, tues, wed, thurs, fri, sat, sun ) VALUES(?,?,?,?,?,?,?,?);]
+2019-12-02 22:17:18.381 [39mTRACE[0;39m [35m[http-nio-2020-exec-4][0;39m o.s.j.c.StatementCreatorUtils.setParameterValueInternal :: Setting SQL statement parameter value: column index 1, parameter value [2], value class [java.lang.Integer], SQL type unknown
+2019-12-02 22:17:18.381 [39mTRACE[0;39m [35m[http-nio-2020-exec-4][0;39m o.s.j.c.StatementCreatorUtils.setParameterValueInternal :: Setting SQL statement parameter value: column index 2, parameter value [09:00~18:00], value class [java.lang.String], SQL type unknown
+2019-12-02 22:17:18.381 [39mTRACE[0;39m [35m[http-nio-2020-exec-4][0;39m o.s.j.c.StatementCreatorUtils.setParameterValueInternal :: Setting SQL statement parameter value: column index 3, parameter value [09:00~18:00], value class [java.lang.String], SQL type unknown
+2019-12-02 22:17:18.382 [39mTRACE[0;39m [35m[http-nio-2020-exec-4][0;39m o.s.j.c.StatementCreatorUtils.setParameterValueInternal :: Setting SQL statement parameter value: column index 4, parameter value [09:00~18:00], value class [java.lang.String], SQL type unknown
+2019-12-02 22:17:18.382 [39mTRACE[0;39m [35m[http-nio-2020-exec-4][0;39m o.s.j.c.StatementCreatorUtils.setParameterValueInternal :: Setting SQL statement parameter value: column index 5, parameter value [09:00~18:00], value class [java.lang.String], SQL type unknown
+2019-12-02 22:17:18.382 [39mTRACE[0;39m [35m[http-nio-2020-exec-4][0;39m o.s.j.c.StatementCreatorUtils.setParameterValueInternal :: Setting SQL statement parameter value: column index 6, parameter value [09:00~18:00], value class [java.lang.String], SQL type unknown
+2019-12-02 22:17:18.382 [39mTRACE[0;39m [35m[http-nio-2020-exec-4][0;39m o.s.j.c.StatementCreatorUtils.setParameterValueInternal :: Setting SQL statement parameter value: column index 7, parameter value [09:00~18:00], value class [java.lang.String], SQL type unknown
+2019-12-02 22:17:18.383 [39mTRACE[0;39m [35m[http-nio-2020-exec-4][0;39m o.s.j.c.StatementCreatorUtils.setParameterValueInternal :: Setting SQL statement parameter value: column index 8, parameter value [off], value class [java.lang.String], SQL type unknown
+2019-12-02 22:17:18.386 [39mTRACE[0;39m [35m[http-nio-2020-exec-4][0;39m o.s.j.c.JdbcTemplate.lambda$update$0 :: SQL update affected 1 rows
+2019-12-02 22:17:18.436 [34mINFO[0;39m [35m[http-nio-2020-exec-4][0;39m c.s.S.w.StoreInfoController.createNewStoreInfo :: tvjs68@Admin.com has created the new store info JP3.
+2019-12-02 22:18:34.354 [34mINFO[0;39m [35m[Thread-4][0;39m o.s.i.e.EventDrivenConsumer.logComponentSubscriptionEvent :: Removing {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2019-12-02 22:18:34.355 [34mINFO[0;39m [35m[Thread-4][0;39m o.s.i.c.PublishSubscribeChannel.adjustCounterIfNecessary :: Channel 'application.errorChannel' has 0 subscriber(s).
+2019-12-02 22:18:34.355 [34mINFO[0;39m [35m[Thread-4][0;39m o.s.i.e.EventDrivenConsumer.stop :: stopped _org.springframework.integration.errorLogger
+2019-12-02 22:18:34.356 [34mINFO[0;39m [35m[Thread-4][0;39m o.s.s.c.ThreadPoolTaskScheduler.shutdown :: Shutting down ExecutorService 'taskScheduler'
+2019-12-02 22:18:34.360 [34mINFO[0;39m [35m[Thread-4][0;39m o.s.s.c.ThreadPoolTaskExecutor.shutdown :: Shutting down ExecutorService 'applicationTaskExecutor'
+2019-12-02 22:18:34.362 [34mINFO[0;39m [35m[Thread-4][0;39m c.z.h.HikariDataSource.close :: HikariPool-1 - Shutdown initiated...
+2019-12-02 22:18:34.371 [34mINFO[0;39m [35m[Thread-4][0;39m c.z.h.HikariDataSource.close :: HikariPool-1 - Shutdown completed.
+2019-12-02 22:25:29.928 [34mINFO[0;39m [35m[main][0;39m c.s.S.SearchFoodApplication.logStarting :: Starting SearchFoodApplication on eason-P15FV2 with PID 14894 (/home/eason/Desktop/WorkPlace/Project/SearchFoodBackend/target/classes started by eason in /home/eason/Desktop/WorkPlace/Project/SearchFoodBackend)
+2019-12-02 22:25:29.932 [34mINFO[0;39m [35m[main][0;39m c.s.S.SearchFoodApplication.logStartupProfileInfo :: No active profile set, falling back to default profiles: default
+2019-12-02 22:25:31.076 [34mINFO[0;39m [35m[main][0;39m o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor.registerErrorChannel :: No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2019-12-02 22:25:31.082 [34mINFO[0;39m [35m[main][0;39m o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor.registerTaskScheduler :: No bean named 'taskScheduler' has been explicitly defined. Therefore, a default ThreadPoolTaskScheduler will be created.
+2019-12-02 22:25:31.086 [34mINFO[0;39m [35m[main][0;39m o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor.registerHeaderChannelRegistry :: No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2019-12-02 22:25:31.197 [34mINFO[0;39m [35m[main][0;39m o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization :: Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$34a8fac] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-12-02 22:25:31.218 [34mINFO[0;39m [35m[main][0;39m o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization :: Bean 'org.springframework.integration.config.IntegrationManagementConfiguration' of type [org.springframework.integration.config.IntegrationManagementConfiguration$$EnhancerBySpringCGLIB$$6e3c4adb] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-12-02 22:25:31.235 [34mINFO[0;39m [35m[main][0;39m o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization :: Bean 'integrationDisposableAutoCreatedBeans' of type [org.springframework.integration.config.annotation.Disposables] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-12-02 22:25:31.521 [34mINFO[0;39m [35m[main][0;39m o.s.b.w.e.t.TomcatWebServer.initialize :: Tomcat initialized with port(s): 2020 (http)
+2019-12-02 22:25:31.555 [34mINFO[0;39m [35m[main][0;39m o.a.c.c.StandardService.log :: Starting service [Tomcat]
+2019-12-02 22:25:31.555 [34mINFO[0;39m [35m[main][0;39m o.a.c.c.StandardEngine.log :: Starting Servlet engine: [Apache Tomcat/9.0.22]
+2019-12-02 22:25:31.642 [34mINFO[0;39m [35m[main][0;39m o.a.c.c.C.[.[.[/].log :: Initializing Spring embedded WebApplicationContext
+2019-12-02 22:25:31.642 [34mINFO[0;39m [35m[main][0;39m o.s.w.c.ContextLoader.prepareWebApplicationContext :: Root WebApplicationContext: initialization completed in 1672 ms
+2019-12-02 22:25:31.891 [34mINFO[0;39m [35m[main][0;39m c.z.h.HikariDataSource.getConnection :: HikariPool-1 - Starting...
+2019-12-02 22:25:32.532 [34mINFO[0;39m [35m[main][0;39m c.z.h.HikariDataSource.getConnection :: HikariPool-1 - Start completed.
+2019-12-02 22:25:33.205 [34mINFO[0;39m [35m[main][0;39m o.s.s.c.ThreadPoolTaskExecutor.initialize :: Initializing ExecutorService 'applicationTaskExecutor'
+2019-12-02 22:25:33.666 [34mINFO[0;39m [35m[main][0;39m o.s.b.a.e.w.EndpointLinksResolver.<init> :: Exposing 2 endpoint(s) beneath base path '/actuator'
+2019-12-02 22:25:33.756 [34mINFO[0;39m [35m[main][0;39m o.s.s.c.ThreadPoolTaskScheduler.initialize :: Initializing ExecutorService 'taskScheduler'
+2019-12-02 22:25:33.819 [34mINFO[0;39m [35m[main][0;39m o.s.i.e.EventDrivenConsumer.logComponentSubscriptionEvent :: Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2019-12-02 22:25:33.819 [34mINFO[0;39m [35m[main][0;39m o.s.i.c.PublishSubscribeChannel.adjustCounterIfNecessary :: Channel 'application.errorChannel' has 1 subscriber(s).
+2019-12-02 22:25:33.820 [34mINFO[0;39m [35m[main][0;39m o.s.i.e.EventDrivenConsumer.start :: started _org.springframework.integration.errorLogger
+2019-12-02 22:25:33.864 [34mINFO[0;39m [35m[main][0;39m o.s.b.w.e.t.TomcatWebServer.start :: Tomcat started on port(s): 2020 (http) with context path ''
+2019-12-02 22:25:33.867 [34mINFO[0;39m [35m[main][0;39m c.s.S.SearchFoodApplication.logStarted :: Started SearchFoodApplication in 4.346 seconds (JVM running for 7.954)
+2019-12-02 22:25:41.380 [34mINFO[0;39m [35m[http-nio-2020-exec-1][0;39m o.a.c.c.C.[.[.[/].log :: Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-12-02 22:25:41.380 [34mINFO[0;39m [35m[http-nio-2020-exec-1][0;39m o.s.w.s.DispatcherServlet.initServletBean :: Initializing Servlet 'dispatcherServlet'
+2019-12-02 22:25:41.392 [34mINFO[0;39m [35m[http-nio-2020-exec-1][0;39m o.s.w.s.DispatcherServlet.initServletBean :: Completed initialization in 12 ms
+2019-12-02 22:25:41.446 [34mINFO[0;39m [35m[http-nio-2020-exec-1][0;39m c.s.S.w.CreateStoreTypeController.getStoreTypes :: Processing getStoreTypes...
+2019-12-02 22:25:41.457 [39mDEBUG[0;39m [35m[http-nio-2020-exec-1][0;39m o.s.j.c.JdbcTemplate.query :: Executing prepared SQL query
+2019-12-02 22:25:41.458 [39mDEBUG[0;39m [35m[http-nio-2020-exec-1][0;39m o.s.j.c.JdbcTemplate.execute :: Executing prepared SQL statement [SELECT mail, login_time FROM Token WHERE token = ?]
+2019-12-02 22:25:41.479 [39mTRACE[0;39m [35m[http-nio-2020-exec-1][0;39m o.s.j.c.StatementCreatorUtils.setParameterValueInternal :: Setting SQL statement parameter value: column index 1, parameter value [5ed92318-5145-4ba7-a1bf-96eaadc51545], value class [java.lang.String], SQL type unknown
+2019-12-02 22:25:41.496 [31mWARN[0;39m [35m[http-nio-2020-exec-1][0;39m c.s.S.w.CreateStoreTypeController.getStoreTypes :: The token is invalid.
+2019-12-02 22:25:41.498 [31mWARN[0;39m [35m[http-nio-2020-exec-1][0;39m c.s.S.u.e.ControllerException.handleNotFoundException :: In ControllerException: NotFoundException
+2019-12-02 22:26:23.581 [39mDEBUG[0;39m [35m[http-nio-2020-exec-2][0;39m c.s.S.w.LoginController.login :: TESTING logging: username: tvjs68@Admin.com  password: 1234#$%@ browser: IE
+2019-12-02 22:26:23.582 [34mINFO[0;39m [35m[http-nio-2020-exec-2][0;39m c.s.S.w.LoginController.login :: username: tvjs68@Admin.com, password: 1234#$%@send request to login
+2019-12-02 22:26:23.586 [39mDEBUG[0;39m [35m[http-nio-2020-exec-2][0;39m o.s.j.c.JdbcTemplate.query :: Executing prepared SQL query
+2019-12-02 22:26:23.586 [39mDEBUG[0;39m [35m[http-nio-2020-exec-2][0;39m o.s.j.c.JdbcTemplate.execute :: Executing prepared SQL statement [SELECT * FROM Users WHERE mail = ? AND passwd = ?;]
+2019-12-02 22:26:23.587 [39mTRACE[0;39m [35m[http-nio-2020-exec-2][0;39m o.s.j.c.StatementCreatorUtils.setParameterValueInternal :: Setting SQL statement parameter value: column index 1, parameter value [tvjs68@Admin.com], value class [java.lang.String], SQL type unknown
+2019-12-02 22:26:23.587 [39mTRACE[0;39m [35m[http-nio-2020-exec-2][0;39m o.s.j.c.StatementCreatorUtils.setParameterValueInternal :: Setting SQL statement parameter value: column index 2, parameter value [1234#$%@], value class [java.lang.String], SQL type unknown
+2019-12-02 22:26:23.590 [34mINFO[0;39m [35m[http-nio-2020-exec-2][0;39m c.s.S.m.TokenRecordsImp.isExist :: Member tvjs68@Admin.com founded.
+2019-12-02 22:26:23.591 [39mDEBUG[0;39m [35m[http-nio-2020-exec-2][0;39m o.s.j.c.JdbcTemplate.update :: Executing prepared SQL update
+2019-12-02 22:26:23.592 [39mDEBUG[0;39m [35m[http-nio-2020-exec-2][0;39m o.s.j.c.JdbcTemplate.execute :: Executing prepared SQL statement [INSERT INTO Token( mail, token, navigator_type ) VALUES( ?, ?, ? )]
+2019-12-02 22:26:23.592 [39mTRACE[0;39m [35m[http-nio-2020-exec-2][0;39m o.s.j.c.StatementCreatorUtils.setParameterValueInternal :: Setting SQL statement parameter value: column index 1, parameter value [tvjs68@Admin.com], value class [java.lang.String], SQL type unknown
+2019-12-02 22:26:23.593 [39mTRACE[0;39m [35m[http-nio-2020-exec-2][0;39m o.s.j.c.StatementCreatorUtils.setParameterValueInternal :: Setting SQL statement parameter value: column index 2, parameter value [70bfee05-aaf4-4b37-a54b-e2c4441534ba], value class [java.lang.String], SQL type unknown
+2019-12-02 22:26:23.593 [39mTRACE[0;39m [35m[http-nio-2020-exec-2][0;39m o.s.j.c.StatementCreatorUtils.setParameterValueInternal :: Setting SQL statement parameter value: column index 3, parameter value [IE], value class [java.lang.String], SQL type unknown
+2019-12-02 22:26:23.689 [39mTRACE[0;39m [35m[http-nio-2020-exec-2][0;39m o.s.j.c.JdbcTemplate.lambda$update$0 :: SQL update affected 1 rows
+2019-12-02 22:26:35.732 [34mINFO[0;39m [35m[http-nio-2020-exec-3][0;39m c.s.S.w.CreateStoreTypeController.getStoreTypes :: Processing getStoreTypes...
+2019-12-02 22:26:35.733 [39mDEBUG[0;39m [35m[http-nio-2020-exec-3][0;39m o.s.j.c.JdbcTemplate.query :: Executing prepared SQL query
+2019-12-02 22:26:35.733 [39mDEBUG[0;39m [35m[http-nio-2020-exec-3][0;39m o.s.j.c.JdbcTemplate.execute :: Executing prepared SQL statement [SELECT mail, login_time FROM Token WHERE token = ?]
+2019-12-02 22:26:35.734 [39mTRACE[0;39m [35m[http-nio-2020-exec-3][0;39m o.s.j.c.StatementCreatorUtils.setParameterValueInternal :: Setting SQL statement parameter value: column index 1, parameter value [70bfee05-aaf4-4b37-a54b-e2c4441534ba], value class [java.lang.String], SQL type unknown
+2019-12-02 22:26:35.738 [34mINFO[0;39m [35m[http-nio-2020-exec-3][0;39m c.s.S.m.CheckTokenImp.isExist :: now: 2019-12-02T14:26:35.737Z
+2019-12-02 22:26:35.739 [34mINFO[0;39m [35m[http-nio-2020-exec-3][0;39m c.s.S.m.CheckTokenImp.isExist :: loginTime: 2019-12-02T14:26:23Z
+2019-12-02 22:26:35.739 [34mINFO[0;39m [35m[http-nio-2020-exec-3][0;39m c.s.S.m.CheckTokenImp.isExist :: Duration: 0
+2019-12-02 22:26:35.740 [34mINFO[0;39m [35m[http-nio-2020-exec-3][0;39m c.s.S.m.CheckTokenImp.check :: The username of 70bfee05-aaf4-4b37-a54b-e2c4441534ba is tvjs68@Admin.com
+2019-12-02 22:26:35.740 [34mINFO[0;39m [35m[http-nio-2020-exec-3][0;39m c.s.S.w.CreateStoreTypeController.getStoreTypes :: Valid token
+2019-12-02 22:26:35.740 [34mINFO[0;39m [35m[http-nio-2020-exec-3][0;39m c.s.S.w.CreateStoreTypeController.getStoreTypes :: Trying to load the food types from databases...
+2019-12-02 22:26:35.745 [39mDEBUG[0;39m [35m[http-nio-2020-exec-3][0;39m c.s.S.m.GetFoodTypesImp.getFoodTypesMap :: start to get data...
+2019-12-02 22:26:35.745 [39mDEBUG[0;39m [35m[http-nio-2020-exec-3][0;39m c.s.S.m.GetFoodTypesImp.getQueryResults :: query data from database in the form of List...
+2019-12-02 22:26:35.746 [39mDEBUG[0;39m [35m[http-nio-2020-exec-3][0;39m o.s.j.c.JdbcTemplate.query :: Executing SQL query [SELECT * FROM ReferedTable WHERE class='FoodTypes';]
+2019-12-02 22:26:35.750 [39mDEBUG[0;39m [35m[http-nio-2020-exec-3][0;39m c.s.S.m.GetFoodTypesImp.getQueryResults :: Start to change List to JSONArray...
+2019-12-02 22:26:35.750 [39mDEBUG[0;39m [35m[http-nio-2020-exec-3][0;39m c.s.S.m.GetFoodTypesImp.toMap :: forEach...
+2019-12-02 22:26:35.751 [39mDEBUG[0;39m [35m[http-nio-2020-exec-3][0;39m c.s.S.m.GetFoodTypesImp.toMap :: resultMap {速食=[麥當勞, 肯德基, 胖老爹, 頂呱呱], 麵食=[陽春麵, 涼麵, 油麵, 義大利麵, 拉麵], 飯=[三寶飯, 滷肉飯, 豬排飯, 炒飯, 燴飯, 油飯]}
+2019-12-02 22:26:35.751 [39mDEBUG[0;39m [35m[http-nio-2020-exec-3][0;39m c.s.S.m.GetFoodTypesImp.getFoodTypesMap :: Finished
+2019-12-02 22:26:35.751 [39mDEBUG[0;39m [35m[http-nio-2020-exec-3][0;39m c.s.S.w.CreateStoreTypeController.getStoreTypes :: foodJson {速食=[麥當勞, 肯德基, 胖老爹, 頂呱呱], 麵食=[陽春麵, 涼麵, 油麵, 義大利麵, 拉麵], 飯=[三寶飯, 滷肉飯, 豬排飯, 炒飯, 燴飯, 油飯]}
+2019-12-02 22:26:59.117 [39mDEBUG[0;39m [35m[http-nio-2020-exec-4][0;39m c.s.S.w.StoreInfoController.createNewStoreInfo :: storename: JP3
+2019-12-02 22:26:59.117 [39mDEBUG[0;39m [35m[http-nio-2020-exec-4][0;39m c.s.S.w.StoreInfoController.createNewStoreInfo :: latlong: {lat=123, long=2332}
+2019-12-02 22:26:59.118 [39mDEBUG[0;39m [35m[http-nio-2020-exec-4][0;39m o.s.j.c.JdbcTemplate.query :: Executing prepared SQL query
+2019-12-02 22:26:59.118 [39mDEBUG[0;39m [35m[http-nio-2020-exec-4][0;39m o.s.j.c.JdbcTemplate.execute :: Executing prepared SQL statement [SELECT mail, login_time FROM Token WHERE token = ?]
+2019-12-02 22:26:59.119 [39mTRACE[0;39m [35m[http-nio-2020-exec-4][0;39m o.s.j.c.StatementCreatorUtils.setParameterValueInternal :: Setting SQL statement parameter value: column index 1, parameter value [fe1f3964-31ff-45ab-96d7-4515be767675], value class [java.lang.String], SQL type unknown
+2019-12-02 22:26:59.121 [34mINFO[0;39m [35m[http-nio-2020-exec-4][0;39m c.s.S.m.CheckTokenImp.isExist :: now: 2019-12-02T14:26:59.121Z
+2019-12-02 22:26:59.122 [34mINFO[0;39m [35m[http-nio-2020-exec-4][0;39m c.s.S.m.CheckTokenImp.isExist :: loginTime: 2019-12-02T14:10:13Z
+2019-12-02 22:26:59.122 [34mINFO[0;39m [35m[http-nio-2020-exec-4][0;39m c.s.S.m.CheckTokenImp.isExist :: Duration: 16
+2019-12-02 22:26:59.122 [34mINFO[0;39m [35m[http-nio-2020-exec-4][0;39m c.s.S.m.CheckTokenImp.check :: The username of fe1f3964-31ff-45ab-96d7-4515be767675 is tvjs68@Admin.com
+2019-12-02 22:26:59.123 [34mINFO[0;39m [35m[http-nio-2020-exec-4][0;39m c.s.S.w.StoreInfoController.createNewStoreInfo :: tvjs68@Admin.com is trying to create new store info.
+2019-12-02 22:26:59.123 [34mINFO[0;39m [35m[http-nio-2020-exec-4][0;39m c.s.S.w.StoreInfoController.createNewStoreInfo :: The data for building new store infomation is valid.
+2019-12-02 22:26:59.146 [39mDEBUG[0;39m [35m[http-nio-2020-exec-4][0;39m c.s.S.m.StoreInfoImp.createNewStoreInfoToDatabase :: username: tvjs68@Admin.com	storeName: JP3. At 2019-12-02 22:26:59.146
+2019-12-02 22:26:59.147 [39mDEBUG[0;39m [35m[http-nio-2020-exec-4][0;39m c.s.S.m.StoreInfoImp.save :: Test in Map: null
+2019-12-02 22:26:59.148 [39mDEBUG[0;39m [35m[http-nio-2020-exec-4][0;39m c.s.S.m.StoreInfoImp.save :: The details of food types: [麥當勞, 肯德基, 頂呱呱, 胖老爹]
+2019-12-02 22:26:59.149 [39mDEBUG[0;39m [35m[http-nio-2020-exec-4][0;39m c.s.S.m.GetFoodTypesImp.getFoodIdsListInString :: stringBuilder: $12$13$15$14$
+2019-12-02 22:26:59.149 [39mDEBUG[0;39m [35m[http-nio-2020-exec-4][0;39m c.s.S.m.StoreInfoImp.save :: The foodId of details in String format. $12$13$15$14$
+2019-12-02 22:26:59.151 [39mDEBUG[0;39m [35m[http-nio-2020-exec-4][0;39m o.s.j.c.JdbcTemplate.update :: Executing SQL update and returning generated keys
+2019-12-02 22:26:59.152 [39mDEBUG[0;39m [35m[http-nio-2020-exec-4][0;39m o.s.j.c.JdbcTemplate.execute :: Executing prepared SQL statement
+2019-12-02 22:26:59.164 [39mTRACE[0;39m [35m[http-nio-2020-exec-4][0;39m o.s.j.c.JdbcTemplate.lambda$update$1 :: SQL update affected 1 rows and returned 1 keys
+2019-12-02 22:26:59.165 [39mDEBUG[0;39m [35m[http-nio-2020-exec-4][0;39m c.s.S.m.StoreInfoImp.save :: Afer updating StoreInfo, the storeId is 3
+2019-12-02 22:26:59.166 [39mDEBUG[0;39m [35m[http-nio-2020-exec-4][0;39m c.s.S.m.StoreInfoImp.save :: BusinessHours are {星期一=09:00~18:00, 星期二=09:00~18:00, 星期三=09:00~18:00, 星期四=09:00~18:00, 星期五=09:00~18:00, 星期六=09:00~18:00, 星期日=off}
+2019-12-02 22:26:59.166 [39mDEBUG[0;39m [35m[http-nio-2020-exec-4][0;39m o.s.j.c.JdbcTemplate.update :: Executing prepared SQL update
+2019-12-02 22:26:59.167 [39mDEBUG[0;39m [35m[http-nio-2020-exec-4][0;39m o.s.j.c.JdbcTemplate.execute :: Executing prepared SQL statement [INSERT INTO BusinessHours( storeId, mon, tues, wed, thurs, fri, sat, sun ) VALUES(?,?,?,?,?,?,?,?);]
+2019-12-02 22:26:59.167 [39mTRACE[0;39m [35m[http-nio-2020-exec-4][0;39m o.s.j.c.StatementCreatorUtils.setParameterValueInternal :: Setting SQL statement parameter value: column index 1, parameter value [3], value class [java.lang.Integer], SQL type unknown
+2019-12-02 22:26:59.168 [39mTRACE[0;39m [35m[http-nio-2020-exec-4][0;39m o.s.j.c.StatementCreatorUtils.setParameterValueInternal :: Setting SQL statement parameter value: column index 2, parameter value [09:00~18:00], value class [java.lang.String], SQL type unknown
+2019-12-02 22:26:59.169 [39mTRACE[0;39m [35m[http-nio-2020-exec-4][0;39m o.s.j.c.StatementCreatorUtils.setParameterValueInternal :: Setting SQL statement parameter value: column index 3, parameter value [09:00~18:00], value class [java.lang.String], SQL type unknown
+2019-12-02 22:26:59.169 [39mTRACE[0;39m [35m[http-nio-2020-exec-4][0;39m o.s.j.c.StatementCreatorUtils.setParameterValueInternal :: Setting SQL statement parameter value: column index 4, parameter value [09:00~18:00], value class [java.lang.String], SQL type unknown
+2019-12-02 22:26:59.170 [39mTRACE[0;39m [35m[http-nio-2020-exec-4][0;39m o.s.j.c.StatementCreatorUtils.setParameterValueInternal :: Setting SQL statement parameter value: column index 5, parameter value [09:00~18:00], value class [java.lang.String], SQL type unknown
+2019-12-02 22:26:59.170 [39mTRACE[0;39m [35m[http-nio-2020-exec-4][0;39m o.s.j.c.StatementCreatorUtils.setParameterValueInternal :: Setting SQL statement parameter value: column index 6, parameter value [09:00~18:00], value class [java.lang.String], SQL type unknown
+2019-12-02 22:26:59.170 [39mTRACE[0;39m [35m[http-nio-2020-exec-4][0;39m o.s.j.c.StatementCreatorUtils.setParameterValueInternal :: Setting SQL statement parameter value: column index 7, parameter value [09:00~18:00], value class [java.lang.String], SQL type unknown
+2019-12-02 22:26:59.171 [39mTRACE[0;39m [35m[http-nio-2020-exec-4][0;39m o.s.j.c.StatementCreatorUtils.setParameterValueInternal :: Setting SQL statement parameter value: column index 8, parameter value [off], value class [java.lang.String], SQL type unknown
+2019-12-02 22:26:59.172 [39mTRACE[0;39m [35m[http-nio-2020-exec-4][0;39m o.s.j.c.JdbcTemplate.lambda$update$0 :: SQL update affected 1 rows
+2019-12-02 22:26:59.250 [34mINFO[0;39m [35m[http-nio-2020-exec-4][0;39m c.s.S.w.StoreInfoController.createNewStoreInfo :: tvjs68@Admin.com has created the new store info JP3.
+2019-12-02 22:39:05.313 [39mDEBUG[0;39m [35m[http-nio-2020-exec-6][0;39m o.s.j.c.JdbcTemplate.update :: Executing prepared SQL update
+2019-12-02 22:39:05.338 [39mDEBUG[0;39m [35m[http-nio-2020-exec-6][0;39m o.s.j.c.JdbcTemplate.execute :: Executing prepared SQL statement [DELETE FROM Token WHERE Token = ?]
+2019-12-02 22:39:05.339 [39mTRACE[0;39m [35m[http-nio-2020-exec-6][0;39m o.s.j.c.StatementCreatorUtils.setParameterValueInternal :: Setting SQL statement parameter value: column index 1, parameter value [fe1f3964-31ff-45ab-96d7-4515be767675], value class [java.lang.String], SQL type unknown
+2019-12-02 22:39:05.509 [39mTRACE[0;39m [35m[http-nio-2020-exec-6][0;39m o.s.j.c.JdbcTemplate.lambda$update$0 :: SQL update affected 1 rows
+2019-12-02 22:39:05.510 [34mINFO[0;39m [35m[http-nio-2020-exec-6][0;39m c.s.S.w.LogoutController.logout :: fe1f3964-31ff-45ab-96d7-4515be767675 logout.
+2019-12-02 22:39:09.845 [34mINFO[0;39m [35m[Thread-4][0;39m o.s.i.e.EventDrivenConsumer.logComponentSubscriptionEvent :: Removing {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2019-12-02 22:39:09.846 [34mINFO[0;39m [35m[Thread-4][0;39m o.s.i.c.PublishSubscribeChannel.adjustCounterIfNecessary :: Channel 'application.errorChannel' has 0 subscriber(s).
+2019-12-02 22:39:09.846 [34mINFO[0;39m [35m[Thread-4][0;39m o.s.i.e.EventDrivenConsumer.stop :: stopped _org.springframework.integration.errorLogger
+2019-12-02 22:39:09.847 [34mINFO[0;39m [35m[Thread-4][0;39m o.s.s.c.ThreadPoolTaskScheduler.shutdown :: Shutting down ExecutorService 'taskScheduler'
+2019-12-02 22:39:09.851 [34mINFO[0;39m [35m[Thread-4][0;39m o.s.s.c.ThreadPoolTaskExecutor.shutdown :: Shutting down ExecutorService 'applicationTaskExecutor'
+2019-12-02 22:39:09.853 [34mINFO[0;39m [35m[Thread-4][0;39m c.z.h.HikariDataSource.close :: HikariPool-1 - Shutdown initiated...
+2019-12-02 22:39:09.861 [34mINFO[0;39m [35m[Thread-4][0;39m c.z.h.HikariDataSource.close :: HikariPool-1 - Shutdown completed.

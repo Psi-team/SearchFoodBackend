@@ -42,6 +42,7 @@ CREATE TABLE IF NOT EXISTS StoreInfo(
     click_cum INT(4) DEFAULT '0', 
     lat_long JSON NOT NULL, 
     foodList VARCHAR(150) NOT NULL, 
+    rating FLOAT DEFAULT '0.0', 
     PRIMARY KEY( store_id, store_name, city, district, address ), 
     /*UNIQUE KEY store_name ( store_name, city, district, address ), */ 
     UNIQUE KEY city ( city, district, address ), 

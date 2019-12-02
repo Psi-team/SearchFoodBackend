@@ -66,6 +66,7 @@ public class StoreInfo implements Serializable{
     
     private int cleek_week; 
     private int cleek_cum;  
+    private float rating; 
     
     // constructor 
     public StoreInfo(){ 
@@ -73,7 +74,7 @@ public class StoreInfo implements Serializable{
     } 
 
     public StoreInfo(String n, String c, String d, String a, String t, String ct, 
-                                Map<String,Integer> latlong, Map<String,List<String>> ty, Timestamp cd, Map<String,String> bt ){ 
+                                Map<String,Integer> latlong, Map<String,List<String>> ty, Timestamp cd, Map<String,String> bt, float rating ){ 
         this.storename = n; 
         this.city = c; 
         this.district = d; 
@@ -84,6 +85,7 @@ public class StoreInfo implements Serializable{
         this.type = ty; 
         this.createdAt = cd; 
         this.businessHours = bt; 
+        this.rating = rating; 
     } 
 
     // setter 
@@ -131,6 +133,10 @@ public class StoreInfo implements Serializable{
         this.type = type; 
     } 
 
+    public void setRating( float rating ){ 
+        this.rating = rating; 
+    } 
+
     // getter 
     public int getStoreId( int id ){ 
         return this.storeId = id; 
@@ -174,6 +180,10 @@ public class StoreInfo implements Serializable{
 
     public Map<String,List<String>> getType(){ 
         return this.type; 
+    } 
+
+    public float getRating(){ 
+        return this.rating; 
     } 
 
 
