@@ -12,6 +12,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet; 
 import java.util.List; 
 import java.util.ArrayList; 
+import java.util.Map; 
+import java.util.HashMap; 
 
 import com.searchfood.SearchFoodBackend.model.data.StoreInfo; 
 
@@ -29,7 +31,7 @@ public class SearchStoresImp{
 
     public List<StoreInfo> getSearchByFoodType( String foodType ){ 
         String sql = 
-            "SELECT store_id AS ID, store_name, city, district, address, rating, lat_long, createAt FROM StoreInfo WHERE foodList LIKE ?;"; 
+            "SELECT * FROM StoreInfo INNER JOIN BusinessHours on BusinessHours.storeId = StoreInfo.store_id WHERE foodList LIKE ?;"; 
         this.psc = 
             connection -> { 
                 PreparedStatement ps = connection.prepareStatement(sql); 
@@ -41,7 +43,7 @@ public class SearchStoresImp{
 
     public List<StoreInfo> getSearchByLocation( String city, String district ){ 
         String sql = 
-            "SELECT store_id AS ID, store_name, city, district, address, rating, lat_long, createAt FFROM StoreInfo WHERE city = ? AND district = ?;"; 
+            "SELECT * FROM StoreInfo INNER JOIN BusinessHours on BusinessHours.storeId = StoreInfo.store_id WHERE city = ? AND district = ?;"; 
         this.psc = 
             connection -> { 
                 PreparedStatement ps = connection.prepareStatement(sql); 
@@ -52,7 +54,7 @@ public class SearchStoresImp{
 
     public List<StoreInfo> getSearchByFoodTypeWithLocation( String foodType, String city, String district ){ 
         String sql = 
-            "SELECT store_id AS ID, store_name, city, district, address, rating, lat_long, createAt FROM StoreInfo WHERE city = ? AND district = ? AND foodList LIKE ?;"; 
+            "SELECT * FROM StoreInfo INNER JOIN BusinessHours on BusinessHours.storeId = StoreInfo.store_id WHERE city = ? AND district = ? AND foodList LIKE ?;"; 
         this.psc = 
             connection -> { 
                 PreparedStatement ps = connection.prepareStatement(sql); 
@@ -62,22 +64,32 @@ public class SearchStoresImp{
     } 
 
     private List<StoreInfo> searchFromStoreInfo( PreparedStatementCreator psc ){ 
-        //List<StoreInfo> resultList = this.jdbc.query( psc, this::getList ); 
-        return null; 
+        List<StoreInfo> resultList = this.jdbc.query( psc, this::getList ); 
+        return resultList; 
     } 
 
-    private SearchStoreInfoResults getList( ResultSet rs, int rowNum ){ 
-        //return new SearchStoreInfoResults( 
-        //              rs.getInt("store_id"), 
-        //              rs.getString("store_name"), 
-        //              rs.getString("city"), 
-        //              rs.getString("district"), 
-        //              rs.getString("address"), 
-        //              rs.getFloat("rating"), 
-        //              rs.getTimestamp("createdAt"), 
-        //              rs.getString("businessHours"), 
-        //              rs.getString("lat_long") ); 
-        return null;  
+    private StoreInfo getList( ResultSet rs, int rowNum ){ 
+        Map<String,String> businessHours = new HashMap(); 
+        businessHours.put("星期一", rs.getString("mon")); 
+        businessHours.put("星期二", rs.getString("tues")); 
+        businessHours.put("星期三", rs.getString("wed")); 
+        businessHours.put("星期四", rs.getString("thurs")); 
+        businessHours.put("星期五", rs.getString("fri")); 
+        businessHours.put("星期六", rs.getString("sat")); 
+        businessHours.put("星期日", rs.getString("sun")); 
+        return new StoreInfo(
+                rs.getInt("store_id"), 
+                rs.getString("store_name"), 
+                rs.getString("city"), 
+                rs.getString("district"), 
+                rs.getString("address"), 
+                rs.getString("tel"), 
+                rs.getString("creator"), 
+                rs.getString("lat_long"), 
+                rs.getString("foodList"), 
+                rs.getTimestamp("createdAt"), 
+                businessHours, 
+                rs.getFloat("rating") ); 
     } 
 } 
 

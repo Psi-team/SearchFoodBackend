@@ -77,7 +77,7 @@ public class SearchController{
             return new ResponseEntity(HttpStatus.BAD_REQUEST);  
         } 
 
-        if ( null == resultsList ) return new ResponseEntity( resultsList, HttpStatus.OK ); 
+        if ( null != resultsList ) return new ResponseEntity( resultsList, HttpStatus.OK ); 
         else throw new NotFoundException("No suitable results."); 
     } 
 } 

@@ -88,6 +88,22 @@ public class StoreInfo implements Serializable{
         this.rating = rating; 
     } 
 
+    public StoreInfo( int id, String n, String c, String d, String a, String t, String ct, 
+                                Map<String,Integer> latlong, Map<String,List<String>> ty, Timestamp cd, Map<String,String> bt, float rating ){ 
+        this.storeId = id; 
+        this.storename = n; 
+        this.city = c; 
+        this.district = d; 
+        this.address = a; 
+        this.tel = t; 
+        this.creator = ct; 
+        this.latLong = latlong; 
+        this.type = ty; 
+        this.createdAt = cd; 
+        this.businessHours = bt; 
+        this.rating = rating; 
+    } 
+
     // setter 
     public void setStoreId( int id ){ 
         this.storeId = id; 
