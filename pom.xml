@@ -90,6 +90,17 @@
             <artifactId>spring-boot-starter-mail</artifactId> 
         </dependency> 
 
+        <!-- Gogole Guava --> 
+        <dependency><!--This must be added-->
+            <groupId>org.springframework</groupId> 
+            <artifactId>spring-context-support</artifactId> 
+        </dependency> 
+        <dependency> 
+            <groupId>com.google.guava</groupId> 
+            <artifactId>guava</artifactId> 
+            <version>19.0</version> 
+        </dependency> 
+
         <!-- log4j2  
         <dependency> 
             <groupId>org.springframework.boot</groupId> 

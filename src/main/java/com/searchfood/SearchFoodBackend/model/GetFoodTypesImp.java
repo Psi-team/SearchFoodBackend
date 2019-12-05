@@ -84,8 +84,7 @@ public class GetFoodTypesImp{
         ); 
 
         Map<String,List<String>> resultMap = new HashMap(); 
-        resultMap.put("飯",Rice); 
-        resultMap.put("麵食",Noodles); 
+        resultMap.put("飯",Rice); resultMap.put("麵食",Noodles); 
         resultMap.put("速食",FastFood); 
         log.debug("resultMap " + resultMap); 
         return resultMap; 
@@ -100,6 +99,7 @@ public class GetFoodTypesImp{
     } 
 
     public List<Integer> getFoodIdsList( List<String> queryValue ){ 
+        /* 將食物轉成整數List e.g. [ 12, 2, 20 ] */ 
         List<Integer> foodIdList = new ArrayList(); 
         /* 需要更好的搜尋法 */ 
         for( int i = 0; i < queryValue.size(); i++ ){ 
@@ -114,6 +114,7 @@ public class GetFoodTypesImp{
     } 
 
     public String getFoodIdsListInString( List<String> queryValue ){ 
+        /* 將食物轉成數字文字並用$前後連接. e.g."$12$2$20$" */ 
         // using StringBuilder to concate String. 
         StringBuilder stringBuilder = new StringBuilder("$"); 
         /* 需要更好的搜尋法 */ 
@@ -128,6 +129,47 @@ public class GetFoodTypesImp{
         log.debug( "stringBuilder: " +stringBuilder.toString() ); 
         return stringBuilder.toString(); 
     } 
+
+    public List<String> getFoodsNameList( String foodListString ){ 
+        String foodList[] = foodListString.split("$"); 
+        return null; 
+    } 
+
+    public int getFoodNamesIdInt( String foodName ){ 
+        /* 將foodName轉換foodId e.g. foodName = 三寶飯 -> foodId = 12 */ 
+        int j; 
+        for( j = 0; j < this.foodTypesList.size(); j++ ){ 
+            if( this.foodTypesList.get(j).getValue().equals( foodName )) 
+                break; 
+        } 
+        return this.foodTypesList.get(j).getId(); 
+    } 
+
+    public String getFoodIdStringForQuery( String target ){ 
+        String str = "'%"+target+"%';"; 
+        List<Integer> foodIdList = 
+                        this.jdbc.query( 
+                             "SELECT id FROM ReferedTable WHERE value LIKE CONCAT('%',?,'%');", 
+                             ( rs, rowNum ) ->{ 
+                                 log.debug("DEBUGSSS"); 
+                                 return new Integer( rs.getInt("id") ); 
+                             }, 
+                             target ); 
+        log.debug("SQL: " + "SELECT id FROM ReferedTable WHERE value LIKE "+str); 
+        log.debug("List<Integer> foodIdList: " + foodIdList ); 
+        
+        StringBuilder stringBuilder = new StringBuilder(" foodList LIKE "); 
+        int i; 
+        for( i = 0; i < foodIdList.size() - 1; i++ ){ 
+            stringBuilder.append( "'%$" + String.valueOf( foodIdList.get(i) ) + "$%' OR foodList LIKE "  ); 
+        } 
+        log.debug("After for loop, i: " + i + " foodIdList.size(): " + foodIdList.size() ); 
+        stringBuilder.append( "'%$" + String.valueOf( foodIdList.get(i) ) + "$%';" ); 
+        log.debug("stringBuilder for LIKE: " + stringBuilder ); 
+        
+        return stringBuilder.toString();  
+    } 
+
 } 
 
 
