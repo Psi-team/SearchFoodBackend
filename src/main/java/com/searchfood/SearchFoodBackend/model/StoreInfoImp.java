@@ -68,24 +68,9 @@ public class StoreInfoImp implements StoreInfoITF{
     public boolean save(StoreInfo storeInfo){ 
 
         //try{ 
-            log.debug( "Test in Map: " + storeInfo.getType().get("飯") ); 
-            List<String> detailsList = new ArrayList(); 
-            storeInfo.getType()
-                .forEach( 
-                    new BiConsumer<String,List>(){ 
-                        @Override 
-                        public void accept( String types, List details ){ // types=食物種類的名稱, details=該種類下所有的食物清單 
-                            detailsList.addAll( storeInfo.getType().get(types) ); 
-                        } 
-                    }
-                ); 
-            log.debug("The details of food types: " + detailsList); 
-            String foodIdString =  this.getFoodTypesImp.getFoodIdsListInString( detailsList ); 
-            //List<Integer> foodIdString =  this.getFoodTypesImp.getFoodIdsList( detailsList ); 
-            log.debug("The foodId of details in String format. " + foodIdString ); 
             // use KeyHolder to get storeId 
             String sql = 
-                "INSERT INTO StoreInfo(store_name,city,district,address,tel,createdAt,creator,lat_long,foodList) VALUES(?,?,?,?,?,?,?,?,?);"; 
+                "INSERT INTO StoreInfo(storename,city,district,address,tel,createdAt,creator,lat_long) VALUES(?,?,?,?,?,?,?,?);"; 
             KeyHolder keyHolder = new GeneratedKeyHolder(); 
             jdbc.update( connection -> { 
                             PreparedStatement ps = connection.prepareStatement( sql, Statement.RETURN_GENERATED_KEYS ); // setting keyHolder by 2nd arg. 
@@ -99,8 +84,7 @@ public class StoreInfoImp implements StoreInfoITF{
                             ps.setString(7,storeInfo.getCreator()); 
                             ps.setString(8,storeInfo.JsonLatLongString());// may cause problem. 
                             // 若使用Java Bean包裝nested Json,則必須使用JSONPObject來封裝並用toString()來存至DB. 
-                            // storeInfo.getLatlong()中,必須將JSONObject用toString()輸出才能存至MySQL的JSON欄位 
-                            ps.setString(9,foodIdString); 
+                            // storeInfo.getLatlong()中,必須將JSONObject用toString()輸出才能存至MySQL的JSON欄位 return ps; 
                             return ps; 
                          }, 
                          keyHolder ); 
@@ -108,7 +92,7 @@ public class StoreInfoImp implements StoreInfoITF{
             int storeId = keyHolder.getKey().intValue(); 
             log.debug("Afer updating StoreInfo, the storeId is " + storeId); 
             log.debug("BusinessHours are " + storeInfo.getBusinessHours()); 
-            jdbc.update( "INSERT INTO BusinessHours( storeId, mon, tues, wed, thurs, fri, sat, sun ) VALUES(?,?,?,?,?,?,?,?);", 
+            jdbc.update( "INSERT INTO BusinessHours( storeId, mon, tue, wed, thu, fri, sat, sun ) VALUES(?,?,?,?,?,?,?,?);", 
                          storeId, 
                          storeInfo.getBusinessHours().get("星期一"), 
                          storeInfo.getBusinessHours().get("星期二"), 
@@ -119,41 +103,43 @@ public class StoreInfoImp implements StoreInfoITF{
                          storeInfo.getBusinessHours().get("星期日")  
             ); 
             // use storeId to insert key values of foods 
-            //log.debug( "Test in Map: " + storeInfo.getType().get("飯") ); 
-            //List<String> detailsList = new ArrayList(); 
-            //storeInfo.getType()
-            //    .forEach( 
-            //        new BiConsumer<String,List>(){ 
-            //            @Override 
-            //            public void accept( String types, List details ){ 
-            //                detailsList.addAll( storeInfo.getType().get(details) ); 
-            //            } 
-            //        }
-            //    ); 
-            //log.debug("The details of food types: " + detailsList);  
-            //List<Integer> foodIdList =  this.getFoodTypesImp.getFoodIdsList( detailsList ); 
-            //log.debug("The foodId of details." + foodIdList ); 
-            //jdbc.batchUpdate( 
-            //        "INSERT INTO StoreTypes( storeId, foodId ) VALUES( ?, ? );", 
-            //        new BatchPreparedStatementSetter(){ 
-            //            @Override 
-            //            public void setValues( PreparedStatement ps, int i ) throws SQLException{ 
-            //                ps.setInt(1, storeId); 
-            //                ps.setInt(2, foodIdList.get(i)); 
-            //            } 
-            //            @Override 
-            //            public int getBatchSize(){ 
-            //                return foodIdList.size(); 
-            //            } 
-            //        } 
-            //);
-            //
+            log.debug( "Test in Map: " + storeInfo.getType().get("飯") ); 
+            List<String> detailsList = new ArrayList(); 
+            storeInfo.getType()
+                .forEach( 
+                    new BiConsumer<String,List>(){ 
+                        @Override 
+                        public void accept( String types, List details ){ 
+                            detailsList.addAll( storeInfo.getType().get(types) ); 
+                        } 
+                    }
+                ); 
+            log.debug("The details of food types: " + detailsList);  
+            List<Integer> foodIdList =  this.getFoodTypesImp.getStoreMenuList( detailsList ); 
+            log.debug("The foodId of details." + foodIdList ); 
+            jdbc.batchUpdate( 
+                    "INSERT INTO StoresMenu( storeId, foodId ) VALUES( ?, ? );", 
+                    new BatchPreparedStatementSetter(){ 
+                        @Override 
+                        public void setValues( PreparedStatement ps, int i ) throws SQLException{ 
+                            ps.setInt(1, storeId); 
+                            ps.setInt(2, foodIdList.get(i)); 
+                        } 
+                        @Override 
+                        public int getBatchSize(){ 
+                            return foodIdList.size(); 
+                        } 
+                    } 
+            );
+            
             return true; 
         //}catch( DuplicateKeyException e ){ 
         //    return false; 
             //throw new DataExistException("Data has existed."); 
         //}catch( DataAccessException e ){ 
         //    return false;  
+        //}catch( SQLException e ){ 
+        //    return false; 
         //} 
     } 
 

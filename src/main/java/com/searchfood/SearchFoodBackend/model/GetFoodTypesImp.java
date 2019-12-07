@@ -98,7 +98,7 @@ public class GetFoodTypesImp{
                 rs.getString("class") ); 
     } 
 
-    public List<Integer> getFoodIdsList( List<String> queryValue ){ 
+    public List<Integer> getStoreMenuList( List<String> queryValue ){ 
         /* 將食物轉成整數List e.g. [ 12, 2, 20 ] */ 
         List<Integer> foodIdList = new ArrayList(); 
         /* 需要更好的搜尋法 */ 
@@ -145,29 +145,10 @@ public class GetFoodTypesImp{
         return this.foodTypesList.get(j).getId(); 
     } 
 
-    public String getFoodIdStringForQuery( String target ){ 
-        String str = "'%"+target+"%';"; 
-        List<Integer> foodIdList = 
-                        this.jdbc.query( 
-                             "SELECT id FROM ReferedTable WHERE value LIKE CONCAT('%',?,'%');", 
-                             ( rs, rowNum ) ->{ 
-                                 log.debug("DEBUGSSS"); 
-                                 return new Integer( rs.getInt("id") ); 
-                             }, 
-                             target ); 
-        log.debug("SQL: " + "SELECT id FROM ReferedTable WHERE value LIKE "+str); 
-        log.debug("List<Integer> foodIdList: " + foodIdList ); 
-        
-        StringBuilder stringBuilder = new StringBuilder(" foodList LIKE "); 
-        int i; 
-        for( i = 0; i < foodIdList.size() - 1; i++ ){ 
-            stringBuilder.append( "'%$" + String.valueOf( foodIdList.get(i) ) + "$%' OR foodList LIKE "  ); 
-        } 
-        log.debug("After for loop, i: " + i + " foodIdList.size(): " + foodIdList.size() ); 
-        stringBuilder.append( "'%$" + String.valueOf( foodIdList.get(i) ) + "$%';" ); 
-        log.debug("stringBuilder for LIKE: " + stringBuilder ); 
-        
-        return stringBuilder.toString();  
+    public Map<String,List<String>> getStoreFoodTags( String target ){ 
+
+        String sql = "SELECT DISTINCT(storeId), types FROM StoresMenu, ReferedTable WHERE value LIKE ?;"; 
+        return null; 
     } 
 
 } 

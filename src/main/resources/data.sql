@@ -21,19 +21,19 @@ INSERT INTO ReferedTable( value, types, class ) VALUES( "胖老爹", "速食", "
 INSERT INTO ReferedTable( value, types, class ) VALUES( "頂呱呱", "速食", "FoodTypes" ); 
 
 
-INSERT INTO StoreIndo( storename, city. district, address, tel, creator, lat_long ) 
+INSERT INTO StoreInfo( storename, city, district, address, tel, creator, lat_long ) 
             VALUES("JSP", "台北市","中正區","民生北路三段2號1樓","0222244568", "Admin@test2.com", "{\"lat\":123,\"long\":121}"); 
-INSERT INTO StoreIndo( storename, city. district, address, tel, creator, lat_long ) 
+INSERT INTO StoreInfo( storename, city, district, address, tel, creator, lat_long ) 
             VALUES("JSP", "台北市","中山正區","民生南路三段2號1樓","0222254568", "Admin@test2.com", "{\"lat\":123,\"long\":121}"); 
-INSERT INTO StoreIndo( storename, city. district, address, tel, creator, lat_long ) 
-            VALUES("JSP", "台北市","中正區","民生北路三段2號1樓","0222244568", "Admin@test1.com", "{\"lat\":123,\"long\":121}"); 
-INSERT INTO StoreIndo( storename, city. district, address, tel, creator, lat_long ) 
+INSERT INTO StoreInfo( storename, city, district, address, tel, creator, lat_long ) 
+            VALUES("JSP", "台北市","內湖區","民生北路三段2號1樓","0222244568", "Admin@test1.com", "{\"lat\":123,\"long\":121}"); 
+INSERT INTO StoreInfo( storename, city, district, address, tel, creator, lat_long ) 
             VALUES("JSP", "新北市","板橋區","民生北路一段2號1樓","0222235568", "Admin@test2.com", "{\"lat\":123,\"long\":121}"); 
-INSERT INTO StoreIndo( storename, city. district, address, tel, creator, lat_long ) 
+INSERT INTO StoreInfo( storename, city, district, address, tel, creator, lat_long ) 
             VALUES("JSP", "台南市","西區","民生北路三段2號1樓","0222244568", "Admin@test2.com", "{\"lat\":123,\"long\":121}"); 
-INSERT INTO StoreIndo( storename, city. district, address, tel, creator, lat_long ) 
+INSERT INTO StoreInfo( storename, city, district, address, tel, creator, lat_long ) 
             VALUES("JSP", "台中市","東區","民生北路三段2號1樓","0222244568", "Admin@test2.com", "{\"lat\":123,\"long\":121}"); 
-INSERT INTO StoreIndo( storename, city. district, address, tel, creator, lat_long ) 
+INSERT INTO StoreInfo( storename, city, district, address, tel, creator, lat_long ) 
             VALUES("JSP", "台北市","中山區","民生北路三段2號1樓","0222244568", "Admin@test2.com", "{\"lat\":123,\"long\":121}"); 
 
 INSERT INTO BusinessHours(storeId,mon,tue,wed,thu,fri,sat,sun) 

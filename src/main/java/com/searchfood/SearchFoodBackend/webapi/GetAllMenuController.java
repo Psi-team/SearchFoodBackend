@@ -26,14 +26,14 @@ import com.searchfood.SearchFoodBackend.utils.exceptions.TokenExpiredException;
 @RestController 
 @CrossOrigin("*") 
 @RequestMapping( value="getStoreTypes", produces="application/json" ) 
-public class CreateStoreTypeController{ 
+public class GetAllMenuController{ 
 
-    private static final Logger log = LoggerFactory.getLogger( CreateStoreTypeController.class ); 
+    private static final Logger log = LoggerFactory.getLogger( GetAllMenuController.class ); 
     private GetFoodTypesImp getFoodTypesImp; 
     private CheckTokenImp checkTokenImp; 
 
     @Autowired 
-    public CreateStoreTypeController( GetFoodTypesImp g, CheckTokenImp c ){ 
+    public GetAllMenuController( GetFoodTypesImp g, CheckTokenImp c ){ 
         this.getFoodTypesImp = g; 
         this.checkTokenImp = c; 
     } 

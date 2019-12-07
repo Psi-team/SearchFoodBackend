@@ -67,6 +67,10 @@ public class StoreInfo implements Serializable{
     private int cleek_week; 
     private int cleek_cum;  
     private float rating; 
+
+    private String logo; 
+    private String images; 
+    private String slogan; 
     
     // constructor 
     public StoreInfo(){ 
@@ -74,7 +78,8 @@ public class StoreInfo implements Serializable{
     } 
 
     public StoreInfo(String n, String c, String d, String a, String t, String ct, 
-                                Map<String,Integer> latlong, Map<String,List<String>> ty, Timestamp cd, Map<String,String> bt, float rating ){ 
+                                Map<String,Integer> latlong, Map<String,List<String>> ty, Timestamp cd, Map<String,String> bt, float rating, 
+                                String l, String i, String s ){ 
         this.storename = n; 
         this.city = c; 
         this.district = d; 
@@ -86,6 +91,9 @@ public class StoreInfo implements Serializable{
         this.createdAt = cd; 
         this.businessHours = bt; 
         this.rating = rating; 
+        this.logo = l; 
+        this.images = i; 
+        this.slogan = s; 
     } 
 
     public StoreInfo( int id, String n, String c, String d, String a, String t, String ct, 
@@ -153,6 +161,18 @@ public class StoreInfo implements Serializable{
         this.rating = rating; 
     } 
 
+    public void setSlogan( String s ){ 
+        this.slogan = s; 
+    } 
+
+    public void setLogo( String s ){ 
+        this.logo = s; 
+    } 
+
+    public void setImages( String s ){ 
+        this.images = s; 
+    } 
+
     // getter 
     public int getStoreId( int id ){ 
         return this.storeId = id; 
@@ -202,6 +222,17 @@ public class StoreInfo implements Serializable{
         return this.rating; 
     } 
 
+    public String getLogo(){ 
+        return this.logo; 
+    } 
+
+    public String getImages(){ 
+        return this.images; 
+    } 
+
+    public String getSlogan(){ 
+        return this.slogan; 
+    } 
 
     /* JsonXXX() below is in order to get the String type of JSONObject to write in MySQL, whose name cannot be getXXX. 
      * Becuase the container will view getXXX as getter then converts it to the JSON data of Http response. */ 

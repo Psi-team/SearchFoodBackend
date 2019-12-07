@@ -30,6 +30,9 @@ public class SearchStoresImp{
     private JdbcTemplate jdbc; 
     private PreparedStatementSetter pss;
     private GetFoodTypesImp getFoodTypesImp; 
+    private String sqlQuery = 
+            "SELECT StoreInfo.*, BusinessHours.* FROM StoreInfo INNER JOIN BusinessHours ON BusinessHours.storeId = StoreInfo.storeId ";  
+    private Map<String,List<String>> storeTages; 
 
     @Autowired 
     public SearchStoresImp( JdbcTemplate jdbc, GetFoodTypesImp g ){ 
@@ -37,23 +40,28 @@ public class SearchStoresImp{
         this.jdbc = jdbc; 
     }
 
-    public List<StoreInfo> getSearchByFoodType( String foodType ){ 
+    public List<StoreInfo> getSearchByFoodType( String foodName ){ 
 
         log.debug("By FoodType"); 
-        String whereClause = getFoodTypesImp.getFoodIdStringForQuery( foodType ); 
-        log.debug("FoodIdList to used with LIKE: "+whereClause); 
+        storeTages = getFoodTypesImp.getStoreFoodTags( foodType ); 
 
-        String sql = 
-            "SELECT * FROM StoreInfo INNER JOIN BusinessHours on BusinessHours.storeId = StoreInfo.store_id WHERE" + whereClause; 
-        return this.jdbc.query( sql, this::getList ); 
+        this.sqlQuery+=
+            "WHERE StoreInfo.storeId IN " + 
+            "( SELECT DISTINCT( StoreMenu.storeId) FROM StoreMenu WHERE StoreMenu.foodId IN " + 
+            "( SELECT ReferedTable.id FROM ReferedTable WHERE value REGEXP ? ) );"; 
+        this.pss = prepareStatement -> { 
+            prepareStatement.setString(1,foodName); 
+            }; 
+
+        return searchFromStoreInfo( sql, pss ); 
     } 
 
     public List<StoreInfo> getSearchByLocation( String city, String district ){ 
 
         log.debug("By Location"); 
-
-        String sql = 
-            "SELECT * FROM StoreInfo INNER JOIN BusinessHours on BusinessHours.storeId = StoreInfo.store_id WHERE city = ? AND district = ?;"; 
+        storeTages = getFoodTypesImp.getStoreFoodTags( foodType ); 
+        
+        this.sqlQuery += "WHERE city = ? AND district = ?;"; 
         this.pss = prepareStatement -> { 
             prepareStatement.setString(1,city); 
             prepareStatement.setString(2,district); 
@@ -64,26 +72,23 @@ public class SearchStoresImp{
     public List<StoreInfo> getSearchByFoodTypeWithLocation( String foodType, String city, String district ){ 
 
         log.debug("By Location and FoodType"); 
-        String likeClause = getFoodTypesImp.getFoodIdStringForQuery( foodType ); 
-        log.debug("FoodIdList to used with LIKE: "+likeClause); 
+        storeTages = getFoodTypesImp.getStoreFoodTags( foodType ); 
 
-        String sql = 
-            "SELECT * FROM StoreInfo INNER JOIN BusinessHours on BusinessHours.storeId = StoreInfo.store_id WHERE city = ? AND district = ? AND" + likeClause; 
-        /* 
+        this.sqlQuery+=
+            "WHERE city = ? AND district = ? AND StoreInfo.storeId IN " + 
+            "( SELECT DISTINCT( StoreMenu.storeId) FROM StoreMenu WHERE StoreMenu.foodId IN " + 
+            "( SELECT ReferedTable.id FROM ReferedTable WHERE value REGEXP ? ) );"; 
         this.pss = prepareStatement -> { 
             prepareStatement.setString(1,city); 
             prepareStatement.setString(2,district); 
             prepareStatement.setString(3,foodId); 
             }; 
-        */ 
-        return this.jdbc.query( sql, this::getList, city, district ); 
-        //return searchFromStoreInfo( sql, pss ); 
+        
+        return searchFromStoreInfo( sql, pss ); 
     } 
 
     public List<StoreInfo> searchFromStoreInfo( String sql, PreparedStatementSetter pss ){ 
         log.debug("Before jdbc query."); 
-        log.debug("PSS: " + pss ); 
-        log.debug("SQL: " + sql ); 
         List<StoreInfo> resultList = this.jdbc.query( sql, pss, this::getList );  
         log.debug("After jdbc query."); 
         log.debug("resultList: " + resultList ); 
@@ -94,11 +99,13 @@ public class SearchStoresImp{
 
         log.debug("In this::getList."); 
 
+        Map<String,Object> resultList = new HashMap<>(); 
+
         Map<String,String> businessHours = new HashMap(); 
         businessHours.put("星期一", rs.getString("mon")); 
-        businessHours.put("星期二", rs.getString("tues")); 
+        businessHours.put("星期二", rs.getString("tue")); 
         businessHours.put("星期三", rs.getString("wed")); 
-        businessHours.put("星期四", rs.getString("thurs")); 
+        businessHours.put("星期四", rs.getString("thu")); 
         businessHours.put("星期五", rs.getString("fri")); 
         businessHours.put("星期六", rs.getString("sat")); 
         businessHours.put("星期日", rs.getString("sun")); 
@@ -110,10 +117,24 @@ public class SearchStoresImp{
         Map<String,Integer> latLong = new HashMap<>(); 
         latLong.put("lat", (Integer) latLongJSONObject.get("lat")); 
         latLong.put("long", (Integer) latLongJSONObject.get("long")); 
+
+        resultList.put("storeId",rs.getInt("storeId")); 
+        resultList.put("storename",rs.getString("storename"); 
+        resultList.put("city",rs.getString("city"); 
+        resultList.put("district",rs.getString("district")); 
+        resultList.put("address",rs.getString("address")); 
+        resultList.put("tel",rs.getString("tel")); 
+        resultList.put("latLont",latLong);  
+        resutlList.put("businessHours",businessHours); 
+        resultList.put("rating",rs.getFloat("rating") );
+        resultList.put("tags", ); 
+
+        return resultList; 
         
+        /* 
         return new StoreInfo(
-                rs.getInt("store_id"), 
-                rs.getString("store_name"), 
+                rs.getInt("storeId"), 
+                rs.getString("storename"), 
                 rs.getString("city"), 
                 rs.getString("district"), 
                 rs.getString("address"), 
@@ -123,7 +144,7 @@ public class SearchStoresImp{
                 null, 
                 rs.getTimestamp("createdAt"), 
                 businessHours, 
-                rs.getFloat("rating") ); 
+                rs.getFloat("rating") ); */ 
     } 
 } 
 

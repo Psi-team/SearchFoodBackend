@@ -16,6 +16,8 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory; 
 
 import java.util.List; 
+import java.util.Map; 
+import java.util.HashMap; 
 
 import com.searchfood.SearchFoodBackend.model.SearchStoresImp; 
 import com.searchfood.SearchFoodBackend.model.data.StoreInfo; 
@@ -28,7 +30,7 @@ public class SearchController{
 
     private static final Logger log = LoggerFactory.getLogger( SearchController.class ); 
     private SearchStoresImp searchStoresImp; 
-    private List<StoreInfo> resultsList; 
+    private List<Map<String,Object>> resultsList; 
 
     @Autowired 
     public SearchController(SearchStoresImp searchStore){ 

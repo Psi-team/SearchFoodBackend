@@ -42,6 +42,9 @@ CREATE TABLE IF NOT EXISTS StoreInfo(
     click_cum INT(4) DEFAULT '0', 
     lat_long JSON NOT NULL, 
     rating FLOAT DEFAULT '0.0', 
+    logo VARCHAR(150) NULL, 
+    images VARCHAR(150) NULL,
+    slogan VARCHAR(50) NULL, 
     PRIMARY KEY( storeId, storename, city, district, address ), 
     /*UNIQUE KEY store_name ( store_name, city, district, address ), */ 
     UNIQUE KEY city ( city, district, address ), 
@@ -72,27 +75,27 @@ CREATE TABLE IF NOT EXISTS BusinessHours(
 );
 
 /* Create the StoreTypes table */ 
-CREATE TABLE IF NOT EXISTS StoreTypes( 
+CREATE TABLE IF NOT EXISTS StoresMenu( 
     storeId INT NOT NULL, 
     foodId INT NOT NULL, 
     PRIMARY KEY( storeId, foodId ), 
     FOREIGN KEY( storeId ) REFERENCES StoreInfo( storeId ), 
-    FOREIGN KEY( foodId ) REFERENCES Refered( id )  
+    FOREIGN KEY( foodId ) REFERENCES ReferedTable( id )  
 ); 
 
 
 /* Create the comments of Store */ 
 CREATE TABLE IF NOT EXISTS StoreComment( 
-    storeIid INT NOT NULL,
+    storeId INT NOT NULL,
     username VARCHAR(25) NOT NULL, 
     star TINYINT NOT NULL DEFAULT '0', 
     price INT NOT NULL, 
     comment_time TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP, 
     comments TINYTEXT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci, 
     picture VARCHAR(20) NULL, 
-    PRIMARY KEY( username, store_id ), 
+    PRIMARY KEY( username, storeId ), 
     FOREIGN KEY( username ) REFERENCES Users( mail ),
-    FOREIGN KEY( store_id ) REFERENCES StoreInfo( store_id )
+    FOREIGN KEY( storeId ) REFERENCES StoreInfo( storeId )
     /* The use of composite primary key, so you need a composite foreign key. */ 
     /*FOREIGN KEY( store_name, city, district, address ) REFERENCES StoreInfo( store_name, city, district, address ) */ 
 ); 
