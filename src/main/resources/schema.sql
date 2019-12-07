@@ -29,8 +29,8 @@ CREATE TABLE IF NOT EXISTS Token(
 /* Create the Store information */ 
 /* 當設定欄位的編碼時,不能使用NOT NULL語法 */ 
 CREATE TABLE IF NOT EXISTS StoreInfo( 
-    store_id INT NOT NULL AUTO_INCREMENT,
-    store_name VARCHAR(15) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci, 
+    storeid INT NOT NULL AUTO_INCREMENT,
+    storename VARCHAR(15) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci, 
     city CHAR(3) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci, 
     district CHAR(5) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci, 
     address VARCHAR(10) CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci, 
@@ -41,9 +41,8 @@ CREATE TABLE IF NOT EXISTS StoreInfo(
     click_week INT(3) DEFAULT '0', 
     click_cum INT(4) DEFAULT '0', 
     lat_long JSON NOT NULL, 
-    foodList VARCHAR(150) NOT NULL, 
     rating FLOAT DEFAULT '0.0', 
-    PRIMARY KEY( store_id, store_name, city, district, address ), 
+    PRIMARY KEY( storeId, storename, city, district, address ), 
     /*UNIQUE KEY store_name ( store_name, city, district, address ), */ 
     UNIQUE KEY city ( city, district, address ), 
     FOREIGN KEY( creator ) REFERENCES Users( mail )
@@ -62,29 +61,29 @@ CREATE TABLE IF NOT EXISTS ReferedTable(
 CREATE TABLE IF NOT EXISTS BusinessHours( 
     storeId INT NOT NULL, 
     mon CHAR(11) NULL, 
-    tues CHAR(11) NULL, 
+    tue CHAR(11) NULL, 
     wed CHAR(11) NULL, 
-    thurs CHAR(11) NULL, 
+    thu CHAR(11) NULL, 
     fri CHAR(11) NULL, 
     sat CHAR(11) NULL, 
     sun CHAR(11) NULL, 
     PRIMARY KEY( storeId ), 
-    FOREIGN KEY( storeId ) REFERENCES StoreInfo( store_id ) 
-); 
+    FOREIGN KEY( storeId ) REFERENCES StoreInfo( storeId ) 
+);
 
-/* Create the StoreTypes table 
+/* Create the StoreTypes table */ 
 CREATE TABLE IF NOT EXISTS StoreTypes( 
     storeId INT NOT NULL, 
     foodId INT NOT NULL, 
     PRIMARY KEY( storeId, foodId ), 
-    FOREIGN KEY( storeId ) REFERENCES StoreInfo( store_id ), 
+    FOREIGN KEY( storeId ) REFERENCES StoreInfo( storeId ), 
     FOREIGN KEY( foodId ) REFERENCES Refered( id )  
 ); 
-*/ 
+
 
 /* Create the comments of Store */ 
 CREATE TABLE IF NOT EXISTS StoreComment( 
-    store_id INT NOT NULL,
+    storeIid INT NOT NULL,
     username VARCHAR(25) NOT NULL, 
     star TINYINT NOT NULL DEFAULT '0', 
     price INT NOT NULL, 
