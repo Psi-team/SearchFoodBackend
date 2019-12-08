@@ -13,7 +13,8 @@ import org.slf4j.LoggerFactory;
 
 import com.searchfood.SearchFoodBackend.utils.exceptions.ErrorResponse; 
 import com.searchfood.SearchFoodBackend.utils.exceptions.InvalidDataException; 
-import com.searchfood.SearchFoodBackend.utils.exceptions.NotFoundException; 
+import com.searchfood.SearchFoodBackend.utils.exceptions.DataNotFoundException; 
+import com.searchfood.SearchFoodBackend.utils.exceptions.TokenNotFoundException; 
 import com.searchfood.SearchFoodBackend.utils.exceptions.DataFailToLoadedException; 
 import com.searchfood.SearchFoodBackend.utils.exceptions.TokenExpiredException; 
 
@@ -25,8 +26,15 @@ public class ControllerException{
 
     private static final Logger log = LoggerFactory.getLogger( ControllerException.class ); 
     
-    @ExceptionHandler( NotFoundException.class ) // data is not exist. 
-    public ResponseEntity<?> handleNotFoundException( Exception e ){ 
+    @ExceptionHandler( DataNotFoundException.class ) // data is not exist. 
+    public ResponseEntity<?> handleDataNotFoundException( Exception e ){ 
+        ErrorResponse errorResponse = new ErrorResponse( e.getMessage() ); // boxing the error message by ErrorResponse. 
+        log.warn("In ControllerException: NotFoundException"); 
+        return new ResponseEntity<>( errorResponse, HttpStatus.NO_CONTENT ); 
+    } 
+
+    @ExceptionHandler( TokenNotFoundException.class ) // data is not exist. 
+    public ResponseEntity<?> handleTokenNotFoundException( Exception e ){ 
         ErrorResponse errorResponse = new ErrorResponse( e.getMessage() ); // boxing the error message by ErrorResponse. 
         log.warn("In ControllerException: NotFoundException"); 
         return new ResponseEntity<>( errorResponse, HttpStatus.UNAUTHORIZED ); 

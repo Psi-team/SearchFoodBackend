@@ -16,6 +16,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Map; 
 import java.util.List; 
+import java.util.ArrayList; 
 import java.util.HashMap; 
 
 @Component 
@@ -71,6 +72,7 @@ public class StoreInfo implements Serializable{
     private String logo; 
     private String images; 
     private String slogan; 
+    private List<String> tags; 
     
     // constructor 
     public StoreInfo(){ 
@@ -79,7 +81,7 @@ public class StoreInfo implements Serializable{
 
     public StoreInfo(String n, String c, String d, String a, String t, String ct, 
                                 Map<String,Integer> latlong, Map<String,List<String>> ty, Timestamp cd, Map<String,String> bt, float rating, 
-                                String l, String i, String s ){ 
+                                String l, String i, String s, List<String> tags ){ 
         this.storename = n; 
         this.city = c; 
         this.district = d; 
@@ -94,8 +96,10 @@ public class StoreInfo implements Serializable{
         this.logo = l; 
         this.images = i; 
         this.slogan = s; 
+        this.tags = tags; 
     } 
 
+    /* 
     public StoreInfo( int id, String n, String c, String d, String a, String t, String ct, 
                                 Map<String,Integer> latlong, Map<String,List<String>> ty, Timestamp cd, Map<String,String> bt, float rating ){ 
         this.storeId = id; 
@@ -111,6 +115,7 @@ public class StoreInfo implements Serializable{
         this.businessHours = bt; 
         this.rating = rating; 
     } 
+    */ 
 
     // setter 
     public void setStoreId( int id ){ 
@@ -173,6 +178,10 @@ public class StoreInfo implements Serializable{
         this.images = s; 
     } 
 
+    public void setTags( List<String> t ){ 
+        this.tags = t; 
+    } 
+
     // getter 
     public int getStoreId( int id ){ 
         return this.storeId = id; 
@@ -232,6 +241,10 @@ public class StoreInfo implements Serializable{
 
     public String getSlogan(){ 
         return this.slogan; 
+    } 
+
+    public List<String> getTags(){ 
+        return this.tags; 
     } 
 
     /* JsonXXX() below is in order to get the String type of JSONObject to write in MySQL, whose name cannot be getXXX. 

@@ -16,11 +16,10 @@ import javax.validation.Valid;
 import org.springframework.validation.Errors; 
 // user-defined class. 
 import com.searchfood.SearchFoodBackend.model.data.StoreInfo; 
-import com.searchfood.SearchFoodBackend.model.CheckTokenImp; 
+import com.searchfood.SearchFoodBackend.utils.CheckTokensController; 
 import com.searchfood.SearchFoodBackend.model.StoreInfoTransactionImp; 
 import com.searchfood.SearchFoodBackend.utils.exceptions.InvalidDataException; 
 import com.searchfood.SearchFoodBackend.utils.exceptions.DataExistException; 
-import com.searchfood.SearchFoodBackend.utils.exceptions.NotFoundException; 
 import com.searchfood.SearchFoodBackend.utils.exceptions.TokenExpiredException; 
 // logger 
 import org.slf4j.Logger; 
@@ -33,12 +32,12 @@ public class StoreInfoController{
 
     private static final Logger log = LoggerFactory.getLogger( StoreInfoController.class ); 
     private StoreInfoTransactionImp storeInfoTransactionImp; 
-    private CheckTokenImp checkToken;  
+    private CheckTokensController checkTokensController;  
     private StoreInfo storeInfoData;  
 
     @Autowired 
-    public StoreInfoController( StoreInfoTransactionImp storeInfoTransactionImp, CheckTokenImp token ){ 
-        this.checkToken = token; 
+    public StoreInfoController( StoreInfoTransactionImp storeInfoTransactionImp, CheckTokensController token ){ 
+        this.checkTokensController = token; 
         this.storeInfoTransactionImp = storeInfoTransactionImp; 
     } 
 
@@ -48,17 +47,11 @@ public class StoreInfoController{
 
         log.debug( "storename: " + storeInfo.getStorename() ); 
         log.debug( "latlong: " + storeInfo.getLatLong() ); 
+        log.debug( "tags: " + storeInfo.getTags() ); 
 
         // checking the token is valid or expired. 
-        String username = checkToken.check( token ); 
-        if( username == null ){ // if the token doesn't exist in database. 
-            log.warn( "The token is invalid." ); 
-            throw new NotFoundException("The token is invalid."); 
-        }else if( username.equals("TokenExpired") ){ 
-            log.warn( "The token is out of date." ); 
-            throw new TokenExpiredException("Token expired."); 
-        } 
-        log.info( username + " is trying to create new store info." ); 
+        String username = checkTokensController.check( token ); 
+        log.info("Valid token"); 
         
         // check the data whether valid or not. 
         if ( errors.hasErrors() ){ 

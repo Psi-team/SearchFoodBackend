@@ -45,6 +45,7 @@ CREATE TABLE IF NOT EXISTS StoreInfo(
     logo VARCHAR(150) NULL, 
     images VARCHAR(150) NULL,
     slogan VARCHAR(50) NULL, 
+    tags VARCHAR(150) NOT NULL, 
     PRIMARY KEY( storeId, storename, city, district, address ), 
     /*UNIQUE KEY store_name ( store_name, city, district, address ), */ 
     UNIQUE KEY city ( city, district, address ), 

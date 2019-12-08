@@ -3,8 +3,8 @@ package com.searchfood.SearchFoodBackend.model;
 import org.springframework.beans.factory.annotation.Autowired; 
 import org.springframework.stereotype.Repository; 
 import org.springframework.jdbc.core.JdbcTemplate; 
-import org.springframework.jdbc.core.PreparedStatementCreator; // sql syntax has place holder, cannot use PreparedStatementCreator.  
-import org.springframework.jdbc.core.PreparedStatementSetter; // sql syntax has place holder, cannot use PreparedStatementCreator.   
+import org.springframework.jdbc.core.PreparedStatementCreator; // sqlQuery syntax has place holder, cannot use PreparedStatementCreator.  
+import org.springframework.jdbc.core.PreparedStatementSetter; // sqlQuery syntax has place holder, cannot use PreparedStatementCreator.   
 
 import org.slf4j.Logger; 
 import org.slf4j.LoggerFactory; 
@@ -17,6 +17,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException; 
 import java.util.List; 
 import java.util.ArrayList; 
+import java.util.Arrays; 
 import java.util.Map; 
 import java.util.HashMap; 
 
@@ -40,64 +41,54 @@ public class SearchStoresImp{
         this.jdbc = jdbc; 
     }
 
-    public List<StoreInfo> getSearchByFoodType( String foodName ){ 
+    public List<Map<String,Object>> getSearchByFoodKeyWord( String foodKeyWord ){ 
 
-        log.debug("By FoodType"); 
-        storeTages = getFoodTypesImp.getStoreFoodTags( foodType ); 
+        log.debug("By Food Key Word"); 
 
-        this.sqlQuery+=
+        String sqlQuery = this.sqlQuery + 
             "WHERE StoreInfo.storeId IN " + 
-            "( SELECT DISTINCT( StoreMenu.storeId) FROM StoreMenu WHERE StoreMenu.foodId IN " + 
+            "( SELECT DISTINCT( StoresMenu.storeId ) FROM StoresMenu WHERE StoresMenu.foodId IN " + 
             "( SELECT ReferedTable.id FROM ReferedTable WHERE value REGEXP ? ) );"; 
         this.pss = prepareStatement -> { 
-            prepareStatement.setString(1,foodName); 
-            }; 
+            prepareStatement.setString(1,foodKeyWord); }; 
 
-        return searchFromStoreInfo( sql, pss ); 
+        return searchFromStoreInfo( sqlQuery, pss ); 
     } 
 
-    public List<StoreInfo> getSearchByLocation( String city, String district ){ 
+    public List<Map<String,Object>> getSearchByLocation( String city, String district ){ 
 
         log.debug("By Location"); 
-        storeTages = getFoodTypesImp.getStoreFoodTags( foodType ); 
         
-        this.sqlQuery += "WHERE city = ? AND district = ?;"; 
+        String sqlQuery = this.sqlQuery + "WHERE city = ? AND district = ?;"; 
         this.pss = prepareStatement -> { 
             prepareStatement.setString(1,city); 
-            prepareStatement.setString(2,district); 
-            }; 
-        return searchFromStoreInfo( sql, pss ); 
+            prepareStatement.setString(2,district); }; 
+        return searchFromStoreInfo( sqlQuery, pss ); 
     } 
 
-    public List<StoreInfo> getSearchByFoodTypeWithLocation( String foodType, String city, String district ){ 
+    public List<Map<String,Object>> getSearchByFoodTypeWithLocation( String foodKeyWord, String city, String district ){ 
 
         log.debug("By Location and FoodType"); 
-        storeTages = getFoodTypesImp.getStoreFoodTags( foodType ); 
 
-        this.sqlQuery+=
+        String sqlQuery = this.sqlQuery + 
             "WHERE city = ? AND district = ? AND StoreInfo.storeId IN " + 
-            "( SELECT DISTINCT( StoreMenu.storeId) FROM StoreMenu WHERE StoreMenu.foodId IN " + 
+            "( SELECT DISTINCT( StoresMenu.storeId ) FROM StoresMenu WHERE StoresMenu.foodId IN " + 
             "( SELECT ReferedTable.id FROM ReferedTable WHERE value REGEXP ? ) );"; 
         this.pss = prepareStatement -> { 
             prepareStatement.setString(1,city); 
             prepareStatement.setString(2,district); 
-            prepareStatement.setString(3,foodId); 
-            }; 
+            prepareStatement.setString(3,foodKeyWord); }; 
         
-        return searchFromStoreInfo( sql, pss ); 
+        return searchFromStoreInfo( sqlQuery, pss ); 
     } 
 
-    public List<StoreInfo> searchFromStoreInfo( String sql, PreparedStatementSetter pss ){ 
-        log.debug("Before jdbc query."); 
-        List<StoreInfo> resultList = this.jdbc.query( sql, pss, this::getList );  
-        log.debug("After jdbc query."); 
+    public List<Map<String,Object>> searchFromStoreInfo( String sql, PreparedStatementSetter pss ){ 
+        List<Map<String,Object>> resultList = this.jdbc.query( sql, pss, this::getList );  
         log.debug("resultList: " + resultList ); 
         return resultList; 
     } 
 
-    private StoreInfo getList( ResultSet rs, int rowNum ) throws SQLException{ 
-
-        log.debug("In this::getList."); 
+    private Map<String,Object> getList( ResultSet rs, int rowNum ) throws SQLException{ 
 
         Map<String,Object> resultList = new HashMap<>(); 
 
@@ -112,39 +103,26 @@ public class SearchStoresImp{
 
         /* 拉出來寫個function, traverse the JSONObject.getKeys()  */ 
         JSONObject latLongJSONObject = new JSONObject( rs.getString("lat_long") ); 
-        log.debug("latLong: " + latLongJSONObject); 
-        log.debug("latLongJSONObject.get(\"lat\"): " + latLongJSONObject.get("lat")); 
         Map<String,Integer> latLong = new HashMap<>(); 
         latLong.put("lat", (Integer) latLongJSONObject.get("lat")); 
         latLong.put("long", (Integer) latLongJSONObject.get("long")); 
 
         resultList.put("storeId",rs.getInt("storeId")); 
-        resultList.put("storename",rs.getString("storename"); 
-        resultList.put("city",rs.getString("city"); 
+        resultList.put("storename",rs.getString("storename")); 
+        resultList.put("city",rs.getString("city")); 
         resultList.put("district",rs.getString("district")); 
         resultList.put("address",rs.getString("address")); 
         resultList.put("tel",rs.getString("tel")); 
-        resultList.put("latLont",latLong);  
-        resutlList.put("businessHours",businessHours); 
-        resultList.put("rating",rs.getFloat("rating") );
-        resultList.put("tags", ); 
+        resultList.put("latLong",latLong);  
+        resultList.put("businessHours",businessHours); 
+        resultList.put("rating",rs.getFloat("rating"));
+        resultList.put("tags", Arrays.asList(rs.getString("tags").split(","))); 
+        resultList.put("slogan",rs.getString("slogan"));
+        resultList.put("images",rs.getString("images"));
+        resultList.put("logo",rs.getString("logo"));
+        resultList.put("createdDate",rs.getTimestamp("createdAt").toLocalDateTime().toLocalDate());
 
         return resultList; 
-        
-        /* 
-        return new StoreInfo(
-                rs.getInt("storeId"), 
-                rs.getString("storename"), 
-                rs.getString("city"), 
-                rs.getString("district"), 
-                rs.getString("address"), 
-                rs.getString("tel"), 
-                rs.getString("creator"), 
-                latLong, 
-                null, 
-                rs.getTimestamp("createdAt"), 
-                businessHours, 
-                rs.getFloat("rating") ); */ 
     } 
 } 
 

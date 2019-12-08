@@ -17,7 +17,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus; 
 
 import com.searchfood.SearchFoodBackend.model.LogoutImp; 
-import com.searchfood.SearchFoodBackend.utils.exceptions.NotFoundException; 
+import com.searchfood.SearchFoodBackend.utils.exceptions.TokenNotFoundException; 
 
 @RestController 
 @CrossOrigin("*") 
@@ -51,7 +51,7 @@ public class LogoutController{
         token = token.substring( token.indexOf(" ")+1 ); 
         //log.info( "Token: " + token ); 
         if ( 1 != logout.deleteFromToken( token ) ){ 
-            throw new NotFoundException( "Token not founded in Database." ); 
+            throw new TokenNotFoundException( "Token not founded in Database." ); 
         }
         log.info( token + " logout." ); 
     } 

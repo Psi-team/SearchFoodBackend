@@ -18,10 +18,9 @@ import java.util.Map;
 import java.util.List; 
 
 import com.searchfood.SearchFoodBackend.model.GetFoodTypesImp; 
-import com.searchfood.SearchFoodBackend.model.CheckTokenImp; 
 import com.searchfood.SearchFoodBackend.utils.exceptions.DataFailToLoadedException; 
-import com.searchfood.SearchFoodBackend.utils.exceptions.NotFoundException; 
 import com.searchfood.SearchFoodBackend.utils.exceptions.TokenExpiredException; 
+import com.searchfood.SearchFoodBackend.utils.CheckTokensController; 
 
 @RestController 
 @CrossOrigin("*") 
@@ -30,12 +29,12 @@ public class GetAllMenuController{
 
     private static final Logger log = LoggerFactory.getLogger( GetAllMenuController.class ); 
     private GetFoodTypesImp getFoodTypesImp; 
-    private CheckTokenImp checkTokenImp; 
+    private CheckTokensController checkTokensController; 
 
     @Autowired 
-    public GetAllMenuController( GetFoodTypesImp g, CheckTokenImp c ){ 
+    public GetAllMenuController( GetFoodTypesImp g, CheckTokensController c ){ 
         this.getFoodTypesImp = g; 
-        this.checkTokenImp = c; 
+        this.checkTokensController= c; 
     } 
 
     @GetMapping  
@@ -45,14 +44,7 @@ public class GetAllMenuController{
         log.info( "Processing getStoreTypes..." ); 
 
         // checking the token is valid or expired. 
-        String username = checkTokenImp.check( token ); 
-        if( username == null ){ // if the token doesn't exist in database. 
-            log.warn( "The token is invalid." ); 
-            throw new NotFoundException("The token is invalid."); 
-        }else if( username.equals("TokenExpired") ){ 
-            log.warn( "The token is out of date." ); 
-            throw new TokenExpiredException("Token expired."); 
-        } 
+        checkTokensController.check( token ); 
         log.info("Valid token"); 
 
         log.info( "Trying to load the food types from databases..." ); 

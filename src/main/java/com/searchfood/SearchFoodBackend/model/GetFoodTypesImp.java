@@ -145,12 +145,26 @@ public class GetFoodTypesImp{
         return this.foodTypesList.get(j).getId(); 
     } 
 
-    public Map<String,List<String>> getStoreFoodTags( String target ){ 
-
-        String sql = "SELECT DISTINCT(storeId), types FROM StoresMenu, ReferedTable WHERE value LIKE ?;"; 
+    public Map<String,List<String>> getStoreTags( String target ){ 
+        String sql = 
+            "SELECT DISTINCT(storeId), types FROM StoresMenu, ReferedTable WHERE foodId IN ( SELECT foodId FROM ReferedTable WHERE value REGEXP ? );"; 
         return null; 
     } 
 
+    public Map<String,List<String>> getStoreTags( String city, String district ){ 
+        String sql = 
+            "SELECT DISTINCT(storeId), types FROM StoreInfo, ReferedTable WHERE StoreInfo.city = ? AND StoreInfo.district = ?;"; 
+
+        return null; 
+    } 
+
+    public Map<String,List<String>> getStoreTags( String target, String city, String district ){ 
+        String sql = 
+            "SELECT DISTINCT(StoresMenu.storeId), types FROM StoresMenu, ReferedTable, StoreInfo WHERE foodId IN " + 
+            "(SELECT foodId FROM ReferedTable WHERE value REGEXP ?) " + 
+            "AND StoreInfo.city = ? AND StoreInfo.district = ?;"; 
+        return null; 
+    } 
 } 
 
 

@@ -34,7 +34,7 @@ import com.searchfood.SearchFoodBackend.model.interfaces.StoreInfoITF;
 import com.searchfood.SearchFoodBackend.model.data.StoreInfo; 
 import com.searchfood.SearchFoodBackend.model.GetFoodTypesImp; 
 import com.searchfood.SearchFoodBackend.utils.exceptions.DataExistException; 
-import com.searchfood.SearchFoodBackend.utils.exceptions.NotFoundException; 
+import com.searchfood.SearchFoodBackend.utils.exceptions.TokenNotFoundException; 
 
 @Repository 
 public class StoreInfoImp implements StoreInfoITF{ 
@@ -60,7 +60,10 @@ public class StoreInfoImp implements StoreInfoITF{
         storeInfo.setCreator( username ); 
         // setting localdatetime to MySQL. 
         storeInfo.setCreatedAt( LocalDateTime.now(ZoneId.of("Asia/Taipei")) ); 
+        storeInfo.setTags( new ArrayList( storeInfo.getType().keySet() ) ); 
         log.debug( "username: " + username + "\tstoreName: " + storeInfo.getStorename() + ". At " + storeInfo.getCreatedAt() ); 
+        log.debug("tags: " + storeInfo.getTags().toString() ); 
+
         if ( true != save(storeInfo) ) return null; 
         return storeInfo; 
     } 
@@ -70,7 +73,7 @@ public class StoreInfoImp implements StoreInfoITF{
         //try{ 
             // use KeyHolder to get storeId 
             String sql = 
-                "INSERT INTO StoreInfo(storename,city,district,address,tel,createdAt,creator,lat_long) VALUES(?,?,?,?,?,?,?,?);"; 
+                "INSERT INTO StoreInfo(storename,city,district,address,tel,createdAt,creator,lat_long, tags) VALUES(?,?,?,?,?,?,?,?,?);"; 
             KeyHolder keyHolder = new GeneratedKeyHolder(); 
             jdbc.update( connection -> { 
                             PreparedStatement ps = connection.prepareStatement( sql, Statement.RETURN_GENERATED_KEYS ); // setting keyHolder by 2nd arg. 
@@ -85,6 +88,7 @@ public class StoreInfoImp implements StoreInfoITF{
                             ps.setString(8,storeInfo.JsonLatLongString());// may cause problem. 
                             // 若使用Java Bean包裝nested Json,則必須使用JSONPObject來封裝並用toString()來存至DB. 
                             // storeInfo.getLatlong()中,必須將JSONObject用toString()輸出才能存至MySQL的JSON欄位 return ps; 
+                            ps.setString(9,storeInfo.getTags().toString() ); 
                             return ps; 
                          }, 
                          keyHolder ); 
@@ -103,7 +107,6 @@ public class StoreInfoImp implements StoreInfoITF{
                          storeInfo.getBusinessHours().get("星期日")  
             ); 
             // use storeId to insert key values of foods 
-            log.debug( "Test in Map: " + storeInfo.getType().get("飯") ); 
             List<String> detailsList = new ArrayList(); 
             storeInfo.getType()
                 .forEach( 
@@ -117,6 +120,7 @@ public class StoreInfoImp implements StoreInfoITF{
             log.debug("The details of food types: " + detailsList);  
             List<Integer> foodIdList =  this.getFoodTypesImp.getStoreMenuList( detailsList ); 
             log.debug("The foodId of details." + foodIdList ); 
+            /* saving the foodId and storeId to the table StoresMenu. */ 
             jdbc.batchUpdate( 
                     "INSERT INTO StoresMenu( storeId, foodId ) VALUES( ?, ? );", 
                     new BatchPreparedStatementSetter(){ 

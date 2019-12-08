@@ -1,14 +1,14 @@
 package com.searchfood.SearchFoodBackend.utils.exceptions; 
 
-public class NotFoundException extends RuntimeException{ // data not founded in database. 
+public class TokenNotFoundException extends RuntimeException{ // data not founded in database. 
 
     private String message; 
 
-    public NotFoundException(){ 
+    public TokenNotFoundException(){ 
         super(); 
     } 
 
-    public NotFoundException( String messages ){ 
+    public TokenNotFoundException( String messages ){ 
         super(messages); 
         this.message = messages; 
     } 
@@ -23,4 +23,5 @@ public class NotFoundException extends RuntimeException{ // data not founded in 
     } 
 
 } 
+
 

@@ -23,7 +23,7 @@ import com.searchfood.SearchFoodBackend.model.data.Members;
 import com.searchfood.SearchFoodBackend.model.data.TokenRecords; 
 import com.searchfood.SearchFoodBackend.model.TokenRecordsImp; 
 
-import com.searchfood.SearchFoodBackend.utils.exceptions.NotFoundException; 
+import com.searchfood.SearchFoodBackend.utils.exceptions.DataNotFoundException; 
 
 @RestController // handle the Restful api 
 @CrossOrigin("*") // allows clients from any domain to consume the API.  
@@ -58,7 +58,7 @@ public class LoginController{
 
         if ( null == token.getUsername() ){ 
             log.info("Not Founded"); 
-            throw new NotFoundException("User or password not founded."); 
+            throw new DataNotFoundException("User or password not founded."); 
              /* Reference: https://openjry.url.tw/spring-boot-rest-exception-all-catch/ */ 
         } 
 
