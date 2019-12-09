@@ -118,8 +118,8 @@ public class SearchStoresImp{
         resultList.put("rating",rs.getFloat("rating"));
         resultList.put("tags", Arrays.asList(rs.getString("tags").split(","))); 
         resultList.put("slogan",rs.getString("slogan"));
-        resultList.put("images",rs.getString("images"));
-        resultList.put("logo",rs.getString("logo"));
+        //resultList.put("images",rs.getString("images"));
+        //resultList.put("logo",rs.getString("logo"));
         resultList.put("createdDate",rs.getTimestamp("createdAt").toLocalDateTime().toLocalDate());
 
         return resultList; 

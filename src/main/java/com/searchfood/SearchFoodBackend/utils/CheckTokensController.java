@@ -19,11 +19,7 @@ public class CheckTokensController{
     private static final Logger log = LoggerFactory.getLogger( CheckTokensController.class ); 
 
     @Autowired 
-    private JdbcTemplate jdbc; 
-    @Autowired 
-    private LogoutImp logoutImp; 
-    @Autowired 
-    private CheckTokenImp checkTokenImp = new CheckTokenImp( jdbc, logoutImp ); 
+    private CheckTokenImp checkTokenImp; 
 
     private String username; 
 
