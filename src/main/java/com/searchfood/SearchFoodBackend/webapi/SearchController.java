@@ -52,6 +52,7 @@ public class SearchController{
         //checkTokensController.check( token ); 
         //log.info("Valid token"); 
 
+        /* These if else may be replaced by @Validated */ 
         if( city.equals("") && !district.equals("") || !city.equals("") && district.equals("") && foodKeyWord.equals("") ){ // errors with no city but district only.  
 
             return new ResponseEntity(HttpStatus.BAD_REQUEST); 
