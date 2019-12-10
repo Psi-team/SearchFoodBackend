@@ -17,6 +17,8 @@ import com.searchfood.SearchFoodBackend.utils.exceptions.DataNotFoundException;
 import com.searchfood.SearchFoodBackend.utils.exceptions.TokenNotFoundException; 
 import com.searchfood.SearchFoodBackend.utils.exceptions.DataFailToLoadedException; 
 import com.searchfood.SearchFoodBackend.utils.exceptions.TokenExpiredException; 
+import com.searchfood.SearchFoodBackend.utils.exceptions.FilesException; 
+import com.searchfood.SearchFoodBackend.utils.exceptions.FileStorageException; 
 
 import java.util.List; 
 import java.util.LinkedList; 
@@ -70,6 +72,20 @@ public class ControllerException{
     public ResponseEntity<?> handleTokenExpiredException( Exception e ){ 
         ErrorResponse errorResponse = new ErrorResponse( e.getMessage() ); 
         log.warn("In ControllerException: TokenExpiredException."); 
+        return new ResponseEntity<>( errorResponse, HttpStatus.UNAUTHORIZED ); 
+    } 
+
+    @ExceptionHandler( FilesException.class ) 
+    public ResponseEntity<?> handleFilesException( Exception e ){ 
+        ErrorResponse errorResponse = new ErrorResponse( e.getMessage() ); 
+        log.warn("In ControllerException: FilesException." ); 
+        return new ResponseEntity<>( errorResponse, HttpStatus.NOT_ACCEPTABLE ); 
+    } 
+
+    @ExceptionHandler( FileStorageException.class ) 
+    public ResponseEntity<?> handleFileStorageException( Exception e ){ 
+        ErrorResponse errorResponse = new ErrorResponse( e.getMessage() ); 
+        log.warn("In ControllerException: FileStorageException."); 
         return new ResponseEntity<>( errorResponse, HttpStatus.UNAUTHORIZED ); 
     } 
     

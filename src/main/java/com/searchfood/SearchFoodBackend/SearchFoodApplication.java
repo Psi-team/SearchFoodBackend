@@ -6,11 +6,11 @@ import org.springframework.boot.context.properties.EnableConfigurationProperties
 
 import org.springframework.core.SpringVersion; 
 
-import com.searchfood.SearchFoodBackend.properties.FileStorageProperties; 
+import com.searchfood.SearchFoodBackend.properties.FilesStorageProperties; 
 
 @SpringBootApplication
 @EnableConfigurationProperties({
-    FileStorageProperties.class 
+    FilesStorageProperties.class 
 })
 public class SearchFoodApplication {
 
