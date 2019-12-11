@@ -15,13 +15,16 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import org.springframework.util.StringUtils; 
 
+import org.springframework.core.io.ClassPathResource; 
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory; 
 
 import java.util.List; 
 import java.util.Arrays; 
-
 import java.util.stream.Collectors; 
+
+import java.io.IOException; 
 
 import com.searchfood.SearchFoodBackend.utils.files.FileStorageService; 
 import com.searchfood.SearchFoodBackend.utils.files.UploadFileResponse; 
@@ -40,27 +43,27 @@ public class FilesController{
 
         log.debug("Start to uploading files..."); 
         log.debug( file.toString() ); 
-        String fileName = fileStorageService.storeFile( file ); 
-        //log.debug( "fileNameLocation: " + fileNameLocation ); 
-        log.debug( "fileName: " + fileName ); 
+        String targetLocation = fileStorageService.storeFile( file ); 
+        log.debug( "targetLocation: " + targetLocation ); 
 
-        if ( StringUtils.isEmpty( fileName ) ) throw new FilesException("Please choose a images"); 
+        if ( StringUtils.isEmpty( targetLocation.endsWith("/") ) ) throw new FilesException("Please choose a images"); 
 
-        String fileDownloadURI = 
-                             ServletUriComponentsBuilder
-                                    .fromCurrentContextPath()
-                                    .path("/uploadFile/") 
-                                    .path(fileName) 
-                                    .toUriString(); 
+        //String fileDownloadURI = 
+        //                     ServletUriComponentsBuilder
+        //                            .fromCurrentContextPath()
+        //                            .path("/uploadFile/") 
+        //                            .path(fileName) 
+        //                            .toUriString(); 
+        //ClassPathResource imgFileUrl = new ClassPathResource("uploads/"+fileName); 
+        //log.debug("imgFileUrl: " + imgFileUrl); 
+        //log.debug( "fileDownloadURI: " + fileDownloadURI ); 
 
-        log.debug( "fileDownloadURI: " + fileDownloadURI ); 
-        /* 
-        return new ResponseEntity<>( 
-                    new UploadFileResponse( file, fileDownloadURI, 
-                        file.getContentType(), file.getSize() ), 
-                    HttpStatus.CREATED ); 
-                    */ 
-        return new ResponseEntity<>( fileDownloadURI, HttpStatus.CREATED ); 
+        //return new ResponseEntity<>( 
+        //            new UploadFileResponse( fileName, fileDownloadURI, 
+        //                file.getContentType(), file.getSize() ), 
+        //            HttpStatus.CREATED ); 
+        
+        return new ResponseEntity<>( targetLocation, HttpStatus.CREATED ); // returns the local relative path.  
     } 
 
     @PostMapping("/uploadFiles") 

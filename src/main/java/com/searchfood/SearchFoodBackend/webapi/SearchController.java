@@ -43,7 +43,7 @@ public class SearchController{
 
     @GetMapping 
     public ResponseEntity<?> getSearchResults( 
-                                @RequestHeader("Authorization") String token, 
+//                                @RequestHeader("Authorization") String token, 
                                 @RequestParam(value="foodType") String foodKeyWord, 
                                 @RequestParam(value="city") String city,
                                 @RequestParam(value="district") String district ){ 

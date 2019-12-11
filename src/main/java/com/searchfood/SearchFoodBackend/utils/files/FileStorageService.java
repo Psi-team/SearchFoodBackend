@@ -6,6 +6,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import org.springframework.core.io.Resource; 
 import org.springframework.core.io.UrlResource; 
+import org.springframework.core.io.ClassPathResource; 
 import org.springframework.util.StringUtils; 
 
 import java.io.IOException; 
@@ -31,11 +32,11 @@ public class FileStorageService{
     public FileStorageService( FilesStorageProperties filesStorageProperties ){ 
 
         this.fileStorageLocation = Paths.get( filesStorageProperties.getUploadDir() ) 
-                                        .toAbsolutePath()
+                                        //.toAbsolutePath()
                                         .normalize(); 
         log.debug( "fileStorageLocation: " + this.fileStorageLocation ); 
 
-        try{ // try to create a a directory if not exist. 
+        try{ // try to create a directory if not exist. 
             Files.createDirectories( this.fileStorageLocation ); 
         }catch( Exception e ){ 
             throw new FileStorageException("Coun't not create the directory where the uploaded files will be stored."); 
@@ -55,7 +56,8 @@ public class FileStorageService{
             Files.copy( file.getInputStream(), targetLocation, StandardCopyOption.REPLACE_EXISTING ); // Copy all bytes from an input stream to a file. 
             // org.springframework.web.multipart.getInputStream() return an InputStream to read the contents of the file from. 
 
-            return fileName; 
+            return targetLocation.toString(); 
+
         }catch( IOException e ){ 
             throw new FileStorageException( "Couldn't store files " + fileName + ". Please try again." ); 
 
