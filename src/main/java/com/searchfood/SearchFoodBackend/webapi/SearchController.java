@@ -20,6 +20,9 @@ import java.util.List;
 import java.util.Map; 
 import java.util.HashMap; 
 
+import java.net.URLDecoder; 
+import java.io.UnsupportedEncodingException; 
+
 import com.searchfood.SearchFoodBackend.model.SearchStoresImp; 
 import com.searchfood.SearchFoodBackend.model.data.StoreInfo; 
 import com.searchfood.SearchFoodBackend.utils.exceptions.DataNotFoundException; 
@@ -27,7 +30,7 @@ import com.searchfood.SearchFoodBackend.utils.CheckTokensController;
 
 @RestController 
 @CrossOrigin("*") 
-@RequestMapping(value="/Search", produces="application/json") 
+@RequestMapping(value="/search", produces="application/json") 
 public class SearchController{ 
 
     private static final Logger log = LoggerFactory.getLogger( SearchController.class ); 
@@ -46,8 +49,11 @@ public class SearchController{
 //                                @RequestHeader("Authorization") String token, 
                                 @RequestParam(value="foodType") String foodKeyWord, 
                                 @RequestParam(value="city") String city,
-                                @RequestParam(value="district") String district ){ 
+                                @RequestParam(value="district") String district ) throws UnsupportedEncodingException{ 
 
+        foodKeyWord = URLDecoder.decode( foodKeyWord, "utf-8" ); 
+        city = URLDecoder.decode( city, "utf-8" ); 
+        district = URLDecoder.decode( district, "utf-8" ); 
         log.debug("foodKeyWords: " + foodKeyWord + ", city: " + city + ", district: " + district ); 
         //checkTokensController.check( token ); 
         //log.info("Valid token"); 

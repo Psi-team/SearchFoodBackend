@@ -115,7 +115,7 @@ public class SearchStoresImp{
         resultList.put("tel",rs.getString("tel")); 
         resultList.put("latLong",latLong);  
         resultList.put("businessHours",businessHours); 
-        resultList.put("rating",rs.getFloat("rating"));
+        resultList.put("star",rs.getFloat("rating"));
         resultList.put("tags", Arrays.asList(rs.getString("tags").split(","))); 
         resultList.put("slogan",rs.getString("slogan"));
         //resultList.put("images",rs.getString("images"));

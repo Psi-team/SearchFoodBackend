@@ -88,7 +88,7 @@ public class StoreInfoImp implements StoreInfoITF{
                             ps.setString(8,storeInfo.JsonLatLongString());// may cause problem. 
                             // 若使用Java Bean包裝nested Json,則必須使用JSONPObject來封裝並用toString()來存至DB. 
                             // storeInfo.getLatlong()中,必須將JSONObject用toString()輸出才能存至MySQL的JSON欄位 return ps; 
-                            ps.setString(9,storeInfo.getTags().toString() ); 
+                            ps.setString(9,storeInfo.getTags().toString().substring(1,storeInfo.getTags().toString().length()-1) ); 
                             return ps; 
                          }, 
                          keyHolder ); 
