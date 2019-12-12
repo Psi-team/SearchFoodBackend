@@ -46,10 +46,10 @@ public class SearchController{
 
     @GetMapping 
     public ResponseEntity<?> getSearchResults( 
-//                                @RequestHeader("Authorization") String token, 
+                                @RequestHeader("Authorization") String token, 
                                 @RequestParam(value="foodType") String foodKeyWord, 
                                 @RequestParam(value="city") String city,
-                                @RequestParam(value="district") String district ) throws UnsupportedEncodingException{ 
+                                @RequestParam(value="district") String district ) throws UnsupportedEncodingException{ // throws exception due to URLDecoder.decode() 
 
         foodKeyWord = URLDecoder.decode( foodKeyWord, "utf-8" ); 
         city = URLDecoder.decode( city, "utf-8" ); 
@@ -58,7 +58,7 @@ public class SearchController{
         //checkTokensController.check( token ); 
         //log.info("Valid token"); 
 
-        /* These if else may be replaced by @Validated */ 
+        /* These if else may be replaced by @Validated in function arguements */ 
         if( city.equals("") && !district.equals("") || !city.equals("") && district.equals("") && foodKeyWord.equals("") ){ // errors with no city but district only.  
 
             return new ResponseEntity(HttpStatus.BAD_REQUEST); 
