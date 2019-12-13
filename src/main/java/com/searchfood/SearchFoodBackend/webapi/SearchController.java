@@ -27,6 +27,7 @@ import com.searchfood.SearchFoodBackend.model.SearchStoresImp;
 import com.searchfood.SearchFoodBackend.model.data.StoreInfo; 
 import com.searchfood.SearchFoodBackend.utils.exceptions.DataNotFoundException; 
 import com.searchfood.SearchFoodBackend.utils.CheckTokensController; 
+import com.searchfood.SearchFoodBackend.properties.SearchPageSizeProperties; 
 
 @RestController 
 @CrossOrigin("*") 
@@ -37,11 +38,14 @@ public class SearchController{
     private SearchStoresImp searchStoresImp; 
     private List<Map<String,Object>> resultsList; 
     private CheckTokensController checkTokensController; 
+    private SearchPageSizeProperties pageSize; 
 
     @Autowired 
-    public SearchController(SearchStoresImp searchStore, CheckTokensController c ){ 
+    public SearchController(SearchStoresImp searchStore, CheckTokensController c, SearchPageSizeProperties s ){ 
         this.searchStoresImp = searchStore; 
         this.checkTokensController= c; 
+        this.pageSize = s; 
+        System.out.println("pageSize: " + pageSize.getPageSize() ); 
     } 
 
     @GetMapping 
@@ -85,5 +89,13 @@ public class SearchController{
         if ( null != resultsList ) return new ResponseEntity( resultsList, HttpStatus.OK ); 
         else throw new DataNotFoundException("No suitable results."); 
     } 
+
+    
+    /*
+    @GetMapping("properties") 
+    public ResponseEntity<?> getSearchResultsProperties(){ 
+
+    } 
+    */ 
 } 
 
