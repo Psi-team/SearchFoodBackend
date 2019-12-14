@@ -45,7 +45,6 @@ public class SearchController{
         this.searchStoresImp = searchStore; 
         this.checkTokensController= c; 
         this.pageSize = s; 
-        System.out.println("pageSize: " + pageSize.getPageSize() ); 
     } 
 
     @GetMapping 
@@ -94,7 +93,7 @@ public class SearchController{
     /*
     @GetMapping("properties") 
     public ResponseEntity<?> getSearchResultsProperties(){ 
-
+        // ref: https://gist.github.com/mobynote/595b61d72a1a0363dc80b7eb785faef9
     } 
     */ 
 } 
