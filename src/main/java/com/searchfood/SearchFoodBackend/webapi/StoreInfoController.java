@@ -47,7 +47,7 @@ public class StoreInfoController{
 
         log.debug( "storename: " + storeInfo.getStorename() ); 
         log.debug( "latlong: " + storeInfo.getLatLong() ); 
-        log.debug( "tags: " + storeInfo.getTags() ); 
+        //log.debug( "tags: " + storeInfo.getTags() ); 
 
         // checking the token is valid or expired. 
         String username = checkTokensController.check( token ); 
@@ -65,7 +65,7 @@ public class StoreInfoController{
             return new ResponseEntity<>( storeInfoData, HttpStatus.CREATED ); 
         } 
 
-        throw new DataExistException( storeInfo.getStorename() + " has existed in the table StoreInfo." ); 
+        throw new DataExistException( "Exception happens when ceating new stores." ); 
     } 
 
 } 
