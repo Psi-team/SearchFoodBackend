@@ -28,15 +28,15 @@ import org.slf4j.LoggerFactory;
 @RestController 
 @CrossOrigin("*") 
 @RequestMapping(value="createStore",produces="application/json") 
-public class StoreInfoController{ 
+public class SaveStoreInfoController{ 
 
-    private static final Logger log = LoggerFactory.getLogger( StoreInfoController.class ); 
+    private static final Logger log = LoggerFactory.getLogger( SaveStoreInfoController.class ); 
     private StoreInfoTransactionImp storeInfoTransactionImp; 
     private CheckTokensController checkTokensController;  
     private StoreInfo storeInfoData;  
 
     @Autowired 
-    public StoreInfoController( StoreInfoTransactionImp storeInfoTransactionImp, CheckTokensController token ){ 
+    public SaveStoreInfoController( StoreInfoTransactionImp storeInfoTransactionImp, CheckTokensController token ){ 
         this.checkTokensController = token; 
         this.storeInfoTransactionImp = storeInfoTransactionImp; 
     } 
@@ -61,6 +61,8 @@ public class StoreInfoController{
         log.info( "The data for building new store infomation is valid." );  
 
         if ( (storeInfoData  = storeInfoTransactionImp.createNewStoreInfoToDatabase( storeInfo, username )) != null ){ 
+            // call the file upload api to store images and logo. 
+            //  which can reference the ch7.1 and ch7.2 in Spring in Actions. 
             log.info( username + " has created the new store info " + storeInfo.getStorename() + "." ); 
             return new ResponseEntity<>( storeInfoData, HttpStatus.CREATED ); 
         } 

@@ -7,6 +7,8 @@ import org.springframework.stereotype.Component;
 import javax.validation.constraints.Size; 
 import javax.validation.constraints.NotNull; 
 
+import org.springframework.web.multipart.MultipartFile; 
+
 import java.time.LocalDateTime; 
 import java.sql.Timestamp; 
 
@@ -69,8 +71,8 @@ public class StoreInfo implements Serializable{
     private int cleek_cum;  
     private float rating; 
 
-    private String logo; 
-    private String images; 
+    private MultipartFile logo; 
+    private MultipartFile images; 
     private String slogan; 
     private List<String> tags; 
     
@@ -81,7 +83,7 @@ public class StoreInfo implements Serializable{
 
     public StoreInfo(String n, String c, String d, String a, String t, String ct, 
                                 Map<String,Integer> latlong, Map<String,List<String>> ty, Timestamp cd, Map<String,String> bt, float rating, 
-                                String l, String i, String s, List<String> tags ){ 
+                                MultipartFile logo, MultipartFile images, String slogan, List<String> tags){ 
         this.storename = n; 
         this.city = c; 
         this.district = d; 
@@ -93,9 +95,9 @@ public class StoreInfo implements Serializable{
         this.createdAt = cd; 
         this.businessHours = bt; 
         this.rating = rating; 
-        this.logo = l; 
-        this.images = i; 
-        this.slogan = s; 
+        this.logo = logo; 
+        this.images = images; 
+        this.slogan = slogan; 
         this.tags = tags; 
     } 
 
@@ -170,11 +172,11 @@ public class StoreInfo implements Serializable{
         this.slogan = s; 
     } 
 
-    public void setLogo( String s ){ 
+    public void setLogo( MultipartFile s ){ 
         this.logo = s; 
     } 
 
-    public void setImages( String s ){ 
+    public void setImages( MultipartFile s ){ 
         this.images = s; 
     } 
 
@@ -231,11 +233,11 @@ public class StoreInfo implements Serializable{
         return this.rating; 
     } 
 
-    public String getLogo(){ 
+    public MultipartFile getLogo(){ 
         return this.logo; 
     } 
 
-    public String getImages(){ 
+    public MultipartFile getImages(){ 
         return this.images; 
     } 
 
