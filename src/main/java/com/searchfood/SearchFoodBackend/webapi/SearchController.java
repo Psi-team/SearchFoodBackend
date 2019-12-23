@@ -52,7 +52,8 @@ public class SearchController{
                                 @RequestHeader("Authorization") String token, 
                                 @RequestParam(value="foodType") String foodKeyWord, 
                                 @RequestParam(value="city") String city,
-                                @RequestParam(value="district") String district ) throws UnsupportedEncodingException{ // throws exception due to URLDecoder.decode() 
+                                @RequestParam(value="district") String district ) 
+                                    throws UnsupportedEncodingException{ // throws exception due to URLDecoder.decode() 
 
         foodKeyWord = URLDecoder.decode( foodKeyWord, "utf-8" ); 
         city = URLDecoder.decode( city, "utf-8" ); 

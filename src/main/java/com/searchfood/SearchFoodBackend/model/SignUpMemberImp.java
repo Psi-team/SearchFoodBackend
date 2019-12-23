@@ -17,6 +17,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException; 
 
 import com.searchfood.SearchFoodBackend.utils.FindDataITF; 
+import com.searchfood.SearchFoodBackend.utils.exceptions.DataExistException; 
 import com.searchfood.SearchFoodBackend.model.interfaces.SignUpMemberITF; 
 import com.searchfood.SearchFoodBackend.model.data.SignUpMember;  
 import com.searchfood.SearchFoodBackend.model.data.TokenRecords; 
@@ -53,10 +54,14 @@ public class SignUpMemberImp implements SignUpMemberITF{
                                 signupmember.getMail(), signupmember.getUsername(), signupmember.getPasswd(), 
                                 signupmember.getSexual(), signupmember.getBirthyear() );  
             jdbc.update( "INSERT INTO Token( mail, token, navigator_type ) VALUES( ?, ?, ? )", 
-                                token.getUsername(), token.getToken(), "Nan" ); 
+                                signupmember.getMail(), token.getToken(), "Nan" ); 
             return true; 
         } catch( DuplicateKeyException e ){ 
-            return false; 
+            System.out.println(e.getMessage()); 
+            if( e.getMessage().contains("'username'") ) 
+                throw new DataExistException("username has existed."); 
+            else 
+                throw new DataExistException("mail has existed."); 
         } 
     } 
 } 

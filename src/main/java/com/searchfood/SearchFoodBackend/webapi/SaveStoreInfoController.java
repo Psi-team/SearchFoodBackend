@@ -60,7 +60,8 @@ public class SaveStoreInfoController{
         } 
         log.info( "The data for building new store infomation is valid." );  
 
-        if ( (storeInfoData  = storeInfoTransactionImp.createNewStoreInfoToDatabase( storeInfo, username )) != null ){ 
+        if ( (storeInfoData  = storeInfoTransactionImp.createNewStoreInfoToDatabase( storeInfo, username )) != null 
+                    && true ){ 
             // call the file upload api to store images and logo. 
             //  which can reference the ch7.1 and ch7.2 in Spring in Actions. 
             log.info( username + " has created the new store info " + storeInfo.getStorename() + "." ); 

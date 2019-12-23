@@ -35,6 +35,7 @@ public class TokenRecordsImp implements TokenRecordsITF, FindDataITF{
 
     private JdbcTemplate jdbc; 
     private Members mem; 
+    private SignUpMember results; 
 
     public TokenRecordsImp( JdbcTemplate jdbc ){ 
         this.jdbc = jdbc; 
@@ -47,8 +48,7 @@ public class TokenRecordsImp implements TokenRecordsITF, FindDataITF{
             // JdbcTemplate.query( PreparedStatementCreator psc, RowMapper<T> rowMapper, Object ... args ) 
             // RowMapper is an interface that you have to @Override  mapRow( ResultSet rs, int rowNum ) to map data into user-defined object. 
             // At the buttom of Spring in Action on page 62. 
-            SignUpMember sign = 
-            jdbc.queryForObject( 
+            this.results = jdbc.queryForObject( 
                     "SELECT * FROM Users WHERE mail = ? AND passwd = ?;", 
                     // using lambda expression below.  
                     ( ResultSet rs, int rowNum ) ->  
@@ -81,7 +81,7 @@ public class TokenRecordsImp implements TokenRecordsITF, FindDataITF{
 
         if( -1 != isExist() ){ // the user who tried to login in is exactly a member. 
             // then trying to set a token; 
-            token.setUsername( mem.getMail() ); 
+            token.setUsername( this.results.getUsername() ); 
             token.setToken();   
             save( token ); 
         } 
@@ -92,7 +92,7 @@ public class TokenRecordsImp implements TokenRecordsITF, FindDataITF{
 
     private int save( TokenRecords token ){ 
         return jdbc.update( "INSERT INTO Token( mail, token, navigator_type ) VALUES( ?, ?, ? )", 
-                        token.getUsername(), token.getToken(), mem.getBrowser() ); 
+                        mem.getMail(), token.getToken(), mem.getBrowser() ); 
     } 
 
 } 

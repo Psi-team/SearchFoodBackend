@@ -36,8 +36,8 @@ public class SendSignUpMailService implements SignUpMailService{
         msg.setSubject( "Thanks you to sign up for SearchFood." ); 
         msg.setText( String
                         .format("Hello, %s:\n\n    Thanks for your signing up for SearchFood,\n    Now, you can enjoy your meal.\n    You know what? Damn you!!", 
-                                    signupMember.getUsername().substring( 0, signupMember.getUsername().indexOf("@") ) 
-                               ) ); 
+                                    signupMember.getUsername() ) 
+                               ); 
 
         javaMailSender.send(msg); 
         log.info("Sending email to " + signupMember.getUsername() + "!!!" );  
