@@ -4,7 +4,7 @@ import org.springframework.stereotype.Component;
 @Component 
 public class Members{ 
 
-    private String username; 
+    private String mail; 
     private String passwd; 
     private String browser; 
 
@@ -12,14 +12,14 @@ public class Members{
 
     } 
 
-    public Members( String username, String passwd, String brow ){ 
-        this.username = username; 
+    public Members( String mail, String passwd, String brow ){ 
+        this.mail = mail; 
         this.passwd = passwd; 
         this.browser = brow; 
     } 
 
-    public void setUsername( String name ){ 
-        this.username = name; 
+    public void setMail( String name ){ 
+        this.mail = name; 
     } 
 
     public void setPasswd( String pass ){ 
@@ -30,8 +30,8 @@ public class Members{
         this.browser = brow; 
     } 
 
-    public String getUsername(){ 
-        return this.username; 
+    public String getMail(){ 
+        return this.mail; 
     } 
 
     public String getPasswd(){ 

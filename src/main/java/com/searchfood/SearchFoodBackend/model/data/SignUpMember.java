@@ -14,12 +14,16 @@ import javax.validation.constraints.Min;
 public class SignUpMember{ 
     
     @NotNull 
-    @Email( message="Username must be the user's email") 
-    private String username; // e-mail by default 
+    @Email( message="Mail must be the user's email") 
+    private String mail; // e-mail by default 
 
     @NotNull 
     @Size( min=6, max=10, message="The length of Password must be between 6 and 10.") 
     private String passwd; 
+
+    @NotNull
+    @Size(message="Username cannot be null.")  
+    private String username; 
 
     @NotNull 
     @Min(0) 
@@ -38,8 +42,9 @@ public class SignUpMember{
     public SignUpMember(){ 
     } 
     
-    public SignUpMember(String name, String pass, int sex, int birthyear, int age ){
-        this.username = name; 
+    public SignUpMember(String mail, String username, String pass, int sex, int birthyear, int age ){
+        this.mail = mail; 
+        this.username = username; 
         this.passwd = pass; 
         this.sexual = sex; 
         this.birthyear = birthyear; 
@@ -47,8 +52,12 @@ public class SignUpMember{
     } 
 
     // Setter 
-    public void setUsername( String name ){ 
-        this.username = name; 
+    public void setMail( String mail ){ 
+        this.mail = mail; 
+    } 
+
+    public void setUsername( String username ){ 
+        this.username = username; 
     } 
 
     public void setPasswd( String pass ){ 
@@ -68,6 +77,10 @@ public class SignUpMember{
     } 
 
     // Getter 
+    public String getMail(){ 
+        return this.mail; 
+    } 
+
     public String getUsername(){ 
         return this.username; 
     } 
@@ -90,8 +103,8 @@ public class SignUpMember{
 
     @Override 
     public String toString(){ 
-       return String.format( "Username: %s\nPassword: %s\nSexual: %d\nBirthYear: %d\nAge: %d", 
-                            this,getUsername(), this.getPasswd(), this.getSexual(), 
+       return String.format( "Mail: %s\nUsername: %s\nPassword: %s\nSexual: %d\nBirthYear: %d\nAge: %d", 
+                            this.getMail(), this.getUsername(), this.getPasswd(), this.getSexual(), 
                             this.getBirthyear(), this.getAge() ); 
     } 
 

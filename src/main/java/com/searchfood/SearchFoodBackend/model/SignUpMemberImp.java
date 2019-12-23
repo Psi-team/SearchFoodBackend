@@ -49,8 +49,8 @@ public class SignUpMemberImp implements SignUpMemberITF{
 
     private boolean save( TokenRecords token, SignUpMember signupmember ){ 
         try{  
-            jdbc.update( "INSERT INTO Users( mail, passwd, sexual, birthyear ) VALUES( ?, ?, ?, ? )", 
-                                signupmember.getUsername(), signupmember.getPasswd(), 
+            jdbc.update( "INSERT INTO Users( mail, username, passwd, sexual, birthyear ) VALUES( ?, ?, ?, ?, ? )", 
+                                signupmember.getMail(), signupmember.getUsername(), signupmember.getPasswd(), 
                                 signupmember.getSexual(), signupmember.getBirthyear() );  
             jdbc.update( "INSERT INTO Token( mail, token, navigator_type ) VALUES( ?, ?, ? )", 
                                 token.getUsername(), token.getToken(), "Nan" ); 

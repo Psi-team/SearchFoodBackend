@@ -50,8 +50,8 @@ public class LoginController{
     @PostMapping( consumes="application/json" ) // receive the json type data.  
     public ResponseEntity<?> login( @RequestBody Members member ){ // @RequestBody: the body of request should be convert to Members as parameters. 
 
-        log.debug( "TESTING logging: username: "+member.getUsername() + "  password: "+member.getPasswd() + " browser: " + member.getBrowser() ); 
-        log.info( "username: "+member.getUsername() + ", password: "+member.getPasswd() + "send request to login" ); 
+        log.debug( "TESTING logging: username: "+member.getMail() + "  password: "+member.getPasswd() + " browser: " + member.getBrowser() ); 
+        log.info( "username: "+member.getMail() + ", password: "+member.getPasswd() + "send request to login" ); 
 
         token = tokenImp.saveTokenTable( member ); 
 

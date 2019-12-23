@@ -54,19 +54,20 @@ public class TokenRecordsImp implements TokenRecordsITF, FindDataITF{
                     ( ResultSet rs, int rowNum ) ->  
                                     new SignUpMember( 
                                         rs.getString("mail"),
+                                        rs.getString("username"),  
                                         rs.getString("passwd"), 
                                         rs.getInt("sexual"), 
                                         rs.getDate("birthyear").getYear() + 1900, 
-                                        rs.getInt("age")
+                                        rs.getInt("age") 
                                         ),
-                    mem.getUsername(), mem.getPasswd() ); 
+                    mem.getMail(), mem.getPasswd() ); 
 
             //System.out.println( "Member founded."); 
-            log.info( "Member " + mem.getUsername() + " founded." ); 
+            log.info( "Member " + mem.getMail() + " founded." ); 
 
             return 1; 
         }catch( EmptyResultDataAccessException e ){ // Access no appropriate data in table Users. 
-            log.info( mem.getUsername() + " not founded."); 
+            log.info( mem.getMail() + " not founded."); 
             return -1; 
         } 
 
@@ -80,7 +81,7 @@ public class TokenRecordsImp implements TokenRecordsITF, FindDataITF{
 
         if( -1 != isExist() ){ // the user who tried to login in is exactly a member. 
             // then trying to set a token; 
-            token.setUsername( mem.getUsername() ); 
+            token.setUsername( mem.getMail() ); 
             token.setToken();   
             save( token ); 
         } 

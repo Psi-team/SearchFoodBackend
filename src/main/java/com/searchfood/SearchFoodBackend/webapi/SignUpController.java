@@ -47,7 +47,8 @@ public class SignUpController{
     public ResponseEntity<?> signUp( @Valid @RequestBody SignUpMember signupmember, 
                                 Errors errors ){ 
 
-        log.debug("TESTING: username: " + signupmember.getUsername() + " password: " + signupmember.getPasswd() + 
+        log.debug("mail: " + signupmember.getMail() + "username: " + signupmember.getUsername() + 
+                            " password: " + signupmember.getPasswd() + 
                             " birthyear: " + signupmember.getBirthyear() + " sex: " + signupmember.getSexual() ); 
         
         if( errors.hasErrors() ){ 

@@ -7,13 +7,15 @@
  * VARCHAR()也不能有給定太大的空間,雖然是以實際字元數量儲存,但是Query是會以定義的數量來搜尋,因此太大的空間會消耗記憶體空間 */ 
 CREATE TABLE IF NOT EXISTS Users( 
     userId INT NOT NULL AUTO_INCREMENT, 
+    username VARCHAR(20) NOT NULL, 
     mail VARCHAR(25) NOT NULL, 
     passwd CHAR(10) NOT NULL, 
     sexual INT NOT NULL, 
     birthyear YEAR NOT NULL, 
     age TINYINT DEFAULT ( YEAR(CURRENT_DATE) - birthyear ), 
     PRIMARY KEY( userId, mail ),  
-    UNIQUE KEY mail ( mail ) 
+    UNIQUE KEY mail ( mail ), 
+    UNIQUE KEY username ( username ) 
 ); 
 
 /* Create the User token */
