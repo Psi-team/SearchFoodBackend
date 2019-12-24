@@ -30,11 +30,11 @@ public class CheckTokensController{
         if( username == null ){ // if the token doesn't exist in database. 
             log.warn( "The token is invalid." ); 
             throw new TokenNotFoundException("The token is invalid."); 
-        }else if( username.equals("TokenExpired") ){ 
+        }else if( username.equals("TokenExpired") ){ // token is expired. 
             log.warn( "The token is out of date." ); 
             throw new TokenExpiredException("Token expired."); 
         } 
-        log.info("Valid token"); 
+        log.debug("Valid token"); 
 
         return username; 
     } 

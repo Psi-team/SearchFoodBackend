@@ -13,7 +13,7 @@ CREATE TABLE IF NOT EXISTS Users(
     sexual INT NOT NULL, 
     birthyear YEAR NOT NULL, 
     age TINYINT DEFAULT ( YEAR(CURRENT_DATE) - birthyear ), 
-    PRIMARY KEY( userId, mail ),  
+    PRIMARY KEY( userId ),  
     UNIQUE KEY mail ( mail ), 
     UNIQUE KEY username ( username ) 
 ); 

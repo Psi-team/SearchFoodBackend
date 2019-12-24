@@ -14,6 +14,7 @@ import org.slf4j.LoggerFactory;
 import com.searchfood.SearchFoodBackend.utils.exceptions.ErrorResponse; 
 import com.searchfood.SearchFoodBackend.utils.exceptions.InvalidDataException; 
 import com.searchfood.SearchFoodBackend.utils.exceptions.DataNotFoundException; 
+import com.searchfood.SearchFoodBackend.utils.exceptions.MemberNotFoundException; 
 import com.searchfood.SearchFoodBackend.utils.exceptions.TokenNotFoundException; 
 import com.searchfood.SearchFoodBackend.utils.exceptions.DataFailToLoadedException; 
 import com.searchfood.SearchFoodBackend.utils.exceptions.TokenExpiredException; 
@@ -33,6 +34,13 @@ public class ControllerException{
         ErrorResponse errorResponse = new ErrorResponse( e.getMessage() ); // boxing the error message by ErrorResponse. 
         log.warn("In ControllerException: NotFoundException"); 
         return new ResponseEntity<>( errorResponse, HttpStatus.NO_CONTENT ); 
+    } 
+
+    @ExceptionHandler( MemberNotFoundException.class ) // member is not exist. 
+    public ResponseEntity<?> handleMemberNotFoundException( Exception e ){ 
+        ErrorResponse errorResponse = new ErrorResponse( e.getMessage() );  
+        log.warn("In ControllerException: MemberNotFoundException"); 
+        return new ResponseEntity<>( errorResponse, HttpStatus.UNAUTHORIZED ); 
     } 
 
     @ExceptionHandler( TokenNotFoundException.class ) // data is not exist. 

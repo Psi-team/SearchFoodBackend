@@ -15,21 +15,38 @@ import org.springframework.http.HttpStatus;
 import org.slf4j.Logger; 
 import org.slf4j.LoggerFactory; 
 
+import com.searchfood.SearchFoodBackend.utils.exceptions.DataNotFoundException; 
+import com.searchfood.SearchFoodBackend.utils.CheckTokensController; 
+import com.searchfood.SearchFoodBackend.model.data.StoreInfo; 
+
 @RestController 
 @CrossOrigin("*") 
 @RequestMapping(value="/storeDetail", produces="application/json") 
-public class SearchDetailController{ 
+public class SearchStoreDetailController{ 
 
-    private final static Logger log = LoggerFactory.getLogger( SearchDetailController.class ); 
+    private final static Logger log = LoggerFactory.getLogger( SearchStoreDetailController.class ); 
+
+    private String username; 
+    private CheckTokenImp checkTokenImp; 
+    private StoreInfo storeInfo; 
+
+    public SearchStoreDetailController( CheckTokenImp c ){ 
+        this.checkTokenImp = c; 
+    } 
 
     @GetMapping  
     public ResponseEntity<?> getStoreDetail( 
             @RequestHeader("Authorization") String token, 
             @RequestParam(value="store_id") int storeId ){ 
 
-            log.debug("Store Id is " + storeId ); 
+        username = checkTokenImp.check( token ); 
 
-            return new ResponseEntity( storeId, HttpStatus.OK );  
+        log.debug("Store Id is " + storeId ); 
+
+       if ( storeInfo != null ) 
+           return new ResponseEntity( storeId, HttpStatus.OK );  
+
+       throw new DataNotFoundException("Data not found."); 
 
     } 
 
