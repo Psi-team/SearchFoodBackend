@@ -92,14 +92,14 @@ CREATE TABLE IF NOT EXISTS StoresMenu(
 /* Create the comments of Store */ 
 CREATE TABLE IF NOT EXISTS StoreComment( 
     storeId INT NOT NULL,
-    username VARCHAR(25) NOT NULL, 
+    username VARCHAR(20) NOT NULL, 
     star TINYINT NOT NULL DEFAULT '0', 
     price INT NOT NULL, 
     comment_time TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP, 
     comments TINYTEXT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci, 
     picture VARCHAR(20) NULL, 
     PRIMARY KEY( username, storeId ), 
-    FOREIGN KEY( username ) REFERENCES Users( mail ),
+    FOREIGN KEY( username ) REFERENCES Users( username ),
     FOREIGN KEY( storeId ) REFERENCES StoreInfo( storeId )
     /* The use of composite primary key, so you need a composite foreign key. */ 
     /*FOREIGN KEY( store_name, city, district, address ) REFERENCES StoreInfo( store_name, city, district, address ) */ 
