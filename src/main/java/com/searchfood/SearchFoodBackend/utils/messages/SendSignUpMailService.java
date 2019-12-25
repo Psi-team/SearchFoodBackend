@@ -31,7 +31,7 @@ public class SendSignUpMailService implements SignUpMailService{
 
     @Override 
     public void sendEmail( SignUpMember signupMember ){ 
-        msg.setTo( signupMember.getUsername() ); 
+        msg.setTo( signupMember.getMail() ); 
 
         msg.setSubject( "Thanks you to sign up for SearchFood." ); 
         msg.setText( String
@@ -42,12 +42,7 @@ public class SendSignUpMailService implements SignUpMailService{
         javaMailSender.send(msg); 
         log.info("Sending email to " + signupMember.getUsername() + "!!!" );  
     } 
-
     
-    @Override 
-    public void sendEmailCreateStores( String username, StoreInfo storeInfo ){ 
-        msg.setTo( username ); 
-    } 
 } 
 
 
