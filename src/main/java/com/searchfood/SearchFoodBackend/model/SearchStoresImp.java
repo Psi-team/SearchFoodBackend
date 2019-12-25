@@ -25,20 +25,20 @@ import com.searchfood.SearchFoodBackend.model.data.StoreInfo;
 import com.searchfood.SearchFoodBackend.model.GetFoodTypesImp; 
 
 @Repository 
-public class SearchStoresImp{ 
+public class SearchStoresImp extends SearchStore{ 
 
     private final static Logger log = LoggerFactory.getLogger( SearchStoresImp.class ); 
-    private JdbcTemplate jdbc; 
     private PreparedStatementSetter pss;
     private GetFoodTypesImp getFoodTypesImp; 
+    private JdbcTemplate jdbc; 
     private String sqlQuery = 
             "SELECT StoreInfo.*, BusinessHours.* FROM StoreInfo INNER JOIN BusinessHours ON BusinessHours.storeId = StoreInfo.storeId ";  
     private Map<String,List<String>> storeTages; 
 
     @Autowired 
-    public SearchStoresImp( JdbcTemplate jdbc, GetFoodTypesImp g ){ 
-        this.getFoodTypesImp = g; 
+    public SearchStoresImp( GetFoodTypesImp g, JdbcTemplate jdbc ){ 
         this.jdbc = jdbc; 
+        this.getFoodTypesImp = g; 
     }
 
     public List<Map<String,Object>> getSearchByFoodKeyWord( String foodKeyWord ){ 
@@ -83,46 +83,10 @@ public class SearchStoresImp{
     } 
 
     public List<Map<String,Object>> searchFromStoreInfo( String sql, PreparedStatementSetter pss ){ 
-        List<Map<String,Object>> resultList = this.jdbc.query( sql, pss, this::getList );  
+        List<Map<String,Object>> resultList = this.jdbc.query( sql, pss, super::getSearchList );  
         log.debug("resultList: " + resultList ); 
         return resultList; 
     } 
 
-    private Map<String,Object> getList( ResultSet rs, int rowNum ) throws SQLException{ 
-
-        Map<String,Object> resultList = new HashMap<>(); 
-
-        Map<String,String> businessHours = new HashMap(); 
-        businessHours.put("星期一", rs.getString("mon")); 
-        businessHours.put("星期二", rs.getString("tue")); 
-        businessHours.put("星期三", rs.getString("wed")); 
-        businessHours.put("星期四", rs.getString("thu")); 
-        businessHours.put("星期五", rs.getString("fri")); 
-        businessHours.put("星期六", rs.getString("sat")); 
-        businessHours.put("星期日", rs.getString("sun")); 
-
-        /* 拉出來寫個function, traverse the JSONObject.getKeys()  */ 
-        JSONObject latLongJSONObject = new JSONObject( rs.getString("lat_long") ); 
-        Map<String,Integer> latLong = new HashMap<>(); 
-        latLong.put("lat", (Integer) latLongJSONObject.get("lat")); 
-        latLong.put("long", (Integer) latLongJSONObject.get("long")); 
-
-        resultList.put("storeId",rs.getInt("storeId")); 
-        resultList.put("storename",rs.getString("storename")); 
-        resultList.put("city",rs.getString("city")); 
-        resultList.put("district",rs.getString("district")); 
-        resultList.put("address",rs.getString("address")); 
-        resultList.put("tel",rs.getString("tel")); 
-        resultList.put("latLong",latLong);  
-        resultList.put("businessHours",businessHours); 
-        resultList.put("star",rs.getFloat("rating"));
-        resultList.put("tags", Arrays.asList(rs.getString("tags").split(","))); 
-        resultList.put("slogan",rs.getString("slogan"));
-        //resultList.put("images",rs.getString("images"));
-        //resultList.put("logo",rs.getString("logo"));
-        resultList.put("createdDate",rs.getTimestamp("createdAt").toLocalDateTime().toLocalDate());
-
-        return resultList; 
-    } 
 } 
 

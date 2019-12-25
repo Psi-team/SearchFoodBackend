@@ -21,11 +21,13 @@ CREATE TABLE IF NOT EXISTS Users(
 /* Create the User token */
 CREATE TABLE IF NOT EXISTS Token( 
     mail VARCHAR(25) NOT NULL, 
+    username VARCHAR(20) NOT NULL, 
     token VARCHAR(80) NOT NULL,
     login_time TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP, 
     navigator_type VARCHAR(20) NOT NULL, 
     PRIMARY KEY( mail, navigator_type ), 
-    FOREIGN KEY( mail ) REFERENCES Users( mail ) 
+    FOREIGN KEY( mail ) REFERENCES Users( mail ), 
+    FOREIGN KEY( username ) REFERENCES Users( username ) 
 ); 
 
 /* Create the Store information */ 
@@ -39,7 +41,7 @@ CREATE TABLE IF NOT EXISTS StoreInfo(
     tel CHAR(10) NOT NULL, 
     /*created_date DATE NULL DEFAULT (CURRENT_DATE), */ /* 時間格式預設當天日期, CURRENT_DATE一定要用() */ 
     createdAt TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP, 
-    creator VARCHAR(25) NOT NULL, 
+    creator VARCHAR(20) NOT NULL, 
     click_week INT(3) DEFAULT '0', 
     click_cum INT(4) DEFAULT '0', 
     lat_long JSON NOT NULL, 
@@ -51,7 +53,7 @@ CREATE TABLE IF NOT EXISTS StoreInfo(
     PRIMARY KEY( storeId, storename, city, district, address ), 
     /*UNIQUE KEY store_name ( store_name, city, district, address ), */ 
     UNIQUE KEY city ( city, district, address ), 
-    FOREIGN KEY( creator ) REFERENCES Users( mail )
+    FOREIGN KEY( creator ) REFERENCES Users( username ) 
 );
 
 /* Create the food table */ 

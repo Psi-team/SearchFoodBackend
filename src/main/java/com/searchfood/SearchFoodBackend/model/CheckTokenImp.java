@@ -54,12 +54,12 @@ public class CheckTokenImp implements FindDataITF{
     @Override 
     public int isExist(){ 
         // with no try statements. 
-        jdbc.query( "SELECT mail, login_time FROM Token WHERE token = ?", 
+        jdbc.query( "SELECT username, login_time FROM Token WHERE token = ?", 
                     new RowCallbackHandler(){ 
                         @Override 
                         public void processRow( ResultSet rs ) 
                             throws SQLException{ 
-                            username = rs.getString("mail"); 
+                            username = rs.getString("username"); 
                             loginTime = rs.getTimestamp("login_time").toInstant(); 
                         } 
                     }, 
