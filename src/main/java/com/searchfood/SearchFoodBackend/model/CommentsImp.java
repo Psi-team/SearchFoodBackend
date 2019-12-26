@@ -30,6 +30,10 @@ public class CommentsImp{
 
         log.debug("Inset into database, affect " + rows + ". "); 
 
+        // 
+        // update the average stars of the certain store. 
+        // Then using tanscation management. 
+
         if ( rows != 0 ) return true; 
         return false; 
         

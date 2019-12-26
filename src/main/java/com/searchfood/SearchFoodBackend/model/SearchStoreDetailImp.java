@@ -13,6 +13,7 @@ import java.util.Map;
 import java.util.List; 
 import java.util.HashMap; 
 import java.util.Arrays; 
+import java.util.ArrayList; 
 import java.sql.ResultSet; 
 import java.sql.SQLException;
 
@@ -31,12 +32,16 @@ public class SearchStoreDetailImp extends SearchStore{
     public Map<String,Object> fetchStoreDetail( int storeId ){ 
         String sqlQuery = "SELECT StoreInfo.*, BusinessHours.* FROM StoreInfo INNER JOIN BusinessHours ON BusinessHours.storeId = StoreInfo.storeId " + 
                      "WHERE StoreInfo.storeId = ?;"; 
-        try{ 
+        try{
+
             resultObject = 
                 jdbc.queryForObject( // replaced by jdbc PreparedStatementCreator and PrepareStatementSetter. 
                     sqlQuery, 
                     this::getSearchList, 
                     storeId );  
+
+            resultObject.put("comments", getCommentList(storeId)); 
+
         }catch( RuntimeException e ){ 
             return null; 
         } 
@@ -70,6 +75,34 @@ public class SearchStoreDetailImp extends SearchStore{
         //resultList.put("creator",rs.getString("creator"));
 
         return resultList; 
+    } 
+
+    private List<Map<String,Object>> getCommentList( int storeId ){ 
+        
+        List<Map<String,Object>> result = new ArrayList<>(); 
+        String sqlQuery = "SELECT username, commentAt, comments, picture FROM StoreComment WHERE storeId = ?;"; 
+        result = 
+            jdbc.query( 
+                    sqlQuery, 
+                    ( ps ) -> { 
+                        ps.setInt(1,storeId); 
+                    }, 
+                    this::getResults
+                    ); 
+        return result; 
+
+    } 
+
+    private Map<String,Object> getResults( 
+            ResultSet rs, int rowNum ) throws SQLException{ 
+
+        Map<String,Object> map = new HashMap<>(); 
+        map.put("createUser", rs.getString("username")); 
+        map.put("createDate", rs.getTimestamp("commentAt").toLocalDateTime().toLocalDate()); 
+        map.put("contents", rs.getString("comments")); 
+        map.put("pictures", rs.getString("picture")); 
+
+        return map; 
     } 
 
 } 

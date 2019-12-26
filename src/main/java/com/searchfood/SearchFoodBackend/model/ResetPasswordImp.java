@@ -19,12 +19,22 @@ public class ResetPasswordImp{
     private JdbcTemplate jdbc; 
 
     public String checkValidEmail( String email ){ 
-        jdbc.query( 
+
+        username = 
+            jdbc.query( 
                 "SELECT username FROM Users WHERE mail = ?;", 
-                ( rs ) ->{ 
-                    username = rs.getString("username"); 
+                ( ps ) ->{ 
+                    ps.setString(1,email); 
                 }, 
-                email ); 
+                ( rs ) ->{ 
+                    String usernameTmp = null; 
+                    while( rs.next() ){ 
+                        usernameTmp = rs.getString("username"); 
+                    } 
+                    return usernameTmp; 
+                } 
+            ); 
+
         return username; 
     } 
 

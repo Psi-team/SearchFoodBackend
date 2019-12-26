@@ -27,7 +27,7 @@ public class Comments{
     @Size( max = 50, message = "The words must be smaller than 50 words." ) 
     private String comments; 
 
-    private int price; 
+    private String price; 
     private Timestamp commentAt;  
     //private MultipartFile pic; 
 
@@ -52,7 +52,7 @@ public class Comments{
         this.comments = comments; 
     } 
 
-    public void setPrice( int price ){ 
+    public void setPrice( String price ){ 
         this.price = price; 
     } 
 
@@ -80,7 +80,7 @@ public class Comments{
         return this.comments; 
     } 
 
-    public int getPrice(){ 
+    public String getPrice(){ 
         return this.price; 
     } 
 
