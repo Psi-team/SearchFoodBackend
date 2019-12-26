@@ -94,10 +94,10 @@ CREATE TABLE IF NOT EXISTS StoreComment(
     storeId INT NOT NULL,
     username VARCHAR(20) NOT NULL, 
     star TINYINT NOT NULL DEFAULT '0', 
-    price INT NOT NULL, 
+    price VARCHAR(20) NOT NULL, 
     comment_time TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP, 
     comments TINYTEXT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci, 
-    picture VARCHAR(20) NULL, 
+    picture VARCHAR(150) NULL, 
     PRIMARY KEY( username, storeId ), 
     FOREIGN KEY( username ) REFERENCES Users( username ),
     FOREIGN KEY( storeId ) REFERENCES StoreInfo( storeId )
