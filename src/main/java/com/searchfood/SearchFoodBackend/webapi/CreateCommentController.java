@@ -10,6 +10,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.PostMapping; 
 import org.springframework.web.bind.annotation.RequestMethod; 
 import org.springframework.web.bind.annotation.ResponseStatus; 
+import org.springframework.web.bind.annotation.RequestPart; 
+import org.springframework.web.bind.annotation.RequestParam; 
+import org.springframework.web.multipart.MultipartFile;  
+import org.springframework.web.multipart.MultipartRequest;   
+//import org.springframework.util.MultiValueMap; 
 
 import org.springframework.http.HttpStatus; 
 
@@ -40,28 +45,41 @@ public class CreateCommentController{
         this.commentsImp = ci; 
     } 
 
-    @PostMapping( consumes="application/json" )  
+    @PostMapping 
     @ResponseStatus( HttpStatus.CREATED ) 
     public void createComments( @RequestHeader("Authorization") String token, 
-                                @Valid @RequestBody Comments commentData, 
-                                Errors errors ){ 
+                                //@Valid @RequestBody Comments commentData, 
+                                //Errors errors 
+                                @RequestParam("pic") MultipartFile pics, 
+                                @RequestParam("star") Float star, 
+                                @RequestParam("comments") String comments,  
+                                @RequestParam("storeId") int storeId ){ 
 
         log.debug("Checking the token is valid or not..."); 
         // checking the token is valid or expired. 
         String username = checkTokensController.check( token ); 
         log.info("Valid token"); 
 
+        log.info( "Test : " ); 
+        log.info( " " + storeId ); 
+        log.info( " " + comments ); 
+        log.info( " " + star ); 
+
+        /* 
         log.debug("Checking data is valid or not ..."); 
         if( errors.hasErrors() ){ 
             throw new InvalidDataException( errors ); 
         } 
+        */ 
 
-        log.debug("storeId: " + commentData.getStoreId()); 
+        //log.debug("storeId: " + commentData.getStoreId()); 
 
         log.debug("saving comment.."); 
+        /* 
         if( !commentsImp.saveComments( commentData, username, null ) ) 
             throw new DataFailToSavedException("Data cannot be stored in table."); 
         log.debug("Comment saved.."); 
+        */ 
 
     } 
 
