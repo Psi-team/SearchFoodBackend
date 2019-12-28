@@ -20,7 +20,7 @@ public class SignUpMemberTransactionImp implements SignUpMemberTransactionInterf
     } 
 
     @Override 
-    @Transactional 
+    @Transactional(rollbackFor=Exception.class)  
     public TokenRecords saveToUsers( SignUpMember s ){ 
         return signupImp.saveToUsers( s ); 
     } 
