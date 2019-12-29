@@ -12,9 +12,11 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseStatus; 
 import org.springframework.web.bind.annotation.RequestPart; 
 import org.springframework.web.bind.annotation.RequestParam; 
-import org.springframework.web.multipart.MultipartFile;  
-import org.springframework.web.multipart.MultipartRequest;   
 //import org.springframework.util.MultiValueMap; 
+
+import org.springframework.web.client.RestTemplate; 
+
+import org.springframework.web.servlet.support.ServletUriComponentsBuilder; 
 
 import org.springframework.http.HttpStatus; 
 
@@ -29,6 +31,7 @@ import com.searchfood.SearchFoodBackend.model.CommentsImp;
 import com.searchfood.SearchFoodBackend.utils.CheckTokensController; 
 import com.searchfood.SearchFoodBackend.utils.exceptions.InvalidDataException; 
 import com.searchfood.SearchFoodBackend.utils.exceptions.DataFailToSavedException; 
+import com.searchfood.SearchFoodBackend.webapi.FilesController; 
 
 @RestController 
 @CrossOrigin("*") 
@@ -38,48 +41,59 @@ public class CreateCommentController{
     final static private Logger log = LoggerFactory.getLogger( CreateCommentController.class ); 
     private CheckTokensController checkTokensController; 
     private CommentsImp commentsImp; 
+    private RestTemplate restTemplate; 
+    private FilesController fileController; 
 
     @Autowired 
-    public CreateCommentController( CheckTokensController c, CommentsImp ci ){ 
+    public CreateCommentController( CheckTokensController c, CommentsImp ci, RestTemplate restTemplate, FilesController f ){ 
         this.checkTokensController = c; 
         this.commentsImp = ci; 
+        this.restTemplate = restTemplate; // RestTemplate 
+        this.fileController = f; 
     } 
 
     @PostMapping 
     @ResponseStatus( HttpStatus.CREATED ) 
     public void createComments( @RequestHeader("Authorization") String token, 
-                                //@Valid @RequestBody Comments commentData, 
-                                //Errors errors 
-                                @RequestParam("pic") MultipartFile pics, 
-                                @RequestParam("star") Float star, 
-                                @RequestParam("comments") String comments,  
-                                @RequestParam("storeId") int storeId ){ 
+                                @Valid Comments commentData, // with no @RequestBody, Why? 
+                                Errors errors ){ 
 
         log.debug("Checking the token is valid or not..."); 
         // checking the token is valid or expired. 
         String username = checkTokensController.check( token ); 
         log.info("Valid token"); 
 
-        log.info( "Test : " ); 
-        log.info( " " + storeId ); 
-        log.info( " " + comments ); 
-        log.info( " " + star ); 
-
-        /* 
         log.debug("Checking data is valid or not ..."); 
         if( errors.hasErrors() ){ 
             throw new InvalidDataException( errors ); 
         } 
+
+        log.debug("storeId: " + commentData.getStoreId()); 
+        log.debug("stars" + commentData.getStar()); 
+        log.debug("Comments" + commentData.getComments()); 
+
+        log.debug("Trying to saving picture."); 
+
+        // Using RestTemplate ?????? 
+        /* 
+        String picUrl = restTemplate.
+                postForObject( 
+                    ServletUriComponentsBuilder
+                        .fromCurrentContextPath()
+                        .path("uploadFile")
+                        .toUriString(), 
+                    commentData.getPic(), 
+                    String.class ).toString();  
         */ 
 
-        //log.debug("storeId: " + commentData.getStoreId()); 
-
+        String picUrl = fileController.uploadFileLocation( commentData.getPic() ); 
+        log.debug("The pic upload sucessfully: " + picUrl ); 
+        
         log.debug("saving comment.."); 
-        /* 
-        if( !commentsImp.saveComments( commentData, username, null ) ) 
+    
+        if( !commentsImp.saveComments( commentData, username, picUrl ) ) 
             throw new DataFailToSavedException("Data cannot be stored in table."); 
         log.debug("Comment saved.."); 
-        */ 
 
     } 
 

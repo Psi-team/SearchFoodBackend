@@ -16,6 +16,7 @@ public class Comments{
 
     @NotNull 
     private int storeId; 
+
     private String username; 
 
     @NotNull 
@@ -27,9 +28,10 @@ public class Comments{
     @Size( max = 50, message = "The words must be smaller than 50 words." ) 
     private String comments; 
 
+    private MultipartFile pic; 
+
     private String price; 
     private Timestamp commentAt;  
-    //private MultipartFile pic; 
 
     public Comments(){ 
 
@@ -56,9 +58,12 @@ public class Comments{
         this.price = price; 
     } 
 
-    //public void setPic( MultipartFile pic ){ 
-    //    this.pic = pic; 
-    //} 
+
+    public void setPic( MultipartFile pic ){ 
+        this.pic = pic; 
+    } 
+
+
     public void setCommentAt( Timestamp cA ){ 
         this.commentAt = cA; 
     } 
@@ -84,9 +89,12 @@ public class Comments{
         return this.price; 
     } 
 
-    //public MultipartFile getPic(){ 
-    //    return this.pic; 
-    //} 
+
+    public MultipartFile getPic(){ 
+        return this.pic; 
+    } 
+
+
     public Timestamp getCommentAt(){ 
         return this.commentAt; 
     } 
