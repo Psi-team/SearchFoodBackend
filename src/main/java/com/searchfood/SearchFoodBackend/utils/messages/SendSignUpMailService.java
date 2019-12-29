@@ -7,6 +7,8 @@ import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Service; 
 // Autowired
 import org.springframework.beans.factory.annotation.Autowired; 
+// Async 
+import org.springframework.scheduling.annotation.Async; 
 // user-define class 
 import com.searchfood.SearchFoodBackend.utils.messages.interfaces.SignUpMailService; 
 import com.searchfood.SearchFoodBackend.model.data.SignUpMember; 
@@ -30,6 +32,7 @@ public class SendSignUpMailService implements SignUpMailService{
     } 
 
     @Override 
+    @Async 
     public void sendEmail( SignUpMember signupMember ){ 
         msg.setTo( signupMember.getMail() ); 
 
