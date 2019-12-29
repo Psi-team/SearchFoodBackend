@@ -22,8 +22,7 @@ public class Comments{
     @NotNull 
     @Min(1) 
     @Max(5) 
-    @Digits( integer=1,fraction=0, message="The start must between 0 and 1" ) 
-    private int star; 
+    private float star; 
 
     @Size( max = 50, message = "The words must be smaller than 50 words." ) 
     private String comments; 
@@ -46,7 +45,7 @@ public class Comments{
         this.username = name; 
     } 
 
-    public void setStar( int star ){ 
+    public void setStar( float star ){ 
         this.star = star; 
     } 
 
@@ -77,7 +76,7 @@ public class Comments{
         return this.username; 
     } 
 
-    public int getStar(){ 
+    public float getStar(){ 
         return this.star; 
     } 
 

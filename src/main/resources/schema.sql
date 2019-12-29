@@ -93,7 +93,7 @@ CREATE TABLE IF NOT EXISTS StoresMenu(
 CREATE TABLE IF NOT EXISTS StoreComment( 
     storeId INT NOT NULL,
     username VARCHAR(20) NOT NULL, 
-    star TINYINT NOT NULL DEFAULT '0', 
+    star FLOAT NOT NULL, 
     price VARCHAR(20) NOT NULL, 
     commentAt TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP, 
     comments TINYTEXT CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci, 

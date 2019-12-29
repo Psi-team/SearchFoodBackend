@@ -1726,3 +1726,794 @@ com.fasterxml.jackson.databind.exc.InvalidDefinitionException: No serializer fou
 2019-12-29 17:19:44.802 [34mINFO[0;39m [35m[Thread-4][0;39m o.s.s.c.ThreadPoolTaskExecutor.shutdown :: Shutting down ExecutorService 'applicationTaskExecutor'
 2019-12-29 17:19:44.804 [34mINFO[0;39m [35m[Thread-4][0;39m c.z.h.HikariDataSource.close :: HikariPool-1 - Shutdown initiated...
 2019-12-29 17:19:44.811 [34mINFO[0;39m [35m[Thread-4][0;39m c.z.h.HikariDataSource.close :: HikariPool-1 - Shutdown completed.
+2019-12-29 17:52:25.868 [34mINFO[0;39m [35m[main][0;39m c.s.S.SearchFoodApplication.logStarting :: Starting SearchFoodApplication on eason-P15FV2 with PID 15897 (/home/eason/Desktop/WorkPlace/Project/SearchFoodBackend/target/classes started by eason in /home/eason/Desktop/WorkPlace/Project/SearchFoodBackend)
+2019-12-29 17:52:25.872 [34mINFO[0;39m [35m[main][0;39m c.s.S.SearchFoodApplication.logStartupProfileInfo :: No active profile set, falling back to default profiles: default
+2019-12-29 17:52:27.167 [34mINFO[0;39m [35m[main][0;39m o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor.registerErrorChannel :: No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2019-12-29 17:52:27.173 [34mINFO[0;39m [35m[main][0;39m o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor.registerTaskScheduler :: No bean named 'taskScheduler' has been explicitly defined. Therefore, a default ThreadPoolTaskScheduler will be created.
+2019-12-29 17:52:27.178 [34mINFO[0;39m [35m[main][0;39m o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor.registerHeaderChannelRegistry :: No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2019-12-29 17:52:27.311 [34mINFO[0;39m [35m[main][0;39m o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization :: Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$a4e596f8] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-12-29 17:52:27.332 [34mINFO[0;39m [35m[main][0;39m o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization :: Bean 'org.springframework.integration.config.IntegrationManagementConfiguration' of type [org.springframework.integration.config.IntegrationManagementConfiguration$$EnhancerBySpringCGLIB$$fd75227] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-12-29 17:52:27.349 [34mINFO[0;39m [35m[main][0;39m o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization :: Bean 'integrationDisposableAutoCreatedBeans' of type [org.springframework.integration.config.annotation.Disposables] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-12-29 17:52:27.643 [34mINFO[0;39m [35m[main][0;39m o.s.b.w.e.t.TomcatWebServer.initialize :: Tomcat initialized with port(s): 2020 (http)
+2019-12-29 17:52:27.690 [34mINFO[0;39m [35m[main][0;39m o.a.c.c.StandardService.log :: Starting service [Tomcat]
+2019-12-29 17:52:27.691 [34mINFO[0;39m [35m[main][0;39m o.a.c.c.StandardEngine.log :: Starting Servlet engine: [Apache Tomcat/9.0.22]
+2019-12-29 17:52:27.759 [34mINFO[0;39m [35m[main][0;39m o.a.c.c.C.[.[.[/].log :: Initializing Spring embedded WebApplicationContext
+2019-12-29 17:52:27.759 [34mINFO[0;39m [35m[main][0;39m o.s.w.c.ContextLoader.prepareWebApplicationContext :: Root WebApplicationContext: initialization completed in 1840 ms
+2019-12-29 17:52:27.982 [34mINFO[0;39m [35m[main][0;39m c.z.h.HikariDataSource.getConnection :: HikariPool-1 - Starting...
+2019-12-29 17:52:28.563 [34mINFO[0;39m [35m[main][0;39m c.z.h.HikariDataSource.getConnection :: HikariPool-1 - Start completed.
+2019-12-29 17:52:28.983 [39mDEBUG[0;39m [35m[main][0;39m c.s.S.u.f.FileStorageService.<init> :: fileStorageLocation: src/main/resources/uploads/images
+2019-12-29 17:52:29.327 [34mINFO[0;39m [35m[main][0;39m o.s.s.c.ThreadPoolTaskExecutor.initialize :: Initializing ExecutorService 'applicationTaskExecutor'
+2019-12-29 17:52:29.836 [34mINFO[0;39m [35m[main][0;39m o.s.b.a.e.w.EndpointLinksResolver.<init> :: Exposing 2 endpoint(s) beneath base path '/actuator'
+2019-12-29 17:52:29.912 [34mINFO[0;39m [35m[main][0;39m o.s.s.c.ThreadPoolTaskScheduler.initialize :: Initializing ExecutorService 'taskScheduler'
+2019-12-29 17:52:29.973 [34mINFO[0;39m [35m[main][0;39m o.s.i.e.EventDrivenConsumer.logComponentSubscriptionEvent :: Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2019-12-29 17:52:29.974 [34mINFO[0;39m [35m[main][0;39m o.s.i.c.PublishSubscribeChannel.adjustCounterIfNecessary :: Channel 'application.errorChannel' has 1 subscriber(s).
+2019-12-29 17:52:29.974 [34mINFO[0;39m [35m[main][0;39m o.s.i.e.EventDrivenConsumer.start :: started _org.springframework.integration.errorLogger
+2019-12-29 17:52:30.018 [34mINFO[0;39m [35m[main][0;39m o.s.b.w.e.t.TomcatWebServer.start :: Tomcat started on port(s): 2020 (http) with context path ''
+2019-12-29 17:52:30.020 [34mINFO[0;39m [35m[main][0;39m c.s.S.SearchFoodApplication.logStarted :: Started SearchFoodApplication in 4.632 seconds (JVM running for 8.422)
+2019-12-29 17:52:31.144 [34mINFO[0;39m [35m[Thread-4][0;39m o.s.i.e.EventDrivenConsumer.logComponentSubscriptionEvent :: Removing {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2019-12-29 17:52:31.144 [34mINFO[0;39m [35m[Thread-4][0;39m o.s.i.c.PublishSubscribeChannel.adjustCounterIfNecessary :: Channel 'application.errorChannel' has 0 subscriber(s).
+2019-12-29 17:52:31.145 [34mINFO[0;39m [35m[Thread-4][0;39m o.s.i.e.EventDrivenConsumer.stop :: stopped _org.springframework.integration.errorLogger
+2019-12-29 17:52:31.146 [34mINFO[0;39m [35m[Thread-4][0;39m o.s.s.c.ThreadPoolTaskScheduler.shutdown :: Shutting down ExecutorService 'taskScheduler'
+2019-12-29 17:52:31.150 [34mINFO[0;39m [35m[Thread-4][0;39m o.s.s.c.ThreadPoolTaskExecutor.shutdown :: Shutting down ExecutorService 'applicationTaskExecutor'
+2019-12-29 17:52:31.151 [34mINFO[0;39m [35m[Thread-4][0;39m c.z.h.HikariDataSource.close :: HikariPool-1 - Shutdown initiated...
+2019-12-29 17:52:31.161 [34mINFO[0;39m [35m[Thread-4][0;39m c.z.h.HikariDataSource.close :: HikariPool-1 - Shutdown completed.
+2019-12-29 17:52:52.233 [34mINFO[0;39m [35m[main][0;39m c.s.S.SearchFoodApplication.logStarting :: Starting SearchFoodApplication on eason-P15FV2 with PID 16073 (/home/eason/Desktop/WorkPlace/Project/SearchFoodBackend/target/classes started by eason in /home/eason/Desktop/WorkPlace/Project/SearchFoodBackend)
+2019-12-29 17:52:52.236 [34mINFO[0;39m [35m[main][0;39m c.s.S.SearchFoodApplication.logStartupProfileInfo :: No active profile set, falling back to default profiles: default
+2019-12-29 17:52:53.483 [34mINFO[0;39m [35m[main][0;39m o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor.registerErrorChannel :: No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2019-12-29 17:52:53.489 [34mINFO[0;39m [35m[main][0;39m o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor.registerTaskScheduler :: No bean named 'taskScheduler' has been explicitly defined. Therefore, a default ThreadPoolTaskScheduler will be created.
+2019-12-29 17:52:53.494 [34mINFO[0;39m [35m[main][0;39m o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor.registerHeaderChannelRegistry :: No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2019-12-29 17:52:53.607 [34mINFO[0;39m [35m[main][0;39m o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization :: Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$395eba70] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-12-29 17:52:53.634 [34mINFO[0;39m [35m[main][0;39m o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization :: Bean 'org.springframework.integration.config.IntegrationManagementConfiguration' of type [org.springframework.integration.config.IntegrationManagementConfiguration$$EnhancerBySpringCGLIB$$a450759f] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-12-29 17:52:53.655 [34mINFO[0;39m [35m[main][0;39m o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization :: Bean 'integrationDisposableAutoCreatedBeans' of type [org.springframework.integration.config.annotation.Disposables] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-12-29 17:52:53.947 [34mINFO[0;39m [35m[main][0;39m o.s.b.w.e.t.TomcatWebServer.initialize :: Tomcat initialized with port(s): 2020 (http)
+2019-12-29 17:52:53.982 [34mINFO[0;39m [35m[main][0;39m o.a.c.c.StandardService.log :: Starting service [Tomcat]
+2019-12-29 17:52:53.983 [34mINFO[0;39m [35m[main][0;39m o.a.c.c.StandardEngine.log :: Starting Servlet engine: [Apache Tomcat/9.0.22]
+2019-12-29 17:52:54.079 [34mINFO[0;39m [35m[main][0;39m o.a.c.c.C.[.[.[/].log :: Initializing Spring embedded WebApplicationContext
+2019-12-29 17:52:54.080 [34mINFO[0;39m [35m[main][0;39m o.s.w.c.ContextLoader.prepareWebApplicationContext :: Root WebApplicationContext: initialization completed in 1808 ms
+2019-12-29 17:52:54.397 [34mINFO[0;39m [35m[main][0;39m c.z.h.HikariDataSource.getConnection :: HikariPool-1 - Starting...
+2019-12-29 17:52:55.083 [34mINFO[0;39m [35m[main][0;39m c.z.h.HikariDataSource.getConnection :: HikariPool-1 - Start completed.
+2019-12-29 17:52:55.490 [39mDEBUG[0;39m [35m[main][0;39m c.s.S.u.f.FileStorageService.<init> :: fileStorageLocation: src/main/resources/uploads/images
+2019-12-29 17:52:55.811 [34mINFO[0;39m [35m[main][0;39m o.s.s.c.ThreadPoolTaskExecutor.initialize :: Initializing ExecutorService 'applicationTaskExecutor'
+2019-12-29 17:52:56.297 [34mINFO[0;39m [35m[main][0;39m o.s.b.a.e.w.EndpointLinksResolver.<init> :: Exposing 2 endpoint(s) beneath base path '/actuator'
+2019-12-29 17:52:56.393 [34mINFO[0;39m [35m[main][0;39m o.s.s.c.ThreadPoolTaskScheduler.initialize :: Initializing ExecutorService 'taskScheduler'
+2019-12-29 17:52:56.471 [34mINFO[0;39m [35m[main][0;39m o.s.i.e.EventDrivenConsumer.logComponentSubscriptionEvent :: Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2019-12-29 17:52:56.471 [34mINFO[0;39m [35m[main][0;39m o.s.i.c.PublishSubscribeChannel.adjustCounterIfNecessary :: Channel 'application.errorChannel' has 1 subscriber(s).
+2019-12-29 17:52:56.472 [34mINFO[0;39m [35m[main][0;39m o.s.i.e.EventDrivenConsumer.start :: started _org.springframework.integration.errorLogger
+2019-12-29 17:52:56.521 [34mINFO[0;39m [35m[main][0;39m o.s.b.w.e.t.TomcatWebServer.start :: Tomcat started on port(s): 2020 (http) with context path ''
+2019-12-29 17:52:56.524 [34mINFO[0;39m [35m[main][0;39m c.s.S.SearchFoodApplication.logStarted :: Started SearchFoodApplication in 4.751 seconds (JVM running for 8.733)
+2019-12-29 17:53:05.847 [34mINFO[0;39m [35m[http-nio-2020-exec-1][0;39m o.a.c.c.C.[.[.[/].log :: Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-12-29 17:53:05.848 [34mINFO[0;39m [35m[http-nio-2020-exec-1][0;39m o.s.w.s.DispatcherServlet.initServletBean :: Initializing Servlet 'dispatcherServlet'
+2019-12-29 17:53:05.864 [34mINFO[0;39m [35m[http-nio-2020-exec-1][0;39m o.s.w.s.DispatcherServlet.initServletBean :: Completed initialization in 15 ms
+2019-12-29 17:53:05.943 [31mWARN[0;39m [35m[http-nio-2020-exec-1][0;39m o.s.w.s.m.s.DefaultHandlerExceptionResolver.logException :: Resolved [org.springframework.web.HttpMediaTypeNotSupportedException: Content type 'multipart/form-data;boundary=--------------------------642171597884632076936837;charset=UTF-8' not supported]
+2019-12-29 17:53:08.717 [34mINFO[0;39m [35m[Thread-4][0;39m o.s.i.e.EventDrivenConsumer.logComponentSubscriptionEvent :: Removing {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2019-12-29 17:53:08.718 [34mINFO[0;39m [35m[Thread-4][0;39m o.s.i.c.PublishSubscribeChannel.adjustCounterIfNecessary :: Channel 'application.errorChannel' has 0 subscriber(s).
+2019-12-29 17:53:08.718 [34mINFO[0;39m [35m[Thread-4][0;39m o.s.i.e.EventDrivenConsumer.stop :: stopped _org.springframework.integration.errorLogger
+2019-12-29 17:53:08.719 [34mINFO[0;39m [35m[Thread-4][0;39m o.s.s.c.ThreadPoolTaskScheduler.shutdown :: Shutting down ExecutorService 'taskScheduler'
+2019-12-29 17:53:08.724 [34mINFO[0;39m [35m[Thread-4][0;39m o.s.s.c.ThreadPoolTaskExecutor.shutdown :: Shutting down ExecutorService 'applicationTaskExecutor'
+2019-12-29 17:53:08.726 [34mINFO[0;39m [35m[Thread-4][0;39m c.z.h.HikariDataSource.close :: HikariPool-1 - Shutdown initiated...
+2019-12-29 17:53:08.732 [34mINFO[0;39m [35m[Thread-4][0;39m c.z.h.HikariDataSource.close :: HikariPool-1 - Shutdown completed.
+2019-12-29 17:53:26.263 [34mINFO[0;39m [35m[main][0;39m c.s.S.SearchFoodApplication.logStarting :: Starting SearchFoodApplication on eason-P15FV2 with PID 16212 (/home/eason/Desktop/WorkPlace/Project/SearchFoodBackend/target/classes started by eason in /home/eason/Desktop/WorkPlace/Project/SearchFoodBackend)
+2019-12-29 17:53:26.265 [34mINFO[0;39m [35m[main][0;39m c.s.S.SearchFoodApplication.logStartupProfileInfo :: No active profile set, falling back to default profiles: default
+2019-12-29 17:53:27.514 [34mINFO[0;39m [35m[main][0;39m o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor.registerErrorChannel :: No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2019-12-29 17:53:27.520 [34mINFO[0;39m [35m[main][0;39m o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor.registerTaskScheduler :: No bean named 'taskScheduler' has been explicitly defined. Therefore, a default ThreadPoolTaskScheduler will be created.
+2019-12-29 17:53:27.525 [34mINFO[0;39m [35m[main][0;39m o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor.registerHeaderChannelRegistry :: No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2019-12-29 17:53:27.665 [34mINFO[0;39m [35m[main][0;39m o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization :: Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$e2e53241] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-12-29 17:53:27.687 [34mINFO[0;39m [35m[main][0;39m o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization :: Bean 'org.springframework.integration.config.IntegrationManagementConfiguration' of type [org.springframework.integration.config.IntegrationManagementConfiguration$$EnhancerBySpringCGLIB$$4dd6ed70] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-12-29 17:53:27.705 [34mINFO[0;39m [35m[main][0;39m o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization :: Bean 'integrationDisposableAutoCreatedBeans' of type [org.springframework.integration.config.annotation.Disposables] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-12-29 17:53:28.071 [34mINFO[0;39m [35m[main][0;39m o.s.b.w.e.t.TomcatWebServer.initialize :: Tomcat initialized with port(s): 2020 (http)
+2019-12-29 17:53:28.103 [34mINFO[0;39m [35m[main][0;39m o.a.c.c.StandardService.log :: Starting service [Tomcat]
+2019-12-29 17:53:28.103 [34mINFO[0;39m [35m[main][0;39m o.a.c.c.StandardEngine.log :: Starting Servlet engine: [Apache Tomcat/9.0.22]
+2019-12-29 17:53:28.179 [34mINFO[0;39m [35m[main][0;39m o.a.c.c.C.[.[.[/].log :: Initializing Spring embedded WebApplicationContext
+2019-12-29 17:53:28.180 [34mINFO[0;39m [35m[main][0;39m o.s.w.c.ContextLoader.prepareWebApplicationContext :: Root WebApplicationContext: initialization completed in 1875 ms
+2019-12-29 17:53:28.430 [34mINFO[0;39m [35m[main][0;39m c.z.h.HikariDataSource.getConnection :: HikariPool-1 - Starting...
+2019-12-29 17:53:28.974 [34mINFO[0;39m [35m[main][0;39m c.z.h.HikariDataSource.getConnection :: HikariPool-1 - Start completed.
+2019-12-29 17:53:29.444 [39mDEBUG[0;39m [35m[main][0;39m c.s.S.u.f.FileStorageService.<init> :: fileStorageLocation: src/main/resources/uploads/images
+2019-12-29 17:53:29.811 [34mINFO[0;39m [35m[main][0;39m o.s.s.c.ThreadPoolTaskExecutor.initialize :: Initializing ExecutorService 'applicationTaskExecutor'
+2019-12-29 17:53:30.287 [34mINFO[0;39m [35m[main][0;39m o.s.b.a.e.w.EndpointLinksResolver.<init> :: Exposing 2 endpoint(s) beneath base path '/actuator'
+2019-12-29 17:53:30.378 [34mINFO[0;39m [35m[main][0;39m o.s.s.c.ThreadPoolTaskScheduler.initialize :: Initializing ExecutorService 'taskScheduler'
+2019-12-29 17:53:30.447 [34mINFO[0;39m [35m[main][0;39m o.s.i.e.EventDrivenConsumer.logComponentSubscriptionEvent :: Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2019-12-29 17:53:30.448 [34mINFO[0;39m [35m[main][0;39m o.s.i.c.PublishSubscribeChannel.adjustCounterIfNecessary :: Channel 'application.errorChannel' has 1 subscriber(s).
+2019-12-29 17:53:30.448 [34mINFO[0;39m [35m[main][0;39m o.s.i.e.EventDrivenConsumer.start :: started _org.springframework.integration.errorLogger
+2019-12-29 17:53:30.501 [34mINFO[0;39m [35m[main][0;39m o.s.b.w.e.t.TomcatWebServer.start :: Tomcat started on port(s): 2020 (http) with context path ''
+2019-12-29 17:53:30.504 [34mINFO[0;39m [35m[main][0;39m c.s.S.SearchFoodApplication.logStarted :: Started SearchFoodApplication in 4.764 seconds (JVM running for 8.598)
+2019-12-29 17:53:32.759 [34mINFO[0;39m [35m[http-nio-2020-exec-1][0;39m o.a.c.c.C.[.[.[/].log :: Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-12-29 17:53:32.760 [34mINFO[0;39m [35m[http-nio-2020-exec-1][0;39m o.s.w.s.DispatcherServlet.initServletBean :: Initializing Servlet 'dispatcherServlet'
+2019-12-29 17:53:32.775 [34mINFO[0;39m [35m[http-nio-2020-exec-1][0;39m o.s.w.s.DispatcherServlet.initServletBean :: Completed initialization in 15 ms
+2019-12-29 17:53:32.930 [39mDEBUG[0;39m [35m[http-nio-2020-exec-1][0;39m c.s.S.w.CreateCommentController.createComments :: Checking the token is valid or not...
+2019-12-29 17:53:32.931 [34mINFO[0;39m [35m[http-nio-2020-exec-1][0;39m c.s.S.u.CheckTokensController.check :: Checking token...
+2019-12-29 17:53:32.980 [34mINFO[0;39m [35m[http-nio-2020-exec-1][0;39m c.s.S.m.CheckTokenImp.isExist :: now: 2019-12-29T09:53:32.979Z
+2019-12-29 17:53:32.981 [34mINFO[0;39m [35m[http-nio-2020-exec-1][0;39m c.s.S.m.CheckTokenImp.isExist :: loginTime: 2019-12-29T07:56:54Z
+2019-12-29 17:53:32.981 [34mINFO[0;39m [35m[http-nio-2020-exec-1][0;39m c.s.S.m.CheckTokenImp.isExist :: Duration: 116
+2019-12-29 17:53:32.982 [34mINFO[0;39m [35m[http-nio-2020-exec-1][0;39m c.s.S.m.CheckTokenImp.check :: The username of 74bb4777-67c5-4095-84fb-0635a3a83234 is Peggy
+2019-12-29 17:53:32.982 [39mDEBUG[0;39m [35m[http-nio-2020-exec-1][0;39m c.s.S.u.CheckTokensController.check :: Valid token
+2019-12-29 17:53:32.982 [34mINFO[0;39m [35m[http-nio-2020-exec-1][0;39m c.s.S.w.CreateCommentController.createComments :: Valid token
+2019-12-29 17:53:32.982 [39mDEBUG[0;39m [35m[http-nio-2020-exec-1][0;39m c.s.S.w.CreateCommentController.createComments :: Checking data is valid or not ...
+2019-12-29 17:53:32.983 [39mDEBUG[0;39m [35m[http-nio-2020-exec-1][0;39m c.s.S.w.CreateCommentController.createComments :: storeId: 4
+2019-12-29 17:53:32.983 [39mDEBUG[0;39m [35m[http-nio-2020-exec-1][0;39m c.s.S.w.CreateCommentController.createComments :: stars3
+2019-12-29 17:53:32.983 [39mDEBUG[0;39m [35m[http-nio-2020-exec-1][0;39m c.s.S.w.CreateCommentController.createComments :: Comments23ssaa
+2019-12-29 17:53:32.983 [39mDEBUG[0;39m [35m[http-nio-2020-exec-1][0;39m c.s.S.w.CreateCommentController.createComments :: Trying to saving picture.
+2019-12-29 17:53:32.983 [39mDEBUG[0;39m [35m[http-nio-2020-exec-1][0;39m c.s.S.w.FilesController.uploadFile :: Start to uploading files...
+2019-12-29 17:53:32.984 [39mDEBUG[0;39m [35m[http-nio-2020-exec-1][0;39m c.s.S.w.FilesController.uploadFile :: org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@1be46e8
+2019-12-29 17:53:32.984 [39mDEBUG[0;39m [35m[http-nio-2020-exec-1][0;39m c.s.S.u.f.FileStorageService.storeFile :: fileName: timthumb.jpeg
+2019-12-29 17:53:32.984 [39mDEBUG[0;39m [35m[http-nio-2020-exec-1][0;39m c.s.S.u.f.FileStorageService.storeFile :: targetLocation: src/main/resources/uploads/images/timthumb.jpeg
+2019-12-29 17:53:32.986 [39mDEBUG[0;39m [35m[http-nio-2020-exec-1][0;39m c.s.S.w.FilesController.uploadFile :: targetLocation: src/main/resources/uploads/images/timthumb.jpeg
+2019-12-29 17:53:32.994 [39mDEBUG[0;39m [35m[http-nio-2020-exec-1][0;39m c.s.S.w.CreateCommentController.createComments :: The pic upload sucessfully: src/main/resources/uploads/images/timthumb.jpeg
+2019-12-29 17:53:32.995 [39mDEBUG[0;39m [35m[http-nio-2020-exec-1][0;39m c.s.S.w.CreateCommentController.createComments :: saving comment..
+2019-12-29 17:53:33.198 [1;31mERROR[0;39m [35m[http-nio-2020-exec-1][0;39m o.a.c.c.C.[.[.[.[dispatcherServlet].log :: Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.dao.DataIntegrityViolationException: PreparedStatementCallback; SQL [INSERT INTO StoreComment( storeId, username, star, price, comments, picture ) VALUES( ?, ?, ?, ?, ?, ? );]; Cannot add or update a child row: a foreign key constraint fails; nested exception is java.sql.SQLIntegrityConstraintViolationException: Cannot add or update a child row: a foreign key constraint fails] with root cause
+java.sql.SQLIntegrityConstraintViolationException: Cannot add or update a child row: a foreign key constraint fails
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:117)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1092)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1040)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1340)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:1025)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeUpdate(ProxyPreparedStatement.java:61)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeUpdate(HikariProxyPreparedStatement.java)
+	at org.springframework.jdbc.core.JdbcTemplate.lambda$update$0(JdbcTemplate.java:866)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:616)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:861)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:916)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:926)
+	at com.searchfood.SearchFoodBackend.model.CommentsImp.saveComments(CommentsImp.java:26)
+	at com.searchfood.SearchFoodBackend.model.CommentsImp$$FastClassBySpringCGLIB$$2ef60d78.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:749)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:139)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:688)
+	at com.searchfood.SearchFoodBackend.model.CommentsImp$$EnhancerBySpringCGLIB$$23fe77e7.saveComments(<generated>)
+	at com.searchfood.SearchFoodBackend.webapi.CreateCommentController.createComments(CreateCommentController.java:94)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:104)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:892)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1039)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:942)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1005)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:908)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:882)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.boot.actuate.web.trace.servlet.HttpTraceFilter.doFilterInternal(HttpTraceFilter.java:88)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:118)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:118)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:92)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:118)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:118)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.filterAndRecordMetrics(WebMvcMetricsFilter.java:114)
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:104)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:118)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:118)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:853)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1587)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2019-12-29 17:53:48.772 [39mDEBUG[0;39m [35m[http-nio-2020-exec-2][0;39m c.s.S.w.CreateCommentController.createComments :: Checking the token is valid or not...
+2019-12-29 17:53:48.773 [34mINFO[0;39m [35m[http-nio-2020-exec-2][0;39m c.s.S.u.CheckTokensController.check :: Checking token...
+2019-12-29 17:53:48.774 [34mINFO[0;39m [35m[http-nio-2020-exec-2][0;39m c.s.S.m.CheckTokenImp.isExist :: now: 2019-12-29T09:53:48.774Z
+2019-12-29 17:53:48.775 [34mINFO[0;39m [35m[http-nio-2020-exec-2][0;39m c.s.S.m.CheckTokenImp.isExist :: loginTime: 2019-12-29T07:56:54Z
+2019-12-29 17:53:48.775 [34mINFO[0;39m [35m[http-nio-2020-exec-2][0;39m c.s.S.m.CheckTokenImp.isExist :: Duration: 116
+2019-12-29 17:53:48.775 [34mINFO[0;39m [35m[http-nio-2020-exec-2][0;39m c.s.S.m.CheckTokenImp.check :: The username of 74bb4777-67c5-4095-84fb-0635a3a83234 is Peggy
+2019-12-29 17:53:48.776 [39mDEBUG[0;39m [35m[http-nio-2020-exec-2][0;39m c.s.S.u.CheckTokensController.check :: Valid token
+2019-12-29 17:53:48.776 [34mINFO[0;39m [35m[http-nio-2020-exec-2][0;39m c.s.S.w.CreateCommentController.createComments :: Valid token
+2019-12-29 17:53:48.776 [39mDEBUG[0;39m [35m[http-nio-2020-exec-2][0;39m c.s.S.w.CreateCommentController.createComments :: Checking data is valid or not ...
+2019-12-29 17:53:48.776 [39mDEBUG[0;39m [35m[http-nio-2020-exec-2][0;39m c.s.S.w.CreateCommentController.createComments :: storeId: 1
+2019-12-29 17:53:48.776 [39mDEBUG[0;39m [35m[http-nio-2020-exec-2][0;39m c.s.S.w.CreateCommentController.createComments :: stars3
+2019-12-29 17:53:48.776 [39mDEBUG[0;39m [35m[http-nio-2020-exec-2][0;39m c.s.S.w.CreateCommentController.createComments :: Comments23ssaa
+2019-12-29 17:53:48.777 [39mDEBUG[0;39m [35m[http-nio-2020-exec-2][0;39m c.s.S.w.CreateCommentController.createComments :: Trying to saving picture.
+2019-12-29 17:53:48.777 [39mDEBUG[0;39m [35m[http-nio-2020-exec-2][0;39m c.s.S.w.FilesController.uploadFile :: Start to uploading files...
+2019-12-29 17:53:48.777 [39mDEBUG[0;39m [35m[http-nio-2020-exec-2][0;39m c.s.S.w.FilesController.uploadFile :: org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@39d6532e
+2019-12-29 17:53:48.777 [39mDEBUG[0;39m [35m[http-nio-2020-exec-2][0;39m c.s.S.u.f.FileStorageService.storeFile :: fileName: timthumb.jpeg
+2019-12-29 17:53:48.777 [39mDEBUG[0;39m [35m[http-nio-2020-exec-2][0;39m c.s.S.u.f.FileStorageService.storeFile :: targetLocation: src/main/resources/uploads/images/timthumb.jpeg
+2019-12-29 17:53:48.779 [39mDEBUG[0;39m [35m[http-nio-2020-exec-2][0;39m c.s.S.w.FilesController.uploadFile :: targetLocation: src/main/resources/uploads/images/timthumb.jpeg
+2019-12-29 17:53:48.779 [39mDEBUG[0;39m [35m[http-nio-2020-exec-2][0;39m c.s.S.w.CreateCommentController.createComments :: The pic upload sucessfully: src/main/resources/uploads/images/timthumb.jpeg
+2019-12-29 17:53:48.779 [39mDEBUG[0;39m [35m[http-nio-2020-exec-2][0;39m c.s.S.w.CreateCommentController.createComments :: saving comment..
+2019-12-29 17:53:48.882 [39mDEBUG[0;39m [35m[http-nio-2020-exec-2][0;39m c.s.S.w.CreateCommentController.createComments :: Comment saved..
+2019-12-29 17:53:55.916 [34mINFO[0;39m [35m[Thread-4][0;39m o.s.i.e.EventDrivenConsumer.logComponentSubscriptionEvent :: Removing {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2019-12-29 17:53:55.917 [34mINFO[0;39m [35m[Thread-4][0;39m o.s.i.c.PublishSubscribeChannel.adjustCounterIfNecessary :: Channel 'application.errorChannel' has 0 subscriber(s).
+2019-12-29 17:53:55.917 [34mINFO[0;39m [35m[Thread-4][0;39m o.s.i.e.EventDrivenConsumer.stop :: stopped _org.springframework.integration.errorLogger
+2019-12-29 17:53:55.918 [34mINFO[0;39m [35m[Thread-4][0;39m o.s.s.c.ThreadPoolTaskScheduler.shutdown :: Shutting down ExecutorService 'taskScheduler'
+2019-12-29 17:53:55.921 [34mINFO[0;39m [35m[Thread-4][0;39m o.s.s.c.ThreadPoolTaskExecutor.shutdown :: Shutting down ExecutorService 'applicationTaskExecutor'
+2019-12-29 17:53:55.924 [34mINFO[0;39m [35m[Thread-4][0;39m c.z.h.HikariDataSource.close :: HikariPool-1 - Shutdown initiated...
+2019-12-29 17:53:55.931 [34mINFO[0;39m [35m[Thread-4][0;39m c.z.h.HikariDataSource.close :: HikariPool-1 - Shutdown completed.
+2019-12-29 17:56:14.594 [34mINFO[0;39m [35m[main][0;39m c.s.S.SearchFoodApplication.logStarting :: Starting SearchFoodApplication on eason-P15FV2 with PID 16428 (/home/eason/Desktop/WorkPlace/Project/SearchFoodBackend/target/classes started by eason in /home/eason/Desktop/WorkPlace/Project/SearchFoodBackend)
+2019-12-29 17:56:14.597 [34mINFO[0;39m [35m[main][0;39m c.s.S.SearchFoodApplication.logStartupProfileInfo :: No active profile set, falling back to default profiles: default
+2019-12-29 17:56:15.954 [34mINFO[0;39m [35m[main][0;39m o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor.registerErrorChannel :: No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2019-12-29 17:56:15.960 [34mINFO[0;39m [35m[main][0;39m o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor.registerTaskScheduler :: No bean named 'taskScheduler' has been explicitly defined. Therefore, a default ThreadPoolTaskScheduler will be created.
+2019-12-29 17:56:15.964 [34mINFO[0;39m [35m[main][0;39m o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor.registerHeaderChannelRegistry :: No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2019-12-29 17:56:16.077 [34mINFO[0;39m [35m[main][0;39m o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization :: Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$26a9a9e4] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-12-29 17:56:16.105 [34mINFO[0;39m [35m[main][0;39m o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization :: Bean 'org.springframework.integration.config.IntegrationManagementConfiguration' of type [org.springframework.integration.config.IntegrationManagementConfiguration$$EnhancerBySpringCGLIB$$919b6513] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-12-29 17:56:16.121 [34mINFO[0;39m [35m[main][0;39m o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization :: Bean 'integrationDisposableAutoCreatedBeans' of type [org.springframework.integration.config.annotation.Disposables] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-12-29 17:56:16.388 [34mINFO[0;39m [35m[main][0;39m o.s.b.w.e.t.TomcatWebServer.initialize :: Tomcat initialized with port(s): 2020 (http)
+2019-12-29 17:56:16.413 [34mINFO[0;39m [35m[main][0;39m o.a.c.c.StandardService.log :: Starting service [Tomcat]
+2019-12-29 17:56:16.414 [34mINFO[0;39m [35m[main][0;39m o.a.c.c.StandardEngine.log :: Starting Servlet engine: [Apache Tomcat/9.0.22]
+2019-12-29 17:56:16.490 [34mINFO[0;39m [35m[main][0;39m o.a.c.c.C.[.[.[/].log :: Initializing Spring embedded WebApplicationContext
+2019-12-29 17:56:16.490 [34mINFO[0;39m [35m[main][0;39m o.s.w.c.ContextLoader.prepareWebApplicationContext :: Root WebApplicationContext: initialization completed in 1848 ms
+2019-12-29 17:56:16.745 [34mINFO[0;39m [35m[main][0;39m c.z.h.HikariDataSource.getConnection :: HikariPool-1 - Starting...
+2019-12-29 17:56:17.340 [34mINFO[0;39m [35m[main][0;39m c.z.h.HikariDataSource.getConnection :: HikariPool-1 - Start completed.
+2019-12-29 17:56:17.799 [39mDEBUG[0;39m [35m[main][0;39m c.s.S.u.f.FileStorageService.<init> :: fileStorageLocation: src/main/resources/uploads/images
+2019-12-29 17:56:18.123 [34mINFO[0;39m [35m[main][0;39m o.s.s.c.ThreadPoolTaskExecutor.initialize :: Initializing ExecutorService 'applicationTaskExecutor'
+2019-12-29 17:56:18.584 [34mINFO[0;39m [35m[main][0;39m o.s.b.a.e.w.EndpointLinksResolver.<init> :: Exposing 2 endpoint(s) beneath base path '/actuator'
+2019-12-29 17:56:18.706 [34mINFO[0;39m [35m[main][0;39m o.s.s.c.ThreadPoolTaskScheduler.initialize :: Initializing ExecutorService 'taskScheduler'
+2019-12-29 17:56:18.781 [34mINFO[0;39m [35m[main][0;39m o.s.i.e.EventDrivenConsumer.logComponentSubscriptionEvent :: Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2019-12-29 17:56:18.782 [34mINFO[0;39m [35m[main][0;39m o.s.i.c.PublishSubscribeChannel.adjustCounterIfNecessary :: Channel 'application.errorChannel' has 1 subscriber(s).
+2019-12-29 17:56:18.782 [34mINFO[0;39m [35m[main][0;39m o.s.i.e.EventDrivenConsumer.start :: started _org.springframework.integration.errorLogger
+2019-12-29 17:56:18.847 [34mINFO[0;39m [35m[main][0;39m o.s.b.w.e.t.TomcatWebServer.start :: Tomcat started on port(s): 2020 (http) with context path ''
+2019-12-29 17:56:18.852 [34mINFO[0;39m [35m[main][0;39m c.s.S.SearchFoodApplication.logStarted :: Started SearchFoodApplication in 4.81 seconds (JVM running for 8.741)
+2019-12-29 17:56:20.741 [34mINFO[0;39m [35m[http-nio-2020-exec-1][0;39m o.a.c.c.C.[.[.[/].log :: Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-12-29 17:56:20.742 [34mINFO[0;39m [35m[http-nio-2020-exec-1][0;39m o.s.w.s.DispatcherServlet.initServletBean :: Initializing Servlet 'dispatcherServlet'
+2019-12-29 17:56:20.752 [34mINFO[0;39m [35m[http-nio-2020-exec-1][0;39m o.s.w.s.DispatcherServlet.initServletBean :: Completed initialization in 10 ms
+2019-12-29 17:56:20.886 [39mDEBUG[0;39m [35m[http-nio-2020-exec-1][0;39m c.s.S.w.CreateCommentController.createComments :: Checking the token is valid or not...
+2019-12-29 17:56:20.887 [34mINFO[0;39m [35m[http-nio-2020-exec-1][0;39m c.s.S.u.CheckTokensController.check :: Checking token...
+2019-12-29 17:56:20.927 [34mINFO[0;39m [35m[http-nio-2020-exec-1][0;39m c.s.S.m.CheckTokenImp.isExist :: now: 2019-12-29T09:56:20.926Z
+2019-12-29 17:56:20.927 [34mINFO[0;39m [35m[http-nio-2020-exec-1][0;39m c.s.S.m.CheckTokenImp.isExist :: loginTime: 2019-12-29T07:56:54Z
+2019-12-29 17:56:20.927 [34mINFO[0;39m [35m[http-nio-2020-exec-1][0;39m c.s.S.m.CheckTokenImp.isExist :: Duration: 119
+2019-12-29 17:56:20.928 [34mINFO[0;39m [35m[http-nio-2020-exec-1][0;39m c.s.S.m.CheckTokenImp.check :: The username of 74bb4777-67c5-4095-84fb-0635a3a83234 is Peggy
+2019-12-29 17:56:20.928 [39mDEBUG[0;39m [35m[http-nio-2020-exec-1][0;39m c.s.S.u.CheckTokensController.check :: Valid token
+2019-12-29 17:56:20.928 [34mINFO[0;39m [35m[http-nio-2020-exec-1][0;39m c.s.S.w.CreateCommentController.createComments :: Valid token
+2019-12-29 17:56:20.928 [39mDEBUG[0;39m [35m[http-nio-2020-exec-1][0;39m c.s.S.w.CreateCommentController.createComments :: Checking data is valid or not ...
+2019-12-29 17:56:20.928 [39mDEBUG[0;39m [35m[http-nio-2020-exec-1][0;39m c.s.S.w.CreateCommentController.createComments :: storeId: 1
+2019-12-29 17:56:20.929 [39mDEBUG[0;39m [35m[http-nio-2020-exec-1][0;39m c.s.S.w.CreateCommentController.createComments :: stars3.0
+2019-12-29 17:56:20.929 [39mDEBUG[0;39m [35m[http-nio-2020-exec-1][0;39m c.s.S.w.CreateCommentController.createComments :: Comments23ssaa
+2019-12-29 17:56:20.929 [39mDEBUG[0;39m [35m[http-nio-2020-exec-1][0;39m c.s.S.w.CreateCommentController.createComments :: Trying to saving picture.
+2019-12-29 17:56:20.930 [39mDEBUG[0;39m [35m[http-nio-2020-exec-1][0;39m c.s.S.w.FilesController.uploadFile :: Start to uploading files...
+2019-12-29 17:56:20.930 [39mDEBUG[0;39m [35m[http-nio-2020-exec-1][0;39m c.s.S.w.FilesController.uploadFile :: org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@1be46e8
+2019-12-29 17:56:20.931 [39mDEBUG[0;39m [35m[http-nio-2020-exec-1][0;39m c.s.S.u.f.FileStorageService.storeFile :: fileName: timthumb.jpeg
+2019-12-29 17:56:20.931 [39mDEBUG[0;39m [35m[http-nio-2020-exec-1][0;39m c.s.S.u.f.FileStorageService.storeFile :: targetLocation: src/main/resources/uploads/images/timthumb.jpeg
+2019-12-29 17:56:20.933 [39mDEBUG[0;39m [35m[http-nio-2020-exec-1][0;39m c.s.S.w.FilesController.uploadFile :: targetLocation: src/main/resources/uploads/images/timthumb.jpeg
+2019-12-29 17:56:20.938 [39mDEBUG[0;39m [35m[http-nio-2020-exec-1][0;39m c.s.S.w.CreateCommentController.createComments :: The pic upload sucessfully: src/main/resources/uploads/images/timthumb.jpeg
+2019-12-29 17:56:20.938 [39mDEBUG[0;39m [35m[http-nio-2020-exec-1][0;39m c.s.S.w.CreateCommentController.createComments :: saving comment..
+2019-12-29 17:56:21.035 [1;31mERROR[0;39m [35m[http-nio-2020-exec-1][0;39m o.a.c.c.C.[.[.[.[dispatcherServlet].log :: Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.dao.DuplicateKeyException: PreparedStatementCallback; SQL [INSERT INTO StoreComment( storeId, username, star, price, comments, picture ) VALUES( ?, ?, ?, ?, ?, ? );]; Duplicate entry 'Peggy-1' for key 'PRIMARY'; nested exception is java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'Peggy-1' for key 'PRIMARY'] with root cause
+java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'Peggy-1' for key 'PRIMARY'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:117)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1092)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1040)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1340)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:1025)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeUpdate(ProxyPreparedStatement.java:61)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeUpdate(HikariProxyPreparedStatement.java)
+	at org.springframework.jdbc.core.JdbcTemplate.lambda$update$0(JdbcTemplate.java:866)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:616)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:861)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:916)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:926)
+	at com.searchfood.SearchFoodBackend.model.CommentsImp.saveComments(CommentsImp.java:26)
+	at com.searchfood.SearchFoodBackend.model.CommentsImp$$FastClassBySpringCGLIB$$2ef60d78.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:749)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:139)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:688)
+	at com.searchfood.SearchFoodBackend.model.CommentsImp$$EnhancerBySpringCGLIB$$7c1fe7e9.saveComments(<generated>)
+	at com.searchfood.SearchFoodBackend.webapi.CreateCommentController.createComments(CreateCommentController.java:94)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:104)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:892)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1039)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:942)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1005)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:908)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:882)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.boot.actuate.web.trace.servlet.HttpTraceFilter.doFilterInternal(HttpTraceFilter.java:88)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:118)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:118)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:92)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:118)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:118)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.filterAndRecordMetrics(WebMvcMetricsFilter.java:114)
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:104)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:118)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:118)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:853)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1587)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2019-12-29 17:57:20.663 [39mDEBUG[0;39m [35m[http-nio-2020-exec-2][0;39m c.s.S.w.CreateCommentController.createComments :: Checking the token is valid or not...
+2019-12-29 17:57:20.663 [34mINFO[0;39m [35m[http-nio-2020-exec-2][0;39m c.s.S.u.CheckTokensController.check :: Checking token...
+2019-12-29 17:57:20.665 [34mINFO[0;39m [35m[http-nio-2020-exec-2][0;39m c.s.S.m.CheckTokenImp.isExist :: now: 2019-12-29T09:57:20.665Z
+2019-12-29 17:57:20.666 [34mINFO[0;39m [35m[http-nio-2020-exec-2][0;39m c.s.S.m.CheckTokenImp.isExist :: loginTime: 2019-12-29T07:56:54Z
+2019-12-29 17:57:20.666 [34mINFO[0;39m [35m[http-nio-2020-exec-2][0;39m c.s.S.m.CheckTokenImp.isExist :: Duration: 120
+2019-12-29 17:57:20.666 [34mINFO[0;39m [35m[http-nio-2020-exec-2][0;39m c.s.S.m.CheckTokenImp.check :: The username of 74bb4777-67c5-4095-84fb-0635a3a83234 is Peggy
+2019-12-29 17:57:20.666 [39mDEBUG[0;39m [35m[http-nio-2020-exec-2][0;39m c.s.S.u.CheckTokensController.check :: Valid token
+2019-12-29 17:57:20.666 [34mINFO[0;39m [35m[http-nio-2020-exec-2][0;39m c.s.S.w.CreateCommentController.createComments :: Valid token
+2019-12-29 17:57:20.667 [39mDEBUG[0;39m [35m[http-nio-2020-exec-2][0;39m c.s.S.w.CreateCommentController.createComments :: Checking data is valid or not ...
+2019-12-29 17:57:20.667 [39mDEBUG[0;39m [35m[http-nio-2020-exec-2][0;39m c.s.S.w.CreateCommentController.createComments :: storeId: 5
+2019-12-29 17:57:20.667 [39mDEBUG[0;39m [35m[http-nio-2020-exec-2][0;39m c.s.S.w.CreateCommentController.createComments :: stars3.0
+2019-12-29 17:57:20.667 [39mDEBUG[0;39m [35m[http-nio-2020-exec-2][0;39m c.s.S.w.CreateCommentController.createComments :: Comments23ssaa
+2019-12-29 17:57:20.667 [39mDEBUG[0;39m [35m[http-nio-2020-exec-2][0;39m c.s.S.w.CreateCommentController.createComments :: Trying to saving picture.
+2019-12-29 17:57:20.668 [39mDEBUG[0;39m [35m[http-nio-2020-exec-2][0;39m c.s.S.w.FilesController.uploadFile :: Start to uploading files...
+2019-12-29 17:57:20.668 [39mDEBUG[0;39m [35m[http-nio-2020-exec-2][0;39m c.s.S.w.FilesController.uploadFile :: org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@39d6532e
+2019-12-29 17:57:20.668 [39mDEBUG[0;39m [35m[http-nio-2020-exec-2][0;39m c.s.S.u.f.FileStorageService.storeFile :: fileName: timthumb.jpeg
+2019-12-29 17:57:20.668 [39mDEBUG[0;39m [35m[http-nio-2020-exec-2][0;39m c.s.S.u.f.FileStorageService.storeFile :: targetLocation: src/main/resources/uploads/images/timthumb.jpeg
+2019-12-29 17:57:20.669 [39mDEBUG[0;39m [35m[http-nio-2020-exec-2][0;39m c.s.S.w.FilesController.uploadFile :: targetLocation: src/main/resources/uploads/images/timthumb.jpeg
+2019-12-29 17:57:20.670 [39mDEBUG[0;39m [35m[http-nio-2020-exec-2][0;39m c.s.S.w.CreateCommentController.createComments :: The pic upload sucessfully: src/main/resources/uploads/images/timthumb.jpeg
+2019-12-29 17:57:20.670 [39mDEBUG[0;39m [35m[http-nio-2020-exec-2][0;39m c.s.S.w.CreateCommentController.createComments :: saving comment..
+2019-12-29 17:57:20.772 [39mDEBUG[0;39m [35m[http-nio-2020-exec-2][0;39m c.s.S.w.CreateCommentController.createComments :: Comment saved..
+2019-12-29 17:57:49.797 [39mDEBUG[0;39m [35m[http-nio-2020-exec-3][0;39m c.s.S.w.CreateCommentController.createComments :: Checking the token is valid or not...
+2019-12-29 17:57:49.797 [34mINFO[0;39m [35m[http-nio-2020-exec-3][0;39m c.s.S.u.CheckTokensController.check :: Checking token...
+2019-12-29 17:57:49.799 [34mINFO[0;39m [35m[http-nio-2020-exec-3][0;39m c.s.S.m.CheckTokenImp.isExist :: now: 2019-12-29T09:57:49.799Z
+2019-12-29 17:57:49.799 [34mINFO[0;39m [35m[http-nio-2020-exec-3][0;39m c.s.S.m.CheckTokenImp.isExist :: loginTime: 2019-12-29T07:56:54Z
+2019-12-29 17:57:49.800 [34mINFO[0;39m [35m[http-nio-2020-exec-3][0;39m c.s.S.m.CheckTokenImp.isExist :: Duration: 120
+2019-12-29 17:57:49.800 [34mINFO[0;39m [35m[http-nio-2020-exec-3][0;39m c.s.S.m.CheckTokenImp.check :: The username of 74bb4777-67c5-4095-84fb-0635a3a83234 is Peggy
+2019-12-29 17:57:49.800 [39mDEBUG[0;39m [35m[http-nio-2020-exec-3][0;39m c.s.S.u.CheckTokensController.check :: Valid token
+2019-12-29 17:57:49.800 [34mINFO[0;39m [35m[http-nio-2020-exec-3][0;39m c.s.S.w.CreateCommentController.createComments :: Valid token
+2019-12-29 17:57:49.800 [39mDEBUG[0;39m [35m[http-nio-2020-exec-3][0;39m c.s.S.w.CreateCommentController.createComments :: Checking data is valid or not ...
+2019-12-29 17:57:49.802 [31mWARN[0;39m [35m[http-nio-2020-exec-3][0;39m c.s.S.u.e.ControllerException.handleInvalidDataException :: In ControllerException: InvalidDataException
+2019-12-29 17:58:03.933 [34mINFO[0;39m [35m[Thread-4][0;39m o.s.i.e.EventDrivenConsumer.logComponentSubscriptionEvent :: Removing {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2019-12-29 17:58:03.934 [34mINFO[0;39m [35m[Thread-4][0;39m o.s.i.c.PublishSubscribeChannel.adjustCounterIfNecessary :: Channel 'application.errorChannel' has 0 subscriber(s).
+2019-12-29 17:58:03.934 [34mINFO[0;39m [35m[Thread-4][0;39m o.s.i.e.EventDrivenConsumer.stop :: stopped _org.springframework.integration.errorLogger
+2019-12-29 17:58:03.935 [34mINFO[0;39m [35m[Thread-4][0;39m o.s.s.c.ThreadPoolTaskScheduler.shutdown :: Shutting down ExecutorService 'taskScheduler'
+2019-12-29 17:58:03.938 [34mINFO[0;39m [35m[Thread-4][0;39m o.s.s.c.ThreadPoolTaskExecutor.shutdown :: Shutting down ExecutorService 'applicationTaskExecutor'
+2019-12-29 17:58:03.940 [34mINFO[0;39m [35m[Thread-4][0;39m c.z.h.HikariDataSource.close :: HikariPool-1 - Shutdown initiated...
+2019-12-29 17:58:03.947 [34mINFO[0;39m [35m[Thread-4][0;39m c.z.h.HikariDataSource.close :: HikariPool-1 - Shutdown completed.
+2019-12-29 17:58:33.548 [34mINFO[0;39m [35m[main][0;39m c.s.S.SearchFoodApplication.logStarting :: Starting SearchFoodApplication on eason-P15FV2 with PID 16673 (/home/eason/Desktop/WorkPlace/Project/SearchFoodBackend/target/classes started by eason in /home/eason/Desktop/WorkPlace/Project/SearchFoodBackend)
+2019-12-29 17:58:33.551 [34mINFO[0;39m [35m[main][0;39m c.s.S.SearchFoodApplication.logStartupProfileInfo :: No active profile set, falling back to default profiles: default
+2019-12-29 17:58:34.755 [34mINFO[0;39m [35m[main][0;39m o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor.registerErrorChannel :: No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2019-12-29 17:58:34.761 [34mINFO[0;39m [35m[main][0;39m o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor.registerTaskScheduler :: No bean named 'taskScheduler' has been explicitly defined. Therefore, a default ThreadPoolTaskScheduler will be created.
+2019-12-29 17:58:34.765 [34mINFO[0;39m [35m[main][0;39m o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor.registerHeaderChannelRegistry :: No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2019-12-29 17:58:34.885 [34mINFO[0;39m [35m[main][0;39m o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization :: Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$db080002] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-12-29 17:58:34.907 [34mINFO[0;39m [35m[main][0;39m o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization :: Bean 'org.springframework.integration.config.IntegrationManagementConfiguration' of type [org.springframework.integration.config.IntegrationManagementConfiguration$$EnhancerBySpringCGLIB$$45f9bb31] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-12-29 17:58:34.925 [34mINFO[0;39m [35m[main][0;39m o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization :: Bean 'integrationDisposableAutoCreatedBeans' of type [org.springframework.integration.config.annotation.Disposables] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-12-29 17:58:35.302 [34mINFO[0;39m [35m[main][0;39m o.s.b.w.e.t.TomcatWebServer.initialize :: Tomcat initialized with port(s): 2020 (http)
+2019-12-29 17:58:35.335 [34mINFO[0;39m [35m[main][0;39m o.a.c.c.StandardService.log :: Starting service [Tomcat]
+2019-12-29 17:58:35.335 [34mINFO[0;39m [35m[main][0;39m o.a.c.c.StandardEngine.log :: Starting Servlet engine: [Apache Tomcat/9.0.22]
+2019-12-29 17:58:35.450 [34mINFO[0;39m [35m[main][0;39m o.a.c.c.C.[.[.[/].log :: Initializing Spring embedded WebApplicationContext
+2019-12-29 17:58:35.451 [34mINFO[0;39m [35m[main][0;39m o.s.w.c.ContextLoader.prepareWebApplicationContext :: Root WebApplicationContext: initialization completed in 1856 ms
+2019-12-29 17:58:35.767 [34mINFO[0;39m [35m[main][0;39m c.z.h.HikariDataSource.getConnection :: HikariPool-1 - Starting...
+2019-12-29 17:58:36.356 [34mINFO[0;39m [35m[main][0;39m c.z.h.HikariDataSource.getConnection :: HikariPool-1 - Start completed.
+2019-12-29 17:58:36.756 [39mDEBUG[0;39m [35m[main][0;39m c.s.S.u.f.FileStorageService.<init> :: fileStorageLocation: src/main/resources/uploads/images
+2019-12-29 17:58:37.068 [34mINFO[0;39m [35m[main][0;39m o.s.s.c.ThreadPoolTaskExecutor.initialize :: Initializing ExecutorService 'applicationTaskExecutor'
+2019-12-29 17:58:37.490 [34mINFO[0;39m [35m[main][0;39m o.s.b.a.e.w.EndpointLinksResolver.<init> :: Exposing 2 endpoint(s) beneath base path '/actuator'
+2019-12-29 17:58:37.580 [34mINFO[0;39m [35m[main][0;39m o.s.s.c.ThreadPoolTaskScheduler.initialize :: Initializing ExecutorService 'taskScheduler'
+2019-12-29 17:58:37.646 [34mINFO[0;39m [35m[main][0;39m o.s.i.e.EventDrivenConsumer.logComponentSubscriptionEvent :: Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2019-12-29 17:58:37.646 [34mINFO[0;39m [35m[main][0;39m o.s.i.c.PublishSubscribeChannel.adjustCounterIfNecessary :: Channel 'application.errorChannel' has 1 subscriber(s).
+2019-12-29 17:58:37.647 [34mINFO[0;39m [35m[main][0;39m o.s.i.e.EventDrivenConsumer.start :: started _org.springframework.integration.errorLogger
+2019-12-29 17:58:37.699 [34mINFO[0;39m [35m[main][0;39m o.s.b.w.e.t.TomcatWebServer.start :: Tomcat started on port(s): 2020 (http) with context path ''
+2019-12-29 17:58:37.704 [34mINFO[0;39m [35m[main][0;39m c.s.S.SearchFoodApplication.logStarted :: Started SearchFoodApplication in 4.665 seconds (JVM running for 8.64)
+2019-12-29 17:58:39.847 [34mINFO[0;39m [35m[http-nio-2020-exec-1][0;39m o.a.c.c.C.[.[.[/].log :: Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-12-29 17:58:39.848 [34mINFO[0;39m [35m[http-nio-2020-exec-1][0;39m o.s.w.s.DispatcherServlet.initServletBean :: Initializing Servlet 'dispatcherServlet'
+2019-12-29 17:58:39.860 [34mINFO[0;39m [35m[http-nio-2020-exec-1][0;39m o.s.w.s.DispatcherServlet.initServletBean :: Completed initialization in 12 ms
+2019-12-29 17:58:40.005 [39mDEBUG[0;39m [35m[http-nio-2020-exec-1][0;39m c.s.S.w.CreateCommentController.createComments :: Checking the token is valid or not...
+2019-12-29 17:58:40.006 [34mINFO[0;39m [35m[http-nio-2020-exec-1][0;39m c.s.S.u.CheckTokensController.check :: Checking token...
+2019-12-29 17:58:40.056 [34mINFO[0;39m [35m[http-nio-2020-exec-1][0;39m c.s.S.m.CheckTokenImp.isExist :: now: 2019-12-29T09:58:40.054Z
+2019-12-29 17:58:40.056 [34mINFO[0;39m [35m[http-nio-2020-exec-1][0;39m c.s.S.m.CheckTokenImp.isExist :: loginTime: 2019-12-29T07:56:54Z
+2019-12-29 17:58:40.057 [34mINFO[0;39m [35m[http-nio-2020-exec-1][0;39m c.s.S.m.CheckTokenImp.isExist :: Duration: 121
+2019-12-29 17:58:40.057 [34mINFO[0;39m [35m[http-nio-2020-exec-1][0;39m c.s.S.m.CheckTokenImp.check :: The username of 74bb4777-67c5-4095-84fb-0635a3a83234 is Peggy
+2019-12-29 17:58:40.057 [39mDEBUG[0;39m [35m[http-nio-2020-exec-1][0;39m c.s.S.u.CheckTokensController.check :: Valid token
+2019-12-29 17:58:40.058 [34mINFO[0;39m [35m[http-nio-2020-exec-1][0;39m c.s.S.w.CreateCommentController.createComments :: Valid token
+2019-12-29 17:58:40.058 [39mDEBUG[0;39m [35m[http-nio-2020-exec-1][0;39m c.s.S.w.CreateCommentController.createComments :: Checking data is valid or not ...
+2019-12-29 17:58:40.058 [39mDEBUG[0;39m [35m[http-nio-2020-exec-1][0;39m c.s.S.w.CreateCommentController.createComments :: storeId: 5
+2019-12-29 17:58:40.059 [39mDEBUG[0;39m [35m[http-nio-2020-exec-1][0;39m c.s.S.w.CreateCommentController.createComments :: stars3.5
+2019-12-29 17:58:40.059 [39mDEBUG[0;39m [35m[http-nio-2020-exec-1][0;39m c.s.S.w.CreateCommentController.createComments :: Comments23ssaa
+2019-12-29 17:58:40.059 [39mDEBUG[0;39m [35m[http-nio-2020-exec-1][0;39m c.s.S.w.CreateCommentController.createComments :: Trying to saving picture.
+2019-12-29 17:58:40.060 [39mDEBUG[0;39m [35m[http-nio-2020-exec-1][0;39m c.s.S.w.FilesController.uploadFile :: Start to uploading files...
+2019-12-29 17:58:40.060 [39mDEBUG[0;39m [35m[http-nio-2020-exec-1][0;39m c.s.S.w.FilesController.uploadFile :: org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@5f7011c9
+2019-12-29 17:58:40.060 [39mDEBUG[0;39m [35m[http-nio-2020-exec-1][0;39m c.s.S.u.f.FileStorageService.storeFile :: fileName: timthumb.jpeg
+2019-12-29 17:58:40.060 [39mDEBUG[0;39m [35m[http-nio-2020-exec-1][0;39m c.s.S.u.f.FileStorageService.storeFile :: targetLocation: src/main/resources/uploads/images/timthumb.jpeg
+2019-12-29 17:58:40.062 [39mDEBUG[0;39m [35m[http-nio-2020-exec-1][0;39m c.s.S.w.FilesController.uploadFile :: targetLocation: src/main/resources/uploads/images/timthumb.jpeg
+2019-12-29 17:58:40.070 [39mDEBUG[0;39m [35m[http-nio-2020-exec-1][0;39m c.s.S.w.CreateCommentController.createComments :: The pic upload sucessfully: src/main/resources/uploads/images/timthumb.jpeg
+2019-12-29 17:58:40.071 [39mDEBUG[0;39m [35m[http-nio-2020-exec-1][0;39m c.s.S.w.CreateCommentController.createComments :: saving comment..
+2019-12-29 17:58:40.179 [1;31mERROR[0;39m [35m[http-nio-2020-exec-1][0;39m o.a.c.c.C.[.[.[.[dispatcherServlet].log :: Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.dao.DuplicateKeyException: PreparedStatementCallback; SQL [INSERT INTO StoreComment( storeId, username, star, price, comments, picture ) VALUES( ?, ?, ?, ?, ?, ? );]; Duplicate entry 'Peggy-5' for key 'PRIMARY'; nested exception is java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'Peggy-5' for key 'PRIMARY'] with root cause
+java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'Peggy-5' for key 'PRIMARY'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:117)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1092)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1040)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1340)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:1025)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeUpdate(ProxyPreparedStatement.java:61)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeUpdate(HikariProxyPreparedStatement.java)
+	at org.springframework.jdbc.core.JdbcTemplate.lambda$update$0(JdbcTemplate.java:866)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:616)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:861)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:916)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:926)
+	at com.searchfood.SearchFoodBackend.model.CommentsImp.saveComments(CommentsImp.java:26)
+	at com.searchfood.SearchFoodBackend.model.CommentsImp$$FastClassBySpringCGLIB$$2ef60d78.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:749)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:139)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:688)
+	at com.searchfood.SearchFoodBackend.model.CommentsImp$$EnhancerBySpringCGLIB$$e0c8fa21.saveComments(<generated>)
+	at com.searchfood.SearchFoodBackend.webapi.CreateCommentController.createComments(CreateCommentController.java:94)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:104)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:892)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1039)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:942)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1005)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:908)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:882)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.boot.actuate.web.trace.servlet.HttpTraceFilter.doFilterInternal(HttpTraceFilter.java:88)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:118)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:118)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:92)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:118)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:118)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.filterAndRecordMetrics(WebMvcMetricsFilter.java:114)
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:104)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:118)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:118)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:853)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1587)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2019-12-29 17:58:51.688 [39mDEBUG[0;39m [35m[http-nio-2020-exec-2][0;39m c.s.S.w.CreateCommentController.createComments :: Checking the token is valid or not...
+2019-12-29 17:58:51.689 [34mINFO[0;39m [35m[http-nio-2020-exec-2][0;39m c.s.S.u.CheckTokensController.check :: Checking token...
+2019-12-29 17:58:51.691 [34mINFO[0;39m [35m[http-nio-2020-exec-2][0;39m c.s.S.m.CheckTokenImp.isExist :: now: 2019-12-29T09:58:51.691Z
+2019-12-29 17:58:51.692 [34mINFO[0;39m [35m[http-nio-2020-exec-2][0;39m c.s.S.m.CheckTokenImp.isExist :: loginTime: 2019-12-29T07:56:54Z
+2019-12-29 17:58:51.692 [34mINFO[0;39m [35m[http-nio-2020-exec-2][0;39m c.s.S.m.CheckTokenImp.isExist :: Duration: 121
+2019-12-29 17:58:51.692 [34mINFO[0;39m [35m[http-nio-2020-exec-2][0;39m c.s.S.m.CheckTokenImp.check :: The username of 74bb4777-67c5-4095-84fb-0635a3a83234 is Peggy
+2019-12-29 17:58:51.693 [39mDEBUG[0;39m [35m[http-nio-2020-exec-2][0;39m c.s.S.u.CheckTokensController.check :: Valid token
+2019-12-29 17:58:51.693 [34mINFO[0;39m [35m[http-nio-2020-exec-2][0;39m c.s.S.w.CreateCommentController.createComments :: Valid token
+2019-12-29 17:58:51.693 [39mDEBUG[0;39m [35m[http-nio-2020-exec-2][0;39m c.s.S.w.CreateCommentController.createComments :: Checking data is valid or not ...
+2019-12-29 17:58:51.694 [39mDEBUG[0;39m [35m[http-nio-2020-exec-2][0;39m c.s.S.w.CreateCommentController.createComments :: storeId: 6
+2019-12-29 17:58:51.694 [39mDEBUG[0;39m [35m[http-nio-2020-exec-2][0;39m c.s.S.w.CreateCommentController.createComments :: stars3.5
+2019-12-29 17:58:51.694 [39mDEBUG[0;39m [35m[http-nio-2020-exec-2][0;39m c.s.S.w.CreateCommentController.createComments :: Comments23ssaa
+2019-12-29 17:58:51.695 [39mDEBUG[0;39m [35m[http-nio-2020-exec-2][0;39m c.s.S.w.CreateCommentController.createComments :: Trying to saving picture.
+2019-12-29 17:58:51.695 [39mDEBUG[0;39m [35m[http-nio-2020-exec-2][0;39m c.s.S.w.FilesController.uploadFile :: Start to uploading files...
+2019-12-29 17:58:51.695 [39mDEBUG[0;39m [35m[http-nio-2020-exec-2][0;39m c.s.S.w.FilesController.uploadFile :: org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@1c708bf0
+2019-12-29 17:58:51.696 [39mDEBUG[0;39m [35m[http-nio-2020-exec-2][0;39m c.s.S.u.f.FileStorageService.storeFile :: fileName: timthumb.jpeg
+2019-12-29 17:58:51.696 [39mDEBUG[0;39m [35m[http-nio-2020-exec-2][0;39m c.s.S.u.f.FileStorageService.storeFile :: targetLocation: src/main/resources/uploads/images/timthumb.jpeg
+2019-12-29 17:58:51.697 [39mDEBUG[0;39m [35m[http-nio-2020-exec-2][0;39m c.s.S.w.FilesController.uploadFile :: targetLocation: src/main/resources/uploads/images/timthumb.jpeg
+2019-12-29 17:58:51.698 [39mDEBUG[0;39m [35m[http-nio-2020-exec-2][0;39m c.s.S.w.CreateCommentController.createComments :: The pic upload sucessfully: src/main/resources/uploads/images/timthumb.jpeg
+2019-12-29 17:58:51.698 [39mDEBUG[0;39m [35m[http-nio-2020-exec-2][0;39m c.s.S.w.CreateCommentController.createComments :: saving comment..
+2019-12-29 17:58:51.881 [39mDEBUG[0;39m [35m[http-nio-2020-exec-2][0;39m c.s.S.w.CreateCommentController.createComments :: Comment saved..
+2019-12-29 17:59:49.240 [39mDEBUG[0;39m [35m[http-nio-2020-exec-3][0;39m c.s.S.w.CreateCommentController.createComments :: Checking the token is valid or not...
+2019-12-29 17:59:49.241 [34mINFO[0;39m [35m[http-nio-2020-exec-3][0;39m c.s.S.u.CheckTokensController.check :: Checking token...
+2019-12-29 17:59:49.243 [34mINFO[0;39m [35m[http-nio-2020-exec-3][0;39m c.s.S.m.CheckTokenImp.isExist :: now: 2019-12-29T09:59:49.243Z
+2019-12-29 17:59:49.243 [34mINFO[0;39m [35m[http-nio-2020-exec-3][0;39m c.s.S.m.CheckTokenImp.isExist :: loginTime: 2019-12-29T07:56:54Z
+2019-12-29 17:59:49.244 [34mINFO[0;39m [35m[http-nio-2020-exec-3][0;39m c.s.S.m.CheckTokenImp.isExist :: Duration: 122
+2019-12-29 17:59:49.244 [34mINFO[0;39m [35m[http-nio-2020-exec-3][0;39m c.s.S.m.CheckTokenImp.check :: The username of 74bb4777-67c5-4095-84fb-0635a3a83234 is Peggy
+2019-12-29 17:59:49.244 [39mDEBUG[0;39m [35m[http-nio-2020-exec-3][0;39m c.s.S.u.CheckTokensController.check :: Valid token
+2019-12-29 17:59:49.244 [34mINFO[0;39m [35m[http-nio-2020-exec-3][0;39m c.s.S.w.CreateCommentController.createComments :: Valid token
+2019-12-29 17:59:49.244 [39mDEBUG[0;39m [35m[http-nio-2020-exec-3][0;39m c.s.S.w.CreateCommentController.createComments :: Checking data is valid or not ...
+2019-12-29 17:59:49.245 [39mDEBUG[0;39m [35m[http-nio-2020-exec-3][0;39m c.s.S.w.CreateCommentController.createComments :: storeId: 7
+2019-12-29 17:59:49.245 [39mDEBUG[0;39m [35m[http-nio-2020-exec-3][0;39m c.s.S.w.CreateCommentController.createComments :: stars3.5
+2019-12-29 17:59:49.245 [39mDEBUG[0;39m [35m[http-nio-2020-exec-3][0;39m c.s.S.w.CreateCommentController.createComments :: Comments23ssaa
+2019-12-29 17:59:49.245 [39mDEBUG[0;39m [35m[http-nio-2020-exec-3][0;39m c.s.S.w.CreateCommentController.createComments :: Trying to saving picture.
+2019-12-29 17:59:49.245 [39mDEBUG[0;39m [35m[http-nio-2020-exec-3][0;39m c.s.S.w.FilesController.uploadFile :: Start to uploading files...
+2019-12-29 17:59:49.245 [39mDEBUG[0;39m [35m[http-nio-2020-exec-3][0;39m c.s.S.w.FilesController.uploadFile :: org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@17343758
+2019-12-29 17:59:49.246 [39mDEBUG[0;39m [35m[http-nio-2020-exec-3][0;39m c.s.S.u.f.FileStorageService.storeFile :: fileName: timthumb.jpeg
+2019-12-29 17:59:49.246 [39mDEBUG[0;39m [35m[http-nio-2020-exec-3][0;39m c.s.S.u.f.FileStorageService.storeFile :: targetLocation: src/main/resources/uploads/images/timthumb.jpeg
+2019-12-29 17:59:49.247 [39mDEBUG[0;39m [35m[http-nio-2020-exec-3][0;39m c.s.S.w.FilesController.uploadFile :: targetLocation: src/main/resources/uploads/images/timthumb.jpeg
+2019-12-29 17:59:49.247 [39mDEBUG[0;39m [35m[http-nio-2020-exec-3][0;39m c.s.S.w.CreateCommentController.createComments :: The pic upload sucessfully: src/main/resources/uploads/images/timthumb.jpeg
+2019-12-29 17:59:49.248 [39mDEBUG[0;39m [35m[http-nio-2020-exec-3][0;39m c.s.S.w.CreateCommentController.createComments :: saving comment..
+2019-12-29 17:59:49.376 [39mDEBUG[0;39m [35m[http-nio-2020-exec-3][0;39m c.s.S.w.CreateCommentController.createComments :: Comment saved..
+2019-12-29 17:59:59.323 [34mINFO[0;39m [35m[Thread-4][0;39m o.s.i.e.EventDrivenConsumer.logComponentSubscriptionEvent :: Removing {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2019-12-29 17:59:59.324 [34mINFO[0;39m [35m[Thread-4][0;39m o.s.i.c.PublishSubscribeChannel.adjustCounterIfNecessary :: Channel 'application.errorChannel' has 0 subscriber(s).
+2019-12-29 17:59:59.324 [34mINFO[0;39m [35m[Thread-4][0;39m o.s.i.e.EventDrivenConsumer.stop :: stopped _org.springframework.integration.errorLogger
+2019-12-29 17:59:59.326 [34mINFO[0;39m [35m[Thread-4][0;39m o.s.s.c.ThreadPoolTaskScheduler.shutdown :: Shutting down ExecutorService 'taskScheduler'
+2019-12-29 17:59:59.330 [34mINFO[0;39m [35m[Thread-4][0;39m o.s.s.c.ThreadPoolTaskExecutor.shutdown :: Shutting down ExecutorService 'applicationTaskExecutor'
+2019-12-29 17:59:59.333 [34mINFO[0;39m [35m[Thread-4][0;39m c.z.h.HikariDataSource.close :: HikariPool-1 - Shutdown initiated...
+2019-12-29 17:59:59.341 [34mINFO[0;39m [35m[Thread-4][0;39m c.z.h.HikariDataSource.close :: HikariPool-1 - Shutdown completed.
+2019-12-29 18:00:39.144 [34mINFO[0;39m [35m[main][0;39m c.s.S.SearchFoodApplication.logStarting :: Starting SearchFoodApplication on eason-P15FV2 with PID 16941 (/home/eason/Desktop/WorkPlace/Project/SearchFoodBackend/target/classes started by eason in /home/eason/Desktop/WorkPlace/Project/SearchFoodBackend)
+2019-12-29 18:00:39.148 [34mINFO[0;39m [35m[main][0;39m c.s.S.SearchFoodApplication.logStartupProfileInfo :: No active profile set, falling back to default profiles: default
+2019-12-29 18:00:40.400 [34mINFO[0;39m [35m[main][0;39m o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor.registerErrorChannel :: No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2019-12-29 18:00:40.406 [34mINFO[0;39m [35m[main][0;39m o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor.registerTaskScheduler :: No bean named 'taskScheduler' has been explicitly defined. Therefore, a default ThreadPoolTaskScheduler will be created.
+2019-12-29 18:00:40.410 [34mINFO[0;39m [35m[main][0;39m o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor.registerHeaderChannelRegistry :: No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2019-12-29 18:00:40.526 [34mINFO[0;39m [35m[main][0;39m o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization :: Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$b1e10490] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-12-29 18:00:40.547 [34mINFO[0;39m [35m[main][0;39m o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization :: Bean 'org.springframework.integration.config.IntegrationManagementConfiguration' of type [org.springframework.integration.config.IntegrationManagementConfiguration$$EnhancerBySpringCGLIB$$1cd2bfbf] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-12-29 18:00:40.564 [34mINFO[0;39m [35m[main][0;39m o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization :: Bean 'integrationDisposableAutoCreatedBeans' of type [org.springframework.integration.config.annotation.Disposables] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-12-29 18:00:40.846 [34mINFO[0;39m [35m[main][0;39m o.s.b.w.e.t.TomcatWebServer.initialize :: Tomcat initialized with port(s): 2020 (http)
+2019-12-29 18:00:40.875 [34mINFO[0;39m [35m[main][0;39m o.a.c.c.StandardService.log :: Starting service [Tomcat]
+2019-12-29 18:00:40.875 [34mINFO[0;39m [35m[main][0;39m o.a.c.c.StandardEngine.log :: Starting Servlet engine: [Apache Tomcat/9.0.22]
+2019-12-29 18:00:40.982 [34mINFO[0;39m [35m[main][0;39m o.a.c.c.C.[.[.[/].log :: Initializing Spring embedded WebApplicationContext
+2019-12-29 18:00:40.983 [34mINFO[0;39m [35m[main][0;39m o.s.w.c.ContextLoader.prepareWebApplicationContext :: Root WebApplicationContext: initialization completed in 1783 ms
+2019-12-29 18:00:41.253 [34mINFO[0;39m [35m[main][0;39m c.z.h.HikariDataSource.getConnection :: HikariPool-1 - Starting...
+2019-12-29 18:00:41.840 [34mINFO[0;39m [35m[main][0;39m c.z.h.HikariDataSource.getConnection :: HikariPool-1 - Start completed.
+2019-12-29 18:00:42.395 [39mDEBUG[0;39m [35m[main][0;39m c.s.S.u.f.FileStorageService.<init> :: fileStorageLocation: src/main/resources/uploads/images
+2019-12-29 18:00:42.757 [34mINFO[0;39m [35m[main][0;39m o.s.s.c.ThreadPoolTaskExecutor.initialize :: Initializing ExecutorService 'applicationTaskExecutor'
+2019-12-29 18:00:43.252 [34mINFO[0;39m [35m[main][0;39m o.s.b.a.e.w.EndpointLinksResolver.<init> :: Exposing 2 endpoint(s) beneath base path '/actuator'
+2019-12-29 18:00:43.366 [34mINFO[0;39m [35m[main][0;39m o.s.s.c.ThreadPoolTaskScheduler.initialize :: Initializing ExecutorService 'taskScheduler'
+2019-12-29 18:00:43.443 [34mINFO[0;39m [35m[main][0;39m o.s.i.e.EventDrivenConsumer.logComponentSubscriptionEvent :: Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2019-12-29 18:00:43.444 [34mINFO[0;39m [35m[main][0;39m o.s.i.c.PublishSubscribeChannel.adjustCounterIfNecessary :: Channel 'application.errorChannel' has 1 subscriber(s).
+2019-12-29 18:00:43.445 [34mINFO[0;39m [35m[main][0;39m o.s.i.e.EventDrivenConsumer.start :: started _org.springframework.integration.errorLogger
+2019-12-29 18:00:43.498 [34mINFO[0;39m [35m[main][0;39m o.s.b.w.e.t.TomcatWebServer.start :: Tomcat started on port(s): 2020 (http) with context path ''
+2019-12-29 18:00:43.501 [34mINFO[0;39m [35m[main][0;39m c.s.S.SearchFoodApplication.logStarted :: Started SearchFoodApplication in 4.812 seconds (JVM running for 8.626)
+2019-12-29 18:00:49.504 [34mINFO[0;39m [35m[http-nio-2020-exec-1][0;39m o.a.c.c.C.[.[.[/].log :: Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-12-29 18:00:49.505 [34mINFO[0;39m [35m[http-nio-2020-exec-1][0;39m o.s.w.s.DispatcherServlet.initServletBean :: Initializing Servlet 'dispatcherServlet'
+2019-12-29 18:00:49.516 [34mINFO[0;39m [35m[http-nio-2020-exec-1][0;39m o.s.w.s.DispatcherServlet.initServletBean :: Completed initialization in 11 ms
+2019-12-29 18:00:49.655 [39mDEBUG[0;39m [35m[http-nio-2020-exec-1][0;39m c.s.S.w.CreateCommentController.createComments :: Checking the token is valid or not...
+2019-12-29 18:00:49.655 [34mINFO[0;39m [35m[http-nio-2020-exec-1][0;39m c.s.S.u.CheckTokensController.check :: Checking token...
+2019-12-29 18:00:49.700 [34mINFO[0;39m [35m[http-nio-2020-exec-1][0;39m c.s.S.m.CheckTokenImp.isExist :: now: 2019-12-29T10:00:49.698Z
+2019-12-29 18:00:49.700 [34mINFO[0;39m [35m[http-nio-2020-exec-1][0;39m c.s.S.m.CheckTokenImp.isExist :: loginTime: 2019-12-29T07:56:54Z
+2019-12-29 18:00:49.701 [34mINFO[0;39m [35m[http-nio-2020-exec-1][0;39m c.s.S.m.CheckTokenImp.isExist :: Duration: 123
+2019-12-29 18:00:49.701 [34mINFO[0;39m [35m[http-nio-2020-exec-1][0;39m c.s.S.m.CheckTokenImp.check :: The username of 74bb4777-67c5-4095-84fb-0635a3a83234 is Peggy
+2019-12-29 18:00:49.701 [39mDEBUG[0;39m [35m[http-nio-2020-exec-1][0;39m c.s.S.u.CheckTokensController.check :: Valid token
+2019-12-29 18:00:49.702 [34mINFO[0;39m [35m[http-nio-2020-exec-1][0;39m c.s.S.w.CreateCommentController.createComments :: Valid token
+2019-12-29 18:00:49.702 [39mDEBUG[0;39m [35m[http-nio-2020-exec-1][0;39m c.s.S.w.CreateCommentController.createComments :: Checking data is valid or not ...
+2019-12-29 18:00:49.702 [39mDEBUG[0;39m [35m[http-nio-2020-exec-1][0;39m c.s.S.w.CreateCommentController.createComments :: storeId: 8
+2019-12-29 18:00:49.702 [39mDEBUG[0;39m [35m[http-nio-2020-exec-1][0;39m c.s.S.w.CreateCommentController.createComments :: stars3.5
+2019-12-29 18:00:49.702 [39mDEBUG[0;39m [35m[http-nio-2020-exec-1][0;39m c.s.S.w.CreateCommentController.createComments :: Comments23ssaa
+2019-12-29 18:00:49.703 [39mDEBUG[0;39m [35m[http-nio-2020-exec-1][0;39m c.s.S.w.CreateCommentController.createComments :: Trying to saving picture.
+2019-12-29 18:00:49.703 [39mDEBUG[0;39m [35m[http-nio-2020-exec-1][0;39m c.s.S.w.FilesController.uploadFile :: Start to uploading files...
+2019-12-29 18:00:49.704 [39mDEBUG[0;39m [35m[http-nio-2020-exec-1][0;39m c.s.S.w.FilesController.uploadFile :: org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@33adfd18
+2019-12-29 18:00:49.704 [39mDEBUG[0;39m [35m[http-nio-2020-exec-1][0;39m c.s.S.u.f.FileStorageService.storeFile :: fileName: timthumb.jpeg
+2019-12-29 18:00:49.705 [39mDEBUG[0;39m [35m[http-nio-2020-exec-1][0;39m c.s.S.u.f.FileStorageService.storeFile :: targetLocation: src/main/resources/uploads/images/timthumb.jpeg
+2019-12-29 18:00:49.707 [39mDEBUG[0;39m [35m[http-nio-2020-exec-1][0;39m c.s.S.w.FilesController.uploadFile :: targetLocation: src/main/resources/uploads/images/timthumb.jpeg
+2019-12-29 18:00:49.713 [39mDEBUG[0;39m [35m[http-nio-2020-exec-1][0;39m c.s.S.w.CreateCommentController.createComments :: The pic upload sucessfully: src/main/resources/uploads/images/timthumb.jpeg
+2019-12-29 18:00:49.714 [39mDEBUG[0;39m [35m[http-nio-2020-exec-1][0;39m c.s.S.w.CreateCommentController.createComments :: saving comment..
+2019-12-29 18:00:49.856 [1;31mERROR[0;39m [35m[http-nio-2020-exec-1][0;39m o.a.c.c.C.[.[.[.[dispatcherServlet].log :: Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed; nested exception is org.springframework.dao.DataIntegrityViolationException: PreparedStatementCallback; SQL [INSERT INTO StoreComment( storeId, username, star, price, comments, picture ) VALUES( ?, ?, ?, ?, ?, ? );]; Cannot add or update a child row: a foreign key constraint fails; nested exception is java.sql.SQLIntegrityConstraintViolationException: Cannot add or update a child row: a foreign key constraint fails] with root cause
+java.sql.SQLIntegrityConstraintViolationException: Cannot add or update a child row: a foreign key constraint fails
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:117)
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:97)
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1092)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1040)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1340)
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:1025)
+	at com.zaxxer.hikari.pool.ProxyPreparedStatement.executeUpdate(ProxyPreparedStatement.java:61)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.executeUpdate(HikariProxyPreparedStatement.java)
+	at org.springframework.jdbc.core.JdbcTemplate.lambda$update$0(JdbcTemplate.java:866)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:616)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:861)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:916)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:926)
+	at com.searchfood.SearchFoodBackend.model.CommentsImp.saveComments(CommentsImp.java:26)
+	at com.searchfood.SearchFoodBackend.model.CommentsImp$$FastClassBySpringCGLIB$$2ef60d78.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:749)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:139)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:688)
+	at com.searchfood.SearchFoodBackend.model.CommentsImp$$EnhancerBySpringCGLIB$$4849a106.saveComments(<generated>)
+	at com.searchfood.SearchFoodBackend.webapi.CreateCommentController.createComments(CreateCommentController.java:94)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:104)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:892)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:797)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1039)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:942)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1005)
+	at org.springframework.web.servlet.FrameworkServlet.doPost(FrameworkServlet.java:908)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:660)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:882)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:741)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:231)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.boot.actuate.web.trace.servlet.HttpTraceFilter.doFilterInternal(HttpTraceFilter.java:88)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:118)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:99)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:118)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:92)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:118)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.HiddenHttpMethodFilter.doFilterInternal(HiddenHttpMethodFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:118)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.filterAndRecordMetrics(WebMvcMetricsFilter.java:114)
+	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:104)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:118)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:200)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:118)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:193)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:166)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:96)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:490)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:139)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:343)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:408)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:66)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:853)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1587)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.lang.Thread.run(Thread.java:748)
+2019-12-29 18:01:19.791 [34mINFO[0;39m [35m[Thread-4][0;39m o.s.i.e.EventDrivenConsumer.logComponentSubscriptionEvent :: Removing {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2019-12-29 18:01:19.791 [34mINFO[0;39m [35m[Thread-4][0;39m o.s.i.c.PublishSubscribeChannel.adjustCounterIfNecessary :: Channel 'application.errorChannel' has 0 subscriber(s).
+2019-12-29 18:01:19.792 [34mINFO[0;39m [35m[Thread-4][0;39m o.s.i.e.EventDrivenConsumer.stop :: stopped _org.springframework.integration.errorLogger
+2019-12-29 18:01:19.793 [34mINFO[0;39m [35m[Thread-4][0;39m o.s.s.c.ThreadPoolTaskScheduler.shutdown :: Shutting down ExecutorService 'taskScheduler'
+2019-12-29 18:01:19.797 [34mINFO[0;39m [35m[Thread-4][0;39m o.s.s.c.ThreadPoolTaskExecutor.shutdown :: Shutting down ExecutorService 'applicationTaskExecutor'
+2019-12-29 18:01:19.799 [34mINFO[0;39m [35m[Thread-4][0;39m c.z.h.HikariDataSource.close :: HikariPool-1 - Shutdown initiated...
+2019-12-29 18:01:19.806 [34mINFO[0;39m [35m[Thread-4][0;39m c.z.h.HikariDataSource.close :: HikariPool-1 - Shutdown completed.
+2019-12-29 18:02:33.099 [34mINFO[0;39m [35m[main][0;39m c.s.S.SearchFoodApplication.logStarting :: Starting SearchFoodApplication on eason-P15FV2 with PID 17083 (/home/eason/Desktop/WorkPlace/Project/SearchFoodBackend/target/classes started by eason in /home/eason/Desktop/WorkPlace/Project/SearchFoodBackend)
+2019-12-29 18:02:33.103 [34mINFO[0;39m [35m[main][0;39m c.s.S.SearchFoodApplication.logStartupProfileInfo :: No active profile set, falling back to default profiles: default
+2019-12-29 18:02:34.308 [34mINFO[0;39m [35m[main][0;39m o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor.registerErrorChannel :: No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2019-12-29 18:02:34.315 [34mINFO[0;39m [35m[main][0;39m o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor.registerTaskScheduler :: No bean named 'taskScheduler' has been explicitly defined. Therefore, a default ThreadPoolTaskScheduler will be created.
+2019-12-29 18:02:34.319 [34mINFO[0;39m [35m[main][0;39m o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor.registerHeaderChannelRegistry :: No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2019-12-29 18:02:34.437 [34mINFO[0;39m [35m[main][0;39m o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization :: Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$64d59b82] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-12-29 18:02:34.464 [34mINFO[0;39m [35m[main][0;39m o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization :: Bean 'org.springframework.integration.config.IntegrationManagementConfiguration' of type [org.springframework.integration.config.IntegrationManagementConfiguration$$EnhancerBySpringCGLIB$$cfc756b1] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-12-29 18:02:34.484 [34mINFO[0;39m [35m[main][0;39m o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization :: Bean 'integrationDisposableAutoCreatedBeans' of type [org.springframework.integration.config.annotation.Disposables] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2019-12-29 18:02:34.814 [34mINFO[0;39m [35m[main][0;39m o.s.b.w.e.t.TomcatWebServer.initialize :: Tomcat initialized with port(s): 2020 (http)
+2019-12-29 18:02:34.842 [34mINFO[0;39m [35m[main][0;39m o.a.c.c.StandardService.log :: Starting service [Tomcat]
+2019-12-29 18:02:34.843 [34mINFO[0;39m [35m[main][0;39m o.a.c.c.StandardEngine.log :: Starting Servlet engine: [Apache Tomcat/9.0.22]
+2019-12-29 18:02:34.955 [34mINFO[0;39m [35m[main][0;39m o.a.c.c.C.[.[.[/].log :: Initializing Spring embedded WebApplicationContext
+2019-12-29 18:02:34.956 [34mINFO[0;39m [35m[main][0;39m o.s.w.c.ContextLoader.prepareWebApplicationContext :: Root WebApplicationContext: initialization completed in 1805 ms
+2019-12-29 18:02:35.219 [34mINFO[0;39m [35m[main][0;39m c.z.h.HikariDataSource.getConnection :: HikariPool-1 - Starting...
+2019-12-29 18:02:35.835 [34mINFO[0;39m [35m[main][0;39m c.z.h.HikariDataSource.getConnection :: HikariPool-1 - Start completed.
+2019-12-29 18:02:36.277 [39mDEBUG[0;39m [35m[main][0;39m c.s.S.u.f.FileStorageService.<init> :: fileStorageLocation: src/main/resources/uploads/images
+2019-12-29 18:02:36.604 [34mINFO[0;39m [35m[main][0;39m o.s.s.c.ThreadPoolTaskExecutor.initialize :: Initializing ExecutorService 'applicationTaskExecutor'
+2019-12-29 18:02:37.028 [34mINFO[0;39m [35m[main][0;39m o.s.b.a.e.w.EndpointLinksResolver.<init> :: Exposing 2 endpoint(s) beneath base path '/actuator'
+2019-12-29 18:02:37.117 [34mINFO[0;39m [35m[main][0;39m o.s.s.c.ThreadPoolTaskScheduler.initialize :: Initializing ExecutorService 'taskScheduler'
+2019-12-29 18:02:37.185 [34mINFO[0;39m [35m[main][0;39m o.s.i.e.EventDrivenConsumer.logComponentSubscriptionEvent :: Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2019-12-29 18:02:37.186 [34mINFO[0;39m [35m[main][0;39m o.s.i.c.PublishSubscribeChannel.adjustCounterIfNecessary :: Channel 'application.errorChannel' has 1 subscriber(s).
+2019-12-29 18:02:37.186 [34mINFO[0;39m [35m[main][0;39m o.s.i.e.EventDrivenConsumer.start :: started _org.springframework.integration.errorLogger
+2019-12-29 18:02:37.234 [34mINFO[0;39m [35m[main][0;39m o.s.b.w.e.t.TomcatWebServer.start :: Tomcat started on port(s): 2020 (http) with context path ''
+2019-12-29 18:02:37.238 [34mINFO[0;39m [35m[main][0;39m c.s.S.SearchFoodApplication.logStarted :: Started SearchFoodApplication in 4.584 seconds (JVM running for 8.466)
+2019-12-29 18:02:39.312 [34mINFO[0;39m [35m[http-nio-2020-exec-1][0;39m o.a.c.c.C.[.[.[/].log :: Initializing Spring DispatcherServlet 'dispatcherServlet'
+2019-12-29 18:02:39.313 [34mINFO[0;39m [35m[http-nio-2020-exec-1][0;39m o.s.w.s.DispatcherServlet.initServletBean :: Initializing Servlet 'dispatcherServlet'
+2019-12-29 18:02:39.325 [34mINFO[0;39m [35m[http-nio-2020-exec-1][0;39m o.s.w.s.DispatcherServlet.initServletBean :: Completed initialization in 11 ms
+2019-12-29 18:02:39.442 [39mDEBUG[0;39m [35m[http-nio-2020-exec-1][0;39m c.s.S.w.CreateCommentController.createComments :: Checking the token is valid or not...
+2019-12-29 18:02:39.443 [34mINFO[0;39m [35m[http-nio-2020-exec-1][0;39m c.s.S.u.CheckTokensController.check :: Checking token...
+2019-12-29 18:02:39.484 [34mINFO[0;39m [35m[http-nio-2020-exec-1][0;39m c.s.S.m.CheckTokenImp.isExist :: now: 2019-12-29T10:02:39.483Z
+2019-12-29 18:02:39.485 [34mINFO[0;39m [35m[http-nio-2020-exec-1][0;39m c.s.S.m.CheckTokenImp.isExist :: loginTime: 2019-12-29T07:56:54Z
+2019-12-29 18:02:39.485 [34mINFO[0;39m [35m[http-nio-2020-exec-1][0;39m c.s.S.m.CheckTokenImp.isExist :: Duration: 125
+2019-12-29 18:02:39.485 [34mINFO[0;39m [35m[http-nio-2020-exec-1][0;39m c.s.S.m.CheckTokenImp.check :: The username of 74bb4777-67c5-4095-84fb-0635a3a83234 is Peggy
+2019-12-29 18:02:39.485 [39mDEBUG[0;39m [35m[http-nio-2020-exec-1][0;39m c.s.S.u.CheckTokensController.check :: Valid token
+2019-12-29 18:02:39.485 [34mINFO[0;39m [35m[http-nio-2020-exec-1][0;39m c.s.S.w.CreateCommentController.createComments :: Valid token
+2019-12-29 18:02:39.486 [39mDEBUG[0;39m [35m[http-nio-2020-exec-1][0;39m c.s.S.w.CreateCommentController.createComments :: Checking data is valid or not ...
+2019-12-29 18:02:39.486 [39mDEBUG[0;39m [35m[http-nio-2020-exec-1][0;39m c.s.S.w.CreateCommentController.createComments :: storeId: 9
+2019-12-29 18:02:39.486 [39mDEBUG[0;39m [35m[http-nio-2020-exec-1][0;39m c.s.S.w.CreateCommentController.createComments :: stars3.5
+2019-12-29 18:02:39.486 [39mDEBUG[0;39m [35m[http-nio-2020-exec-1][0;39m c.s.S.w.CreateCommentController.createComments :: Comments23ssaa
+2019-12-29 18:02:39.487 [39mDEBUG[0;39m [35m[http-nio-2020-exec-1][0;39m c.s.S.w.CreateCommentController.createComments :: Trying to saving picture.
+2019-12-29 18:02:39.487 [39mDEBUG[0;39m [35m[http-nio-2020-exec-1][0;39m c.s.S.w.FilesController.uploadFile :: Start to uploading files...
+2019-12-29 18:02:39.488 [39mDEBUG[0;39m [35m[http-nio-2020-exec-1][0;39m c.s.S.w.FilesController.uploadFile :: org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@5709a13e
+2019-12-29 18:02:39.488 [39mDEBUG[0;39m [35m[http-nio-2020-exec-1][0;39m c.s.S.u.f.FileStorageService.storeFile :: fileName: timthumb.jpeg
+2019-12-29 18:02:39.488 [39mDEBUG[0;39m [35m[http-nio-2020-exec-1][0;39m c.s.S.u.f.FileStorageService.storeFile :: targetLocation: src/main/resources/uploads/images/timthumb.jpeg
+2019-12-29 18:02:39.491 [39mDEBUG[0;39m [35m[http-nio-2020-exec-1][0;39m c.s.S.w.FilesController.uploadFile :: targetLocation: src/main/resources/uploads/images/timthumb.jpeg
+2019-12-29 18:02:39.497 [39mDEBUG[0;39m [35m[http-nio-2020-exec-1][0;39m c.s.S.w.CreateCommentController.createComments :: The pic upload sucessfully: src/main/resources/uploads/images/timthumb.jpeg
+2019-12-29 18:02:39.497 [39mDEBUG[0;39m [35m[http-nio-2020-exec-1][0;39m c.s.S.w.CreateCommentController.createComments :: saving comment..
+2019-12-29 18:02:39.573 [39mDEBUG[0;39m [35m[http-nio-2020-exec-1][0;39m c.s.S.w.CreateCommentController.createComments :: Comment saved..
+2019-12-29 18:03:01.870 [34mINFO[0;39m [35m[Thread-4][0;39m o.s.i.e.EventDrivenConsumer.logComponentSubscriptionEvent :: Removing {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2019-12-29 18:03:01.871 [34mINFO[0;39m [35m[Thread-4][0;39m o.s.i.c.PublishSubscribeChannel.adjustCounterIfNecessary :: Channel 'application.errorChannel' has 0 subscriber(s).
+2019-12-29 18:03:01.872 [34mINFO[0;39m [35m[Thread-4][0;39m o.s.i.e.EventDrivenConsumer.stop :: stopped _org.springframework.integration.errorLogger
+2019-12-29 18:03:01.873 [34mINFO[0;39m [35m[Thread-4][0;39m o.s.s.c.ThreadPoolTaskScheduler.shutdown :: Shutting down ExecutorService 'taskScheduler'
+2019-12-29 18:03:01.877 [34mINFO[0;39m [35m[Thread-4][0;39m o.s.s.c.ThreadPoolTaskExecutor.shutdown :: Shutting down ExecutorService 'applicationTaskExecutor'
+2019-12-29 18:03:01.879 [34mINFO[0;39m [35m[Thread-4][0;39m c.z.h.HikariDataSource.close :: HikariPool-1 - Shutdown initiated...
+2019-12-29 18:03:01.886 [34mINFO[0;39m [35m[Thread-4][0;39m c.z.h.HikariDataSource.close :: HikariPool-1 - Shutdown completed.

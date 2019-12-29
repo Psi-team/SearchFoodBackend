@@ -81,12 +81,13 @@ public class FilesController{
                   .substring( targetLocation.indexOf(",")+1, targetLocation.length()-4 ); // returns the local relative path in String format.  
     } 
 
-    public String[] uploadMultipleFiles( @RequestParam("files") MultipartFile [] files ){ 
+    /* 
+    public String[] uploadMultipleFilesLocation( @RequestParam("files") MultipartFile [] files ){ 
         return Arrays.asList( files )
                      .stream()
-                     .map( file -> uploadFileLocation( file ) ) 
-                     .collect( Collectors.toList() ); 
+                     .map( file -> uploadFileLocation( file ) );  
     } 
+    */ 
 
 } 
 
