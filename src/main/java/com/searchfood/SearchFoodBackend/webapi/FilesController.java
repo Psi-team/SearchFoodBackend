@@ -12,7 +12,6 @@ import org.springframework.http.ResponseEntity;
 
 import org.springframework.web.multipart.MultipartFile; 
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder; 
-
 import org.springframework.util.StringUtils; 
 
 import org.springframework.core.io.ClassPathResource; 
@@ -63,7 +62,7 @@ public class FilesController{
         //                file.getContentType(), file.getSize() ), 
         //            HttpStatus.CREATED ); 
         
-        return new ResponseEntity<>( targetLocation, HttpStatus.CREATED ); // returns the local relative path.  
+        return new ResponseEntity<>( targetLocation, HttpStatus.CREATED ); // returns the local relative path in ResponseEntity. 
     } 
 
     @PostMapping("/uploadFiles") 
@@ -75,6 +74,20 @@ public class FilesController{
                         .map( file -> uploadFile( file ) ) 
                         .collect( Collectors.toList() ), HttpStatus.CREATED ); 
     } 
+
+    public String uploadFileLocation( @RequestParam("file") MultipartFile file ){ 
+        String targetLocation = this.uploadFile( file ).toString(); 
+        return targetLocation
+                  .substring( targetLocation.indexOf(",")+1, targetLocation.length()-4 ); // returns the local relative path in String format.  
+    } 
+
+    /* 
+    public String[] uploadMultipleFilesLocation( @RequestParam("files") MultipartFile [] files ){ 
+        return Arrays.asList( files )
+                     .stream()
+                     .map( file -> uploadFileLocation( file ) );  
+    } 
+    */ 
 
 } 
 

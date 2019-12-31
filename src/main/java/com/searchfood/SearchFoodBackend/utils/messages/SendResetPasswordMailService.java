@@ -7,6 +7,8 @@ import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Service; 
 // Autowired
 import org.springframework.beans.factory.annotation.Autowired; 
+// Async 
+import org.springframework.scheduling.annotation.Async; 
 // user-define class 
 import com.searchfood.SearchFoodBackend.utils.messages.interfaces.ResetPasswordMailService; 
 import com.searchfood.SearchFoodBackend.model.data.Emails; 
@@ -29,6 +31,7 @@ public class SendResetPasswordMailService implements ResetPasswordMailService{
     } 
 
     @Override 
+    @Async 
     public void sendEmail( Emails email, String username, String password ){ 
         msg.setTo( email.getEmail() ); 
 
@@ -40,6 +43,7 @@ public class SendResetPasswordMailService implements ResetPasswordMailService{
 
         javaMailSender.send(msg); 
         log.info("Sending email to " + email.getEmail() + "!!!" );  
+        log.info("The Thread is " + Thread.currentThread().getName()); 
     } 
     
 } 

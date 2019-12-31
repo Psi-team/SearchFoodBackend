@@ -53,8 +53,8 @@ public class SignUpMemberImp implements SignUpMemberITF{
             jdbc.update( "INSERT INTO Users( mail, username, passwd, sexual, birthyear ) VALUES( ?, ?, ?, ?, ? )", 
                                 signupmember.getMail(), signupmember.getUsername(), signupmember.getPasswd(), 
                                 signupmember.getSexual(), signupmember.getBirthyear() );  
-            jdbc.update( "INSERT INTO Token( mail, token, navigator_type ) VALUES( ?, ?, ? )", 
-                                signupmember.getMail(), token.getToken(), "Nan" ); 
+            jdbc.update( "INSERT INTO Token( mail, username, token, navigator_type ) VALUES( ?, ?, ?, ? )", 
+                                signupmember.getMail(), signupmember.getUsername(), token.getToken(), "Nan" ); 
             return true; 
         } catch( DuplicateKeyException e ){ 
             System.out.println(e.getMessage()); 

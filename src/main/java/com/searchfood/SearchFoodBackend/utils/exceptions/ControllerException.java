@@ -13,10 +13,12 @@ import org.slf4j.LoggerFactory;
 
 import com.searchfood.SearchFoodBackend.utils.exceptions.ErrorResponse; 
 import com.searchfood.SearchFoodBackend.utils.exceptions.InvalidDataException; 
+import com.searchfood.SearchFoodBackend.utils.exceptions.DataFailToLoadedException; 
+import com.searchfood.SearchFoodBackend.utils.exceptions.DataFailToSavedException; 
 import com.searchfood.SearchFoodBackend.utils.exceptions.DataNotFoundException; 
+import com.searchfood.SearchFoodBackend.utils.exceptions.DataExistException; 
 import com.searchfood.SearchFoodBackend.utils.exceptions.MemberNotFoundException; 
 import com.searchfood.SearchFoodBackend.utils.exceptions.TokenNotFoundException; 
-import com.searchfood.SearchFoodBackend.utils.exceptions.DataFailToLoadedException; 
 import com.searchfood.SearchFoodBackend.utils.exceptions.TokenExpiredException; 
 import com.searchfood.SearchFoodBackend.utils.exceptions.FilesException; 
 import com.searchfood.SearchFoodBackend.utils.exceptions.FileStorageException; 
@@ -70,9 +72,16 @@ public class ControllerException{
     } 
 
     @ExceptionHandler( DataFailToLoadedException.class ) 
-    public ResponseEntity<?> handleDataFailedToAccess( Exception e ){ 
+    public ResponseEntity<?> handleDataFailedToLoadedException( Exception e ){ 
         ErrorResponse errorResponse = new ErrorResponse( e.getMessage() ); 
-        log.warn("In ControllerException: DataFailedToAccessException."); 
+        log.warn("In ControllerException: DataFailedToLoadedException."); 
+        return new ResponseEntity<>( errorResponse, HttpStatus.CONFLICT ); 
+    } 
+
+    @ExceptionHandler( DataFailToSavedException.class ) 
+    public ResponseEntity<?> handleDataFailedToSavedException( Exception e ){ 
+        ErrorResponse errorResponse = new ErrorResponse( e.getMessage() ); 
+        log.warn("In ControllerException: DataFailedToSavedException."); 
         return new ResponseEntity<>( errorResponse, HttpStatus.CONFLICT ); 
     } 
 

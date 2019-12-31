@@ -6,12 +6,15 @@ import org.springframework.boot.context.properties.EnableConfigurationProperties
 
 import org.springframework.core.SpringVersion; 
 
+import org.springframework.scheduling.annotation.EnableAsync; 
+
 import com.searchfood.SearchFoodBackend.properties.FilesStorageProperties; 
 
 @SpringBootApplication
 @EnableConfigurationProperties({
     FilesStorageProperties.class 
 })
+@EnableAsync(proxyTargetClass=true) 
 public class SearchFoodApplication {
 
 	public static void main(String[] args) {
