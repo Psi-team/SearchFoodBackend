@@ -55,9 +55,9 @@ public class SearchStoresImp extends SearchStore{
         return searchFromStoreInfo( sqlQuery, pss ); 
     } 
 
-    public List<Map<String,Object>> getSearchByLocation( String city, String district ){ 
+    public List<Map<String,Object>> getSearchByDetailLocation( String city, String district ){ 
 
-        log.debug("By Location"); 
+        log.debug("By detail location only"); 
         
         String sqlQuery = this.sqlQuery + "WHERE city = ? AND district = ?;"; 
         this.pss = prepareStatement -> { 
@@ -66,9 +66,20 @@ public class SearchStoresImp extends SearchStore{
         return searchFromStoreInfo( sqlQuery, pss ); 
     } 
 
-    public List<Map<String,Object>> getSearchByFoodTypeWithLocation( String foodKeyWord, String city, String district ){ 
+    public List<Map<String,Object>> getSearchByCity( String city ){ 
 
-        log.debug("By Location and FoodType"); 
+        log.debug("By City"); 
+        
+        String sqlQuery = this.sqlQuery + "WHERE city = ?;"; 
+        this.pss = prepareStatement -> { 
+            prepareStatement.setString(1,city); 
+        }; 
+        return searchFromStoreInfo( sqlQuery, pss ); 
+    } 
+
+    public List<Map<String,Object>> getSearchByFoodTypeWithDetailLocation( String foodKeyWord, String city, String district ){ 
+
+        log.debug("By Detail Location and FoodType"); 
 
         String sqlQuery = this.sqlQuery + 
             "WHERE city = ? AND district = ? AND StoreInfo.storeId IN " + 
@@ -78,6 +89,21 @@ public class SearchStoresImp extends SearchStore{
             prepareStatement.setString(1,city); 
             prepareStatement.setString(2,district); 
             prepareStatement.setString(3,foodKeyWord); }; 
+        
+        return searchFromStoreInfo( sqlQuery, pss ); 
+    } 
+
+    public List<Map<String,Object>> getSearchByFoodTypeWithCity( String foodKeyWord, String city ){ 
+
+        log.debug("By City and FoodType"); 
+
+        String sqlQuery = this.sqlQuery + 
+            "WHERE city = ? AND StoreInfo.storeId IN " + 
+            "( SELECT DISTINCT( StoresMenu.storeId ) FROM StoresMenu WHERE StoresMenu.foodId IN " + 
+            "( SELECT ReferedTable.id FROM ReferedTable WHERE value REGEXP ? ) );"; 
+        this.pss = prepareStatement -> { 
+            prepareStatement.setString(1,city); 
+            prepareStatement.setString(2,foodKeyWord); }; 
         
         return searchFromStoreInfo( sqlQuery, pss ); 
     } 

@@ -63,26 +63,38 @@ public class SearchController{
         //log.info("Valid token"); 
 
         /* These if else may be replaced by @Validated in function arguements */ 
-        if( city.equals("") && !district.equals("") || !city.equals("") && district.equals("") && foodKeyWord.equals("") ){ // errors with no city but district only.  
+        if( city.equals("") && !district.equals("") || city.equals("") && district.equals("") && foodKeyWord.equals("") ){ // errors with no city but district only.  
 
+            log.debug("Bad Request"); 
             return new ResponseEntity(HttpStatus.BAD_REQUEST); 
 
-        }else if( foodKeyWord.equals("") && !city.equals("") ){ // search by location. 
+        }else if( foodKeyWord.equals("") && !city.equals("") && district.equals("") ){ // search by city only.
 
-            log.debug("Search by Locations.");  
-            resultsList = searchStoresImp.getSearchByLocation( city, district ); 
+            log.debug("Search by city.");  
+            resultsList = searchStoresImp.getSearchByCity( city ); 
 
-        }else if( !foodKeyWord.equals("") && city.equals("") ){ // search by Food. 
+        }else if( !foodKeyWord.equals("") && city.equals("") && district.equals("") ){ // search by Food only. 
 
             log.debug("Search by Food Key Word.");  
             resultsList = searchStoresImp.getSearchByFoodKeyWord( foodKeyWord ); 
 
-        }else if( !foodKeyWord.equals("") && !city.equals("") ){ // search by food and location. 
+        }else if( !foodKeyWord.equals("") && !city.equals("") && !district.equals("") ){ // search by food and detail location. 
 
             log.debug("Search by food and location.");  
-            resultsList = searchStoresImp.getSearchByFoodTypeWithLocation( foodKeyWord, city, district ); 
+            resultsList = searchStoresImp.getSearchByFoodTypeWithDetailLocation( foodKeyWord, city, district ); 
+
+        }else if( !foodKeyWord.equals("") && !city.equals("") && district.equals("") ){ // search by food with city. 
+
+            log.debug("Search by food with city."); 
+            resultsList = searchStoresImp.getSearchByFoodTypeWithCity( foodKeyWord, city ); 
+
+        }else if( foodKeyWord.equals("") && !city.equals("") && !district.equals("") ){ // search by detail location only. 
+
+            log.debug("Search by detail logcation only."); 
+            resultsList = searchStoresImp.getSearchByDetailLocation( city, district ); 
 
         }else{ 
+            log.debug("Bad Request"); 
             return new ResponseEntity(HttpStatus.BAD_REQUEST);  
         } 
 
