@@ -27,6 +27,7 @@ public class SearchFoodConfig{
 
     @Bean 
     public RestTemplate getRestTemplate(){ 
+        System.out.println(" Initializing a RestTemplate object."); 
         return new RestTemplate(); 
     } 
 

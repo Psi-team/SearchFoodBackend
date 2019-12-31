@@ -44,6 +44,7 @@ public class SendSignUpMailService implements SignUpMailService{
 
         javaMailSender.send(msg); 
         log.info("Sending email to " + signupMember.getUsername() + "!!!" );  
+        log.info("The Thread is " + Thread.currentThread().getName()); 
     } 
     
 } 

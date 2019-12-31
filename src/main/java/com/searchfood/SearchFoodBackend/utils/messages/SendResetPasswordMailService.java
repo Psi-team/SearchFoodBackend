@@ -43,6 +43,7 @@ public class SendResetPasswordMailService implements ResetPasswordMailService{
 
         javaMailSender.send(msg); 
         log.info("Sending email to " + email.getEmail() + "!!!" );  
+        log.info("The Thread is " + Thread.currentThread().getName()); 
     } 
     
 } 

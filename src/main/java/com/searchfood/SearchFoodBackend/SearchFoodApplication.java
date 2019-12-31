@@ -14,7 +14,7 @@ import com.searchfood.SearchFoodBackend.properties.FilesStorageProperties;
 @EnableConfigurationProperties({
     FilesStorageProperties.class 
 })
-@EnableAsync(proxyTargetClass = true )  
+@EnableAsync(proxyTargetClass=true) 
 public class SearchFoodApplication {
 
 	public static void main(String[] args) {
