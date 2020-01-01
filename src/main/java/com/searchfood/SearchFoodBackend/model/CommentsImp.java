@@ -28,13 +28,15 @@ public class CommentsImp{
                 comment.getStoreId(), comment.getUsername(), comment.getStar(), 
                 comment.getPrice(), comment.getComments(), picUrl ); 
 
-        log.debug("Inset into database, affect " + rows + ". "); 
 
-        // 
-        // update the average stars of the certain store. 
-        // Then using tanscation management. 
+        // update the average star of the certain store. 
+        String sqlUpdateRating = 
+            "UPDATE StorInfo SET rating = ( SELECT AVG(star) FROM StoreComment WHERE StoreComment.storeId = ? ) WHERE StorInfo.storeid = ?;"; 
+        int rows2 = jdbc.update( sqlUpdateRating, comment.getStoreId(), comment.getStoreId() ); 
 
-        if ( rows != 0 ) return true; 
+        log.debug("Insert into database, affect " + rows + ". "); 
+
+        if ( (rows+rows2) == 2 ) return true; 
         return false; 
         
     } 

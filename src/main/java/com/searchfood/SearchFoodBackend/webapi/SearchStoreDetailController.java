@@ -20,7 +20,7 @@ import java.util.Map;
 import com.searchfood.SearchFoodBackend.utils.exceptions.DataNotFoundException; 
 import com.searchfood.SearchFoodBackend.utils.CheckTokensController; 
 import com.searchfood.SearchFoodBackend.model.data.StoreInfo; 
-import com.searchfood.SearchFoodBackend.model.SearchStoreDetailImp; import com.searchfood.SearchFoodBackend.utils.CheckTokensController; 
+import com.searchfood.SearchFoodBackend.model.SearchStoreDetailImp; 
 
 @RestController 
 @CrossOrigin("*") 
@@ -41,19 +41,19 @@ public class SearchStoreDetailController{
 
     @GetMapping  
     public ResponseEntity<?> getStoreDetail( 
-            //@RequestHeader("Authorization") String token, 
+            @RequestHeader("Authorization") String token, 
             @RequestParam(value="store_id") int storeId ){ 
 
-        //username = checkTokensController.check( token ); 
+        username = checkTokensController.check( token ); 
 
         log.debug("Store Id is " + storeId ); 
 
-        if ( (this.result = searchStoreDetailImp.fetchStoreDetail(storeId)) != null ){ 
+        if ( (this.result = searchStoreDetailImp.fetchStoreDetail( storeId, username )) != null ){ 
             log.debug("results: " + this.result ); 
             return new ResponseEntity( this.result, HttpStatus.OK );  
         }
         
-        throw new DataNotFoundException("Data not found."); 
+        throw new DataNotFoundException("Data access problems."); 
 
     } 
 

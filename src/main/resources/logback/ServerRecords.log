@@ -3847,3 +3847,298 @@ java.sql.SQLException: Parameter index out of range (3 > number of parameters, w
 2019-12-31 13:43:59.100 [34mINFO[0;39m [35m[Thread-4][0;39m o.s.s.c.ThreadPoolTaskExecutor.shutdown :: Shutting down ExecutorService 'applicationTaskExecutor'
 2019-12-31 13:43:59.102 [34mINFO[0;39m [35m[Thread-4][0;39m c.z.h.HikariDataSource.close :: HikariPool-1 - Shutdown initiated...
 2019-12-31 13:43:59.109 [34mINFO[0;39m [35m[Thread-4][0;39m c.z.h.HikariDataSource.close :: HikariPool-1 - Shutdown completed.
+2020-01-01 16:06:53.605 [34mINFO[0;39m [35m[main][0;39m c.s.S.SearchFoodApplication.logStarting :: Starting SearchFoodApplication on eason-UX410UQK with PID 10176 (/home/eason/Desktop/Workplace/Projects/SearchFoodBackend/target/classes started by eason in /home/eason/Desktop/Workplace/Projects/SearchFoodBackend)
+2020-01-01 16:06:53.609 [34mINFO[0;39m [35m[main][0;39m c.s.S.SearchFoodApplication.logStartupProfileInfo :: No active profile set, falling back to default profiles: default
+2020-01-01 16:06:55.133 [34mINFO[0;39m [35m[main][0;39m o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor.registerErrorChannel :: No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2020-01-01 16:06:55.144 [34mINFO[0;39m [35m[main][0;39m o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor.registerTaskScheduler :: No bean named 'taskScheduler' has been explicitly defined. Therefore, a default ThreadPoolTaskScheduler will be created.
+2020-01-01 16:06:55.157 [34mINFO[0;39m [35m[main][0;39m o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor.registerHeaderChannelRegistry :: No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2020-01-01 16:06:55.335 [34mINFO[0;39m [35m[main][0;39m o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization :: Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$38a24f35] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-01-01 16:06:55.358 [34mINFO[0;39m [35m[main][0;39m o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization :: Bean 'org.springframework.integration.config.IntegrationManagementConfiguration' of type [org.springframework.integration.config.IntegrationManagementConfiguration$$EnhancerBySpringCGLIB$$a3940a64] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-01-01 16:06:55.381 [34mINFO[0;39m [35m[main][0;39m o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization :: Bean 'integrationDisposableAutoCreatedBeans' of type [org.springframework.integration.config.annotation.Disposables] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-01-01 16:06:55.775 [34mINFO[0;39m [35m[main][0;39m o.s.b.w.e.t.TomcatWebServer.initialize :: Tomcat initialized with port(s): 2020 (http)
+2020-01-01 16:06:55.809 [34mINFO[0;39m [35m[main][0;39m o.a.c.c.StandardService.log :: Starting service [Tomcat]
+2020-01-01 16:06:55.809 [34mINFO[0;39m [35m[main][0;39m o.a.c.c.StandardEngine.log :: Starting Servlet engine: [Apache Tomcat/9.0.22]
+2020-01-01 16:06:55.926 [34mINFO[0;39m [35m[main][0;39m o.a.c.c.C.[.[.[/].log :: Initializing Spring embedded WebApplicationContext
+2020-01-01 16:06:55.926 [34mINFO[0;39m [35m[main][0;39m o.s.w.c.ContextLoader.prepareWebApplicationContext :: Root WebApplicationContext: initialization completed in 2251 ms
+2020-01-01 16:06:56.165 [34mINFO[0;39m [35m[main][0;39m c.z.h.HikariDataSource.getConnection :: HikariPool-1 - Starting...
+2020-01-01 16:06:56.882 [34mINFO[0;39m [35m[main][0;39m c.z.h.HikariDataSource.getConnection :: HikariPool-1 - Start completed.
+2020-01-01 16:06:57.376 [39mDEBUG[0;39m [35m[main][0;39m c.s.S.u.f.FileStorageService.<init> :: fileStorageLocation: src/main/resources/uploads/images
+2020-01-01 16:06:57.737 [34mINFO[0;39m [35m[main][0;39m o.s.s.c.ThreadPoolTaskExecutor.initialize :: Initializing ExecutorService 'applicationTaskExecutor'
+2020-01-01 16:06:58.169 [34mINFO[0;39m [35m[main][0;39m o.s.b.a.e.w.EndpointLinksResolver.<init> :: Exposing 2 endpoint(s) beneath base path '/actuator'
+2020-01-01 16:06:58.262 [34mINFO[0;39m [35m[main][0;39m o.s.s.c.ThreadPoolTaskScheduler.initialize :: Initializing ExecutorService 'taskScheduler'
+2020-01-01 16:06:58.328 [34mINFO[0;39m [35m[main][0;39m o.s.i.e.EventDrivenConsumer.logComponentSubscriptionEvent :: Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2020-01-01 16:06:58.328 [34mINFO[0;39m [35m[main][0;39m o.s.i.c.PublishSubscribeChannel.adjustCounterIfNecessary :: Channel 'application.errorChannel' has 1 subscriber(s).
+2020-01-01 16:06:58.329 [34mINFO[0;39m [35m[main][0;39m o.s.i.e.EventDrivenConsumer.start :: started _org.springframework.integration.errorLogger
+2020-01-01 16:06:58.393 [34mINFO[0;39m [35m[main][0;39m o.s.b.w.e.t.TomcatWebServer.start :: Tomcat started on port(s): 2020 (http) with context path ''
+2020-01-01 16:06:58.396 [34mINFO[0;39m [35m[main][0;39m c.s.S.SearchFoodApplication.logStarted :: Started SearchFoodApplication in 5.561 seconds (JVM running for 9.909)
+2020-01-01 16:09:02.608 [34mINFO[0;39m [35m[http-nio-2020-exec-1][0;39m o.a.c.c.C.[.[.[/].log :: Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-01-01 16:09:02.609 [34mINFO[0;39m [35m[http-nio-2020-exec-1][0;39m o.s.w.s.DispatcherServlet.initServletBean :: Initializing Servlet 'dispatcherServlet'
+2020-01-01 16:09:02.623 [34mINFO[0;39m [35m[http-nio-2020-exec-1][0;39m o.s.w.s.DispatcherServlet.initServletBean :: Completed initialization in 13 ms
+2020-01-01 16:09:02.778 [34mINFO[0;39m [35m[http-nio-2020-exec-1][0;39m c.s.S.w.LoginController.login :: mail: tvjs68@test123.com, password: 1234#$%@send request to login
+2020-01-01 16:09:02.851 [34mINFO[0;39m [35m[http-nio-2020-exec-1][0;39m c.s.S.m.TokenRecordsImp.isExist :: Member tvjs68@test123.com founded.
+2020-01-01 16:09:54.139 [34mINFO[0;39m [35m[http-nio-2020-exec-2][0;39m c.s.S.u.CheckTokensController.check :: Checking token...
+2020-01-01 16:09:54.149 [34mINFO[0;39m [35m[http-nio-2020-exec-2][0;39m c.s.S.m.CheckTokenImp.isExist :: now: 2020-01-01T08:09:54.148Z
+2020-01-01 16:09:54.149 [34mINFO[0;39m [35m[http-nio-2020-exec-2][0;39m c.s.S.m.CheckTokenImp.isExist :: loginTime: 2020-01-01T08:09:02Z
+2020-01-01 16:09:54.150 [34mINFO[0;39m [35m[http-nio-2020-exec-2][0;39m c.s.S.m.CheckTokenImp.isExist :: Duration: 0
+2020-01-01 16:09:54.150 [34mINFO[0;39m [35m[http-nio-2020-exec-2][0;39m c.s.S.m.CheckTokenImp.check :: The username of 9fd9144b-bcd8-4298-a994-b39b01690171 is Jumbo
+2020-01-01 16:09:54.150 [39mDEBUG[0;39m [35m[http-nio-2020-exec-2][0;39m c.s.S.u.CheckTokensController.check :: Valid token
+2020-01-01 16:09:54.151 [39mDEBUG[0;39m [35m[http-nio-2020-exec-2][0;39m c.s.S.w.SearchStoreDetailController.getStoreDetail :: Store Id is 3
+2020-01-01 16:09:54.276 [39mDEBUG[0;39m [35m[http-nio-2020-exec-2][0;39m c.s.S.m.SearchStoreDetailImp.fetchStoreDetail :: The username has clicked this store.
+2020-01-01 16:09:54.276 [39mDEBUG[0;39m [35m[http-nio-2020-exec-2][0;39m c.s.S.w.SearchStoreDetailController.getStoreDetail :: results: {address=新北市中和區中壢路2211號, comments=[], star=0.0, businessHours={星期二=09:00~18:00, 星期六=09:00~18:00, 星期三=09:00~18:00, 星期四=09:00~18:00, 星期五=09:00~18:00, 星期日=off, 星期一=09:00~18:00}, storename=JP2, tel=0912332123, slogan=null, pictures=[null, null], tags=[速食,  麵食,  飯]}
+2020-01-01 16:10:33.604 [34mINFO[0;39m [35m[http-nio-2020-exec-3][0;39m c.s.S.u.CheckTokensController.check :: Checking token...
+2020-01-01 16:10:33.606 [34mINFO[0;39m [35m[http-nio-2020-exec-3][0;39m c.s.S.m.CheckTokenImp.isExist :: now: 2020-01-01T08:10:33.606Z
+2020-01-01 16:10:33.607 [34mINFO[0;39m [35m[http-nio-2020-exec-3][0;39m c.s.S.m.CheckTokenImp.isExist :: loginTime: 2020-01-01T08:09:02Z
+2020-01-01 16:10:33.607 [34mINFO[0;39m [35m[http-nio-2020-exec-3][0;39m c.s.S.m.CheckTokenImp.isExist :: Duration: 1
+2020-01-01 16:10:33.607 [34mINFO[0;39m [35m[http-nio-2020-exec-3][0;39m c.s.S.m.CheckTokenImp.check :: The username of 9fd9144b-bcd8-4298-a994-b39b01690171 is Jumbo
+2020-01-01 16:10:33.607 [39mDEBUG[0;39m [35m[http-nio-2020-exec-3][0;39m c.s.S.u.CheckTokensController.check :: Valid token
+2020-01-01 16:10:33.607 [39mDEBUG[0;39m [35m[http-nio-2020-exec-3][0;39m c.s.S.w.SearchStoreDetailController.getStoreDetail :: Store Id is 1
+2020-01-01 16:10:33.620 [31mWARN[0;39m [35m[http-nio-2020-exec-3][0;39m c.s.S.u.e.ControllerException.handleDataNotFoundException :: In ControllerException: NotFoundException
+2020-01-01 16:10:44.566 [34mINFO[0;39m [35m[http-nio-2020-exec-4][0;39m c.s.S.u.CheckTokensController.check :: Checking token...
+2020-01-01 16:10:44.571 [34mINFO[0;39m [35m[http-nio-2020-exec-4][0;39m c.s.S.m.CheckTokenImp.isExist :: now: 2020-01-01T08:10:44.571Z
+2020-01-01 16:10:44.572 [34mINFO[0;39m [35m[http-nio-2020-exec-4][0;39m c.s.S.m.CheckTokenImp.isExist :: loginTime: 2020-01-01T08:09:02Z
+2020-01-01 16:10:44.572 [34mINFO[0;39m [35m[http-nio-2020-exec-4][0;39m c.s.S.m.CheckTokenImp.isExist :: Duration: 1
+2020-01-01 16:10:44.573 [34mINFO[0;39m [35m[http-nio-2020-exec-4][0;39m c.s.S.m.CheckTokenImp.check :: The username of 9fd9144b-bcd8-4298-a994-b39b01690171 is Jumbo
+2020-01-01 16:10:44.573 [39mDEBUG[0;39m [35m[http-nio-2020-exec-4][0;39m c.s.S.u.CheckTokensController.check :: Valid token
+2020-01-01 16:10:44.573 [39mDEBUG[0;39m [35m[http-nio-2020-exec-4][0;39m c.s.S.w.SearchStoreDetailController.getStoreDetail :: Store Id is 2
+2020-01-01 16:10:44.579 [39mDEBUG[0;39m [35m[http-nio-2020-exec-4][0;39m c.s.S.m.SearchStoreDetailImp.fetchStoreDetail :: The username has clicked this store.
+2020-01-01 16:10:44.580 [39mDEBUG[0;39m [35m[http-nio-2020-exec-4][0;39m c.s.S.w.SearchStoreDetailController.getStoreDetail :: results: {address=台北市中和區中壢路2211號, comments=[{contents=null, createUser=Beta, pictures=null, createDate=2020-01-01}, {contents=null, createUser=Eason, pictures=null, createDate=2020-01-01}, {contents=null, createUser=Gamma, pictures=null, createDate=2020-01-01}, {contents=null, createUser=Joho12, pictures=null, createDate=2020-01-01}, {contents=null, createUser=Jumbo, pictures=null, createDate=2020-01-01}, {contents=null, createUser=Jumbo11, pictures=null, createDate=2020-01-01}, {contents=null, createUser=Jumbo12, pictures=null, createDate=2020-01-01}, {contents=null, createUser=Jumbo8, pictures=null, createDate=2020-01-01}, {contents=null, createUser=MRT22, pictures=null, createDate=2020-01-01}], star=3.44444, businessHours={星期二=09:00~18:00, 星期六=09:00~18:00, 星期三=09:00~18:00, 星期四=09:00~18:00, 星期五=09:00~18:00, 星期日=off, 星期一=09:00~18:00}, storename=JP2, tel=0912332123, slogan=null, pictures=[null, null], tags=[速食,  麵食,  飯]}
+2020-01-01 16:10:52.187 [34mINFO[0;39m [35m[Thread-4][0;39m o.s.i.e.EventDrivenConsumer.logComponentSubscriptionEvent :: Removing {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2020-01-01 16:10:52.190 [34mINFO[0;39m [35m[Thread-4][0;39m o.s.i.c.PublishSubscribeChannel.adjustCounterIfNecessary :: Channel 'application.errorChannel' has 0 subscriber(s).
+2020-01-01 16:10:52.190 [34mINFO[0;39m [35m[Thread-4][0;39m o.s.i.e.EventDrivenConsumer.stop :: stopped _org.springframework.integration.errorLogger
+2020-01-01 16:10:52.200 [34mINFO[0;39m [35m[Thread-4][0;39m o.s.s.c.ThreadPoolTaskScheduler.shutdown :: Shutting down ExecutorService 'taskScheduler'
+2020-01-01 16:10:52.205 [34mINFO[0;39m [35m[Thread-4][0;39m o.s.s.c.ThreadPoolTaskExecutor.shutdown :: Shutting down ExecutorService 'applicationTaskExecutor'
+2020-01-01 16:10:52.207 [34mINFO[0;39m [35m[Thread-4][0;39m c.z.h.HikariDataSource.close :: HikariPool-1 - Shutdown initiated...
+2020-01-01 16:10:52.227 [34mINFO[0;39m [35m[Thread-4][0;39m c.z.h.HikariDataSource.close :: HikariPool-1 - Shutdown completed.
+2020-01-01 16:11:30.502 [34mINFO[0;39m [35m[main][0;39m c.s.S.SearchFoodApplication.logStarting :: Starting SearchFoodApplication on eason-UX410UQK with PID 11038 (/home/eason/Desktop/Workplace/Projects/SearchFoodBackend/target/classes started by eason in /home/eason/Desktop/Workplace/Projects/SearchFoodBackend)
+2020-01-01 16:11:30.506 [34mINFO[0;39m [35m[main][0;39m c.s.S.SearchFoodApplication.logStartupProfileInfo :: No active profile set, falling back to default profiles: default
+2020-01-01 16:11:31.939 [34mINFO[0;39m [35m[main][0;39m o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor.registerErrorChannel :: No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2020-01-01 16:11:31.946 [34mINFO[0;39m [35m[main][0;39m o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor.registerTaskScheduler :: No bean named 'taskScheduler' has been explicitly defined. Therefore, a default ThreadPoolTaskScheduler will be created.
+2020-01-01 16:11:31.949 [34mINFO[0;39m [35m[main][0;39m o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor.registerHeaderChannelRegistry :: No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2020-01-01 16:11:32.117 [34mINFO[0;39m [35m[main][0;39m o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization :: Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$1769f78c] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-01-01 16:11:32.137 [34mINFO[0;39m [35m[main][0;39m o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization :: Bean 'org.springframework.integration.config.IntegrationManagementConfiguration' of type [org.springframework.integration.config.IntegrationManagementConfiguration$$EnhancerBySpringCGLIB$$825bb2bb] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-01-01 16:11:32.156 [34mINFO[0;39m [35m[main][0;39m o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization :: Bean 'integrationDisposableAutoCreatedBeans' of type [org.springframework.integration.config.annotation.Disposables] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-01-01 16:11:32.531 [34mINFO[0;39m [35m[main][0;39m o.s.b.w.e.t.TomcatWebServer.initialize :: Tomcat initialized with port(s): 2020 (http)
+2020-01-01 16:11:32.568 [34mINFO[0;39m [35m[main][0;39m o.a.c.c.StandardService.log :: Starting service [Tomcat]
+2020-01-01 16:11:32.568 [34mINFO[0;39m [35m[main][0;39m o.a.c.c.StandardEngine.log :: Starting Servlet engine: [Apache Tomcat/9.0.22]
+2020-01-01 16:11:32.651 [34mINFO[0;39m [35m[main][0;39m o.a.c.c.C.[.[.[/].log :: Initializing Spring embedded WebApplicationContext
+2020-01-01 16:11:32.651 [34mINFO[0;39m [35m[main][0;39m o.s.w.c.ContextLoader.prepareWebApplicationContext :: Root WebApplicationContext: initialization completed in 2081 ms
+2020-01-01 16:11:32.915 [34mINFO[0;39m [35m[main][0;39m c.z.h.HikariDataSource.getConnection :: HikariPool-1 - Starting...
+2020-01-01 16:11:33.530 [34mINFO[0;39m [35m[main][0;39m c.z.h.HikariDataSource.getConnection :: HikariPool-1 - Start completed.
+2020-01-01 16:11:34.025 [39mDEBUG[0;39m [35m[main][0;39m c.s.S.u.f.FileStorageService.<init> :: fileStorageLocation: src/main/resources/uploads/images
+2020-01-01 16:11:34.424 [34mINFO[0;39m [35m[main][0;39m o.s.s.c.ThreadPoolTaskExecutor.initialize :: Initializing ExecutorService 'applicationTaskExecutor'
+2020-01-01 16:11:34.859 [34mINFO[0;39m [35m[main][0;39m o.s.b.a.e.w.EndpointLinksResolver.<init> :: Exposing 2 endpoint(s) beneath base path '/actuator'
+2020-01-01 16:11:34.959 [34mINFO[0;39m [35m[main][0;39m o.s.s.c.ThreadPoolTaskScheduler.initialize :: Initializing ExecutorService 'taskScheduler'
+2020-01-01 16:11:35.030 [34mINFO[0;39m [35m[main][0;39m o.s.i.e.EventDrivenConsumer.logComponentSubscriptionEvent :: Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2020-01-01 16:11:35.031 [34mINFO[0;39m [35m[main][0;39m o.s.i.c.PublishSubscribeChannel.adjustCounterIfNecessary :: Channel 'application.errorChannel' has 1 subscriber(s).
+2020-01-01 16:11:35.031 [34mINFO[0;39m [35m[main][0;39m o.s.i.e.EventDrivenConsumer.start :: started _org.springframework.integration.errorLogger
+2020-01-01 16:11:35.086 [34mINFO[0;39m [35m[main][0;39m o.s.b.w.e.t.TomcatWebServer.start :: Tomcat started on port(s): 2020 (http) with context path ''
+2020-01-01 16:11:35.089 [34mINFO[0;39m [35m[main][0;39m c.s.S.SearchFoodApplication.logStarted :: Started SearchFoodApplication in 5.209 seconds (JVM running for 9.548)
+2020-01-01 16:11:52.355 [34mINFO[0;39m [35m[http-nio-2020-exec-1][0;39m o.a.c.c.C.[.[.[/].log :: Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-01-01 16:11:52.362 [34mINFO[0;39m [35m[http-nio-2020-exec-1][0;39m o.s.w.s.DispatcherServlet.initServletBean :: Initializing Servlet 'dispatcherServlet'
+2020-01-01 16:11:52.381 [34mINFO[0;39m [35m[http-nio-2020-exec-1][0;39m o.s.w.s.DispatcherServlet.initServletBean :: Completed initialization in 19 ms
+2020-01-01 16:11:52.448 [34mINFO[0;39m [35m[http-nio-2020-exec-1][0;39m c.s.S.u.CheckTokensController.check :: Checking token...
+2020-01-01 16:11:52.507 [34mINFO[0;39m [35m[http-nio-2020-exec-1][0;39m c.s.S.m.CheckTokenImp.isExist :: now: 2020-01-01T08:11:52.505Z
+2020-01-01 16:11:52.508 [34mINFO[0;39m [35m[http-nio-2020-exec-1][0;39m c.s.S.m.CheckTokenImp.isExist :: loginTime: 2020-01-01T08:09:02Z
+2020-01-01 16:11:52.508 [34mINFO[0;39m [35m[http-nio-2020-exec-1][0;39m c.s.S.m.CheckTokenImp.isExist :: Duration: 2
+2020-01-01 16:11:52.509 [34mINFO[0;39m [35m[http-nio-2020-exec-1][0;39m c.s.S.m.CheckTokenImp.check :: The username of 9fd9144b-bcd8-4298-a994-b39b01690171 is Jumbo
+2020-01-01 16:11:52.509 [39mDEBUG[0;39m [35m[http-nio-2020-exec-1][0;39m c.s.S.u.CheckTokensController.check :: Valid token
+2020-01-01 16:11:52.509 [39mDEBUG[0;39m [35m[http-nio-2020-exec-1][0;39m c.s.S.w.SearchStoreDetailController.getStoreDetail :: Store Id is 5
+2020-01-01 16:11:52.540 [39mDEBUG[0;39m [35m[http-nio-2020-exec-1][0;39m c.s.S.m.SearchStoreDetailImp.fetchStoreDetail :: TESTING The click_cum has updated.
+2020-01-01 16:11:52.542 [39mDEBUG[0;39m [35m[http-nio-2020-exec-1][0;39m c.s.S.w.SearchStoreDetailController.getStoreDetail :: results: {address=新北市中和區中正路11號, comments=[], star=0.0, businessHours={星期二=09:00~18:00, 星期六=09:00~18:00, 星期三=09:00~18:00, 星期四=09:00~18:00, 星期五=09:00~18:00, 星期日=off, 星期一=09:00~18:00}, storename=JP2, tel=0912332123, slogan=null, pictures=[null, null], tags=[速食,  麵食,  飯]}
+2020-01-01 16:12:10.371 [34mINFO[0;39m [35m[http-nio-2020-exec-3][0;39m c.s.S.u.CheckTokensController.check :: Checking token...
+2020-01-01 16:12:10.373 [34mINFO[0;39m [35m[http-nio-2020-exec-3][0;39m c.s.S.m.CheckTokenImp.isExist :: now: 2020-01-01T08:12:10.373Z
+2020-01-01 16:12:10.374 [34mINFO[0;39m [35m[http-nio-2020-exec-3][0;39m c.s.S.m.CheckTokenImp.isExist :: loginTime: 2020-01-01T08:09:02Z
+2020-01-01 16:12:10.375 [34mINFO[0;39m [35m[http-nio-2020-exec-3][0;39m c.s.S.m.CheckTokenImp.isExist :: Duration: 3
+2020-01-01 16:12:10.375 [34mINFO[0;39m [35m[http-nio-2020-exec-3][0;39m c.s.S.m.CheckTokenImp.check :: The username of 9fd9144b-bcd8-4298-a994-b39b01690171 is Jumbo
+2020-01-01 16:12:10.375 [39mDEBUG[0;39m [35m[http-nio-2020-exec-3][0;39m c.s.S.u.CheckTokensController.check :: Valid token
+2020-01-01 16:12:10.376 [39mDEBUG[0;39m [35m[http-nio-2020-exec-3][0;39m c.s.S.w.SearchStoreDetailController.getStoreDetail :: Store Id is 5
+2020-01-01 16:12:10.465 [39mDEBUG[0;39m [35m[http-nio-2020-exec-3][0;39m c.s.S.m.SearchStoreDetailImp.fetchStoreDetail :: The username has clicked this store.
+2020-01-01 16:12:10.466 [39mDEBUG[0;39m [35m[http-nio-2020-exec-3][0;39m c.s.S.w.SearchStoreDetailController.getStoreDetail :: results: {address=新北市中和區中正路11號, comments=[], star=0.0, businessHours={星期二=09:00~18:00, 星期六=09:00~18:00, 星期三=09:00~18:00, 星期四=09:00~18:00, 星期五=09:00~18:00, 星期日=off, 星期一=09:00~18:00}, storename=JP2, tel=0912332123, slogan=null, pictures=[null, null], tags=[速食,  麵食,  飯]}
+2020-01-01 16:12:19.404 [34mINFO[0;39m [35m[Thread-4][0;39m o.s.i.e.EventDrivenConsumer.logComponentSubscriptionEvent :: Removing {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2020-01-01 16:12:19.404 [34mINFO[0;39m [35m[Thread-4][0;39m o.s.i.c.PublishSubscribeChannel.adjustCounterIfNecessary :: Channel 'application.errorChannel' has 0 subscriber(s).
+2020-01-01 16:12:19.405 [34mINFO[0;39m [35m[Thread-4][0;39m o.s.i.e.EventDrivenConsumer.stop :: stopped _org.springframework.integration.errorLogger
+2020-01-01 16:12:19.406 [34mINFO[0;39m [35m[Thread-4][0;39m o.s.s.c.ThreadPoolTaskScheduler.shutdown :: Shutting down ExecutorService 'taskScheduler'
+2020-01-01 16:12:19.417 [34mINFO[0;39m [35m[Thread-4][0;39m o.s.s.c.ThreadPoolTaskExecutor.shutdown :: Shutting down ExecutorService 'applicationTaskExecutor'
+2020-01-01 16:12:19.419 [34mINFO[0;39m [35m[Thread-4][0;39m c.z.h.HikariDataSource.close :: HikariPool-1 - Shutdown initiated...
+2020-01-01 16:12:19.431 [34mINFO[0;39m [35m[Thread-4][0;39m c.z.h.HikariDataSource.close :: HikariPool-1 - Shutdown completed.
+2020-01-01 16:12:58.058 [34mINFO[0;39m [35m[main][0;39m c.s.S.SearchFoodApplication.logStarting :: Starting SearchFoodApplication on eason-UX410UQK with PID 11187 (/home/eason/Desktop/Workplace/Projects/SearchFoodBackend/target/classes started by eason in /home/eason/Desktop/Workplace/Projects/SearchFoodBackend)
+2020-01-01 16:12:58.061 [34mINFO[0;39m [35m[main][0;39m c.s.S.SearchFoodApplication.logStartupProfileInfo :: No active profile set, falling back to default profiles: default
+2020-01-01 16:12:59.485 [34mINFO[0;39m [35m[main][0;39m o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor.registerErrorChannel :: No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2020-01-01 16:12:59.491 [34mINFO[0;39m [35m[main][0;39m o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor.registerTaskScheduler :: No bean named 'taskScheduler' has been explicitly defined. Therefore, a default ThreadPoolTaskScheduler will be created.
+2020-01-01 16:12:59.496 [34mINFO[0;39m [35m[main][0;39m o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor.registerHeaderChannelRegistry :: No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2020-01-01 16:12:59.645 [34mINFO[0;39m [35m[main][0;39m o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization :: Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$f8c1ccb0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-01-01 16:12:59.671 [34mINFO[0;39m [35m[main][0;39m o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization :: Bean 'org.springframework.integration.config.IntegrationManagementConfiguration' of type [org.springframework.integration.config.IntegrationManagementConfiguration$$EnhancerBySpringCGLIB$$63b387df] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-01-01 16:12:59.693 [34mINFO[0;39m [35m[main][0;39m o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization :: Bean 'integrationDisposableAutoCreatedBeans' of type [org.springframework.integration.config.annotation.Disposables] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-01-01 16:13:00.066 [34mINFO[0;39m [35m[main][0;39m o.s.b.w.e.t.TomcatWebServer.initialize :: Tomcat initialized with port(s): 2020 (http)
+2020-01-01 16:13:00.102 [34mINFO[0;39m [35m[main][0;39m o.a.c.c.StandardService.log :: Starting service [Tomcat]
+2020-01-01 16:13:00.102 [34mINFO[0;39m [35m[main][0;39m o.a.c.c.StandardEngine.log :: Starting Servlet engine: [Apache Tomcat/9.0.22]
+2020-01-01 16:13:00.221 [34mINFO[0;39m [35m[main][0;39m o.a.c.c.C.[.[.[/].log :: Initializing Spring embedded WebApplicationContext
+2020-01-01 16:13:00.222 [34mINFO[0;39m [35m[main][0;39m o.s.w.c.ContextLoader.prepareWebApplicationContext :: Root WebApplicationContext: initialization completed in 2098 ms
+2020-01-01 16:13:00.530 [34mINFO[0;39m [35m[main][0;39m c.z.h.HikariDataSource.getConnection :: HikariPool-1 - Starting...
+2020-01-01 16:13:01.174 [34mINFO[0;39m [35m[main][0;39m c.z.h.HikariDataSource.getConnection :: HikariPool-1 - Start completed.
+2020-01-01 16:13:01.676 [39mDEBUG[0;39m [35m[main][0;39m c.s.S.u.f.FileStorageService.<init> :: fileStorageLocation: src/main/resources/uploads/images
+2020-01-01 16:13:02.080 [34mINFO[0;39m [35m[main][0;39m o.s.s.c.ThreadPoolTaskExecutor.initialize :: Initializing ExecutorService 'applicationTaskExecutor'
+2020-01-01 16:13:02.663 [34mINFO[0;39m [35m[main][0;39m o.s.b.a.e.w.EndpointLinksResolver.<init> :: Exposing 2 endpoint(s) beneath base path '/actuator'
+2020-01-01 16:13:02.791 [34mINFO[0;39m [35m[main][0;39m o.s.s.c.ThreadPoolTaskScheduler.initialize :: Initializing ExecutorService 'taskScheduler'
+2020-01-01 16:13:02.873 [34mINFO[0;39m [35m[main][0;39m o.s.i.e.EventDrivenConsumer.logComponentSubscriptionEvent :: Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2020-01-01 16:13:02.874 [34mINFO[0;39m [35m[main][0;39m o.s.i.c.PublishSubscribeChannel.adjustCounterIfNecessary :: Channel 'application.errorChannel' has 1 subscriber(s).
+2020-01-01 16:13:02.874 [34mINFO[0;39m [35m[main][0;39m o.s.i.e.EventDrivenConsumer.start :: started _org.springframework.integration.errorLogger
+2020-01-01 16:13:02.939 [34mINFO[0;39m [35m[main][0;39m o.s.b.w.e.t.TomcatWebServer.start :: Tomcat started on port(s): 2020 (http) with context path ''
+2020-01-01 16:13:02.942 [34mINFO[0;39m [35m[main][0;39m c.s.S.SearchFoodApplication.logStarted :: Started SearchFoodApplication in 5.462 seconds (JVM running for 9.768)
+2020-01-01 16:13:07.665 [34mINFO[0;39m [35m[http-nio-2020-exec-1][0;39m o.a.c.c.C.[.[.[/].log :: Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-01-01 16:13:07.666 [34mINFO[0;39m [35m[http-nio-2020-exec-1][0;39m o.s.w.s.DispatcherServlet.initServletBean :: Initializing Servlet 'dispatcherServlet'
+2020-01-01 16:13:07.683 [34mINFO[0;39m [35m[http-nio-2020-exec-1][0;39m o.s.w.s.DispatcherServlet.initServletBean :: Completed initialization in 17 ms
+2020-01-01 16:13:07.741 [34mINFO[0;39m [35m[http-nio-2020-exec-1][0;39m c.s.S.u.CheckTokensController.check :: Checking token...
+2020-01-01 16:13:07.800 [34mINFO[0;39m [35m[http-nio-2020-exec-1][0;39m c.s.S.m.CheckTokenImp.isExist :: now: 2020-01-01T08:13:07.799Z
+2020-01-01 16:13:07.801 [34mINFO[0;39m [35m[http-nio-2020-exec-1][0;39m c.s.S.m.CheckTokenImp.isExist :: loginTime: 2020-01-01T08:09:02Z
+2020-01-01 16:13:07.801 [34mINFO[0;39m [35m[http-nio-2020-exec-1][0;39m c.s.S.m.CheckTokenImp.isExist :: Duration: 4
+2020-01-01 16:13:07.802 [34mINFO[0;39m [35m[http-nio-2020-exec-1][0;39m c.s.S.m.CheckTokenImp.check :: The username of 9fd9144b-bcd8-4298-a994-b39b01690171 is Jumbo
+2020-01-01 16:13:07.802 [39mDEBUG[0;39m [35m[http-nio-2020-exec-1][0;39m c.s.S.u.CheckTokensController.check :: Valid token
+2020-01-01 16:13:07.803 [39mDEBUG[0;39m [35m[http-nio-2020-exec-1][0;39m c.s.S.w.SearchStoreDetailController.getStoreDetail :: Store Id is 5
+2020-01-01 16:13:07.926 [39mDEBUG[0;39m [35m[http-nio-2020-exec-1][0;39m c.s.S.m.SearchStoreDetailImp.fetchStoreDetail :: The username has already clicked this store. No update for click_cum
+2020-01-01 16:13:07.927 [39mDEBUG[0;39m [35m[http-nio-2020-exec-1][0;39m c.s.S.w.SearchStoreDetailController.getStoreDetail :: results: {address=新北市中和區中正路11號, comments=[], star=0.0, businessHours={星期二=09:00~18:00, 星期六=09:00~18:00, 星期三=09:00~18:00, 星期四=09:00~18:00, 星期五=09:00~18:00, 星期日=off, 星期一=09:00~18:00}, storename=JP2, tel=0912332123, slogan=null, pictures=[null, null], tags=[速食,  麵食,  飯]}
+2020-01-01 16:13:21.373 [34mINFO[0;39m [35m[http-nio-2020-exec-2][0;39m c.s.S.u.CheckTokensController.check :: Checking token...
+2020-01-01 16:13:21.375 [34mINFO[0;39m [35m[http-nio-2020-exec-2][0;39m c.s.S.m.CheckTokenImp.isExist :: now: 2020-01-01T08:13:21.375Z
+2020-01-01 16:13:21.375 [34mINFO[0;39m [35m[http-nio-2020-exec-2][0;39m c.s.S.m.CheckTokenImp.isExist :: loginTime: 2020-01-01T08:09:02Z
+2020-01-01 16:13:21.376 [34mINFO[0;39m [35m[http-nio-2020-exec-2][0;39m c.s.S.m.CheckTokenImp.isExist :: Duration: 4
+2020-01-01 16:13:21.376 [34mINFO[0;39m [35m[http-nio-2020-exec-2][0;39m c.s.S.m.CheckTokenImp.check :: The username of 9fd9144b-bcd8-4298-a994-b39b01690171 is Jumbo
+2020-01-01 16:13:21.377 [39mDEBUG[0;39m [35m[http-nio-2020-exec-2][0;39m c.s.S.u.CheckTokensController.check :: Valid token
+2020-01-01 16:13:21.377 [39mDEBUG[0;39m [35m[http-nio-2020-exec-2][0;39m c.s.S.w.SearchStoreDetailController.getStoreDetail :: Store Id is 5
+2020-01-01 16:13:21.381 [39mDEBUG[0;39m [35m[http-nio-2020-exec-2][0;39m c.s.S.m.SearchStoreDetailImp.fetchStoreDetail :: The username has already clicked this store. No update for click_cum
+2020-01-01 16:13:21.382 [39mDEBUG[0;39m [35m[http-nio-2020-exec-2][0;39m c.s.S.w.SearchStoreDetailController.getStoreDetail :: results: {address=新北市中和區中正路11號, comments=[], star=0.0, businessHours={星期二=09:00~18:00, 星期六=09:00~18:00, 星期三=09:00~18:00, 星期四=09:00~18:00, 星期五=09:00~18:00, 星期日=off, 星期一=09:00~18:00}, storename=JP2, tel=0912332123, slogan=null, pictures=[null, null], tags=[速食,  麵食,  飯]}
+2020-01-01 16:13:47.600 [34mINFO[0;39m [35m[Thread-4][0;39m o.s.i.e.EventDrivenConsumer.logComponentSubscriptionEvent :: Removing {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2020-01-01 16:13:47.603 [34mINFO[0;39m [35m[Thread-4][0;39m o.s.i.c.PublishSubscribeChannel.adjustCounterIfNecessary :: Channel 'application.errorChannel' has 0 subscriber(s).
+2020-01-01 16:13:47.605 [34mINFO[0;39m [35m[Thread-4][0;39m o.s.i.e.EventDrivenConsumer.stop :: stopped _org.springframework.integration.errorLogger
+2020-01-01 16:13:47.608 [34mINFO[0;39m [35m[Thread-4][0;39m o.s.s.c.ThreadPoolTaskScheduler.shutdown :: Shutting down ExecutorService 'taskScheduler'
+2020-01-01 16:13:47.616 [34mINFO[0;39m [35m[Thread-4][0;39m o.s.s.c.ThreadPoolTaskExecutor.shutdown :: Shutting down ExecutorService 'applicationTaskExecutor'
+2020-01-01 16:13:47.619 [34mINFO[0;39m [35m[Thread-4][0;39m c.z.h.HikariDataSource.close :: HikariPool-1 - Shutdown initiated...
+2020-01-01 16:13:47.636 [34mINFO[0;39m [35m[Thread-4][0;39m c.z.h.HikariDataSource.close :: HikariPool-1 - Shutdown completed.
+2020-01-01 16:14:17.206 [34mINFO[0;39m [35m[main][0;39m c.s.S.SearchFoodApplication.logStarting :: Starting SearchFoodApplication on eason-UX410UQK with PID 11368 (/home/eason/Desktop/Workplace/Projects/SearchFoodBackend/target/classes started by eason in /home/eason/Desktop/Workplace/Projects/SearchFoodBackend)
+2020-01-01 16:14:17.211 [34mINFO[0;39m [35m[main][0;39m c.s.S.SearchFoodApplication.logStartupProfileInfo :: No active profile set, falling back to default profiles: default
+2020-01-01 16:14:18.621 [34mINFO[0;39m [35m[main][0;39m o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor.registerErrorChannel :: No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2020-01-01 16:14:18.630 [34mINFO[0;39m [35m[main][0;39m o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor.registerTaskScheduler :: No bean named 'taskScheduler' has been explicitly defined. Therefore, a default ThreadPoolTaskScheduler will be created.
+2020-01-01 16:14:18.637 [34mINFO[0;39m [35m[main][0;39m o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor.registerHeaderChannelRegistry :: No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2020-01-01 16:14:18.794 [34mINFO[0;39m [35m[main][0;39m o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization :: Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$f84bed76] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-01-01 16:14:18.813 [34mINFO[0;39m [35m[main][0;39m o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization :: Bean 'org.springframework.integration.config.IntegrationManagementConfiguration' of type [org.springframework.integration.config.IntegrationManagementConfiguration$$EnhancerBySpringCGLIB$$633da8a5] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-01-01 16:14:18.831 [34mINFO[0;39m [35m[main][0;39m o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization :: Bean 'integrationDisposableAutoCreatedBeans' of type [org.springframework.integration.config.annotation.Disposables] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-01-01 16:14:19.168 [34mINFO[0;39m [35m[main][0;39m o.s.b.w.e.t.TomcatWebServer.initialize :: Tomcat initialized with port(s): 2020 (http)
+2020-01-01 16:14:19.206 [34mINFO[0;39m [35m[main][0;39m o.a.c.c.StandardService.log :: Starting service [Tomcat]
+2020-01-01 16:14:19.207 [34mINFO[0;39m [35m[main][0;39m o.a.c.c.StandardEngine.log :: Starting Servlet engine: [Apache Tomcat/9.0.22]
+2020-01-01 16:14:19.307 [34mINFO[0;39m [35m[main][0;39m o.a.c.c.C.[.[.[/].log :: Initializing Spring embedded WebApplicationContext
+2020-01-01 16:14:19.308 [34mINFO[0;39m [35m[main][0;39m o.s.w.c.ContextLoader.prepareWebApplicationContext :: Root WebApplicationContext: initialization completed in 2024 ms
+2020-01-01 16:14:19.606 [34mINFO[0;39m [35m[main][0;39m c.z.h.HikariDataSource.getConnection :: HikariPool-1 - Starting...
+2020-01-01 16:14:20.274 [34mINFO[0;39m [35m[main][0;39m c.z.h.HikariDataSource.getConnection :: HikariPool-1 - Start completed.
+2020-01-01 16:14:20.821 [39mDEBUG[0;39m [35m[main][0;39m c.s.S.u.f.FileStorageService.<init> :: fileStorageLocation: src/main/resources/uploads/images
+2020-01-01 16:14:21.133 [34mINFO[0;39m [35m[main][0;39m o.s.s.c.ThreadPoolTaskExecutor.initialize :: Initializing ExecutorService 'applicationTaskExecutor'
+2020-01-01 16:14:21.568 [34mINFO[0;39m [35m[main][0;39m o.s.b.a.e.w.EndpointLinksResolver.<init> :: Exposing 2 endpoint(s) beneath base path '/actuator'
+2020-01-01 16:14:21.663 [34mINFO[0;39m [35m[main][0;39m o.s.s.c.ThreadPoolTaskScheduler.initialize :: Initializing ExecutorService 'taskScheduler'
+2020-01-01 16:14:21.731 [34mINFO[0;39m [35m[main][0;39m o.s.i.e.EventDrivenConsumer.logComponentSubscriptionEvent :: Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2020-01-01 16:14:21.731 [34mINFO[0;39m [35m[main][0;39m o.s.i.c.PublishSubscribeChannel.adjustCounterIfNecessary :: Channel 'application.errorChannel' has 1 subscriber(s).
+2020-01-01 16:14:21.732 [34mINFO[0;39m [35m[main][0;39m o.s.i.e.EventDrivenConsumer.start :: started _org.springframework.integration.errorLogger
+2020-01-01 16:14:21.786 [34mINFO[0;39m [35m[main][0;39m o.s.b.w.e.t.TomcatWebServer.start :: Tomcat started on port(s): 2020 (http) with context path ''
+2020-01-01 16:14:21.789 [34mINFO[0;39m [35m[main][0;39m c.s.S.SearchFoodApplication.logStarted :: Started SearchFoodApplication in 5.239 seconds (JVM running for 10.012)
+2020-01-01 16:14:25.310 [34mINFO[0;39m [35m[http-nio-2020-exec-1][0;39m o.a.c.c.C.[.[.[/].log :: Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-01-01 16:14:25.313 [34mINFO[0;39m [35m[http-nio-2020-exec-1][0;39m o.s.w.s.DispatcherServlet.initServletBean :: Initializing Servlet 'dispatcherServlet'
+2020-01-01 16:14:25.343 [34mINFO[0;39m [35m[http-nio-2020-exec-1][0;39m o.s.w.s.DispatcherServlet.initServletBean :: Completed initialization in 28 ms
+2020-01-01 16:14:25.415 [34mINFO[0;39m [35m[http-nio-2020-exec-1][0;39m c.s.S.u.CheckTokensController.check :: Checking token...
+2020-01-01 16:14:25.485 [34mINFO[0;39m [35m[http-nio-2020-exec-1][0;39m c.s.S.m.CheckTokenImp.isExist :: now: 2020-01-01T08:14:25.484Z
+2020-01-01 16:14:25.486 [34mINFO[0;39m [35m[http-nio-2020-exec-1][0;39m c.s.S.m.CheckTokenImp.isExist :: loginTime: 2020-01-01T08:09:02Z
+2020-01-01 16:14:25.487 [34mINFO[0;39m [35m[http-nio-2020-exec-1][0;39m c.s.S.m.CheckTokenImp.isExist :: Duration: 5
+2020-01-01 16:14:25.487 [34mINFO[0;39m [35m[http-nio-2020-exec-1][0;39m c.s.S.m.CheckTokenImp.check :: The username of 9fd9144b-bcd8-4298-a994-b39b01690171 is Jumbo
+2020-01-01 16:14:25.488 [39mDEBUG[0;39m [35m[http-nio-2020-exec-1][0;39m c.s.S.u.CheckTokensController.check :: Valid token
+2020-01-01 16:14:25.489 [39mDEBUG[0;39m [35m[http-nio-2020-exec-1][0;39m c.s.S.w.SearchStoreDetailController.getStoreDetail :: Store Id is 50
+2020-01-01 16:14:25.515 [31mWARN[0;39m [35m[http-nio-2020-exec-1][0;39m c.s.S.u.e.ControllerException.handleDataNotFoundException :: In ControllerException: NotFoundException
+2020-01-01 16:14:48.551 [34mINFO[0;39m [35m[Thread-4][0;39m o.s.i.e.EventDrivenConsumer.logComponentSubscriptionEvent :: Removing {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2020-01-01 16:14:48.553 [34mINFO[0;39m [35m[Thread-4][0;39m o.s.i.c.PublishSubscribeChannel.adjustCounterIfNecessary :: Channel 'application.errorChannel' has 0 subscriber(s).
+2020-01-01 16:14:48.553 [34mINFO[0;39m [35m[Thread-4][0;39m o.s.i.e.EventDrivenConsumer.stop :: stopped _org.springframework.integration.errorLogger
+2020-01-01 16:14:48.554 [34mINFO[0;39m [35m[Thread-4][0;39m o.s.s.c.ThreadPoolTaskScheduler.shutdown :: Shutting down ExecutorService 'taskScheduler'
+2020-01-01 16:14:48.562 [34mINFO[0;39m [35m[Thread-4][0;39m o.s.s.c.ThreadPoolTaskExecutor.shutdown :: Shutting down ExecutorService 'applicationTaskExecutor'
+2020-01-01 16:14:48.563 [34mINFO[0;39m [35m[Thread-4][0;39m c.z.h.HikariDataSource.close :: HikariPool-1 - Shutdown initiated...
+2020-01-01 16:14:48.572 [34mINFO[0;39m [35m[Thread-4][0;39m c.z.h.HikariDataSource.close :: HikariPool-1 - Shutdown completed.
+2020-01-01 16:23:30.744 [34mINFO[0;39m [35m[main][0;39m c.s.S.SearchFoodApplication.logStarting :: Starting SearchFoodApplication on eason-UX410UQK with PID 11843 (/home/eason/Desktop/Workplace/Projects/SearchFoodBackend/target/classes started by eason in /home/eason/Desktop/Workplace/Projects/SearchFoodBackend)
+2020-01-01 16:23:30.749 [34mINFO[0;39m [35m[main][0;39m c.s.S.SearchFoodApplication.logStartupProfileInfo :: No active profile set, falling back to default profiles: default
+2020-01-01 16:23:32.170 [34mINFO[0;39m [35m[main][0;39m o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor.registerErrorChannel :: No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2020-01-01 16:23:32.178 [34mINFO[0;39m [35m[main][0;39m o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor.registerTaskScheduler :: No bean named 'taskScheduler' has been explicitly defined. Therefore, a default ThreadPoolTaskScheduler will be created.
+2020-01-01 16:23:32.183 [34mINFO[0;39m [35m[main][0;39m o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor.registerHeaderChannelRegistry :: No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2020-01-01 16:23:32.341 [34mINFO[0;39m [35m[main][0;39m o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization :: Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$600039dc] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-01-01 16:23:32.362 [34mINFO[0;39m [35m[main][0;39m o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization :: Bean 'org.springframework.integration.config.IntegrationManagementConfiguration' of type [org.springframework.integration.config.IntegrationManagementConfiguration$$EnhancerBySpringCGLIB$$caf1f50b] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-01-01 16:23:32.384 [34mINFO[0;39m [35m[main][0;39m o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization :: Bean 'integrationDisposableAutoCreatedBeans' of type [org.springframework.integration.config.annotation.Disposables] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-01-01 16:23:32.754 [34mINFO[0;39m [35m[main][0;39m o.s.b.w.e.t.TomcatWebServer.initialize :: Tomcat initialized with port(s): 2020 (http)
+2020-01-01 16:23:32.793 [34mINFO[0;39m [35m[main][0;39m o.a.c.c.StandardService.log :: Starting service [Tomcat]
+2020-01-01 16:23:32.793 [34mINFO[0;39m [35m[main][0;39m o.a.c.c.StandardEngine.log :: Starting Servlet engine: [Apache Tomcat/9.0.22]
+2020-01-01 16:23:32.904 [34mINFO[0;39m [35m[main][0;39m o.a.c.c.C.[.[.[/].log :: Initializing Spring embedded WebApplicationContext
+2020-01-01 16:23:32.904 [34mINFO[0;39m [35m[main][0;39m o.s.w.c.ContextLoader.prepareWebApplicationContext :: Root WebApplicationContext: initialization completed in 2088 ms
+2020-01-01 16:23:33.154 [34mINFO[0;39m [35m[main][0;39m c.z.h.HikariDataSource.getConnection :: HikariPool-1 - Starting...
+2020-01-01 16:23:33.788 [34mINFO[0;39m [35m[main][0;39m c.z.h.HikariDataSource.getConnection :: HikariPool-1 - Start completed.
+2020-01-01 16:23:34.292 [39mDEBUG[0;39m [35m[main][0;39m c.s.S.u.f.FileStorageService.<init> :: fileStorageLocation: src/main/resources/uploads/images
+2020-01-01 16:23:34.710 [34mINFO[0;39m [35m[main][0;39m o.s.s.c.ThreadPoolTaskExecutor.initialize :: Initializing ExecutorService 'applicationTaskExecutor'
+2020-01-01 16:23:35.208 [34mINFO[0;39m [35m[main][0;39m o.s.b.a.e.w.EndpointLinksResolver.<init> :: Exposing 2 endpoint(s) beneath base path '/actuator'
+2020-01-01 16:23:35.305 [34mINFO[0;39m [35m[main][0;39m o.s.s.c.ThreadPoolTaskScheduler.initialize :: Initializing ExecutorService 'taskScheduler'
+2020-01-01 16:23:35.371 [34mINFO[0;39m [35m[main][0;39m o.s.i.e.EventDrivenConsumer.logComponentSubscriptionEvent :: Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2020-01-01 16:23:35.371 [34mINFO[0;39m [35m[main][0;39m o.s.i.c.PublishSubscribeChannel.adjustCounterIfNecessary :: Channel 'application.errorChannel' has 1 subscriber(s).
+2020-01-01 16:23:35.372 [34mINFO[0;39m [35m[main][0;39m o.s.i.e.EventDrivenConsumer.start :: started _org.springframework.integration.errorLogger
+2020-01-01 16:23:35.433 [34mINFO[0;39m [35m[main][0;39m o.s.b.w.e.t.TomcatWebServer.start :: Tomcat started on port(s): 2020 (http) with context path ''
+2020-01-01 16:23:35.436 [34mINFO[0;39m [35m[main][0;39m c.s.S.SearchFoodApplication.logStarted :: Started SearchFoodApplication in 5.356 seconds (JVM running for 9.89)
+2020-01-01 16:24:16.938 [34mINFO[0;39m [35m[http-nio-2020-exec-1][0;39m o.a.c.c.C.[.[.[/].log :: Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-01-01 16:24:16.939 [34mINFO[0;39m [35m[http-nio-2020-exec-1][0;39m o.s.w.s.DispatcherServlet.initServletBean :: Initializing Servlet 'dispatcherServlet'
+2020-01-01 16:24:16.969 [34mINFO[0;39m [35m[http-nio-2020-exec-1][0;39m o.s.w.s.DispatcherServlet.initServletBean :: Completed initialization in 30 ms
+2020-01-01 16:24:17.027 [34mINFO[0;39m [35m[http-nio-2020-exec-1][0;39m c.s.S.u.CheckTokensController.check :: Checking token...
+2020-01-01 16:24:17.097 [34mINFO[0;39m [35m[http-nio-2020-exec-1][0;39m c.s.S.m.CheckTokenImp.isExist :: now: 2020-01-01T08:24:17.095Z
+2020-01-01 16:24:17.100 [34mINFO[0;39m [35m[http-nio-2020-exec-1][0;39m c.s.S.m.CheckTokenImp.isExist :: loginTime: 2020-01-01T08:09:02Z
+2020-01-01 16:24:17.104 [34mINFO[0;39m [35m[http-nio-2020-exec-1][0;39m c.s.S.m.CheckTokenImp.isExist :: Duration: 15
+2020-01-01 16:24:17.107 [34mINFO[0;39m [35m[http-nio-2020-exec-1][0;39m c.s.S.m.CheckTokenImp.check :: The username of 9fd9144b-bcd8-4298-a994-b39b01690171 is Jumbo
+2020-01-01 16:24:17.110 [39mDEBUG[0;39m [35m[http-nio-2020-exec-1][0;39m c.s.S.u.CheckTokensController.check :: Valid token
+2020-01-01 16:24:17.117 [39mDEBUG[0;39m [35m[http-nio-2020-exec-1][0;39m c.s.S.w.SearchStoreDetailController.getStoreDetail :: Store Id is 50
+2020-01-01 16:24:17.161 [31mWARN[0;39m [35m[http-nio-2020-exec-1][0;39m c.s.S.u.e.ControllerException.handleDataNotFoundException :: In ControllerException: NotFoundException
+2020-01-01 16:24:20.103 [34mINFO[0;39m [35m[http-nio-2020-exec-2][0;39m c.s.S.u.CheckTokensController.check :: Checking token...
+2020-01-01 16:24:20.105 [34mINFO[0;39m [35m[http-nio-2020-exec-2][0;39m c.s.S.m.CheckTokenImp.isExist :: now: 2020-01-01T08:24:20.105Z
+2020-01-01 16:24:20.106 [34mINFO[0;39m [35m[http-nio-2020-exec-2][0;39m c.s.S.m.CheckTokenImp.isExist :: loginTime: 2020-01-01T08:09:02Z
+2020-01-01 16:24:20.107 [34mINFO[0;39m [35m[http-nio-2020-exec-2][0;39m c.s.S.m.CheckTokenImp.isExist :: Duration: 15
+2020-01-01 16:24:20.107 [34mINFO[0;39m [35m[http-nio-2020-exec-2][0;39m c.s.S.m.CheckTokenImp.check :: The username of 9fd9144b-bcd8-4298-a994-b39b01690171 is Jumbo
+2020-01-01 16:24:20.107 [39mDEBUG[0;39m [35m[http-nio-2020-exec-2][0;39m c.s.S.u.CheckTokensController.check :: Valid token
+2020-01-01 16:24:20.108 [39mDEBUG[0;39m [35m[http-nio-2020-exec-2][0;39m c.s.S.w.SearchStoreDetailController.getStoreDetail :: Store Id is 5
+2020-01-01 16:24:20.121 [39mDEBUG[0;39m [35m[http-nio-2020-exec-2][0;39m c.s.S.m.SearchStoreDetailImp.fetchStoreDetail :: The click_cum has updated.
+2020-01-01 16:24:20.122 [39mDEBUG[0;39m [35m[http-nio-2020-exec-2][0;39m c.s.S.w.SearchStoreDetailController.getStoreDetail :: results: {address=新北市中和區中正路11號, comments=[], star=0.0, businessHours={星期二=09:00~18:00, 星期六=09:00~18:00, 星期三=09:00~18:00, 星期四=09:00~18:00, 星期五=09:00~18:00, 星期日=off, 星期一=09:00~18:00}, storename=JP2, tel=0912332123, slogan=null, pictures=[null, null], tags=[速食,  麵食,  飯]}
+2020-01-01 16:24:23.834 [34mINFO[0;39m [35m[http-nio-2020-exec-3][0;39m c.s.S.u.CheckTokensController.check :: Checking token...
+2020-01-01 16:24:23.842 [34mINFO[0;39m [35m[http-nio-2020-exec-3][0;39m c.s.S.m.CheckTokenImp.isExist :: now: 2020-01-01T08:24:23.842Z
+2020-01-01 16:24:23.843 [34mINFO[0;39m [35m[http-nio-2020-exec-3][0;39m c.s.S.m.CheckTokenImp.isExist :: loginTime: 2020-01-01T08:09:02Z
+2020-01-01 16:24:23.843 [34mINFO[0;39m [35m[http-nio-2020-exec-3][0;39m c.s.S.m.CheckTokenImp.isExist :: Duration: 15
+2020-01-01 16:24:23.843 [34mINFO[0;39m [35m[http-nio-2020-exec-3][0;39m c.s.S.m.CheckTokenImp.check :: The username of 9fd9144b-bcd8-4298-a994-b39b01690171 is Jumbo
+2020-01-01 16:24:23.843 [39mDEBUG[0;39m [35m[http-nio-2020-exec-3][0;39m c.s.S.u.CheckTokensController.check :: Valid token
+2020-01-01 16:24:23.844 [39mDEBUG[0;39m [35m[http-nio-2020-exec-3][0;39m c.s.S.w.SearchStoreDetailController.getStoreDetail :: Store Id is 2
+2020-01-01 16:24:23.873 [39mDEBUG[0;39m [35m[http-nio-2020-exec-3][0;39m c.s.S.m.SearchStoreDetailImp.fetchStoreDetail :: The click_cum has updated.
+2020-01-01 16:24:23.873 [39mDEBUG[0;39m [35m[http-nio-2020-exec-3][0;39m c.s.S.w.SearchStoreDetailController.getStoreDetail :: results: {address=台北市中和區中壢路2211號, comments=[{contents=null, createUser=Beta, pictures=null, createDate=2020-01-01}, {contents=null, createUser=Eason, pictures=null, createDate=2020-01-01}, {contents=null, createUser=Gamma, pictures=null, createDate=2020-01-01}, {contents=null, createUser=Joho12, pictures=null, createDate=2020-01-01}, {contents=null, createUser=Jumbo, pictures=null, createDate=2020-01-01}, {contents=null, createUser=Jumbo11, pictures=null, createDate=2020-01-01}, {contents=null, createUser=Jumbo12, pictures=null, createDate=2020-01-01}, {contents=null, createUser=Jumbo8, pictures=null, createDate=2020-01-01}, {contents=null, createUser=MRT22, pictures=null, createDate=2020-01-01}], star=3.44444, businessHours={星期二=09:00~18:00, 星期六=09:00~18:00, 星期三=09:00~18:00, 星期四=09:00~18:00, 星期五=09:00~18:00, 星期日=off, 星期一=09:00~18:00}, storename=JP2, tel=0912332123, slogan=null, pictures=[null, null], tags=[速食,  麵食,  飯]}
+2020-01-01 16:24:35.442 [34mINFO[0;39m [35m[http-nio-2020-exec-4][0;39m c.s.S.u.CheckTokensController.check :: Checking token...
+2020-01-01 16:24:35.446 [34mINFO[0;39m [35m[http-nio-2020-exec-4][0;39m c.s.S.m.CheckTokenImp.isExist :: now: 2020-01-01T08:24:35.446Z
+2020-01-01 16:24:35.447 [34mINFO[0;39m [35m[http-nio-2020-exec-4][0;39m c.s.S.m.CheckTokenImp.isExist :: loginTime: 2020-01-01T08:09:02Z
+2020-01-01 16:24:35.447 [34mINFO[0;39m [35m[http-nio-2020-exec-4][0;39m c.s.S.m.CheckTokenImp.isExist :: Duration: 15
+2020-01-01 16:24:35.447 [34mINFO[0;39m [35m[http-nio-2020-exec-4][0;39m c.s.S.m.CheckTokenImp.check :: The username of 9fd9144b-bcd8-4298-a994-b39b01690171 is Jumbo
+2020-01-01 16:24:35.448 [39mDEBUG[0;39m [35m[http-nio-2020-exec-4][0;39m c.s.S.u.CheckTokensController.check :: Valid token
+2020-01-01 16:24:35.448 [39mDEBUG[0;39m [35m[http-nio-2020-exec-4][0;39m c.s.S.w.SearchStoreDetailController.getStoreDetail :: Store Id is 5
+2020-01-01 16:24:35.549 [39mDEBUG[0;39m [35m[http-nio-2020-exec-4][0;39m c.s.S.m.SearchStoreDetailImp.fetchStoreDetail :: The username has already clicked this store. No update for click_cum
+2020-01-01 16:24:35.550 [39mDEBUG[0;39m [35m[http-nio-2020-exec-4][0;39m c.s.S.w.SearchStoreDetailController.getStoreDetail :: results: {address=新北市中和區中正路11號, comments=[], star=0.0, businessHours={星期二=09:00~18:00, 星期六=09:00~18:00, 星期三=09:00~18:00, 星期四=09:00~18:00, 星期五=09:00~18:00, 星期日=off, 星期一=09:00~18:00}, storename=JP2, tel=0912332123, slogan=null, pictures=[null, null], tags=[速食,  麵食,  飯]}
+2020-01-01 16:24:43.141 [34mINFO[0;39m [35m[http-nio-2020-exec-5][0;39m c.s.S.u.CheckTokensController.check :: Checking token...
+2020-01-01 16:24:43.144 [34mINFO[0;39m [35m[http-nio-2020-exec-5][0;39m c.s.S.m.CheckTokenImp.isExist :: now: 2020-01-01T08:24:43.144Z
+2020-01-01 16:24:43.145 [34mINFO[0;39m [35m[http-nio-2020-exec-5][0;39m c.s.S.m.CheckTokenImp.isExist :: loginTime: 2020-01-01T08:09:02Z
+2020-01-01 16:24:43.145 [34mINFO[0;39m [35m[http-nio-2020-exec-5][0;39m c.s.S.m.CheckTokenImp.isExist :: Duration: 15
+2020-01-01 16:24:43.146 [34mINFO[0;39m [35m[http-nio-2020-exec-5][0;39m c.s.S.m.CheckTokenImp.check :: The username of 9fd9144b-bcd8-4298-a994-b39b01690171 is Jumbo
+2020-01-01 16:24:43.146 [39mDEBUG[0;39m [35m[http-nio-2020-exec-5][0;39m c.s.S.u.CheckTokensController.check :: Valid token
+2020-01-01 16:24:43.146 [39mDEBUG[0;39m [35m[http-nio-2020-exec-5][0;39m c.s.S.w.SearchStoreDetailController.getStoreDetail :: Store Id is 2
+2020-01-01 16:24:43.153 [39mDEBUG[0;39m [35m[http-nio-2020-exec-5][0;39m c.s.S.m.SearchStoreDetailImp.fetchStoreDetail :: The username has already clicked this store. No update for click_cum
+2020-01-01 16:24:43.157 [39mDEBUG[0;39m [35m[http-nio-2020-exec-5][0;39m c.s.S.w.SearchStoreDetailController.getStoreDetail :: results: {address=台北市中和區中壢路2211號, comments=[{contents=null, createUser=Beta, pictures=null, createDate=2020-01-01}, {contents=null, createUser=Eason, pictures=null, createDate=2020-01-01}, {contents=null, createUser=Gamma, pictures=null, createDate=2020-01-01}, {contents=null, createUser=Joho12, pictures=null, createDate=2020-01-01}, {contents=null, createUser=Jumbo, pictures=null, createDate=2020-01-01}, {contents=null, createUser=Jumbo11, pictures=null, createDate=2020-01-01}, {contents=null, createUser=Jumbo12, pictures=null, createDate=2020-01-01}, {contents=null, createUser=Jumbo8, pictures=null, createDate=2020-01-01}, {contents=null, createUser=MRT22, pictures=null, createDate=2020-01-01}], star=3.44444, businessHours={星期二=09:00~18:00, 星期六=09:00~18:00, 星期三=09:00~18:00, 星期四=09:00~18:00, 星期五=09:00~18:00, 星期日=off, 星期一=09:00~18:00}, storename=JP2, tel=0912332123, slogan=null, pictures=[null, null], tags=[速食,  麵食,  飯]}
+2020-01-01 16:24:54.144 [34mINFO[0;39m [35m[http-nio-2020-exec-6][0;39m c.s.S.u.CheckTokensController.check :: Checking token...
+2020-01-01 16:24:54.148 [34mINFO[0;39m [35m[http-nio-2020-exec-6][0;39m c.s.S.m.CheckTokenImp.isExist :: now: 2020-01-01T08:24:54.148Z
+2020-01-01 16:24:54.149 [34mINFO[0;39m [35m[http-nio-2020-exec-6][0;39m c.s.S.m.CheckTokenImp.isExist :: loginTime: 2020-01-01T08:09:02Z
+2020-01-01 16:24:54.150 [34mINFO[0;39m [35m[http-nio-2020-exec-6][0;39m c.s.S.m.CheckTokenImp.isExist :: Duration: 15
+2020-01-01 16:24:54.150 [34mINFO[0;39m [35m[http-nio-2020-exec-6][0;39m c.s.S.m.CheckTokenImp.check :: The username of 9fd9144b-bcd8-4298-a994-b39b01690171 is Jumbo
+2020-01-01 16:24:54.150 [39mDEBUG[0;39m [35m[http-nio-2020-exec-6][0;39m c.s.S.u.CheckTokensController.check :: Valid token
+2020-01-01 16:24:54.150 [39mDEBUG[0;39m [35m[http-nio-2020-exec-6][0;39m c.s.S.w.SearchStoreDetailController.getStoreDetail :: Store Id is 5
+2020-01-01 16:24:54.155 [39mDEBUG[0;39m [35m[http-nio-2020-exec-6][0;39m c.s.S.m.SearchStoreDetailImp.fetchStoreDetail :: The username has already clicked this store. No update for click_cum
+2020-01-01 16:24:54.156 [39mDEBUG[0;39m [35m[http-nio-2020-exec-6][0;39m c.s.S.w.SearchStoreDetailController.getStoreDetail :: results: {address=新北市中和區中正路11號, comments=[], star=0.0, businessHours={星期二=09:00~18:00, 星期六=09:00~18:00, 星期三=09:00~18:00, 星期四=09:00~18:00, 星期五=09:00~18:00, 星期日=off, 星期一=09:00~18:00}, storename=JP2, tel=0912332123, slogan=null, pictures=[null, null], tags=[速食,  麵食,  飯]}
+2020-01-01 16:38:48.395 [34mINFO[0;39m [35m[Thread-4][0;39m o.s.i.e.EventDrivenConsumer.logComponentSubscriptionEvent :: Removing {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2020-01-01 16:38:48.401 [34mINFO[0;39m [35m[Thread-4][0;39m o.s.i.c.PublishSubscribeChannel.adjustCounterIfNecessary :: Channel 'application.errorChannel' has 0 subscriber(s).
+2020-01-01 16:38:48.402 [34mINFO[0;39m [35m[Thread-4][0;39m o.s.i.e.EventDrivenConsumer.stop :: stopped _org.springframework.integration.errorLogger
+2020-01-01 16:38:48.407 [34mINFO[0;39m [35m[Thread-4][0;39m o.s.s.c.ThreadPoolTaskScheduler.shutdown :: Shutting down ExecutorService 'taskScheduler'
+2020-01-01 16:38:48.417 [34mINFO[0;39m [35m[Thread-4][0;39m o.s.s.c.ThreadPoolTaskExecutor.shutdown :: Shutting down ExecutorService 'applicationTaskExecutor'
+2020-01-01 16:38:48.419 [34mINFO[0;39m [35m[Thread-4][0;39m c.z.h.HikariDataSource.close :: HikariPool-1 - Shutdown initiated...
+2020-01-01 16:38:48.440 [34mINFO[0;39m [35m[Thread-4][0;39m c.z.h.HikariDataSource.close :: HikariPool-1 - Shutdown completed.

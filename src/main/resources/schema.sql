@@ -105,5 +105,20 @@ CREATE TABLE IF NOT EXISTS StoreComment(
     /*FOREIGN KEY( store_name, city, district, address ) REFERENCES StoreInfo( store_name, city, district, address ) */ 
 ); 
  
+/* Records the click time a day to specific storeId */ 
+CREATE TABLE IF NOT EXISTS ClickRecords( 
+    username VARCHAR(20) NOT NULL, 
+    storeId INT NOT NULL, 
+    FOREIGN KEY( username ) REFERENCES Users( username ),
+    FOREIGN KEY( storeId ) REFERENCES StoreInfo( storeId )
+    UNIQUE KEY records ( username, storeId ) 
+); 
+
+/* auto delete data when a new day starts */ 
+/*  ref: https://noter.tw/2306/mysql%E6%8E%92%E7%A8%8Bevent-scheduler/    Not DELETE EVENTS but DROP EVENTS */ 
+CREATE EVENT AutoCleanDay 
+    ON SCHEDULE EVERY 1 DAY STARTS DATE(CURRENT_TIMESTAMP) + 1 
+    DO 
+        DELETE FROM ClickRecords; 
 
 

@@ -27,7 +27,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory; 
 
 import com.searchfood.SearchFoodBackend.model.data.Comments; 
-import com.searchfood.SearchFoodBackend.model.CommentsImp; 
+import com.searchfood.SearchFoodBackend.model.CommentsTransactionImp; 
 import com.searchfood.SearchFoodBackend.utils.CheckTokensController; 
 import com.searchfood.SearchFoodBackend.utils.exceptions.InvalidDataException; 
 import com.searchfood.SearchFoodBackend.utils.exceptions.DataFailToSavedException; 
@@ -40,14 +40,14 @@ public class CreateCommentController{
 
     final static private Logger log = LoggerFactory.getLogger( CreateCommentController.class ); 
     private CheckTokensController checkTokensController; 
-    private CommentsImp commentsImp; 
+    private CommentsTransactionImp commentsTransactionImp; 
     private RestTemplate restTemplate; 
     private FilesController fileController; 
 
     @Autowired 
-    public CreateCommentController( CheckTokensController c, CommentsImp ci, RestTemplate restTemplate, FilesController f ){ 
+    public CreateCommentController( CheckTokensController c, CommentsTransactionImp ci, RestTemplate restTemplate, FilesController f ){ 
         this.checkTokensController = c; 
-        this.commentsImp = ci; 
+        this.commentsTransactionImp = ci; 
         this.restTemplate = restTemplate; // RestTemplate 
         this.fileController = f; 
     } 
@@ -91,8 +91,9 @@ public class CreateCommentController{
         
         log.debug("saving comment.."); 
     
-        if( !commentsImp.saveComments( commentData, username, picUrl ) ) 
+        if( !commentsTransactionImp.saveComments( commentData, username, picUrl ) ) 
             throw new DataFailToSavedException("Data cannot be stored in table."); 
+
         log.debug("Comment saved.."); 
 
     } 

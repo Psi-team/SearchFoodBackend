@@ -53,8 +53,6 @@ public class StoreInfoImp implements StoreInfoITF{
 
     @Override 
     public StoreInfo createNewStoreInfoToDatabase( StoreInfo storeInfo, String username ){ 
-        //storeId = 0; // Why must need this to avoid error. 
-                     // 因為@Repository預設為Singleton因此一旦在runtime中storeId被改變不為初始化的0,它就不會是0,storeId會一直存在直到程式結束 
         this.username = username; 
         this.storeInfo = storeInfo; 
         storeInfo.setCreator( username ); 
@@ -70,7 +68,7 @@ public class StoreInfoImp implements StoreInfoITF{
 
     public boolean save(StoreInfo storeInfo){ 
 
-        //try{ 
+        try{ 
             // use KeyHolder to get storeId 
             String sql = 
                 "INSERT INTO StoreInfo(storename,city,district,address,tel,createdAt,creator,lat_long, tags) VALUES(?,?,?,?,?,?,?,?,?);"; 
@@ -92,6 +90,7 @@ public class StoreInfoImp implements StoreInfoITF{
                             return ps; 
                          }, 
                          keyHolder ); 
+
             // use storeId to insert values of businessHours. 
             int storeId = keyHolder.getKey().intValue(); 
             log.debug("Afer updating StoreInfo, the storeId is " + storeId); 
@@ -106,6 +105,7 @@ public class StoreInfoImp implements StoreInfoITF{
                          storeInfo.getBusinessHours().get("星期六"), 
                          storeInfo.getBusinessHours().get("星期日")  
             ); 
+
             // use storeId to insert key values of foods 
             List<String> detailsList = new ArrayList(); 
             storeInfo.getType()
@@ -133,18 +133,13 @@ public class StoreInfoImp implements StoreInfoITF{
                         public int getBatchSize(){ 
                             return foodIdList.size(); 
                         } 
-                    } 
-            );
+                    } );
             
             return true; 
-        //}catch( DuplicateKeyException e ){ 
-        //    return false; 
-            //throw new DataExistException("Data has existed."); 
-        //}catch( DataAccessException e ){ 
-        //    return false;  
-        //}catch( SQLException e ){ 
-        //    return false; 
-        //} 
+        }catch( DuplicateKeyException e ){ 
+            e.printStackTrace(); 
+            return false; 
+        } 
     } 
 
 
