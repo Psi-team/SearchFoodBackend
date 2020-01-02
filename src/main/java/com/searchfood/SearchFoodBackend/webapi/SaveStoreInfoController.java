@@ -17,7 +17,8 @@ import org.springframework.validation.Errors;
 // user-defined class. 
 import com.searchfood.SearchFoodBackend.model.data.StoreInfo; 
 import com.searchfood.SearchFoodBackend.utils.CheckTokensController; 
-import com.searchfood.SearchFoodBackend.model.StoreInfoTransactionImp; 
+//import com.searchfood.SearchFoodBackend.model.StoreInfoTransactionImp; 
+import com.searchfood.SearchFoodBackend.model.TransactionManagement; 
 import com.searchfood.SearchFoodBackend.utils.exceptions.InvalidDataException; 
 import com.searchfood.SearchFoodBackend.utils.exceptions.DataExistException; 
 import com.searchfood.SearchFoodBackend.utils.exceptions.TokenExpiredException; 
@@ -31,14 +32,14 @@ import org.slf4j.LoggerFactory;
 public class SaveStoreInfoController{ 
 
     private static final Logger log = LoggerFactory.getLogger( SaveStoreInfoController.class ); 
-    private StoreInfoTransactionImp storeInfoTransactionImp; 
+    private TransactionManagement transactionManagement;//private StoreInfoTransactionImp storeInfoTransactionImp; 
     private CheckTokensController checkTokensController;  
     private StoreInfo storeInfoData;  
 
     @Autowired 
-    public SaveStoreInfoController( StoreInfoTransactionImp storeInfoTransactionImp, CheckTokensController token ){ 
+    public SaveStoreInfoController( TransactionManagement transactionManagement, CheckTokensController token ){ 
         this.checkTokensController = token; 
-        this.storeInfoTransactionImp = storeInfoTransactionImp; 
+        this.transactionManagement = transactionManagement; 
     } 
 
     @PostMapping( consumes="application/json" )  
@@ -60,7 +61,7 @@ public class SaveStoreInfoController{
         } 
         log.info( "The data for building new store infomation is valid." );  
 
-        if ( (storeInfoData  = storeInfoTransactionImp.createNewStoreInfoToDatabase( storeInfo, username )) != null 
+        if ( (storeInfoData  = transactionManagement.createNewStoreInfoToDatabase( storeInfo, username )) != null 
                     && true ){ 
             // call the file upload api to store images and logo. 
             //  which can reference the ch7.1 and ch7.2 in Spring in Actions. 

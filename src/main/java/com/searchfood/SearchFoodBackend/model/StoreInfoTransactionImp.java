@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 
 import com.searchfood.SearchFoodBackend.model.interfaces.StoreInfoTransactionInterface; 
 import com.searchfood.SearchFoodBackend.model.data.StoreInfo; 
+import com.searchfood.SearchFoodBackend.model.StoreInfoImp; 
 
 @Service 
 public class StoreInfoTransactionImp implements StoreInfoTransactionInterface{ 
