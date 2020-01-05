@@ -34,8 +34,8 @@ public class TransactionManagement{
     } 
     
     @Transactional(rollbackFor=Exception.class) 
-    public StoreInfo createNewStoreInfoToDatabase( StoreInfo storeInfo, String username ){ // create new store transaction. 
-        return this.storeInfoImp.createNewStoreInfoToDatabase( storeInfo, username );  
+    public StoreInfo createNewStoreInfoToDatabase( StoreInfo storeInfo, String username, String [] picUrls ){ // create new store transaction. 
+        return this.storeInfoImp.createNewStoreInfoToDatabase( storeInfo, username, picUrls );  
     } 
 
     @Transactional(rollbackFor=Exception.class) 

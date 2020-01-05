@@ -114,6 +114,13 @@ CREATE TABLE IF NOT EXISTS ClickRecords(
     UNIQUE KEY records ( username, storeId ) 
 ); 
 
+/* saving the images of stores */ 
+CREATE TABLE IF NOT EXISTS StoreImages{ 
+    storeId INT NOT NULL, 
+    picUrl VARCHAR(150) NULL, 
+    FOREIGN KEY( storeId ) REFERENCES StoreInfo( storeId )
+}
+
 /* auto delete data when a new day starts */ 
 /*  ref: https://noter.tw/2306/mysql%E6%8E%92%E7%A8%8Bevent-scheduler/    Not DELETE EVENTS but DROP EVENTS */ 
 CREATE EVENT AutoCleanDay 

@@ -37,12 +37,13 @@ import com.searchfood.SearchFoodBackend.utils.exceptions.DataExistException;
 import com.searchfood.SearchFoodBackend.utils.exceptions.TokenNotFoundException; 
 
 @Repository 
-public class StoreInfoImp implements StoreInfoITF{ 
+public class StoreInfoImp{ 
 
     private final static Logger log = LoggerFactory.getLogger( StoreInfoImp.class ); 
     private JdbcTemplate jdbc; 
     private String username; 
     private StoreInfo storeInfo; 
+    private String [] picUrls;  
     private GetFoodTypesImp getFoodTypesImp; 
 
     @Autowired 
@@ -51,10 +52,10 @@ public class StoreInfoImp implements StoreInfoITF{
         this.getFoodTypesImp = g; 
     } 
 
-    @Override 
-    public StoreInfo createNewStoreInfoToDatabase( StoreInfo storeInfo, String username ){ 
+    public StoreInfo createNewStoreInfoToDatabase( StoreInfo storeInfo, String username, String [] picUrls ){ 
         this.username = username; 
         this.storeInfo = storeInfo; 
+        this.picUrls = picUrls; 
         storeInfo.setCreator( username ); 
         // setting localdatetime to MySQL. 
         storeInfo.setCreatedAt( LocalDateTime.now(ZoneId.of("Asia/Taipei")) ); 
@@ -132,6 +133,20 @@ public class StoreInfoImp implements StoreInfoITF{
                         @Override 
                         public int getBatchSize(){ 
                             return foodIdList.size(); 
+                        } 
+                    } );
+            /* saving the store images in table */ 
+            jdbc.batchUpdate( 
+                    "INSERT INTO StoresMenu( storeId, picUrl ) VALUES( ?, ? );", 
+                    new BatchPreparedStatementSetter(){ 
+                        @Override 
+                        public void setValues( PreparedStatement ps, int i ) throws SQLException{ 
+                            ps.setInt(1, storeId); 
+                            ps.setString(2, picUrls[i]); 
+                        } 
+                        @Override 
+                        public int getBatchSize(){ 
+                            return picUrls.length; 
                         } 
                     } );
             

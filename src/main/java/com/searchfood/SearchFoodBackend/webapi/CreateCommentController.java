@@ -88,6 +88,9 @@ public class CreateCommentController{
         */ 
 
         String picUrl = fileController.uploadFileLocation( commentData.getPic() ); 
+        if( picUrl == null ) 
+            throw new DataFailToSavedException("Picture cannot be stored in table."); 
+        
         log.debug("The pic upload sucessfully: " + picUrl ); 
         
         log.debug("saving comment.."); 
