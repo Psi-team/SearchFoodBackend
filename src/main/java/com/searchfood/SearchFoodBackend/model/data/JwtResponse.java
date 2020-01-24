@@ -3,7 +3,7 @@ package com.searchfood.SearchFoodBackend.model.data;
 import org.springframework.stereotype.annotation.Component; 
 
 @Component 
-public JwtResponse{ 
+public class JwtResponse{ 
 
     private final String jwtToken; 
 

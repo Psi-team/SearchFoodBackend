@@ -3,7 +3,7 @@ package com.searchfood.SearchFoodBackend.model.data;
 import org.springframework.stereotype.annotation.Component; 
 
 @Component 
-public JwtRequest{ 
+public class JwtRequest{ 
 
     private String username; 
     private String password; 
