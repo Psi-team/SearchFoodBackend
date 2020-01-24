@@ -106,12 +106,11 @@
             <artifactId>spring-boot-starter-security</artifactId> 
         </dependency> 
 
-        <!-- 
         <dependency> 
             <groupId>io.jsonwebtoken</groupId> 
             <artifactId>jjwt</artifactId> 
+            <version>0.7.0</version> 
         </dependency> 
-        --> 
 
         <!-- log4j2  
         <dependency> 
