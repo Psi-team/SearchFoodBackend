@@ -27,11 +27,12 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory; 
 
 import com.searchfood.SearchFoodBackend.model.data.Comments; 
-import com.searchfood.SearchFoodBackend.model.CommentsImp; 
 import com.searchfood.SearchFoodBackend.utils.CheckTokensController; 
 import com.searchfood.SearchFoodBackend.utils.exceptions.InvalidDataException; 
 import com.searchfood.SearchFoodBackend.utils.exceptions.DataFailToSavedException; 
 import com.searchfood.SearchFoodBackend.webapi.FilesController; 
+//import com.searchfood.SearchFoodBackend.model.CommentsTransactionImp; 
+import com.searchfood.SearchFoodBackend.model.TransactionManagement; 
 
 @RestController 
 @CrossOrigin("*") 
@@ -40,14 +41,14 @@ public class CreateCommentController{
 
     final static private Logger log = LoggerFactory.getLogger( CreateCommentController.class ); 
     private CheckTokensController checkTokensController; 
-    private CommentsImp commentsImp; 
+    private TransactionManagement transactionManagement;//private CommentsTransactionImp commentsTransactionImp; 
     private RestTemplate restTemplate; 
     private FilesController fileController; 
 
     @Autowired 
-    public CreateCommentController( CheckTokensController c, CommentsImp ci, RestTemplate restTemplate, FilesController f ){ 
+    public CreateCommentController( CheckTokensController c, TransactionManagement tm, RestTemplate restTemplate, FilesController f ){ 
         this.checkTokensController = c; 
-        this.commentsImp = ci; 
+        this.transactionManagement = tm; 
         this.restTemplate = restTemplate; // RestTemplate 
         this.fileController = f; 
     } 
@@ -87,12 +88,16 @@ public class CreateCommentController{
         */ 
 
         String picUrl = fileController.uploadFileLocation( commentData.getPic() ); 
+        if( picUrl == null ) 
+            throw new DataFailToSavedException("Picture cannot be stored in table."); 
+        
         log.debug("The pic upload sucessfully: " + picUrl ); 
         
         log.debug("saving comment.."); 
     
-        if( !commentsImp.saveComments( commentData, username, picUrl ) ) 
+        if( !transactionManagement.saveComments( commentData, username, picUrl ) ) 
             throw new DataFailToSavedException("Data cannot be stored in table."); 
+
         log.debug("Comment saved.."); 
 
     } 

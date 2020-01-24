@@ -37,12 +37,13 @@ import com.searchfood.SearchFoodBackend.utils.exceptions.DataExistException;
 import com.searchfood.SearchFoodBackend.utils.exceptions.TokenNotFoundException; 
 
 @Repository 
-public class StoreInfoImp implements StoreInfoITF{ 
+public class StoreInfoImp{ 
 
     private final static Logger log = LoggerFactory.getLogger( StoreInfoImp.class ); 
     private JdbcTemplate jdbc; 
     private String username; 
     private StoreInfo storeInfo; 
+    private String [] picUrls;  
     private GetFoodTypesImp getFoodTypesImp; 
 
     @Autowired 
@@ -51,12 +52,10 @@ public class StoreInfoImp implements StoreInfoITF{
         this.getFoodTypesImp = g; 
     } 
 
-    @Override 
-    public StoreInfo createNewStoreInfoToDatabase( StoreInfo storeInfo, String username ){ 
-        //storeId = 0; // Why must need this to avoid error. 
-                     // 因為@Repository預設為Singleton因此一旦在runtime中storeId被改變不為初始化的0,它就不會是0,storeId會一直存在直到程式結束 
+    public StoreInfo createNewStoreInfoToDatabase( StoreInfo storeInfo, String username, String [] picUrls ){ 
         this.username = username; 
         this.storeInfo = storeInfo; 
+        this.picUrls = picUrls; 
         storeInfo.setCreator( username ); 
         // setting localdatetime to MySQL. 
         storeInfo.setCreatedAt( LocalDateTime.now(ZoneId.of("Asia/Taipei")) ); 
@@ -70,7 +69,7 @@ public class StoreInfoImp implements StoreInfoITF{
 
     public boolean save(StoreInfo storeInfo){ 
 
-        //try{ 
+        try{ 
             // use KeyHolder to get storeId 
             String sql = 
                 "INSERT INTO StoreInfo(storename,city,district,address,tel,createdAt,creator,lat_long, tags) VALUES(?,?,?,?,?,?,?,?,?);"; 
@@ -92,6 +91,7 @@ public class StoreInfoImp implements StoreInfoITF{
                             return ps; 
                          }, 
                          keyHolder ); 
+
             // use storeId to insert values of businessHours. 
             int storeId = keyHolder.getKey().intValue(); 
             log.debug("Afer updating StoreInfo, the storeId is " + storeId); 
@@ -106,6 +106,7 @@ public class StoreInfoImp implements StoreInfoITF{
                          storeInfo.getBusinessHours().get("星期六"), 
                          storeInfo.getBusinessHours().get("星期日")  
             ); 
+
             // use storeId to insert key values of foods 
             List<String> detailsList = new ArrayList(); 
             storeInfo.getType()
@@ -133,18 +134,27 @@ public class StoreInfoImp implements StoreInfoITF{
                         public int getBatchSize(){ 
                             return foodIdList.size(); 
                         } 
-                    } 
-            );
+                    } );
+            /* saving the store images in table */ 
+            jdbc.batchUpdate( 
+                    "INSERT INTO StoresMenu( storeId, picUrl ) VALUES( ?, ? );", 
+                    new BatchPreparedStatementSetter(){ 
+                        @Override 
+                        public void setValues( PreparedStatement ps, int i ) throws SQLException{ 
+                            ps.setInt(1, storeId); 
+                            ps.setString(2, picUrls[i]); 
+                        } 
+                        @Override 
+                        public int getBatchSize(){ 
+                            return picUrls.length; 
+                        } 
+                    } );
             
             return true; 
-        //}catch( DuplicateKeyException e ){ 
-        //    return false; 
-            //throw new DataExistException("Data has existed."); 
-        //}catch( DataAccessException e ){ 
-        //    return false;  
-        //}catch( SQLException e ){ 
-        //    return false; 
-        //} 
+        }catch( DuplicateKeyException e ){ 
+            e.printStackTrace(); 
+            return false; 
+        } 
     } 
 
 

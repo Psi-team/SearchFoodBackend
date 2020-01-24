@@ -17,10 +17,13 @@ import org.springframework.validation.Errors;
 // user-defined class. 
 import com.searchfood.SearchFoodBackend.model.data.StoreInfo; 
 import com.searchfood.SearchFoodBackend.utils.CheckTokensController; 
-import com.searchfood.SearchFoodBackend.model.StoreInfoTransactionImp; 
+//import com.searchfood.SearchFoodBackend.model.StoreInfoTransactionImp; 
+import com.searchfood.SearchFoodBackend.model.TransactionManagement; 
 import com.searchfood.SearchFoodBackend.utils.exceptions.InvalidDataException; 
 import com.searchfood.SearchFoodBackend.utils.exceptions.DataExistException; 
+import com.searchfood.SearchFoodBackend.utils.exceptions.DataFailToSavedException; 
 import com.searchfood.SearchFoodBackend.utils.exceptions.TokenExpiredException; 
+import com.searchfood.SearchFoodBackend.webapi.FilesController; 
 // logger 
 import org.slf4j.Logger; 
 import org.slf4j.LoggerFactory; 
@@ -31,14 +34,16 @@ import org.slf4j.LoggerFactory;
 public class SaveStoreInfoController{ 
 
     private static final Logger log = LoggerFactory.getLogger( SaveStoreInfoController.class ); 
-    private StoreInfoTransactionImp storeInfoTransactionImp; 
+    private TransactionManagement transactionManagement;//private StoreInfoTransactionImp storeInfoTransactionImp; 
     private CheckTokensController checkTokensController;  
     private StoreInfo storeInfoData;  
+    private FilesController fileController; 
 
     @Autowired 
-    public SaveStoreInfoController( StoreInfoTransactionImp storeInfoTransactionImp, CheckTokensController token ){ 
+    public SaveStoreInfoController( TransactionManagement transactionManagement, CheckTokensController token, FilesController f ){ 
         this.checkTokensController = token; 
-        this.storeInfoTransactionImp = storeInfoTransactionImp; 
+        this.transactionManagement = transactionManagement; 
+        this.fileController = f; 
     } 
 
     @PostMapping( consumes="application/json" )  
@@ -51,20 +56,29 @@ public class SaveStoreInfoController{
 
         // checking the token is valid or expired. 
         String username = checkTokensController.check( token ); 
-        log.info("Valid token"); 
+        log.debug("Valid token"); 
         
         // check the data whether valid or not. 
         if ( errors.hasErrors() ){ 
             log.warn( "The data for build new store infomation is invalid." );  
             throw new InvalidDataException( errors ); 
         } 
-        log.info( "The data for building new store infomation is valid." );  
+        log.debug( "The data for building new store infomation is valid." );  
 
-        if ( (storeInfoData  = storeInfoTransactionImp.createNewStoreInfoToDatabase( storeInfo, username )) != null 
-                    && true ){ 
+        String [] picUrls = null ; 
+        /* 
+        picUrls = fileController.uploadMultipleFilesLocation( files  ); // files is an array of files. 
+        if( picUrls == null ){ 
+            throw new DataFailToSavedException("Picture cannot be stored in table."); 
+        } 
+        */ 
+
+        if ( (storeInfoData  = 
+                    transactionManagement.createNewStoreInfoToDatabase( storeInfo, username, picUrls )) 
+                        != null ){ 
             // call the file upload api to store images and logo. 
             //  which can reference the ch7.1 and ch7.2 in Spring in Actions. 
-            log.info( username + " has created the new store info " + storeInfo.getStorename() + "." ); 
+            log.debug( username + " has created the new store info " + storeInfo.getStorename() + "." ); 
             return new ResponseEntity<>( storeInfoData, HttpStatus.CREATED ); 
         } 
 

@@ -17,7 +17,8 @@ import org.springframework.validation.Errors; // If constraints don't meet, capt
 // User-defined class 
 import com.searchfood.SearchFoodBackend.model.data.TokenRecords; 
 import com.searchfood.SearchFoodBackend.model.data.SignUpMember;  
-import com.searchfood.SearchFoodBackend.model.SignUpMemberTransactionImp; 
+//import com.searchfood.SearchFoodBackend.model.SignUpMemberTransactionImp; 
+import com.searchfood.SearchFoodBackend.model.TransactionManagement; 
 // logging import org.slf4j.Logger; 
 import org.slf4j.Logger; 
 import org.slf4j.LoggerFactory; 
@@ -31,15 +32,15 @@ import com.searchfood.SearchFoodBackend.utils.messages.interfaces.SignUpMailServ
 @RequestMapping( value="signup", produces="application/json" ) 
 public class SignUpController{ 
 
-    private SignUpMemberTransactionImp signupTransactionImp;  
+    private TransactionManagement transactionManagement;//private SignUpMemberTransactionImp signupTransactionImp;  
     private TokenRecords token; 
     private SignUpMailService signupMailService; 
 
     private static final Logger log = LoggerFactory.getLogger( SignUpController.class ); 
 
     @Autowired 
-    public SignUpController( SignUpMemberTransactionImp signupImp, SignUpMailService signupMailService ){ 
-        this.signupTransactionImp = signupImp; 
+    public SignUpController( TransactionManagement transactionManagement, SignUpMailService signupMailService ){ 
+        this.transactionManagement = transactionManagement; 
         this.signupMailService = signupMailService; 
     } 
     
@@ -55,7 +56,7 @@ public class SignUpController{
             throw new InvalidDataException( errors ); 
         } 
 
-        this.token = signupTransactionImp.saveToUsers( signupmember ); 
+        this.token = transactionManagement.saveToUsers( signupmember ); 
         if ( token == null ){ 
             throw new DataExistException("The mail has existed."); 
         } 

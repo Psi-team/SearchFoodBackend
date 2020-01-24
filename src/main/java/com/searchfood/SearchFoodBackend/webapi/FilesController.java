@@ -13,7 +13,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.multipart.MultipartFile; 
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder; 
 import org.springframework.util.StringUtils; 
-
 import org.springframework.core.io.ClassPathResource; 
 
 import org.slf4j.Logger;
@@ -21,6 +20,8 @@ import org.slf4j.LoggerFactory;
 
 import java.util.List; 
 import java.util.Arrays; 
+import java.util.ArrayList; 
+import java.util.Map; 
 import java.util.stream.Collectors; 
 
 import java.io.IOException; 
@@ -66,12 +67,11 @@ public class FilesController{
     } 
 
     @PostMapping("/uploadFiles") 
-    //public List<UploadFileResponse> uploadMultipleFiles( @RequestParam("files") MultipartFile [] files ){ 
     public ResponseEntity<?> uploadMultipleFiles( @RequestParam("files") MultipartFile [] files ){ 
         return new ResponseEntity<>( 
                 Arrays.asList( files )
                         .stream()
-                        .map( file -> uploadFile( file ) ) 
+                        .map( file -> uploadFile( file ) )
                         .collect( Collectors.toList() ), HttpStatus.CREATED ); 
     } 
 
@@ -81,13 +81,20 @@ public class FilesController{
                   .substring( targetLocation.indexOf(",")+1, targetLocation.length()-4 ); // returns the local relative path in String format.  
     } 
 
-    /* 
+
     public String[] uploadMultipleFilesLocation( @RequestParam("files") MultipartFile [] files ){ 
-        return Arrays.asList( files )
-                     .stream()
-                     .map( file -> uploadFileLocation( file ) );  
+        List<ResponseEntity> results = this.uploadMultipleFiles( files ); 
+        List<String> targetLocations = new ArrayList<>(); 
+        results.forEach( 
+                responseEntity -> 
+                    targetLocations.add( 
+                        responseEntity
+                            .toString()
+                            .substring( responseEntity.indexOf(",")+1, responseEntity.length()-4 ) 
+                    )
+                ); 
+        return targetLocations.stream().toArray( n -> new String[n] ); 
     } 
-    */ 
 
 } 
 
