@@ -82,6 +82,7 @@ public class FilesController{
     } 
 
 
+    /* 
     public String[] uploadMultipleFilesLocation( @RequestParam("files") MultipartFile [] files ){ 
         List<ResponseEntity> results = this.uploadMultipleFiles( files ); 
         List<String> targetLocations = new ArrayList<>(); 
@@ -95,6 +96,7 @@ public class FilesController{
                 ); 
         return targetLocations.stream().toArray( n -> new String[n] ); 
     } 
+    */ 
 
 } 
 

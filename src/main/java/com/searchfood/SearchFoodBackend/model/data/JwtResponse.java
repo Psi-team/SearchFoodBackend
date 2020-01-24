@@ -1,11 +1,12 @@
+/* 
 package com.searchfood.SearchFoodBackend.model.data; 
 
-import org.springframework.stereotype.annotation.Component; 
+import org.springframework.stereotype.Component; 
 
 @Component 
 public class JwtResponse{ 
 
-    private final String jwtToken; 
+    private String jwtToken; 
 
     public JwtResponse( String jwtToken ){ 
         this.jwtToken = jwtToken; 
@@ -16,8 +17,9 @@ public class JwtResponse{
     } 
 
     public void setJwtToken( String token ){ 
-        return this.jwtToken = token; 
+        this.jwtToken = token; 
     } 
 
 } 
+*/ 
 

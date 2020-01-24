@@ -1,6 +1,7 @@
+/* 
 package com.searchfood.SearchFoodBackend.model.data; 
 
-import org.springframework.stereotype.annotation.Component; 
+import org.springframework.stereotype.Component; 
 
 @Component 
 public class JwtRequest{ 
@@ -29,4 +30,5 @@ public class JwtRequest{
     } 
 
 } 
+*/ 
 
