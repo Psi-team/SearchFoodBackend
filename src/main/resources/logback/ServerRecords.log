@@ -1,240 +1,31 @@
-2020-01-05 20:50:40.215 [34mINFO[0;39m [35m[main][0;39m c.s.S.SearchFoodApplication.logStarting :: Starting SearchFoodApplication on eason-UX410UQK with PID 3562 (/home/eason/Desktop/Workplace/Projects/SearchFoodBackend/target/classes started by eason in /home/eason/Desktop/Workplace/Projects/SearchFoodBackend)
-2020-01-05 20:50:40.226 [34mINFO[0;39m [35m[main][0;39m c.s.S.SearchFoodApplication.logStartupProfileInfo :: No active profile set, falling back to default profiles: default
-2020-01-05 20:50:41.709 [34mINFO[0;39m [35m[main][0;39m o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor.registerErrorChannel :: No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
-2020-01-05 20:50:41.718 [34mINFO[0;39m [35m[main][0;39m o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor.registerTaskScheduler :: No bean named 'taskScheduler' has been explicitly defined. Therefore, a default ThreadPoolTaskScheduler will be created.
-2020-01-05 20:50:41.725 [34mINFO[0;39m [35m[main][0;39m o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor.registerHeaderChannelRegistry :: No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
-2020-01-05 20:50:41.890 [34mINFO[0;39m [35m[main][0;39m o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization :: Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$bf1f3396] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-01-05 20:50:41.912 [34mINFO[0;39m [35m[main][0;39m o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization :: Bean 'org.springframework.integration.config.IntegrationManagementConfiguration' of type [org.springframework.integration.config.IntegrationManagementConfiguration$$EnhancerBySpringCGLIB$$2a10eec5] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-01-05 20:50:41.933 [34mINFO[0;39m [35m[main][0;39m o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization :: Bean 'integrationDisposableAutoCreatedBeans' of type [org.springframework.integration.config.annotation.Disposables] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-01-05 20:50:42.328 [34mINFO[0;39m [35m[main][0;39m o.s.b.w.e.t.TomcatWebServer.initialize :: Tomcat initialized with port(s): 2020 (http)
-2020-01-05 20:50:42.399 [34mINFO[0;39m [35m[main][0;39m o.a.c.c.StandardService.log :: Starting service [Tomcat]
-2020-01-05 20:50:42.399 [34mINFO[0;39m [35m[main][0;39m o.a.c.c.StandardEngine.log :: Starting Servlet engine: [Apache Tomcat/9.0.22]
-2020-01-05 20:50:42.481 [34mINFO[0;39m [35m[main][0;39m o.a.c.c.C.[.[.[/].log :: Initializing Spring embedded WebApplicationContext
-2020-01-05 20:50:42.481 [34mINFO[0;39m [35m[main][0;39m o.s.w.c.ContextLoader.prepareWebApplicationContext :: Root WebApplicationContext: initialization completed in 2178 ms
-2020-01-05 20:50:42.744 [34mINFO[0;39m [35m[main][0;39m c.z.h.HikariDataSource.getConnection :: HikariPool-1 - Starting...
-2020-01-05 20:50:43.441 [34mINFO[0;39m [35m[main][0;39m c.z.h.HikariDataSource.getConnection :: HikariPool-1 - Start completed.
-2020-01-05 20:50:43.963 [39mDEBUG[0;39m [35m[main][0;39m c.s.S.u.f.FileStorageService.<init> :: fileStorageLocation: src/main/resources/uploads/images
-2020-01-05 20:50:44.295 [34mINFO[0;39m [35m[main][0;39m o.s.s.c.ThreadPoolTaskExecutor.initialize :: Initializing ExecutorService 'applicationTaskExecutor'
-2020-01-05 20:50:44.743 [34mINFO[0;39m [35m[main][0;39m o.s.b.a.e.w.EndpointLinksResolver.<init> :: Exposing 2 endpoint(s) beneath base path '/actuator'
-2020-01-05 20:50:44.839 [34mINFO[0;39m [35m[main][0;39m o.s.s.c.ThreadPoolTaskScheduler.initialize :: Initializing ExecutorService 'taskScheduler'
-2020-01-05 20:50:44.909 [34mINFO[0;39m [35m[main][0;39m o.s.i.e.EventDrivenConsumer.logComponentSubscriptionEvent :: Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
-2020-01-05 20:50:44.910 [34mINFO[0;39m [35m[main][0;39m o.s.i.c.PublishSubscribeChannel.adjustCounterIfNecessary :: Channel 'application.errorChannel' has 1 subscriber(s).
-2020-01-05 20:50:44.910 [34mINFO[0;39m [35m[main][0;39m o.s.i.e.EventDrivenConsumer.start :: started _org.springframework.integration.errorLogger
-2020-01-05 20:50:44.978 [34mINFO[0;39m [35m[main][0;39m o.s.b.w.e.t.TomcatWebServer.start :: Tomcat started on port(s): 2020 (http) with context path ''
-2020-01-05 20:50:44.980 [34mINFO[0;39m [35m[main][0;39m c.s.S.SearchFoodApplication.logStarted :: Started SearchFoodApplication in 5.437 seconds (JVM running for 10.679)
-2020-01-05 20:56:38.284 [34mINFO[0;39m [35m[http-nio-2020-exec-1][0;39m o.a.c.c.C.[.[.[/].log :: Initializing Spring DispatcherServlet 'dispatcherServlet'
-2020-01-05 20:56:38.285 [34mINFO[0;39m [35m[http-nio-2020-exec-1][0;39m o.s.w.s.DispatcherServlet.initServletBean :: Initializing Servlet 'dispatcherServlet'
-2020-01-05 20:56:38.300 [34mINFO[0;39m [35m[http-nio-2020-exec-1][0;39m o.s.w.s.DispatcherServlet.initServletBean :: Completed initialization in 15 ms
-2020-01-05 20:56:38.382 [39mDEBUG[0;39m [35m[http-nio-2020-exec-1][0;39m c.s.S.w.FilesController.uploadFile :: Start to uploading files...
-2020-01-05 20:56:38.383 [39mDEBUG[0;39m [35m[http-nio-2020-exec-1][0;39m c.s.S.w.FilesController.uploadFile :: org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@594f1c3d
-2020-01-05 20:56:38.383 [39mDEBUG[0;39m [35m[http-nio-2020-exec-1][0;39m c.s.S.u.f.FileStorageService.storeFile :: fileName: 35-512.png
-2020-01-05 20:56:38.384 [39mDEBUG[0;39m [35m[http-nio-2020-exec-1][0;39m c.s.S.u.f.FileStorageService.storeFile :: targetLocation: src/main/resources/uploads/images/35-512.png
-2020-01-05 20:56:38.385 [39mDEBUG[0;39m [35m[http-nio-2020-exec-1][0;39m c.s.S.w.FilesController.uploadFile :: targetLocation: src/main/resources/uploads/images/35-512.png
-2020-01-05 20:57:45.138 [39mDEBUG[0;39m [35m[http-nio-2020-exec-3][0;39m c.s.S.w.FilesController.uploadFile :: Start to uploading files...
-2020-01-05 20:57:45.139 [39mDEBUG[0;39m [35m[http-nio-2020-exec-3][0;39m c.s.S.w.FilesController.uploadFile :: org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@3c0ca36e
-2020-01-05 20:57:45.139 [39mDEBUG[0;39m [35m[http-nio-2020-exec-3][0;39m c.s.S.u.f.FileStorageService.storeFile :: fileName: 35-512.png
-2020-01-05 20:57:45.140 [39mDEBUG[0;39m [35m[http-nio-2020-exec-3][0;39m c.s.S.u.f.FileStorageService.storeFile :: targetLocation: src/main/resources/uploads/images/35-512.png
-2020-01-05 20:57:45.141 [39mDEBUG[0;39m [35m[http-nio-2020-exec-3][0;39m c.s.S.w.FilesController.uploadFile :: targetLocation: src/main/resources/uploads/images/35-512.png
-2020-01-05 20:57:55.573 [34mINFO[0;39m [35m[Thread-4][0;39m o.s.i.e.EventDrivenConsumer.logComponentSubscriptionEvent :: Removing {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
-2020-01-05 20:57:55.576 [34mINFO[0;39m [35m[Thread-4][0;39m o.s.i.c.PublishSubscribeChannel.adjustCounterIfNecessary :: Channel 'application.errorChannel' has 0 subscriber(s).
-2020-01-05 20:57:55.578 [34mINFO[0;39m [35m[Thread-4][0;39m o.s.i.e.EventDrivenConsumer.stop :: stopped _org.springframework.integration.errorLogger
-2020-01-05 20:57:55.580 [34mINFO[0;39m [35m[Thread-4][0;39m o.s.s.c.ThreadPoolTaskScheduler.shutdown :: Shutting down ExecutorService 'taskScheduler'
-2020-01-05 20:57:55.588 [34mINFO[0;39m [35m[Thread-4][0;39m o.s.s.c.ThreadPoolTaskExecutor.shutdown :: Shutting down ExecutorService 'applicationTaskExecutor'
-2020-01-05 20:57:55.590 [34mINFO[0;39m [35m[Thread-4][0;39m c.z.h.HikariDataSource.close :: HikariPool-1 - Shutdown initiated...
-2020-01-05 20:57:55.605 [34mINFO[0;39m [35m[Thread-4][0;39m c.z.h.HikariDataSource.close :: HikariPool-1 - Shutdown completed.
-2020-01-05 21:04:13.149 [34mINFO[0;39m [35m[main][0;39m c.s.S.SearchFoodApplication.logStarting :: Starting SearchFoodApplication on eason-UX410UQK with PID 5693 (/home/eason/Desktop/Workplace/Projects/SearchFoodBackend/target/classes started by eason in /home/eason/Desktop/Workplace/Projects/SearchFoodBackend)
-2020-01-05 21:04:13.160 [34mINFO[0;39m [35m[main][0;39m c.s.S.SearchFoodApplication.logStartupProfileInfo :: No active profile set, falling back to default profiles: default
-2020-01-05 21:04:14.582 [34mINFO[0;39m [35m[main][0;39m o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor.registerErrorChannel :: No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
-2020-01-05 21:04:14.590 [34mINFO[0;39m [35m[main][0;39m o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor.registerTaskScheduler :: No bean named 'taskScheduler' has been explicitly defined. Therefore, a default ThreadPoolTaskScheduler will be created.
-2020-01-05 21:04:14.599 [34mINFO[0;39m [35m[main][0;39m o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor.registerHeaderChannelRegistry :: No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
-2020-01-05 21:04:14.779 [34mINFO[0;39m [35m[main][0;39m o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization :: Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$6416c85] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-01-05 21:04:14.802 [34mINFO[0;39m [35m[main][0;39m o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization :: Bean 'org.springframework.integration.config.IntegrationManagementConfiguration' of type [org.springframework.integration.config.IntegrationManagementConfiguration$$EnhancerBySpringCGLIB$$713327b4] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-01-05 21:04:14.823 [34mINFO[0;39m [35m[main][0;39m o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization :: Bean 'integrationDisposableAutoCreatedBeans' of type [org.springframework.integration.config.annotation.Disposables] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-01-05 21:04:15.154 [34mINFO[0;39m [35m[main][0;39m o.s.b.w.e.t.TomcatWebServer.initialize :: Tomcat initialized with port(s): 2020 (http)
-2020-01-05 21:04:15.197 [34mINFO[0;39m [35m[main][0;39m o.a.c.c.StandardService.log :: Starting service [Tomcat]
-2020-01-05 21:04:15.198 [34mINFO[0;39m [35m[main][0;39m o.a.c.c.StandardEngine.log :: Starting Servlet engine: [Apache Tomcat/9.0.22]
-2020-01-05 21:04:15.322 [34mINFO[0;39m [35m[main][0;39m o.a.c.c.C.[.[.[/].log :: Initializing Spring embedded WebApplicationContext
-2020-01-05 21:04:15.322 [34mINFO[0;39m [35m[main][0;39m o.s.w.c.ContextLoader.prepareWebApplicationContext :: Root WebApplicationContext: initialization completed in 2099 ms
-2020-01-05 21:04:15.643 [34mINFO[0;39m [35m[main][0;39m c.z.h.HikariDataSource.getConnection :: HikariPool-1 - Starting...
-2020-01-05 21:04:16.338 [34mINFO[0;39m [35m[main][0;39m c.z.h.HikariDataSource.getConnection :: HikariPool-1 - Start completed.
-2020-01-05 21:04:16.829 [39mDEBUG[0;39m [35m[main][0;39m c.s.S.u.f.FileStorageService.<init> :: fileStorageLocation: src/main/resources/uploads/images
-2020-01-05 21:04:17.159 [34mINFO[0;39m [35m[main][0;39m o.s.s.c.ThreadPoolTaskExecutor.initialize :: Initializing ExecutorService 'applicationTaskExecutor'
-2020-01-05 21:04:17.598 [34mINFO[0;39m [35m[main][0;39m o.s.b.a.e.w.EndpointLinksResolver.<init> :: Exposing 2 endpoint(s) beneath base path '/actuator'
-2020-01-05 21:04:17.704 [34mINFO[0;39m [35m[main][0;39m o.s.s.c.ThreadPoolTaskScheduler.initialize :: Initializing ExecutorService 'taskScheduler'
-2020-01-05 21:04:17.772 [34mINFO[0;39m [35m[main][0;39m o.s.i.e.EventDrivenConsumer.logComponentSubscriptionEvent :: Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
-2020-01-05 21:04:17.773 [34mINFO[0;39m [35m[main][0;39m o.s.i.c.PublishSubscribeChannel.adjustCounterIfNecessary :: Channel 'application.errorChannel' has 1 subscriber(s).
-2020-01-05 21:04:17.773 [34mINFO[0;39m [35m[main][0;39m o.s.i.e.EventDrivenConsumer.start :: started _org.springframework.integration.errorLogger
-2020-01-05 21:04:17.838 [34mINFO[0;39m [35m[main][0;39m o.s.b.w.e.t.TomcatWebServer.start :: Tomcat started on port(s): 2020 (http) with context path ''
-2020-01-05 21:04:17.841 [34mINFO[0;39m [35m[main][0;39m c.s.S.SearchFoodApplication.logStarted :: Started SearchFoodApplication in 5.37 seconds (JVM running for 9.707)
-2020-01-05 21:05:04.247 [34mINFO[0;39m [35m[http-nio-2020-exec-1][0;39m o.a.c.c.C.[.[.[/].log :: Initializing Spring DispatcherServlet 'dispatcherServlet'
-2020-01-05 21:05:04.248 [34mINFO[0;39m [35m[http-nio-2020-exec-1][0;39m o.s.w.s.DispatcherServlet.initServletBean :: Initializing Servlet 'dispatcherServlet'
-2020-01-05 21:05:04.262 [34mINFO[0;39m [35m[http-nio-2020-exec-1][0;39m o.s.w.s.DispatcherServlet.initServletBean :: Completed initialization in 14 ms
-2020-01-05 21:05:04.363 [39mDEBUG[0;39m [35m[http-nio-2020-exec-1][0;39m c.s.S.w.FilesController.uploadFile :: Start to uploading files...
-2020-01-05 21:05:04.364 [39mDEBUG[0;39m [35m[http-nio-2020-exec-1][0;39m c.s.S.w.FilesController.uploadFile :: org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@6a24ffc9
-2020-01-05 21:05:04.364 [39mDEBUG[0;39m [35m[http-nio-2020-exec-1][0;39m c.s.S.u.f.FileStorageService.storeFile :: fileName: 35-512.png
-2020-01-05 21:05:04.365 [39mDEBUG[0;39m [35m[http-nio-2020-exec-1][0;39m c.s.S.u.f.FileStorageService.storeFile :: targetLocation: src/main/resources/uploads/images/35-512.png
-2020-01-05 21:05:04.366 [39mDEBUG[0;39m [35m[http-nio-2020-exec-1][0;39m c.s.S.w.FilesController.uploadFile :: targetLocation: src/main/resources/uploads/images/35-512.png
-2020-01-05 21:05:04.367 [39mDEBUG[0;39m [35m[http-nio-2020-exec-1][0;39m c.s.S.w.FilesController.uploadFile :: Start to uploading files...
-2020-01-05 21:05:04.367 [39mDEBUG[0;39m [35m[http-nio-2020-exec-1][0;39m c.s.S.w.FilesController.uploadFile :: org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@1da2aaba
-2020-01-05 21:05:04.368 [39mDEBUG[0;39m [35m[http-nio-2020-exec-1][0;39m c.s.S.u.f.FileStorageService.storeFile :: fileName: 681px-Interactive_icon.svg.png
-2020-01-05 21:05:04.368 [39mDEBUG[0;39m [35m[http-nio-2020-exec-1][0;39m c.s.S.u.f.FileStorageService.storeFile :: targetLocation: src/main/resources/uploads/images/681px-Interactive_icon.svg.png
-2020-01-05 21:05:04.368 [39mDEBUG[0;39m [35m[http-nio-2020-exec-1][0;39m c.s.S.w.FilesController.uploadFile :: targetLocation: src/main/resources/uploads/images/681px-Interactive_icon.svg.png
-2020-01-05 21:05:04.369 [39mDEBUG[0;39m [35m[http-nio-2020-exec-1][0;39m c.s.S.w.FilesController.uploadFile :: Start to uploading files...
-2020-01-05 21:05:04.369 [39mDEBUG[0;39m [35m[http-nio-2020-exec-1][0;39m c.s.S.w.FilesController.uploadFile :: org.springframework.web.multipart.support.StandardMultipartHttpServletRequest$StandardMultipartFile@5035c470
-2020-01-05 21:05:04.369 [39mDEBUG[0;39m [35m[http-nio-2020-exec-1][0;39m c.s.S.u.f.FileStorageService.storeFile :: fileName: cute.png
-2020-01-05 21:05:04.370 [39mDEBUG[0;39m [35m[http-nio-2020-exec-1][0;39m c.s.S.u.f.FileStorageService.storeFile :: targetLocation: src/main/resources/uploads/images/cute.png
-2020-01-05 21:05:04.370 [39mDEBUG[0;39m [35m[http-nio-2020-exec-1][0;39m c.s.S.w.FilesController.uploadFile :: targetLocation: src/main/resources/uploads/images/cute.png
-2020-01-05 21:06:21.217 [34mINFO[0;39m [35m[Thread-4][0;39m o.s.i.e.EventDrivenConsumer.logComponentSubscriptionEvent :: Removing {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
-2020-01-05 21:06:21.222 [34mINFO[0;39m [35m[Thread-4][0;39m o.s.i.c.PublishSubscribeChannel.adjustCounterIfNecessary :: Channel 'application.errorChannel' has 0 subscriber(s).
-2020-01-05 21:06:21.225 [34mINFO[0;39m [35m[Thread-4][0;39m o.s.i.e.EventDrivenConsumer.stop :: stopped _org.springframework.integration.errorLogger
-2020-01-05 21:06:21.236 [34mINFO[0;39m [35m[Thread-4][0;39m o.s.s.c.ThreadPoolTaskScheduler.shutdown :: Shutting down ExecutorService 'taskScheduler'
-2020-01-05 21:06:21.243 [34mINFO[0;39m [35m[Thread-4][0;39m o.s.s.c.ThreadPoolTaskExecutor.shutdown :: Shutting down ExecutorService 'applicationTaskExecutor'
-2020-01-05 21:06:21.245 [34mINFO[0;39m [35m[Thread-4][0;39m c.z.h.HikariDataSource.close :: HikariPool-1 - Shutdown initiated...
-2020-01-05 21:06:21.267 [34mINFO[0;39m [35m[Thread-4][0;39m c.z.h.HikariDataSource.close :: HikariPool-1 - Shutdown completed.
-2020-01-24 23:21:09.544 [34mINFO[0;39m [35m[main][0;39m c.s.S.SearchFoodApplication.logStarting :: Starting SearchFoodApplication on eason-P15FV2 with PID 13156 (/home/eason/Desktop/WorkPlace/Project/SearchStoresApplication/SearchFoodBackend/target/classes started by eason in /home/eason/Desktop/WorkPlace/Project/SearchStoresApplication/SearchFoodBackend)
-2020-01-24 23:21:09.547 [34mINFO[0;39m [35m[main][0;39m c.s.S.SearchFoodApplication.logStartupProfileInfo :: No active profile set, falling back to default profiles: default
-2020-01-24 23:21:12.003 [34mINFO[0;39m [35m[main][0;39m o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor.registerErrorChannel :: No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
-2020-01-24 23:21:12.012 [34mINFO[0;39m [35m[main][0;39m o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor.registerTaskScheduler :: No bean named 'taskScheduler' has been explicitly defined. Therefore, a default ThreadPoolTaskScheduler will be created.
-2020-01-24 23:21:12.016 [34mINFO[0;39m [35m[main][0;39m o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor.registerHeaderChannelRegistry :: No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
-2020-01-24 23:21:12.168 [34mINFO[0;39m [35m[main][0;39m o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization :: Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$8f00f0b0] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-01-24 23:21:12.252 [34mINFO[0;39m [35m[main][0;39m o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization :: Bean 'org.springframework.integration.config.IntegrationManagementConfiguration' of type [org.springframework.integration.config.IntegrationManagementConfiguration$$EnhancerBySpringCGLIB$$f9f2abdf] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-01-24 23:21:12.270 [34mINFO[0;39m [35m[main][0;39m o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization :: Bean 'integrationDisposableAutoCreatedBeans' of type [org.springframework.integration.config.annotation.Disposables] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-01-24 23:21:12.790 [34mINFO[0;39m [35m[main][0;39m o.s.b.w.e.t.TomcatWebServer.initialize :: Tomcat initialized with port(s): 2020 (http)
-2020-01-24 23:21:12.972 [34mINFO[0;39m [35m[main][0;39m o.a.c.c.StandardService.log :: Starting service [Tomcat]
-2020-01-24 23:21:12.972 [34mINFO[0;39m [35m[main][0;39m o.a.c.c.StandardEngine.log :: Starting Servlet engine: [Apache Tomcat/9.0.22]
-2020-01-24 23:21:13.081 [34mINFO[0;39m [35m[main][0;39m o.a.c.c.C.[.[.[/].log :: Initializing Spring embedded WebApplicationContext
-2020-01-24 23:21:13.081 [34mINFO[0;39m [35m[main][0;39m o.s.w.c.ContextLoader.prepareWebApplicationContext :: Root WebApplicationContext: initialization completed in 3401 ms
-2020-01-24 23:21:13.434 [34mINFO[0;39m [35m[main][0;39m c.z.h.HikariDataSource.getConnection :: HikariPool-1 - Starting...
-2020-01-24 23:21:14.228 [34mINFO[0;39m [35m[main][0;39m c.z.h.HikariDataSource.getConnection :: HikariPool-1 - Start completed.
-2020-01-24 23:21:14.703 [31mWARN[0;39m [35m[main][0;39m o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext.refresh :: Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'jwtResponse' defined in file [/home/eason/Desktop/WorkPlace/Project/SearchStoresApplication/SearchFoodBackend/target/classes/com/searchfood/SearchFoodBackend/model/data/JwtResponse.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'java.lang.String' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
-2020-01-24 23:21:14.704 [34mINFO[0;39m [35m[main][0;39m c.z.h.HikariDataSource.close :: HikariPool-1 - Shutdown initiated...
-2020-01-24 23:21:14.711 [34mINFO[0;39m [35m[main][0;39m c.z.h.HikariDataSource.close :: HikariPool-1 - Shutdown completed.
-2020-01-24 23:21:14.718 [34mINFO[0;39m [35m[main][0;39m o.a.c.c.StandardService.log :: Stopping service [Tomcat]
-2020-01-24 23:21:14.737 [34mINFO[0;39m [35m[main][0;39m o.s.b.a.l.ConditionEvaluationReportLoggingListener.logMessage :: 
-
-Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
-2020-01-24 23:21:14.914 [1;31mERROR[0;39m [35m[main][0;39m o.s.b.d.LoggingFailureAnalysisReporter.report :: 
-
-***************************
-APPLICATION FAILED TO START
-***************************
-
-Description:
-
-Parameter 0 of constructor in com.searchfood.SearchFoodBackend.model.data.JwtResponse required a bean of type 'java.lang.String' that could not be found.
-
-
-Action:
-
-Consider defining a bean of type 'java.lang.String' in your configuration.
-
-2020-01-24 23:23:06.735 [34mINFO[0;39m [35m[main][0;39m c.s.S.SearchFoodApplication.logStarting :: Starting SearchFoodApplication on eason-P15FV2 with PID 13456 (/home/eason/Desktop/WorkPlace/Project/SearchStoresApplication/SearchFoodBackend/target/classes started by eason in /home/eason/Desktop/WorkPlace/Project/SearchStoresApplication/SearchFoodBackend)
-2020-01-24 23:23:06.739 [34mINFO[0;39m [35m[main][0;39m c.s.S.SearchFoodApplication.logStartupProfileInfo :: No active profile set, falling back to default profiles: default
-2020-01-24 23:23:07.916 [34mINFO[0;39m [35m[main][0;39m o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor.registerErrorChannel :: No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
-2020-01-24 23:23:07.922 [34mINFO[0;39m [35m[main][0;39m o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor.registerTaskScheduler :: No bean named 'taskScheduler' has been explicitly defined. Therefore, a default ThreadPoolTaskScheduler will be created.
-2020-01-24 23:23:07.926 [34mINFO[0;39m [35m[main][0;39m o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor.registerHeaderChannelRegistry :: No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
-2020-01-24 23:23:08.056 [34mINFO[0;39m [35m[main][0;39m o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization :: Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$a2cc1624] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-01-24 23:23:08.073 [34mINFO[0;39m [35m[main][0;39m o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization :: Bean 'org.springframework.integration.config.IntegrationManagementConfiguration' of type [org.springframework.integration.config.IntegrationManagementConfiguration$$EnhancerBySpringCGLIB$$dbdd153] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-01-24 23:23:08.091 [34mINFO[0;39m [35m[main][0;39m o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization :: Bean 'integrationDisposableAutoCreatedBeans' of type [org.springframework.integration.config.annotation.Disposables] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-01-24 23:23:08.421 [34mINFO[0;39m [35m[main][0;39m o.s.b.w.e.t.TomcatWebServer.initialize :: Tomcat initialized with port(s): 2020 (http)
-2020-01-24 23:23:08.450 [34mINFO[0;39m [35m[main][0;39m o.a.c.c.StandardService.log :: Starting service [Tomcat]
-2020-01-24 23:23:08.451 [34mINFO[0;39m [35m[main][0;39m o.a.c.c.StandardEngine.log :: Starting Servlet engine: [Apache Tomcat/9.0.22]
-2020-01-24 23:23:08.528 [34mINFO[0;39m [35m[main][0;39m o.a.c.c.C.[.[.[/].log :: Initializing Spring embedded WebApplicationContext
-2020-01-24 23:23:08.528 [34mINFO[0;39m [35m[main][0;39m o.s.w.c.ContextLoader.prepareWebApplicationContext :: Root WebApplicationContext: initialization completed in 1739 ms
-2020-01-24 23:23:08.795 [34mINFO[0;39m [35m[main][0;39m c.z.h.HikariDataSource.getConnection :: HikariPool-1 - Starting...
-2020-01-24 23:23:09.423 [34mINFO[0;39m [35m[main][0;39m c.z.h.HikariDataSource.getConnection :: HikariPool-1 - Start completed.
-2020-01-24 23:23:09.826 [31mWARN[0;39m [35m[main][0;39m o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext.refresh :: Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'jwtResponse' defined in file [/home/eason/Desktop/WorkPlace/Project/SearchStoresApplication/SearchFoodBackend/target/classes/com/searchfood/SearchFoodBackend/model/data/JwtResponse.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'java.lang.String' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
-2020-01-24 23:23:09.827 [34mINFO[0;39m [35m[main][0;39m c.z.h.HikariDataSource.close :: HikariPool-1 - Shutdown initiated...
-2020-01-24 23:23:09.834 [34mINFO[0;39m [35m[main][0;39m c.z.h.HikariDataSource.close :: HikariPool-1 - Shutdown completed.
-2020-01-24 23:23:09.838 [34mINFO[0;39m [35m[main][0;39m o.a.c.c.StandardService.log :: Stopping service [Tomcat]
-2020-01-24 23:23:09.853 [34mINFO[0;39m [35m[main][0;39m o.s.b.a.l.ConditionEvaluationReportLoggingListener.logMessage :: 
-
-Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
-2020-01-24 23:23:09.957 [1;31mERROR[0;39m [35m[main][0;39m o.s.b.d.LoggingFailureAnalysisReporter.report :: 
-
-***************************
-APPLICATION FAILED TO START
-***************************
-
-Description:
-
-Parameter 0 of constructor in com.searchfood.SearchFoodBackend.model.data.JwtResponse required a bean of type 'java.lang.String' that could not be found.
-
-
-Action:
-
-Consider defining a bean of type 'java.lang.String' in your configuration.
-
-2020-01-24 23:24:31.578 [34mINFO[0;39m [35m[main][0;39m c.s.S.SearchFoodApplication.logStarting :: Starting SearchFoodApplication on eason-P15FV2 with PID 13597 (/home/eason/Desktop/WorkPlace/Project/SearchStoresApplication/SearchFoodBackend/target/classes started by eason in /home/eason/Desktop/WorkPlace/Project/SearchStoresApplication/SearchFoodBackend)
-2020-01-24 23:24:31.582 [34mINFO[0;39m [35m[main][0;39m c.s.S.SearchFoodApplication.logStartupProfileInfo :: No active profile set, falling back to default profiles: default
-2020-01-24 23:24:32.817 [34mINFO[0;39m [35m[main][0;39m o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor.registerErrorChannel :: No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
-2020-01-24 23:24:32.823 [34mINFO[0;39m [35m[main][0;39m o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor.registerTaskScheduler :: No bean named 'taskScheduler' has been explicitly defined. Therefore, a default ThreadPoolTaskScheduler will be created.
-2020-01-24 23:24:32.827 [34mINFO[0;39m [35m[main][0;39m o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor.registerHeaderChannelRegistry :: No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
-2020-01-24 23:24:32.968 [34mINFO[0;39m [35m[main][0;39m o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization :: Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$91fb3446] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-01-24 23:24:32.990 [34mINFO[0;39m [35m[main][0;39m o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization :: Bean 'org.springframework.integration.config.IntegrationManagementConfiguration' of type [org.springframework.integration.config.IntegrationManagementConfiguration$$EnhancerBySpringCGLIB$$fcecef75] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-01-24 23:24:33.007 [34mINFO[0;39m [35m[main][0;39m o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization :: Bean 'integrationDisposableAutoCreatedBeans' of type [org.springframework.integration.config.annotation.Disposables] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-01-24 23:24:33.295 [34mINFO[0;39m [35m[main][0;39m o.s.b.w.e.t.TomcatWebServer.initialize :: Tomcat initialized with port(s): 2020 (http)
-2020-01-24 23:24:33.359 [34mINFO[0;39m [35m[main][0;39m o.a.c.c.StandardService.log :: Starting service [Tomcat]
-2020-01-24 23:24:33.360 [34mINFO[0;39m [35m[main][0;39m o.a.c.c.StandardEngine.log :: Starting Servlet engine: [Apache Tomcat/9.0.22]
-2020-01-24 23:24:33.475 [34mINFO[0;39m [35m[main][0;39m o.a.c.c.C.[.[.[/].log :: Initializing Spring embedded WebApplicationContext
-2020-01-24 23:24:33.476 [34mINFO[0;39m [35m[main][0;39m o.s.w.c.ContextLoader.prepareWebApplicationContext :: Root WebApplicationContext: initialization completed in 1845 ms
-2020-01-24 23:24:33.747 [34mINFO[0;39m [35m[main][0;39m c.z.h.HikariDataSource.getConnection :: HikariPool-1 - Starting...
-2020-01-24 23:24:34.502 [34mINFO[0;39m [35m[main][0;39m c.z.h.HikariDataSource.getConnection :: HikariPool-1 - Start completed.
-2020-01-24 23:24:34.971 [31mWARN[0;39m [35m[main][0;39m o.s.b.w.s.c.AnnotationConfigServletWebServerApplicationContext.refresh :: Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'jwtResponse' defined in file [/home/eason/Desktop/WorkPlace/Project/SearchStoresApplication/SearchFoodBackend/target/classes/com/searchfood/SearchFoodBackend/model/data/JwtResponse.class]: Unsatisfied dependency expressed through constructor parameter 0; nested exception is org.springframework.beans.factory.NoSuchBeanDefinitionException: No qualifying bean of type 'java.lang.String' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {}
-2020-01-24 23:24:34.973 [34mINFO[0;39m [35m[main][0;39m c.z.h.HikariDataSource.close :: HikariPool-1 - Shutdown initiated...
-2020-01-24 23:24:34.980 [34mINFO[0;39m [35m[main][0;39m c.z.h.HikariDataSource.close :: HikariPool-1 - Shutdown completed.
-2020-01-24 23:24:34.987 [34mINFO[0;39m [35m[main][0;39m o.a.c.c.StandardService.log :: Stopping service [Tomcat]
-2020-01-24 23:24:35.008 [34mINFO[0;39m [35m[main][0;39m o.s.b.a.l.ConditionEvaluationReportLoggingListener.logMessage :: 
-
-Error starting ApplicationContext. To display the conditions report re-run your application with 'debug' enabled.
-2020-01-24 23:24:35.152 [1;31mERROR[0;39m [35m[main][0;39m o.s.b.d.LoggingFailureAnalysisReporter.report :: 
-
-***************************
-APPLICATION FAILED TO START
-***************************
-
-Description:
-
-Parameter 0 of constructor in com.searchfood.SearchFoodBackend.model.data.JwtResponse required a bean of type 'java.lang.String' that could not be found.
-
-
-Action:
-
-Consider defining a bean of type 'java.lang.String' in your configuration.
-
-2020-01-24 23:26:00.053 [34mINFO[0;39m [35m[main][0;39m c.s.S.SearchFoodApplication.logStarting :: Starting SearchFoodApplication on eason-P15FV2 with PID 13747 (/home/eason/Desktop/WorkPlace/Project/SearchStoresApplication/SearchFoodBackend/target/classes started by eason in /home/eason/Desktop/WorkPlace/Project/SearchStoresApplication/SearchFoodBackend)
-2020-01-24 23:26:00.056 [34mINFO[0;39m [35m[main][0;39m c.s.S.SearchFoodApplication.logStartupProfileInfo :: No active profile set, falling back to default profiles: default
-2020-01-24 23:26:01.329 [34mINFO[0;39m [35m[main][0;39m o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor.registerErrorChannel :: No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
-2020-01-24 23:26:01.334 [34mINFO[0;39m [35m[main][0;39m o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor.registerTaskScheduler :: No bean named 'taskScheduler' has been explicitly defined. Therefore, a default ThreadPoolTaskScheduler will be created.
-2020-01-24 23:26:01.338 [34mINFO[0;39m [35m[main][0;39m o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor.registerHeaderChannelRegistry :: No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
-2020-01-24 23:26:01.477 [34mINFO[0;39m [35m[main][0;39m o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization :: Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$d223cf18] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-01-24 23:26:01.495 [34mINFO[0;39m [35m[main][0;39m o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization :: Bean 'org.springframework.integration.config.IntegrationManagementConfiguration' of type [org.springframework.integration.config.IntegrationManagementConfiguration$$EnhancerBySpringCGLIB$$3d158a47] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-01-24 23:26:01.532 [34mINFO[0;39m [35m[main][0;39m o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization :: Bean 'integrationDisposableAutoCreatedBeans' of type [org.springframework.integration.config.annotation.Disposables] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
-2020-01-24 23:26:01.860 [34mINFO[0;39m [35m[main][0;39m o.s.b.w.e.t.TomcatWebServer.initialize :: Tomcat initialized with port(s): 2020 (http)
-2020-01-24 23:26:01.890 [34mINFO[0;39m [35m[main][0;39m o.a.c.c.StandardService.log :: Starting service [Tomcat]
-2020-01-24 23:26:01.891 [34mINFO[0;39m [35m[main][0;39m o.a.c.c.StandardEngine.log :: Starting Servlet engine: [Apache Tomcat/9.0.22]
-2020-01-24 23:26:01.973 [34mINFO[0;39m [35m[main][0;39m o.a.c.c.C.[.[.[/].log :: Initializing Spring embedded WebApplicationContext
-2020-01-24 23:26:01.973 [34mINFO[0;39m [35m[main][0;39m o.s.w.c.ContextLoader.prepareWebApplicationContext :: Root WebApplicationContext: initialization completed in 1872 ms
-2020-01-24 23:26:02.255 [34mINFO[0;39m [35m[main][0;39m c.z.h.HikariDataSource.getConnection :: HikariPool-1 - Starting...
-2020-01-24 23:26:02.831 [34mINFO[0;39m [35m[main][0;39m c.z.h.HikariDataSource.getConnection :: HikariPool-1 - Start completed.
-2020-01-24 23:26:03.264 [39mDEBUG[0;39m [35m[main][0;39m c.s.S.u.f.FileStorageService.<init> :: fileStorageLocation: src/main/resources/uploads/images
-2020-01-24 23:26:03.628 [34mINFO[0;39m [35m[main][0;39m o.s.s.c.ThreadPoolTaskExecutor.initialize :: Initializing ExecutorService 'applicationTaskExecutor'
-2020-01-24 23:26:04.136 [34mINFO[0;39m [35m[main][0;39m o.s.b.a.s.s.UserDetailsServiceAutoConfiguration.getOrDeducePassword :: 
-
-Using generated security password: cad9c542-f798-40ea-ace8-9ef7f7030a6f
-
-2020-01-24 23:26:04.253 [34mINFO[0;39m [35m[main][0;39m o.s.s.w.DefaultSecurityFilterChain.<init> :: Creating filter chain: any request, [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3f3f238d, org.springframework.security.web.context.SecurityContextPersistenceFilter@7e058baf, org.springframework.security.web.header.HeaderWriterFilter@77cb77e9, org.springframework.security.web.csrf.CsrfFilter@1826b649, org.springframework.security.web.authentication.logout.LogoutFilter@260a93f0, org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter@ed67096, org.springframework.security.web.authentication.ui.DefaultLoginPageGeneratingFilter@6f3f1d64, org.springframework.security.web.authentication.ui.DefaultLogoutPageGeneratingFilter@4e939eaa, org.springframework.security.web.authentication.www.BasicAuthenticationFilter@4452e8f7, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7c01e7d6, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4787543a, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5e46e628, org.springframework.security.web.session.SessionManagementFilter@284ea00b, org.springframework.security.web.access.ExceptionTranslationFilter@b7c93d9, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@2af74dee]
-2020-01-24 23:26:04.303 [34mINFO[0;39m [35m[main][0;39m o.s.b.a.e.w.EndpointLinksResolver.<init> :: Exposing 2 endpoint(s) beneath base path '/actuator'
-2020-01-24 23:26:04.457 [34mINFO[0;39m [35m[main][0;39m o.s.s.c.ThreadPoolTaskScheduler.initialize :: Initializing ExecutorService 'taskScheduler'
-2020-01-24 23:26:04.516 [34mINFO[0;39m [35m[main][0;39m o.s.i.e.EventDrivenConsumer.logComponentSubscriptionEvent :: Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
-2020-01-24 23:26:04.517 [34mINFO[0;39m [35m[main][0;39m o.s.i.c.PublishSubscribeChannel.adjustCounterIfNecessary :: Channel 'application.errorChannel' has 1 subscriber(s).
-2020-01-24 23:26:04.517 [34mINFO[0;39m [35m[main][0;39m o.s.i.e.EventDrivenConsumer.start :: started _org.springframework.integration.errorLogger
-2020-01-24 23:26:04.585 [34mINFO[0;39m [35m[main][0;39m o.s.b.w.e.t.TomcatWebServer.start :: Tomcat started on port(s): 2020 (http) with context path ''
-2020-01-24 23:26:04.588 [34mINFO[0;39m [35m[main][0;39m c.s.S.SearchFoodApplication.logStarted :: Started SearchFoodApplication in 4.937 seconds (JVM running for 9.219)
-2020-01-24 23:26:08.428 [34mINFO[0;39m [35m[Thread-4][0;39m o.s.i.e.EventDrivenConsumer.logComponentSubscriptionEvent :: Removing {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
-2020-01-24 23:26:08.428 [34mINFO[0;39m [35m[Thread-4][0;39m o.s.i.c.PublishSubscribeChannel.adjustCounterIfNecessary :: Channel 'application.errorChannel' has 0 subscriber(s).
-2020-01-24 23:26:08.429 [34mINFO[0;39m [35m[Thread-4][0;39m o.s.i.e.EventDrivenConsumer.stop :: stopped _org.springframework.integration.errorLogger
-2020-01-24 23:26:08.430 [34mINFO[0;39m [35m[Thread-4][0;39m o.s.s.c.ThreadPoolTaskScheduler.shutdown :: Shutting down ExecutorService 'taskScheduler'
-2020-01-24 23:26:08.434 [34mINFO[0;39m [35m[Thread-4][0;39m o.s.s.c.ThreadPoolTaskExecutor.shutdown :: Shutting down ExecutorService 'applicationTaskExecutor'
-2020-01-24 23:26:08.435 [34mINFO[0;39m [35m[Thread-4][0;39m c.z.h.HikariDataSource.close :: HikariPool-1 - Shutdown initiated...
-2020-01-24 23:26:08.442 [34mINFO[0;39m [35m[Thread-4][0;39m c.z.h.HikariDataSource.close :: HikariPool-1 - Shutdown completed.
+2020-01-25 00:55:23.857 [34mINFO[0;39m [35m[main][0;39m c.s.S.SearchFoodApplication.logStarting :: Starting SearchFoodApplication on eason-P15FV2 with PID 20688 (/home/eason/Desktop/WorkPlace/Project/SearchStoresApplication/SearchFoodBackend/target/classes started by eason in /home/eason/Desktop/WorkPlace/Project/SearchStoresApplication/SearchFoodBackend)
+2020-01-25 00:55:23.887 [34mINFO[0;39m [35m[main][0;39m c.s.S.SearchFoodApplication.logStartupProfileInfo :: No active profile set, falling back to default profiles: default
+2020-01-25 00:55:26.227 [34mINFO[0;39m [35m[main][0;39m o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor.registerErrorChannel :: No bean named 'errorChannel' has been explicitly defined. Therefore, a default PublishSubscribeChannel will be created.
+2020-01-25 00:55:26.233 [34mINFO[0;39m [35m[main][0;39m o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor.registerTaskScheduler :: No bean named 'taskScheduler' has been explicitly defined. Therefore, a default ThreadPoolTaskScheduler will be created.
+2020-01-25 00:55:26.237 [34mINFO[0;39m [35m[main][0;39m o.s.i.c.DefaultConfiguringBeanFactoryPostProcessor.registerHeaderChannelRegistry :: No bean named 'integrationHeaderChannelRegistry' has been explicitly defined. Therefore, a default DefaultHeaderChannelRegistry will be created.
+2020-01-25 00:55:26.383 [34mINFO[0;39m [35m[main][0;39m o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization :: Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$954ac876] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-01-25 00:55:26.416 [34mINFO[0;39m [35m[main][0;39m o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization :: Bean 'org.springframework.integration.config.IntegrationManagementConfiguration' of type [org.springframework.integration.config.IntegrationManagementConfiguration$$EnhancerBySpringCGLIB$$3c83a5] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-01-25 00:55:26.436 [34mINFO[0;39m [35m[main][0;39m o.s.c.s.PostProcessorRegistrationDelegate$BeanPostProcessorChecker.postProcessAfterInitialization :: Bean 'integrationDisposableAutoCreatedBeans' of type [org.springframework.integration.config.annotation.Disposables] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2020-01-25 00:55:26.887 [34mINFO[0;39m [35m[main][0;39m o.s.b.w.e.t.TomcatWebServer.initialize :: Tomcat initialized with port(s): 2020 (http)
+2020-01-25 00:55:26.926 [34mINFO[0;39m [35m[main][0;39m o.a.c.c.StandardService.log :: Starting service [Tomcat]
+2020-01-25 00:55:26.926 [34mINFO[0;39m [35m[main][0;39m o.a.c.c.StandardEngine.log :: Starting Servlet engine: [Apache Tomcat/9.0.22]
+2020-01-25 00:55:27.035 [34mINFO[0;39m [35m[main][0;39m o.a.c.c.C.[.[.[/].log :: Initializing Spring embedded WebApplicationContext
+2020-01-25 00:55:27.035 [34mINFO[0;39m [35m[main][0;39m o.s.w.c.ContextLoader.prepareWebApplicationContext :: Root WebApplicationContext: initialization completed in 3045 ms
+2020-01-25 00:55:27.388 [34mINFO[0;39m [35m[main][0;39m c.z.h.HikariDataSource.getConnection :: HikariPool-1 - Starting...
+2020-01-25 00:55:27.967 [34mINFO[0;39m [35m[main][0;39m c.z.h.HikariDataSource.getConnection :: HikariPool-1 - Start completed.
+2020-01-25 00:55:28.547 [39mDEBUG[0;39m [35m[main][0;39m c.s.S.u.f.FileStorageService.<init> :: fileStorageLocation: src/main/resources/uploads/images
+2020-01-25 00:55:29.026 [34mINFO[0;39m [35m[main][0;39m o.s.s.c.ThreadPoolTaskExecutor.initialize :: Initializing ExecutorService 'applicationTaskExecutor'
+2020-01-25 00:55:29.566 [34mINFO[0;39m [35m[main][0;39m o.s.b.a.e.w.EndpointLinksResolver.<init> :: Exposing 2 endpoint(s) beneath base path '/actuator'
+2020-01-25 00:55:29.721 [34mINFO[0;39m [35m[main][0;39m o.s.s.c.ThreadPoolTaskScheduler.initialize :: Initializing ExecutorService 'taskScheduler'
+2020-01-25 00:55:29.797 [34mINFO[0;39m [35m[main][0;39m o.s.i.e.EventDrivenConsumer.logComponentSubscriptionEvent :: Adding {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2020-01-25 00:55:29.798 [34mINFO[0;39m [35m[main][0;39m o.s.i.c.PublishSubscribeChannel.adjustCounterIfNecessary :: Channel 'application.errorChannel' has 1 subscriber(s).
+2020-01-25 00:55:29.798 [34mINFO[0;39m [35m[main][0;39m o.s.i.e.EventDrivenConsumer.start :: started _org.springframework.integration.errorLogger
+2020-01-25 00:55:29.871 [34mINFO[0;39m [35m[main][0;39m o.s.b.w.e.t.TomcatWebServer.start :: Tomcat started on port(s): 2020 (http) with context path ''
+2020-01-25 00:55:29.875 [34mINFO[0;39m [35m[main][0;39m c.s.S.SearchFoodApplication.logStarted :: Started SearchFoodApplication in 7.057 seconds (JVM running for 18.797)
+2020-01-25 00:55:37.588 [34mINFO[0;39m [35m[Thread-4][0;39m o.s.i.e.EventDrivenConsumer.logComponentSubscriptionEvent :: Removing {logging-channel-adapter:_org.springframework.integration.errorLogger} as a subscriber to the 'errorChannel' channel
+2020-01-25 00:55:37.589 [34mINFO[0;39m [35m[Thread-4][0;39m o.s.i.c.PublishSubscribeChannel.adjustCounterIfNecessary :: Channel 'application.errorChannel' has 0 subscriber(s).
+2020-01-25 00:55:37.589 [34mINFO[0;39m [35m[Thread-4][0;39m o.s.i.e.EventDrivenConsumer.stop :: stopped _org.springframework.integration.errorLogger
+2020-01-25 00:55:37.590 [34mINFO[0;39m [35m[Thread-4][0;39m o.s.s.c.ThreadPoolTaskScheduler.shutdown :: Shutting down ExecutorService 'taskScheduler'
+2020-01-25 00:55:37.592 [34mINFO[0;39m [35m[Thread-4][0;39m o.s.s.c.ThreadPoolTaskExecutor.shutdown :: Shutting down ExecutorService 'applicationTaskExecutor'
+2020-01-25 00:55:37.594 [34mINFO[0;39m [35m[Thread-4][0;39m c.z.h.HikariDataSource.close :: HikariPool-1 - Shutdown initiated...
+2020-01-25 00:55:37.644 [34mINFO[0;39m [35m[Thread-4][0;39m c.z.h.HikariDataSource.close :: HikariPool-1 - Shutdown completed.
