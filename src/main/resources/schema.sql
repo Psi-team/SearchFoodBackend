@@ -12,7 +12,7 @@ CREATE TABLE IF NOT EXISTS Users(
     passwd CHAR(10) NOT NULL, 
     sexual INT NOT NULL, 
     birthyear YEAR NOT NULL, 
-    age TINYINT, /* DEFAULT ( YEAR(CURRENT_DATE) - birthyear ), */ 
+    age TINYINT DEFAULT ( YEAR(CURRENT_DATE) - birthyear ), 
     PRIMARY KEY( userId ),  
     UNIQUE KEY mail ( mail ), 
     UNIQUE KEY username ( username ) 
@@ -110,16 +110,16 @@ CREATE TABLE IF NOT EXISTS ClickRecords(
     username VARCHAR(20) NOT NULL, 
     storeId INT NOT NULL, 
     FOREIGN KEY( username ) REFERENCES Users( username ),
-    FOREIGN KEY( storeId ) REFERENCES StoreInfo( storeId )
+    FOREIGN KEY( storeId ) REFERENCES StoreInfo( storeId ), 
     UNIQUE KEY records ( username, storeId ) 
 ); 
 
 /* saving the images of stores */ 
-CREATE TABLE IF NOT EXISTS StoreImages{ 
+CREATE TABLE IF NOT EXISTS StoreImages( 
     storeId INT NOT NULL, 
     picUrl VARCHAR(150) NULL, 
     FOREIGN KEY( storeId ) REFERENCES StoreInfo( storeId )
-}
+); 
 
 /* auto delete data when a new day starts */ 
 /*  ref: https://noter.tw/2306/mysql%E6%8E%92%E7%A8%8Bevent-scheduler/    Not DELETE EVENTS but DROP EVENTS */ 
