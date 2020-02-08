@@ -1,6 +1,9 @@
 
 /* sudo mysql -u 'user' -p  */ 
 
+CREATE DATABASE IF NOT EXISTS SearchFood; 
+USING SearchFood; 
+
 /* Create the user table */ 
 /* CHAR() 是固定字元存取,VARCHAR()是以實際字元存取,
  * VARCHAR()雖然比較省空間,但若要修改可能會被擷取分段擺放 
