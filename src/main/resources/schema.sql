@@ -2,7 +2,7 @@
 /* sudo mysql -u 'user' -p  */ 
 
 CREATE DATABASE IF NOT EXISTS SearchFood; 
-USING SearchFood; 
+USE SearchFood; 
 
 /* Create the user table */ 
 /* CHAR() 是固定字元存取,VARCHAR()是以實際字元存取,
