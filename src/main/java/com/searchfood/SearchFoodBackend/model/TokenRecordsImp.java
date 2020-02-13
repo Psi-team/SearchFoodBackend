@@ -21,6 +21,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import java.sql.ResultSet; 
 import java.sql.SQLException; 
 
+import java.util.Optional; 
+
 // user-defined class 
 import com.searchfood.SearchFoodBackend.model.interfaces.TokenRecordsITF; 
 import com.searchfood.SearchFoodBackend.model.data.TokenRecords;  
@@ -29,7 +31,7 @@ import com.searchfood.SearchFoodBackend.model.data.SignUpMember;
 import com.searchfood.SearchFoodBackend.utils.FindDataITF; 
 
 @Repository 
-public class TokenRecordsImp implements TokenRecordsITF, FindDataITF{ 
+public class TokenRecordsImp{ 
 
     private static final Logger log = LoggerFactory.getLogger( TokenRecordsImp.class.getName() ); 
 
@@ -41,7 +43,6 @@ public class TokenRecordsImp implements TokenRecordsITF, FindDataITF{
         this.jdbc = jdbc; 
     } 
 
-    @Override 
     public int isExist(){ 
 
         try{ 
@@ -73,8 +74,7 @@ public class TokenRecordsImp implements TokenRecordsITF, FindDataITF{
 
     } 
 
-    @Override 
-    public TokenRecords saveTokenTable( Members mem ){ 
+    public Optional<TokenRecords> saveTokenTable( Members mem ){ 
         
         this.mem = mem; 
         TokenRecords token = new TokenRecords(); 
@@ -84,10 +84,14 @@ public class TokenRecordsImp implements TokenRecordsITF, FindDataITF{
             token.setUsername( this.results.getUsername() ); 
             token.setToken();   
             save( token ); 
+            log.info( "Username before Optional: " + token.getUsername() ); 
+            Optional<TokenRecords> opt_token = Optional.of( token ); 
+            log.info( "Username after Optional: " + opt_token.get().getUsername() ); 
+            return opt_token; 
         } 
 
         //System.out.println( "Token not built."); 
-        return token; 
+        return Optional.ofNullable( null ); 
     } 
 
     private int save( TokenRecords token ){ 

@@ -18,6 +18,8 @@ import org.springframework.http.ResponseEntity;
 import org.slf4j.Logger; 
 import org.slf4j.LoggerFactory; 
 
+import java.util.Optional; 
+
 // user-define class  
 import com.searchfood.SearchFoodBackend.model.data.Members; 
 import com.searchfood.SearchFoodBackend.model.data.TokenRecords; 
@@ -38,10 +40,10 @@ public class LoginController{
      */ 
 
     private TokenRecordsImp tokenImp; 
-    private TokenRecords token; 
+    private Optional<TokenRecords> token; 
 
     @Autowired 
-    public LoginController( TokenRecordsImp tokenImp, TokenRecords token ){ 
+    public LoginController( TokenRecordsImp tokenImp, Optional<TokenRecords> token ){ 
         this.tokenImp = tokenImp; 
         this.token = token; 
     } 
@@ -50,18 +52,18 @@ public class LoginController{
     @PostMapping( consumes="application/json" ) // receive the json type data.  
     public ResponseEntity<?> login( @RequestBody Members member ){ // @RequestBody: the body of request should be convert to Members as parameters. 
 
-        log.info( "mail: "+member.getMail() + ", password: "+member.getPasswd() + "send request to login" ); 
-
-        token = tokenImp.saveTokenTable( member ); 
+        log.debug( "mail: "+member.getMail() + ", password: "+member.getPasswd() + "send request to login" ); 
 
 
-        if ( null == token.getUsername() ){ 
-            log.info("Not Founded"); 
+        if( !( ( token = tokenImp.saveTokenTable( member ) ).isPresent() ) ){ 
+            log.debug("Not Founded"); 
             throw new MemberNotFoundException("User or password not founded."); 
              /* Reference: https://openjry.url.tw/spring-boot-rest-exception-all-catch/ */ 
         } 
 
-        return new ResponseEntity<>( token, HttpStatus.OK ); 
+        log.debug( "Username: " + token.get().getUsername() ); 
+
+        return new ResponseEntity<>( token.get(), HttpStatus.OK ); 
     } 
 
 
