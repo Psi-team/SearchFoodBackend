@@ -23,6 +23,8 @@ import java.util.HashMap;
 import java.net.URLDecoder; 
 import java.io.UnsupportedEncodingException; 
 
+import javax.servlet.http.HttpServletRequest; 
+
 import com.searchfood.SearchFoodBackend.model.SearchStoresImp; 
 import com.searchfood.SearchFoodBackend.model.data.StoreInfo; 
 import com.searchfood.SearchFoodBackend.utils.exceptions.DataNotFoundException; 
@@ -52,8 +54,11 @@ public class SearchController{
                                // @RequestHeader("Authorization") String token, 
                                 @RequestParam(value="foodType") String foodKeyWord, 
                                 @RequestParam(value="city") String city,
-                                @RequestParam(value="district") String district ) 
+                                @RequestParam(value="district") String district, 
+				HttpServletRequest request ) 
                                     throws UnsupportedEncodingException{ // throws exception due to URLDecoder.decode() 
+	System.out.println( "HttpServletRequest: " ); 
+	System.out.println( request.getMethod() ); 
 
         foodKeyWord = URLDecoder.decode( foodKeyWord, "utf-8" ); 
         city = URLDecoder.decode( city, "utf-8" ); 
